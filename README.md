@@ -12,11 +12,19 @@ Eine einfache Version eines Rollenspiels als Lernprogramm für die IHK-Abschluss
 ## Die Datenbank
 - Die relationale Datenbank für die Fragen wird durch das Team "Daten- und Prozessanalyse" gestaltet.
 ### Welches Package benötigt wird für SQL
-MySQL → mysql-connector-j
+allowed:
+DB steht in MySQL. XAMPP öffnen und dann starte MySQL/Apache server.
+DB erstellen unter der Name: quizdb
 
-PostgreSQL → postgresql
-
+not accepted: weil wir ausschliesslich den Projekt in Schulrechner ausfuehren muss. PostreSQL & pgadmin ist nicht in Schulrechner installisiert. SQLite to fair. 
+PostgreSQL → postgresql 
 SQLite → sqlite-jdbc
+
+DB MySQL & DBGUI verwendet werden und die Daten genau in quizdb gespeichert werden.
+
+Im Backend braucht ein Web-Framework. Hier vorschlaegt: Spring & Springboot. bitte euren Rechner installisieren.
+
+Im Backend in Java Projekt - pom.xml konfigration machen. Schritte und properties folgt bald.
 
 ## UI 
 Keine Ahnung, wird schon.
