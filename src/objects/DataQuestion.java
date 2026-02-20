@@ -1,7 +1,11 @@
 package objects;
 
+import javax.persistence.*;
+
 import java.util.ArrayList;
 
+@Entity
+@Table(name="question")
 public class DataQuestion {
     ArrayList<DataAnswer> answers;
 

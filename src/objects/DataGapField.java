@@ -1,5 +1,9 @@
 package objects;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="gap_field")
 public class DataGapField {
     private int gap_index;
     private String input_type;

@@ -1,5 +1,9 @@
 package objects;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="gap_option")
 public class DataGapOption {
     private String option_text;
     private boolean is_correct;

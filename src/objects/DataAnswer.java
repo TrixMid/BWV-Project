@@ -1,5 +1,9 @@
 package objects;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="mc_answer")
 public class DataAnswer {
     private String option_text;
     private int points;
