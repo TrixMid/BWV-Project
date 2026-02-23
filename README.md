@@ -24,7 +24,7 @@ Das spiel soll:
 
 ## Im Frontend
 - Frontend soll in Javascript / HTML / CSS entwickelt werden (Team Khishig & Gleb)
-(Es soll ein Fullstack-Projekt sein, deswegen können wir nicht JFrame anwenden, sonst müssen wir ein Web-Framework Springboot einsetzen dann über REST API das Backend & Frontend kommunizieren)
+(Es soll ein Fullstack-Projekt sein, deswegen können wir nicht JFrame anwenden, sonst müssen wir ein Web-Framework Springboot einsetzen, Backend und Frontend soll über REST API kommunizieren
 
 ## User story
 - Ein Team soll User story schreiben (Team ?)
