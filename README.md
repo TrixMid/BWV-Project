@@ -17,13 +17,13 @@ Das spiel soll:
 ### Welches Package benötigt wird für SQL
 - DB steht in MySQL. XAMPP öffnen und dann starte MySQL/Apache server.
 - DB erstellen unter der Name: quizdb
-- DB MySQL & DBGUI verwendet werden und die Daten genau in quizdb gespeichert werden. (Khishig)
-- Im Backend braucht ein Web-Framework. Hier vorschlaegt: Spring & Springboot. bitte euren Rechner installisieren: https://spring.io/quickstart
+- DB MySQL & DBGUI verwendet werden und die Daten genau in quizdb gespeichert werden.
+- Im Backend braucht ein Web-Framework. Hier vorschlaegt: Spring & Springboot. https://spring.io/quickstart. Erstellung der Springboot Projekt (Khishig)
 - Im Backend in Java Projekt - pom.xml konfigration machen. Schritte und properties folgt bald. 
-- DB Fragen in Excel zusammenfassen und vor 13.03 auf Moodle hochladen (Team ?) 40 Fragen (Wirtschaft)
+- DB Fragen in Excel zusammenfassen und vor 13.03 auf Moodle hochladen (Team ?) 40 Fragen (Wirtschaft) (Gleb)
 
 ## Im Frontend
-- Frontend soll in Javascript / HTML / CSS entwickelt werden (Team Khishig & Gleb)
+- Frontend soll in Javascript / HTML / CSS entwickelt werden (Team Khishig & Gleb) Gleb hier vorschlägt React. 
 (Es soll ein Fullstack-Projekt sein, deswegen können wir nicht JFrame anwenden, sonst müssen wir ein Web-Framework Springboot einsetzen, Backend und Frontend soll über REST API kommunizieren
 
 ## User story
