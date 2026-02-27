@@ -27,24 +27,4 @@ public class QuestionService {
     public Optional<Question> getQuestionById(Integer id) {
         return questionRepository.findById(id);
     }
-
-    public List<Question> getQuestionsByQuestionSet(Integer questionSetId) {
-        return questionRepository.findByQuestionSetId(questionSetId);
-    }
-
-    public List<McAnswer> getAnswersForQuestion(Integer questionId) {
-        return mcAnswerRepository.findByQuestionIdOrderByOptionOrderAsc(questionId);
-    }
-
-    public boolean checkSingleChoiceAnswer(Integer questionId, Integer answerId) {
-        List<McAnswer> answers = mcAnswerRepository.findByQuestionIdOrderByOptionOrderAsc(questionId);
-
-        for (McAnswer answer : answers) {
-            if (answer.getId().equals(answerId)) {
-                return answer.isCorrect();
-            }
-        }
-
-        return false;
-    }
 }

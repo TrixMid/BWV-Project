@@ -14,9 +14,9 @@ Project: Maven
 Language: Java
 Spring Boot: 3.x
 Dependencies:
-✅ Spring Web
-✅ Spring Data JPA
-✅ MySQL Driver
+Spring Web
+Spring Data JPA
+MySQL Driver
 
 Struktur in Spring Boot wäre:
 entity → Team, Theme, QuestionSet, Question, McAnswer, GapField, GapOption
