@@ -21,7 +21,6 @@ public class QuestionSet {
     @Column(name = "question_set_id")
     private Integer id;
 
-
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id", nullable = false)
     private Team team;

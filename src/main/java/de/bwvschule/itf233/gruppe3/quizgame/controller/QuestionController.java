@@ -2,8 +2,6 @@ package de.bwvschule.itf233.gruppe3.quizgame.controller;
 
 import de.bwvschule.itf233.gruppe3.quizgame.db.entities.*;
 import de.bwvschule.itf233.gruppe3.quizgame.service.QuestionService;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;

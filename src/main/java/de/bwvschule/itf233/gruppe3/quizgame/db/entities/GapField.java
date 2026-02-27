@@ -36,8 +36,8 @@ public class GapField {
     private int gapIndex;
 
     @Column(name = "input_type", nullable = false, length = 10)
-    private String inputType = "FREE_TEXT";
-//    private GapInputType inputType = GapInputType.FREE_TEXT;
+    //private String inputType = "FREE_TEXT";
+    private GapInputType inputType = GapInputType.FREE_TEXT;
 
     @Lob
     @Column(name = "correct_text")

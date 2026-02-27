@@ -1,19 +1,28 @@
 package de.bwvschule.itf233.gruppe3.quizgame.db.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "question")
-
+@Setter
+@Getter
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "question_id")
     private Integer id;
 
+//    @Column(name = "question_set_id", nullable = false)
+//    private Integer questionSetId;
+
     @ManyToOne
-    @JoinColumn(name = "question_set_id") // The FK column in your DB
-    private QuestionSet questionSet;    // <--- This name must match mappedBy
+    @JoinColumn(name = "question_set_id")
+    private QuestionSet questionSet;
+
+    @ManyToOne
+    private Theme theme;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "question_type", nullable = false)
@@ -34,7 +43,7 @@ public class Question {
     @Column(nullable = false)
     private int points;
 
-    public Question() {
+/*    public Question() {
     }
 
     public Integer getId() {
@@ -49,8 +58,8 @@ public class Question {
         return questionSet.getId();
     }
 
-    public void setQuestionSet(QuestionSet questionSet) {
-        this.questionSet = questionSet;
+    public void setQuestionSetId(Integer questionSetId) {
+        this.questionSet = questionSetId;
     }
 
     public QuestionType getQuestionType() {
@@ -99,5 +108,5 @@ public class Question {
 
     public void setPoints(int points) {
         this.points = points;
-    }
+    }*/
 }
