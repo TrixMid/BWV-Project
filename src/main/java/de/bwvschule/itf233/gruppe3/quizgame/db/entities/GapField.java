@@ -35,7 +35,6 @@ public class GapField {
     @Column(name = "gap_index", nullable = false)
     private int gapIndex;
 
-    @Enumerated(value = EnumType.STRING)
     @Column(name = "input_type", nullable = false, length = 10)
     private String inputType = "FREE_TEXT";
 //    private GapInputType inputType = GapInputType.FREE_TEXT;

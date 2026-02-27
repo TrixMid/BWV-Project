@@ -11,8 +11,9 @@ public class Question {
     @Column(name = "question_id")
     private Integer id;
 
-    @Column(name = "question_set_id", nullable = false)
-    private Integer questionSetId;
+    @ManyToOne
+    @JoinColumn(name = "question_set_id") // The FK column in your DB
+    private QuestionSet questionSet;    // <--- This name must match mappedBy
 
     @Enumerated(EnumType.STRING)
     @Column(name = "question_type", nullable = false)
@@ -45,11 +46,11 @@ public class Question {
     }
 
     public Integer getQuestionSetId() {
-        return questionSetId;
+        return questionSet.getId();
     }
 
-    public void setQuestionSetId(Integer questionSetId) {
-        this.questionSetId = questionSetId;
+    public void setQuestionSet(QuestionSet questionSet) {
+        this.questionSet = questionSet;
     }
 
     public QuestionType getQuestionType() {
