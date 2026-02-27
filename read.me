@@ -1,0 +1,33 @@
+Spieler → bekommt Frage → antwortet → bekommt Punkte
+
+Browser
+   ↓
+Spring Controller
+   ↓
+Service
+   ↓
+JPA Repository
+   ↓
+MySQL Database
+
+Project: Maven
+Language: Java
+Spring Boot: 3.x
+Dependencies:
+✅ Spring Web
+✅ Spring Data JPA
+✅ MySQL Driver
+
+Struktur in Spring Boot wäre:
+entity → Team, Theme, QuestionSet, Question, McAnswer, GapField, GapOption
+repository → JPA-Repositories für Datenbankzugriff
+service → Spiellogik, Auswertung, Punktberechnung
+controller → REST-API für Fragen, Antworten, Spielstand
+dto → Request/Response-Objekte für JSO
+
+Technik:
+Spring Boot
+Spring Web
+Spring Data JPA
+MySQL
+optional Lombok
