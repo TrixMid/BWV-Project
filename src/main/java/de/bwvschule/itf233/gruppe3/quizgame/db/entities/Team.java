@@ -3,9 +3,6 @@ package de.bwvschule.itf233.gruppe3.quizgame.db.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @Table(name = "team")
 @Getter
@@ -17,11 +14,11 @@ public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "team_id")
-    private Integer id;
+    private Integer teamId;
 
-    @Column(name = "name", nullable = false, length = 255)
+    @Column(nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<QuestionSet> questionSets = new ArrayList<>();
+//    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<QuestionSet> questionSets = new ArrayList<>();
 }

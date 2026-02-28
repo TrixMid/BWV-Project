@@ -1,0 +1,11 @@
+GET http://localhost:8080/api/questions/1
+
+###
+
+POST http://localhost:8080/api/questions/submit
+Content-Type: application/json
+
+{
+  "questionId": 1,
+  "selectedAnswerIds": [3]
+}

@@ -1,72 +1,31 @@
 package de.bwvschule.itf233.gruppe3.quizgame.db.entities;
-
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import java.util.ArrayList;
-import java.util.List;
+import lombok.*;
 
 @Entity
-@Table(
-        name = "gap_field",
-        uniqueConstraints = {
-                @UniqueConstraint(name = "uq_gap_field_question_index", columnNames = {"question_id", "gap_index"})
-        },
-        indexes = {
-                @Index(name = "idx_gap_field_question", columnList = "question_id")
-        }
-)
+@Table(name = "gap_field")
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class GapField {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "gap_id")
-    private Integer id;
+    private Integer gapId;
 
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "question_id", nullable = false)
     private Question question;
 
     @Column(name = "gap_index", nullable = false)
-    private int gapIndex;
+    private Integer gapIndex;
 
-    @Column(name = "input_type", nullable = false, length = 10)
-    //private String inputType = "FREE_TEXT";
-    private GapInputType inputType = GapInputType.FREE_TEXT;
+    @Column(name = "text_before", columnDefinition = "TEXT")
+    private String textBefore;
 
-    @Lob
-    @Column(name = "correct_text")
-    private String correctText;
-
-    @Column(name = "case_sensitive", nullable = false)
-    private boolean caseSensitive = false;
-
-    @OneToMany(mappedBy = "gapField", cascade = CascadeType.ALL, orphanRemoval = true)
-    @OrderBy("optionOrder ASC")
-    private List<GapOption> options = new ArrayList<>();
-
-   /* // getters/setters
-    public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id; }
-
-    public Question getQuestion() { return question; }
-    public void setQuestion(Question question) {
-        this.question = question; }
-
-    public int getGapIndex() { return gapIndex; }
-    public void setGapIndex(int gapIndex) { this.gapIndex = gapIndex; }
-
-    public String getCorrectText() { return correctText; }
-    public void setCorrectText(String correctText) { this.correctText = correctText; }
-
-    public boolean isCaseSensitive() { return caseSensitive; }
-    public void setCaseSensitive(boolean caseSensitive) { this.caseSensitive = caseSensitive; }
-
-    public List<GapOption> getOptions() { return options; }
-    public void setOptions(List<GapOption> options) { this.options = options; }*/
+    @Column(name = "text_after", columnDefinition = "TEXT")
+    private String textAfter;
 }
