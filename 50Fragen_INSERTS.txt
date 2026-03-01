@@ -1,0 +1,359 @@
+-- === SEED DATA: BEGIN (EXACT FROM DOC HIGHLIGHTS) ===
+START TRANSACTION;
+
+INSERT INTO team (team_id, name) VALUES (1, 'BWV Wirtschaft und Sozialkunde');
+INSERT INTO theme (theme_id, name, description) VALUES (1, 'WISO/BWV', 'Wirtschafts- und Sozialkunde Fragen');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (1, 1, 'Wirtschaft & Sozialkunde – 50');
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (1, 1, 'MC', 'Welche beiden Regelungen finden Sie in einem Manteltarifvertrag?', NULL, NULL, 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (1, 1, 'Beginn und Ende der den Arbeitnehmern zustehenden Pausen', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (2, 1, 'Höhe der Ausbildungsvergütung', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (3, 1, 'Höhe des Tarifgehaltes', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (4, 1, 'Dauer der wöchentlichen Arbeitszeit', 1, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (5, 1, 'Höhe des jährlichen Urlaubanspruchs', 1, 5);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (6, 1, 'Nutzung betrieblicher sozialer Einrichtungen', 0, 6);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (2, 1, 'MC', 'In der MaHaG KG steht die Wahl des Betriebsrates an. Welche 3 Personen sind wahlberechtigt ?', NULL, NULL, 1, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (7, 2, 'Die geschäftsführende Gesellschafterin Lea Hofmann.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (8, 2, 'Anja Melter, eine 30-jährige Mitarbeiterin eines Zeitarbeitsunternehmens, die vor 4 Monaten dem Unternehmen zur Umstellung der Software-Anwendungen auf unbestimmte Zeit überlassen wurde.', 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (9, 2, 'Marga Becker, eine 16-jährige Schülerpraktikantin, die in ihren sechswöchigen Sommerferien im Unternehmen tätig ist.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (10, 2, 'Die Handelsvertreterin Claudia Roth, die seit 15 Jahren end mit der MaHaG KG zusammenarbeitet.', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (11, 2, 'Carlos Brentiger, ein Mitarbeiter, der mittels Telearbeitsplatz wöchentlich zu Hause 30 Stunden für die MaHaG tätig ist.', 1, 5);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (12, 2, 'Die 17-jährige Auszubildende Bea Timmermann.', 1, 6);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (3, 1, 'MC', 'Mit Ihren Auszubildenen sprechen Sie über die anstehenden Betriebswahlen. Welche beiden Aussagen sind richtig ?', NULL, NULL, 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (13, 3, 'Ohne Zustimmung der Komplementärin Lea Hollermann kann kein neuer Betriebsrat gewählt werden.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (14, 3, 'Der amtierende Betriebsrat kann nicht wiedergewählt werden.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (15, 3, 'Ein Mitglied der Jugend und Auszubildendenvertretung kann nicht gleichzeitig Mitglied des Betriebsrates sein.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (16, 3, 'Aktives Wahlrecht ist das Recht , sich zur Wahl des Betriebsrates als Kandidat aufstellen zu lassen.', 1, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (17, 3, 'Einem Mitglied des Betriebsrates kann während seiner Amtszeit nur außerordentlich gekündigt werden .', 1, 5);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (18, 3, 'Die regelmäßige Amtszeit des Betriebsrates beträgt 5 Jahre.', 0, 6);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (4, 1, 'MC', 'Welche beiden Sachverhalte sind im Allgemeinen Gleichbehandlungsgesetz (AGG) geregelt?', NULL, NULL, 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (19, 4, 'Das AGG regelt, dass Benachteiligungen aus Gründen der ethischen Herkunft, des Geschlechts, der Religion oder Weltanschauung, einer Behinderung, des Alters oder der sexuellen Identität beim Auswahlverfahren nicht zulässig sind.', 1, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (20, 4, 'Die Benachteiligungsverbote des AGG erstrecken sich auch auf Ungleichbehandlungen beim beruflichen Aufstieg und die Beschäftigung- und Arbeitsbedingungen.', 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (21, 4, 'Bei Verstoß gegen das AGG hat der betroffene Arbeitnehmer keinen Anspruch auf Schadensersatz.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (22, 4, 'Bei einer Stellenausschreibung, muss der Arbeitgeber nicht geschlechtsneutral ausschreiben.', 0, 4);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (5, 1, 'MC', 'Die MaHaG KG plant, einen Fachinformatiker Anwendungsentwicklung (m/w/d) einzustellen. Nachdem Sie das Anforderungsprofil entworfen haben, weist Ihre Rechtsabteilung Sie darauf hin, dass eine Formulierung gegen das Allgemeine Gleichbehandlungsgesetz (AGG) verstößt. Was dürfen Sie nicht in eine Stellenbeschreibung nach dem AGG schreiben?', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (23, 5, 'Sie beherrschen die englische Sprache in Word und Schrift.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (24, 5, 'Sie sind in der Lage, dynamische Webseiten zu programmieren.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (25, 5, 'Sie passen in unser Team, wenn Sie nicht älter als 30 Jahre sind.', 1, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (26, 5, 'Sie sind mobil und auch bereit, unsere Kunden deutschlandweit zu besuchen.', 0, 4);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (6, 1, 'MC', 'Bei der Gestaltung der Ausbildungsverträge für volljährige und jugendliche Auszubildende müssen Sie darauf achten, dass gesetzliche Bestimmungen eingehalten werden. In welchen beiden Gesetzen schauen Sie nach, wenn Sie Inhalte eines Ausbildungsvertrages prüfen möchten?', NULL, NULL, 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (27, 6, 'Jugendschutzgesetz', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (28, 6, 'Arbeitssicherheitsgesetz', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (29, 6, 'Berufsbildungsgesetz', 1, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (30, 6, 'Betriebsverfassungsgesetz', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (31, 6, 'Jugendarbeitsschutzgesetz', 1, 5);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (7, 1, 'MC', 'Welche zwei Bestimmungen finden Sie im Berufsbildungsgesetz?', NULL, NULL, 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (32, 7, 'Sollte die IHK-Prüfung vorher bestanden werden, endet das Ausbildungsverhältnis dennoch erst mit Ablauf der vertraglich festgelegten Ausbildungszeit.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (33, 7, 'Will ein Auszubildender eine Ausbildung in einem anderen Beruf beginnen, so kann er das Ausbildungsverhältnis auch nach der Probezeit noch beenden.', 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (34, 7, 'Jugendliche Auszubildende haben einen Anspruch auf eine einstündige Pause, wenn sie mehr als 6 Stunden beschäftigt werden.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (35, 7, 'Bei der Beendigung eines Berufsausbildungsverhältnisses hat der Auszubildende Anspruch auf ein Zeugnis. Er hat die Möglichkeit, ein qualifiziertes Zeugnis zu verlangen.', 1, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (36, 7, 'Die Ausbildung endet in jedem Fall mit dem letzten Termin der mündlichen Prüfung.', 0, 5);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (8, 1, 'MC', 'Jens Rievers hat am 16.07.2025 seine Ausbildung mit dem Bestehen der letzten Prüfung erfolgreich beendet. Weil sein Ausbildungsvertrag als Vertragsende den 31.07.2025 vorsieht, ist er der Meinung, dass er bis zu diesem Zeitpunkt arbeiten muss. Welche Rechtsfolge tritt ein, wenn er ab dem 17.07.2025 in der bisherigen Abteilung weiterarbeitet?', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (37, 8, 'Er muss weiterarbeiten, weil sein Ausbildungsvertrag das vorsieht.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (38, 8, 'Es handelt sich um einen schwebend-unwirksamen Arbeitsvertrag, der angefochten werden kann.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (39, 8, 'Die Weiterbeschäftigung kann jederzeit von beiden Seiten ohne Kündigung beendet werden.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (40, 8, 'Es wird ein neues Arbeitsverhältnis begründet mit einer neuen Probezeit von drei Monaten.', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (41, 8, 'Jens Rievers begründet damit ein neues unbefristetes Arbeitsverhältnis und hat Anspruch auf Zahlung eines Gehalts ab dem 17.07.2025.', 1, 5);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (9, 1, 'MC', 'Bei der MaHaG KG stehen Wahlen zur Jugend- und Auszubildendenvertretung an. Katja Sommer (Vertriebsmitarbeiterin, 24 Jahre alt), die bereits im Betriebsrat ist und umfangreiche Erfahrungen dort gesammelt hat, will nun auch für dieses Amt kandidieren. Prüfen Sie, ob das möglich ist. Beachten Sie hierzu den folgenden Gesetzestext:', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (42, 9, 'Ausschnitt aus dem Betriebsverfassungsgesetz – Erster Abschnitt: Jugend- und Auszubildendenvertretung', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (43, 9, 'Frau Sommer kann kandidieren, weil sie ja Praxiserfahrung aus ihrer Tätigkeit im Betriebsrat hat.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (44, 9, 'Frau Sommer kann nicht kandidieren, weil dem Arbeitgeber doppelte Kosten nicht zuzumuten sind.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (45, 9, 'Frau Sommer kann nicht kandidieren, weil das Betriebsverfassungsgesetz so etwas ausschließt.', 1, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (46, 9, 'Frau Sommer kann kandidieren, weil es sich um zwei verschiedene Organe der Betriebsverfassung handelt.', 0, 5);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (10, 1, 'MC', 'Bevor Sie die Ausbildungsverträge den Auszubildenden schicken, überprüfen Sie diese. Ein Ausbildungsvertrag weist einen Fehler auf, der gegen das Berufsbildungsgesetz verstößt. Um welchen Fehler handelt es sich hier?', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (47, 10, 'Für die verschiedenen Ausbildungsjahre ist bereits jetzt die jeweilige Vergütung gestaffelt nach Ausbildungsjahren eingetragen.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (48, 10, 'Persönliche Angaben zu den Eltern, wie etwa Beruf und Konfession, fehlen.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (49, 10, 'Die Dauer der Ausbildung beträgt 36 Monate.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (50, 10, 'Die Probezeit beträgt 6 Monate.', 1, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (51, 10, 'Es sind nur die Kündigungsvoraussetzungen einer ordentlichen Kündigung aufgeführt, nicht aber die erforderlichen Gründe einer außerordentlichen.', 0, 5);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (11, 1, 'MC', 'Unternehmen können in der Form einer Personengesellschaft oder als juristische Person geführt werden. Auf welchen der folgenden Begriffe trifft die Bezeichnung „Juristische Person des privaten Rechts“ zu?', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (52, 11, 'König GmbH', 1, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (53, 11, 'Berufsgenossenschaft Bergmannsheil', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (54, 11, 'Industrie- und Handelskammer Mannheim', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (55, 11, 'Dr. Michaela Kluge, RA und Notarin', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (56, 11, 'Gerichtsvollzieher Ferdinand Piersch', 0, 5);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (12, 1, 'MC', 'Zu den Kunden der MaHaG KG zählen neben den Personengesellschaften auch juristische Personen des privaten und des öffentlichen Rechts. Bei welchen beiden Kunden der MaHaG KG handelt es sich um juristische Personen des öffentlichen Rechts?', NULL, NULL, 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (57, 12, 'Schützenverein Mannheim 1896 e. V.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (58, 12, 'Stadt Mannheim', 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (59, 12, 'Universität Heidelberg', 1, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (60, 12, 'Großküchenausstatter Bößle GmbH', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (61, 12, 'Rechtsanwaltssozietät Edel & Stark', 0, 5);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (62, 12, 'Mülldeponie Stuttgart KG', 0, 6);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (13, 1, 'MC', 'Um ihr Kapital sinnvoll einzusetzen und zu verwerten, handelt die MaHaG KG zunächst einmal nach dem ökonomischen Prinzip.', NULL, NULL, 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (63, 13, 'In welchen beiden Fällen handelt es sich um die Anwendung des Maximalprinzips?', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (64, 13, 'Der Absatz der Mikrowellengeräte soll im kommenden Geschäftsjahr das Vorjahresniveau erreichen, der Materialverbrauch soll dabei aber um 4 % gesenkt werden.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (65, 13, 'Mitarbeiter der MaHaG KG haben im Rahmen des betrieblichen Vorschlagswesens ein verbessertes Produktionsverfahren entwickelt. Bei der Herstellung ihrer Dampfgarer hat die MaHaG KG bei höherer Produktionsmenge gleiche Stückkosten. Die Geschäftsleitung greift den Verbesserungsvorschlag ihrer Mitarbeiter auf.', 1, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (66, 13, 'Für die Ausstattung der PC-Arbeitsplätze wurde ein Budget von 60.000 € veranschlagt. Durch Verhandlungen mit ihrem Geschäftspartner erreichen Sie, dass das neueste und verbesserte Betriebssystem auf allen Rechnern vorinstalliert ist.', 1, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (67, 13, 'Nach der anhaltenden Nachfrage nach Kaffee-Vollautomaten beschließt die Geschäftsleitung, die Produktion vorsichtig um 5 % zu erhöhen. Dies geht einher mit einem verstärkten Material- und Personaleinsatz.', 0, 5);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (14, 1, 'MC', 'Prüfen Sie, welche der folgenden Maßnahmen der MaHaG KG keine ökologische Zielsetzung beinhaltet.', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (68, 14, 'Statt der vielen unterschiedlichen Arbeitsplatzdrucker werden abteilungsbezogen leistungs- und netzwerkfähige Multifunktionsdrucker genutzt.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (69, 14, 'Beim Kauf von Büromaschinen wird auf die Energieeffizienz geachtet.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (70, 14, 'In der Betriebskantine der MaHaG KG werden vorzugsweise saisonale und vegane Speisen angeboten.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (71, 14, 'Das Unternehmen wechselt zu einem kostengünstigen Stromanbieter, der auf fossile Energieträger setzt.', 1, 4);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (15, 1, 'MC', 'Bei der Verfolgung ökonomischer Ziele berücksichtigt die MaHaG KG auch zunehmend Aspekte des Umweltschutzes. Prüfen Sie, wo Zielharmonie herrscht, also ökonomische und ökologische Aspekte im Einklang sind.', NULL, NULL, 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (72, 15, 'In der Betriebskantine werden nur noch Steaks aus artgerechter argentinischer Rinderzucht serviert.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (73, 15, 'Das Verwaltungsgebäude der Mannheimer Haushaltsgeräte KG erhält eine Klimaanlage.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (74, 15, 'Drucker und Plotter mit einem hohen Geräuschpegel werden mit einer Schallschutzhaube ausgestattet.', 1, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (75, 15, 'Es werden nur noch LEDs für die Beleuchtung eingesetzt.', 1, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (76, 15, 'Eine hochtourig laufende Drehmaschine wird mit einer Sicherheitseinrichtung nachgerüstet.', 0, 5);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (16, 1, 'MC', 'Im Rahmen der von den Unternehmen praktizierten Kommunikationspolitik weisen Firmen verstärkt auf verantwortungsbewusstes und nachhaltiges Wirtschaften hin. Bei welcher Maßnahme wirtschaftet die MaHaG KG ökologisch nachhaltig und kann werbewirksam darauf hinweisen?', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (77, 16, 'Für die Produktion ihrer Haushaltsgeräte stellt die MaHaG KG um auf Just-in-time.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (78, 16, 'Zur Kosteneinsparung nutzt die MaHaG KG die Vorteile des Outsourcings: einige Funktionsbereiche werden ausgelagert.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (79, 16, 'Die MaHaG KG setzt ihre Ressourcen sparsam ein, versucht, Brauchwasser nach Kühlung wieder dem Produktionsprozess zuzuführen, vermeidet aufwendige Verpackungen und publiziert diese Aktionen auf ihrer Internetseite.', 1, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (80, 16, 'Bei der Einstellung von Mitarbeitern bevorzugt die MaHaG KG junge Mitarbeiter, zeichnen sich diese doch durch mäßige Gehaltsansprüche aus. Damit lassen sich die Lohnkosten deutlich senken.', 0, 4);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (17, 1, 'MC', 'Für ihre mittel- und langfristige Planung benötigt die MaHaG KG Informationen, in welcher Konjunkturphase sich aktuell die wirtschaftliche Entwicklung befindet. Welche Merkmale kennzeichnen den Abschwung?', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (81, 17, 'Die Nachfrage auf dem Arbeitsmarkt nimmt zu.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (82, 17, 'Die Kapazitätsauslastung nähert sich ihrem Höhepunkt.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (83, 17, 'Die Nachfrage nach Krediten nimmt zu, weil die Unternehmen in dieser Situation verstärkt investieren.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (84, 17, 'Ein wirtschaftlicher Abschwung führt zum Abbau von Überstunden und von Arbeitsplätzen.', 1, 4);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (18, 1, 'MC', 'Wie sollte die Mannheimer Haushaltsgeräte KG im Falle eines beginnenden Abschwungs agieren?
+(2 Antworten)', NULL, NULL, 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (85, 18, 'Sie sollte langsam die Produktionsmenge reduzieren.', 1, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (86, 18, 'Sie sollte bei der Bundesagentur für Arbeit Kurzarbeitergeld beantragen.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (87, 18, 'Sie sollte vorhandene Überstunden abbauen.', 1, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (88, 18, 'Sie kann optimistisch in die Zukunft blicken und vorsichtig Produktion und ggf. Mitarbeiterzahl erhöhen.', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (89, 18, 'Sie sollte den Betriebsrat über betriebsbedingte Kündigungen rechtzeitig informieren.', 0, 5);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (19, 1, 'MC', 'Auf einem Markt treffen Angebot und Nachfrage aufeinander.
+Bei einem bestimmten Preis sind angebotene Menge und nachgefragte Menge genau gleich groß.', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (90, 19, 'Mindestpreis', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (91, 19, 'Käufermarkt', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (92, 19, 'Verkäufermarkt', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (93, 19, 'Nachgefragte Menge', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (94, 19, 'Angebotene Menge', 0, 5);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (95, 19, 'Gleichgewichtspreis', 1, 6);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (20, 1, 'MC', 'Prüfen Sie, welche der nachstehenden Aussagen über den einfachen Wirtschaftskreislauf richtig ist.', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (96, 20, 'Die Einkommen in Form von Löhnen und Gehältern fließen von den privaten Haushalten in die Unternehmen.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (97, 20, 'Die Konsumgüterausgaben für Güter fließen von den Unternehmen in die privaten Haushalte.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (98, 20, 'Produktionsgüter sind Teil des Güterstroms von den privaten Haushalten in die Richtung der Unternehmen.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (99, 20, 'Die Einkommen in Form von Löhnen und Gehältern sind Teil des Geldstromes, der von den Unternehmen zu den Haushalten fließt.', 1, 4);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (21, 1, 'MC', 'Die verschiedenen Konjunkturphasen veranlassen auch die Mannheimer Haushaltsgeräte KG, ihr wirtschaftliches Verhalten danach auszurichten. Prüfen Sie, in welcher Konjunkturphase sich die MaHaG KG ökonomisch sinnvoll verhält.', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (100, 21, 'Konjunkturphase Rezession: Die Nachfrage nach Haushaltsgeräten wird ihren Tiefstand erreichen, was einhergeht mit einer hohen Arbeitslosigkeit. Die MaHaG KG hält das bisherige Produktionsniveau aufrecht, um bei künftiger Nachfrage lieferbereit zu sein.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (101, 21, 'Konjunkturphase Depression: Die Wirtschaft hat ihren Tiefpunkt erreicht. Die MaHaG KG baut daher Überstunden ab und richtet sich auf die Einrichtung von Kurzarbeit ein.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (102, 21, 'Konjunkturphase Expansion: Die MaHaG KG verzeichnet eine zunehmende Nachfrage. Sie erhöht vorsichtig die Produktionskapazität und fragt verstärkt Personal nach.', 1, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (103, 21, 'Konjunkturphase Boom: Die steigende Nachfrage bleibt auf hohem Niveau; um der bevorstehenden Depression zu begegnen, baut die MaHaG KG Überstunden ab und verstärkt ihre Werbemaßnahmen.', 0, 4);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (22, 1, 'MC', 'Ein Auszubildender der MaHaG KG stürzt im Hauptlagerhaus beim Einsortieren von Waren von der Leiter und bricht sich ein Bein. Wem muss die entsprechende Unfallmeldung zugeleitet werden?', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (104, 22, 'Der Industrie- und Handelskammer', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (105, 22, 'Der Betriebshaftpflichtversicherung', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (106, 22, 'Der Berufsgenossenschaft', 1, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (107, 22, 'Der Personalabteilung der MaHaG KG', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (108, 22, 'Dem Betriebsarzt', 0, 5);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (109, 22, 'Dem Sicherheitsbeauftragten', 0, 6);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (23, 1, 'MC', 'Marga Schlöter, angehende Kauffrau für Büromanagement, informiert sich bei Ihnen über die Regelungen zur Arbeitsunfähigkeit. Welche zwei Aussagen hierzu sind richtig?', NULL, NULL, 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (110, 23, 'Im Krankheitsfall erhalten Auszubildende keine Entgeltfortzahlung, weil sie keine Arbeitnehmer sind.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (111, 23, 'Die Mannheimer Haushaltsgeräte KG kann schon am 1. Tag der Arbeitsunfähigkeit eine ärztliche Bescheinigung von ihren Auszubildenden verlangen.', 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (112, 23, 'Ärztliche Bescheinigungen zur Arbeitsunfähigkeit müssen spätestens am 5. Tag nach Erkrankung eingereicht werden.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (113, 23, 'Erst nach einer Anwartschaft von einem Jahr bei der MaHaG KG haben alle Mitarbeiter Anspruch auf Fortzahlung ihres Gehaltes bei Arbeitsunfähigkeit.', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (114, 23, 'Entgeltfortzahlung im Krankheitsfall gibt es nur bei unverschuldeter Arbeitsunfähigkeit.', 1, 5);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (24, 1, 'MC', 'Gerda Kalinov ist Prokuristin der Mannheimer Haushaltsgeräte KG und im Handelsregister eingetragen.', NULL, NULL, 1, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (115, 24, 'Welche drei Wirkungen haben Einträge von Vollmachten in das Handelsregister?', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (116, 24, 'Die Eintragung über eine erteilte Prokura in das Handelsregister hat konstitutive Wirkung.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (117, 24, 'Die Eintragung über den Widerruf einer erteilten Prokura hat konstitutive Wirkung.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (118, 24, 'Wurde einem Prokuristen die Prokura entzogen, so gelten seine Willenserklärungen weiterhin bis zum endgültigen Eintrag in das Handelsregister.', 1, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (119, 24, 'Die Eintragung über eine erteilte Prokura in das Handelsregister hat deklaratorische Wirkung.', 1, 5);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (120, 24, 'Die Eintragung über den Widerruf einer erteilten Prokura hat deklaratorische Wirkung.', 1, 6);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (25, 1, 'MC', 'Für welche Unternehmensform wird Claudia Both sich unter diesen Voraussetzungen entscheiden?', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (121, 25, 'Kommanditgesellschaft (KG)', 1, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (122, 25, 'Gesellschaft mit beschränkter Haftung (GmbH)', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (123, 25, 'Offene Handelsgesellschaft (OHG)', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (124, 25, 'Einzelunternehmung (e. Kfr.)', 0, 4);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (26, 1, 'MC', 'Für ein Darlehen zur Existenzgründung verlangt die Bank von Claudia Both einen Businessplan. Wozu dient dieser?', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (125, 26, 'Der Businessplan …', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (126, 26, '… wird vom Amt für Wirtschaftsförderung ausgestellt.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (127, 26, '… dient ausschließlich der Sicherheit bei einer Kreditaufnahme.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (128, 26, '… muss nur bei der Gründung von Kapitalgesellschaften erstellt werden.', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (129, 26, '… legt die strategischen Ziele eines Unternehmens fest.', 1, 5);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (130, 26, '… wird beim Amtsgericht (Handelsregister) hinterlegt.', 0, 6);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (27, 1, 'MC', 'Carlos Ortega, 17 Jahre alt, beginnt am 01.08.2025 seine Berufsausbildung als Fachinformatiker bei der MaHaG KG. Der Auszubildende vollendet am 15.01.2026 das 18. Lebensjahr.', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (131, 27, 'Ermitteln Sie aus den folgenden Gesetzesauszügen, wie viele Arbeitstage Urlaub ihm für das Kalenderjahr 2026 zustehen.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (132, 27, 'mindestens 30 Werktage, wenn der Jugendliche zu Beginn des Kalenderjahrs noch nicht 16 Jahre alt ist,', 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (133, 27, 'mindestens 27 Werktage, wenn der Jugendliche zu Beginn des Kalenderjahrs noch nicht 17 Jahre alt ist,', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (134, 27, 'mindestens 25 Werktage, wenn der Jugendliche zu Beginn des Kalenderjahrs noch nicht 18 Jahre alt ist.', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (135, 27, 'Die Dauer des Erholungsurlaubs beträgt für alle Beschäftigten der MaHaG KG 30 Arbeitstage.', 0, 5);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (28, 1, 'MC', 'Der Auszubildende Igor Czerwinski muss im Rahmen seiner Ausbildung immer wieder Tätigkeiten verrichten, die nach dem Berufsbild ausbildungsfremd und im betrieblichen Ausbildungsplan nicht vorgesehen sind.', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (136, 28, 'Berufsgenossenschaft', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (137, 28, 'Arbeitsgericht', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (138, 28, 'Industrie- und Handelskammer', 1, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (139, 28, 'Metall-Arbeitgeberverband', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (140, 28, 'Dienstleistungsgewerkschaft ver.di', 0, 5);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (141, 28, 'Amtsgericht', 0, 6);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (29, 1, 'MC', 'Fatima Kuslu, 17 Jahre alt, hat am 1. September ihre Berufsausbildung als Fachinformatikerin bei der MaHaG KG begonnen. Welche Vorschrift des Jugendarbeitsschutzgesetzes gilt für sie?', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (142, 29, 'Sie darf maximal 48 Stunden in der Woche arbeiten.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (143, 29, 'Sie darf nur an 5 Tagen in der Woche beschäftigt werden.', 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (144, 29, 'Sie hat Anspruch auf 45 Minuten Pause bei einer 8-stündigen Arbeitszeit.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (145, 29, 'Die Freizeit zwischen zwei Arbeitstagen muss mindestens 10 Stunden betragen.', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (146, 29, 'Spätestens 3 Monate nach Ausbildungsbeginn muss eine ärztliche Erstuntersuchung erfolgen', 0, 5);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (30, 1, 'MC', 'Arbeitnehmer erhalten im Krankheitsfall weiterhin ihre Vergütung, obwohl sie ihre Arbeitsleistung nicht erbringen können. Gilt das auch gleichermaßen für Auszubildende?', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (147, 30, 'Bei der Ausübung gefährlicher Sportarten ist der Arbeitgeber generell von der Entgeltfortzahlungspflicht befreit.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (148, 30, 'Nur bei unverschuldeter Krankheit muss der Arbeitgeber die Ausbildungsvergütung weiterzahlen.', 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (149, 30, 'Ein Auszubildender erhält nur für die Dauer von vier Wochen weiterhin seine Ausbildungsvergütung.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (150, 30, 'Statt des Anspruchs auf Weiterzahlung der Ausbildungsvergütung hat der Auszubildende einen Anspruch auf Zahlung von Krankengeld.', 0, 4);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (31, 1, 'MC', 'In der Mannheimer Haushaltsgeräte KG wurde dem Auszubildenden Mario Klug fristlos gekündigt, weil er beim Aufbrechen eines Spindes ertappt wurde. Der Betriebsrat wurde nach der fristlosen Kündigung informiert und stimmte dieser nachträglich bedenkenlos zu.', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (151, 31, 'Welche Rechtsfolgen hat die Kündigung durch den ausbildenden Betrieb?', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (152, 31, 'Die Kündigung ist unwirksam.', 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (153, 31, 'Ein Auszubildender muss in jedem Fall bis zum Vertragsende des Ausbildungsvertrages beschäftigt und ausgebildet werden.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (154, 31, 'Bei einem Straftatbestand wie Diebstahl oder einem schweren Vertrauensbruch ist die Kündigung immer wirksam, auch ohne Anhörung des Betriebsrates.', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (155, 31, 'Bei einem Auszubildenden muss die Jugend- und Auszubildendenvertretung gehört werden. Weil dies nicht geschehen ist, ist die Kündigung aus diesem Grunde unwirksam.', 0, 5);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (32, 1, 'MC', 'In den Arbeitsverträgen der MaHaG KG ist wie auch in den Ausbildungsverträgen immer eine Probezeit vereinbart. Wodurch unterscheidet sich die Probezeit in einem Ausbildungsvertrag von der in einem Arbeitsvertrag? (Zwei Antworten)', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (156, 32, 'Anders als Arbeitnehmer müssen Azubis im Falle der Kündigung in der Probezeit immer den Grund angeben.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (157, 32, 'Für Ausbildungsverhältnisse beträgt die Mindest-Probezeit zwei, für Arbeitsverhältnisse vier Monate.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (158, 32, 'Die Höchstdauer der Probezeit beträgt bei Arbeitsverhältnissen sechs, bei einem Ausbildungsverhältnis vier Monate.', 1, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (159, 32, 'In einem Arbeitsverhältnis muss eine Probezeit vereinbart werden, in einem Ausbildungsverhältnis kann diese entfallen.', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (160, 32, 'In Ausbildungsverträgen muss, in Arbeitsverträgen kann eine Probezeit vereinbart werden.', 0, 5);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (33, 1, 'MC', 'Ein Ausbildungsvertrag ist ein befristeter Vertrag, der automatisch durch Zeitablauf endet. Wann ist die Kündigung eines solchen Ausbildungsvertrages dennoch möglich? (Zwei Antworten)', NULL, NULL, 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (161, 33, 'Bei einem Wechsel des Berufswunsches kann das bestehende Ausbildungsverhältnis auch nach der Probezeit durch den Auszubildenden noch wirksam gekündigt werden.', 1, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (162, 33, 'Nur in der Probezeit ist eine Kündigung möglich, nach der Probezeit kann das Ausbildungsverhältnis in keinem Fall mehr gekündigt werden.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (163, 33, 'Die Kündigung eines Ausbildungsverhältnisses ist jederzeit formfrei möglich.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (164, 33, 'Der Wunsch nach einem Studium rechtfertigt eine Kündigung auch noch nach der Probezeit.', 1, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (165, 33, 'Es ist von beiden Vertragsparteien nur eine außerordentliche Kündigung bei einem Ausbildungsverhältnis möglich.', 0, 5);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (34, 1, 'MC', 'Der Betriebsrat hat abgestufte Rechte. In welchem Fall hat der Betriebsrat nur ein Informationsrecht?', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (166, 34, 'Der Mitarbeiterin Claudia Funke soll gekündigt werden, weil sie Betriebs- und Geschäftsgeheimnisse verraten hat.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (167, 34, 'Der Betriebsrat möchte Auswahlrichtlinien erstellen für personelle Einzelmaßnahmen.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (168, 34, 'Die Geschäftsleitung der MaHaG KG möchte einen verbindlichen Betriebsurlaub für alle Beschäftigten in den Sommerferien festlegen.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (169, 34, 'Die MaHaG KG möchte auf allen Servern und Arbeitsplatzrechnern das bestehende Betriebssystem ersetzen durch das frei verfügbare Betriebssystem Linux.', 1, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (170, 34, 'Die MaHaG KG möchte Überwachungskameras im Lager installieren.', 0, 5);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (35, 1, 'MC', 'Jan Riekers möchte ein Praktikum im Ausland zur Verbesserung seiner Sprachkenntnisse machen. Sie weisen ihn auf den Europass hin.', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (171, 35, 'Welche Aussage dazu ist falsch?', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (172, 35, 'Europass ist ein kostenpflichtiger Service der EU für Bewerbung und Jobsuche.', 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (173, 35, 'Europass Mobilitätsnachweis dokumentiert Ergebnisse von Lernaufenthalten im Ausland, wie z. B. Praktika während der Ausbildung oder des Studiums.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (174, 35, 'Europass hilft beim Erstellen von Bewerbungsunterlagen und der Karriereplanung.', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (175, 35, 'Europass dient der Dokumentation von Kompetenzen und dem Vergleich von Qualifikationen.', 0, 5);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (176, 35, 'Europass bietet hilfreiche Tools für alle, die sich bewerben oder weiterbilden wollen.', 0, 6);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (36, 1, 'MC', 'Am 28.10.20XX kündigt Mina Stiller (38 Jahre, seit 11 Jahren im Unternehmen) fristgerecht zum nächstmöglichen Termin.
+Nennen Sie das Datum, an dem Frau Stiller frühestens eine neue Stelle antreten kann.', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (177, 36, '15.11.20XX', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (178, 36, '30.11.20XX', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (179, 36, '01.12.20XX', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (180, 36, '31.12.20XX', 0, 4);
+-- WARN: In Aufgabe 36 wurden keine gelb markierten Antworten gefunden. Punkte wurden auf 1 gesetzt.
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (37, 1, 'MC', 'In der MaHaG KG stehen Betriebsratswahlen an. Das Unternehmen hat 134 Beschäftigte (volljährig) und 16 Azubis (12 davon volljährig). Darüber hinaus sind 3 Zeitarbeitnehmer seit 4 Monaten im Betrieb damit beschäftigt, für die IT-Sicherheit zu sorgen.', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (181, 37, '5 Mitglieder', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (182, 37, '7 Mitglieder', 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (183, 37, '9 Mitglieder', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (184, 37, '11 Mitglieder', 0, 4);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (38, 1, 'MC', 'Zur Produktion ihrer Haushaltsgeräte benötigt die Mannheimer Haushaltsgeräte KG Ressourcen und kombiniert Produktionsfaktoren miteinander.', NULL, NULL, 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (185, 38, 'Bei welchen zwei der unten angegebenen Beispiele handelt es sich um betriebswirtschaftliche Produktionsfaktoren?', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (186, 38, 'Edelstahl für die Innenausstattung der Dampfgarer', 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (187, 38, 'Darlehen der Sparkasse Mannheim', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (188, 38, 'Arbeitsleistung eines Metallmeisters in der Fertigung', 1, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (189, 38, 'Privatgrundstück von Lea Hollermann', 0, 5);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (190, 38, 'Eigenkapital von Lea Hollermann', 0, 6);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (39, 1, 'MC', 'Abfallvermeidung bedeutet neben der Entlastung der Umwelt auch Kosteneinsparungen bei der Mannheimer Haushaltsgeräte KG, also eine Zielharmonie zwischen Ökonomie und Ökologie. Welche der folgenden Maßnahmen gehört zur Abfallvermeidung?', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (191, 39, 'Für die Betriebskantine verwendet die Mannheimer Haushaltsgeräte KG Pfandflaschen.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (192, 39, 'Toner-Kassetten und Plastikmaterialien werden dem Grünen Punkt zugeführt.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (193, 39, 'Beim Zuschneiden von Edelstahlblechen wird der Verschnitt dem Wirtschaftskreislauf wieder zugeführt.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (194, 39, 'Alle Heizkörper der Mannheimer Haushaltsgeräte KG werden mit Thermostatventilen ausgestattet.', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (195, 39, 'Gebrauchte Ordner werden mit einem neuen Ordnerrücken versehen und wiederverwendet.', 1, 5);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (40, 1, 'MC', 'Immer wieder fragen Kunden nach einer weiteren Entwicklung vernetzter Haushaltsgeräte.
+Bundesweit gibt es neben der MaHaG KG nur noch drei weitere Hersteller dieser zukunftsweisenden Technologie.', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (196, 40, 'Nachfragemonopol', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (197, 40, 'Nachfrageoligopol', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (198, 40, 'Angebotsmonopol', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (199, 40, 'Angebotsoligopol', 1, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (200, 40, 'Zweiseitiges Duopol', 0, 5);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (201, 40, 'Polypol', 0, 6);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (41, 1, 'MC', 'Die Mannheimer Haushaltsgeräte KG steht bei ihrem Angebot an kleinen Haushaltsgeräten und Zubehör mit einer Vielzahl von Mitbewerbern mit kleinen Angebotsmengen am Markt in einem Wettbewerbsprozess. Auf der Nachfrageseite gibt es eine Vielzahl von Haushalten und Unternehmen mit ihren Werkskantinen.', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (202, 41, 'Was passiert in dieser Marktsituation, wenn sich die Preise ändern?', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (203, 41, 'Das Angebot sinkt bei steigenden Preisen.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (204, 41, 'Die Nachfrage steigt bei sinkenden Preisen.', 1, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (205, 41, 'Angebot und Nachfrage steigen gleichermaßen bei sinkenden Preisen.', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (206, 41, 'Das Angebot steigt bei sinkenden Preisen.', 0, 5);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (207, 41, 'Die Nachfrage sinkt bei sinkenden Preisen.', 0, 6);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (42, 1, 'MC', 'Die Wirtschaftsordnung der Bundesrepublik Deutschland bezeichnet man als „Soziale Marktwirtschaft“.
+Besonderes Merkmal dieser Wirtschaftsordnung ist ein funktionierender Markt. Welche Eigenschaften und Entwicklungen zeichnen diesen Markt aus?', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (208, 42, 'In Zeiten der Globalisierung gibt es solche klassischen funktionierenden Märkte nicht mehr.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (209, 42, 'E-Commerce ist schon lange ein Ersatz für den Markt im herkömmlichen Sinne.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (210, 42, 'Einen wirklich funktionierenden Markt gibt es nur an der Börse.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (211, 42, 'Auch in Zeiten der Digitalisierung und des Online-Handels ist und bleibt der Markt als Zusammentreffen von Angebot und Nachfrage immer noch die zentrale Instanz für die Güterproduktion und -verteilung.', 1, 4);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (43, 1, 'MC', 'Ohne staatliche oder anderweitige Eingriffe in das Marktgeschehen bildet sich am Markt zwischen Angebot und Nachfrage der sog. „Gleichgewichtspreis“. Welche Funktion erfüllt dieser?', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (212, 43, 'Güter und Dienstleistungen werden dadurch auf leistungsstarke Nachfrager verteilt.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (213, 43, 'Der Gleichgewichtspreis sorgt dafür, dass Angebot und Nachfrage ausgeglichen sind.', 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (214, 43, 'Er lenkt das Angebot hin zu den Marktteilnehmern, die bereit sind, auch mehr als den Gleichgewichtspreis zu bezahlen.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (215, 43, 'Er warnt vor einem zu hohen Angebotspreis.', 0, 4);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (44, 1, 'MC', 'Prüfen Sie, welche der nachstehenden Aussagen über den einfachen Wirtschaftskreislauf richtig ist.', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (216, 44, 'Die Einkommen in Form von Löhnen und Gehältern fließen von den privaten Haushalten in die Unternehmen.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (217, 44, 'Die Einkommen in Form von Löhnen und Gehältern sind Teil des Geldstromes, der von den Unternehmen zu den Haushalten fließt.', 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (218, 44, 'Die Konsumausgaben für Güter fließen von den Unternehmen in die privaten Haushalte.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (219, 44, 'Produktionsgüter sind Teil des Güterstroms von den privaten Haushalten in die Richtung der Unternehmen.', 0, 4);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (45, 1, 'MC', 'Die MaHaG KG ist in den letzten Jahren stark gewachsen. Die Geschäftsleitung denkt über eine Reorganisation des Unternehmens nach. Als Mitarbeiter/-in der Stabsstelle „Betriebswirtschaftliche Analyse und Planung“ sollen Sie die Aufbauorganisation Ihres Unternehmens überprüfen. Sie schauen sich auch die Organisationsstrukturen kooperierender Unternehmen an. Die MaHaG verwendet das Stabliniensystem.', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (220, 45, 'Welche Nachteile hat das Leitungssystem der STAEKI AG?', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (221, 45, 'Es ist eine eindeutige Kompetenz und Aufgabenzuordnung festgelegt.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (222, 45, 'Jede Stelle weist exakt nur eine übergeordnete und eine untergeordnete Stelle auf.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (223, 45, 'Ein Mitarbeiter kann von mehreren übergeordneten Stellen Anweisungen erhalten, was zu Kompetenzschwierigkeiten führen kann.', 1, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (224, 45, 'Jeder Mitarbeiter kann Weisungen nur von einer Stelle bekommen.', 0, 5);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (225, 45, 'Informationen werden schnell weitergeleitet.', 0, 6);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (46, 1, 'MC', 'Clara Bürscheid (21 Jahre), Mitarbeiterin im Einkauf, möchte sich bei den anstehenden Wahlen der Jugend- und Auszubildendenvertretung als Kandidatin aufstellen lassen.', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (226, 46, 'Welche Voraussetzung hierzu muss sie erfüllen?', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (227, 46, 'Sie muss mindestens im 2. Ausbildungsjahr sein.', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (228, 46, 'Sie muss die deutsche Staatsangehörigkeit aufweisen.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (229, 46, 'Sie muss bereits Erfahrung als Mitglied des Betriebsrates gesammelt haben.', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (230, 46, 'Sie darf nicht Mitglied des Betriebsrates sein.', 1, 5);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (231, 46, 'Sie muss mindestens 3 Monate dem Betrieb angehören.', 0, 6);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (47, 1, 'MC', 'Nachhaltiges Wirtschaften zeichnet sich insbesondere dadurch aus, dass Ressourcen wiederverwendet werden. Bei welcher der folgenden Maßnahmen handelt die Mannheimer Haushaltsgeräte KG nachhaltig?', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (232, 47, 'Sie ersetzt in der Werkskantine Getränkedosen durch Flaschen.', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (233, 47, 'Sie nimmt Transportpaletten nach erfolgter Lieferung zurück und verwendet diese für weitere Lieferungen.', 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (234, 47, 'Überall im Unternehmen gibt es Behälter für Batterien, die an Sammelstellen zurückgegeben werden.', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (235, 47, 'Bei der Produktion entstehende Metallreste werden eingeschmolzen und zur Herstellung neuer Bleche verwendet.', 0, 4);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (48, 1, 'MC', 'Aus gelieferten Edelstahlblechen fertigt die Mannheimer Haushaltsgeräte KG Edelstahlgehäuse für Waschmaschinen und Trockner. Beim Zuschneiden der Bleche fallen Reste an, die nicht unmittelbar verwendet werden können. Das Unternehmen liefert daher diese Reste an ein Edelstahlwerk, das diese einschmilzt und daraus neue Edelstahlbleche gewinnt. Welche Bezeichnung gibt es für diese Form der Rohstoffeinsparung?', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (236, 48, 'Energetische Abfallverwertung', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (237, 48, 'Recycling', 1, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (238, 48, 'Rohstoffnutzung im Dualen System', 0, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (239, 48, 'Energieeffizienz', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (240, 48, 'Abfallverminderung', 0, 5);
+
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (49, 1, 'MC', 'Die Tarifvertragsparteien – Arbeitgeberverbände und Gewerkschaften – können die Arbeits- und Wirtschaftsbedingungen ohne staatliche Einmischung frei gestalten.', NULL, NULL, 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (241, 49, 'Wie nennt man dieses im Grundgesetz verankerte Prinzip der sozialen Marktwirtschaft?', 0, 1);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (242, 49, 'Betriebsverfassung', 0, 2);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (243, 49, 'Tarifautonomie', 1, 3);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (244, 49, 'Koalitionsfreiheit', 0, 4);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (245, 49, 'Tariffreiheit', 0, 5);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order) VALUES (246, 49, 'Unternehmensmitbestimmung', 0, 6);
+
+COMMIT;
+-- === SEED DATA: END ===
