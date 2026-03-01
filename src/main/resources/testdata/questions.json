@@ -1,0 +1,14 @@
+[
+  {
+    "questionType": "MC",
+    "startText": "Wie heißt die Hauptstadt von Frankreich?",
+    "allowsMultiple": false,
+    "points": 5,
+    "answers": [
+      { "optionText": "Berlin", "isCorrect": false, "optionOrder": 1 },
+      { "optionText": "Madrid", "isCorrect": false, "optionOrder": 2 },
+      { "optionText": "Paris", "isCorrect": true, "optionOrder": 3 },
+      { "optionText": "Rom", "isCorrect": false, "optionOrder": 4 }
+    ]
+  }
+]

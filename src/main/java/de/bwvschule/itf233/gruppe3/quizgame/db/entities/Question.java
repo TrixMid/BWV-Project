@@ -1,23 +1,34 @@
 package de.bwvschule.itf233.gruppe3.quizgame.db.entities;
 
 import jakarta.persistence.*;
+import lombok.*;
+import java.util.*;
 
 @Entity
 @Table(name = "question")
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Question {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "question_id")
-    private Integer id;
+    private Integer questionId;
 
-    @ManyToOne
-    @JoinColumn(name = "question_set_id") // The FK column in your DB
-    private QuestionSet questionSet;    // <--- This name must match mappedBy
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "question_set_id", nullable = false)
+    private QuestionSet questionSet;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "question_type", nullable = false)
     private QuestionType questionType;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "theme_id")
+    private Theme theme;
 
     @Column(name = "start_text", columnDefinition = "TEXT")
     private String startText;
@@ -29,75 +40,16 @@ public class Question {
     private String endText;
 
     @Column(name = "allows_multiple", nullable = false)
-    private boolean allowsMultiple;
+    private Boolean allowsMultiple = false;
 
     @Column(nullable = false)
-    private int points;
+    private Integer points = 1;
 
-    public Question() {
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getQuestionSetId() {
-        return questionSet.getId();
-    }
-
-    public void setQuestionSet(QuestionSet questionSet) {
-        this.questionSet = questionSet;
-    }
-
-    public QuestionType getQuestionType() {
-        return questionType;
-    }
-
-    public void setQuestionType(QuestionType questionType) {
-        this.questionType = questionType;
-    }
-
-    public String getStartText() {
-        return startText;
-    }
-
-    public void setStartText(String startText) {
-        this.startText = startText;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    public String getEndText() {
-        return endText;
-    }
-
-    public void setEndText(String endText) {
-        this.endText = endText;
-    }
-
-    public boolean isAllowsMultiple() {
-        return allowsMultiple;
-    }
-
-    public void setAllowsMultiple(boolean allowsMultiple) {
-        this.allowsMultiple = allowsMultiple;
-    }
-
-    public int getPoints() {
-        return points;
-    }
-
-    public void setPoints(int points) {
-        this.points = points;
-    }
+    @ManyToMany
+    @JoinTable(
+            name = "Question_Theme",
+            joinColumns = @JoinColumn(name = "question_id"),
+            inverseJoinColumns = @JoinColumn(name = "theme_id")
+    )
+    private Set<Theme> themes = new HashSet<>();
 }

@@ -1,13 +1,10 @@
 package de.bwvschule.itf233.gruppe3.quizgame.controller;
 
-import de.bwvschule.itf233.gruppe3.quizgame.db.entities.*;
+import de.bwvschule.itf233.gruppe3.quizgame.dto.*;
 import de.bwvschule.itf233.gruppe3.quizgame.service.QuestionService;
-import org.springframework.http.ResponseEntity;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/questions")
@@ -19,41 +16,13 @@ public class QuestionController {
         this.questionService = questionService;
     }
 
-    @GetMapping
-    public List<Question> getAllQuestions() {
-        return questionService.getAllQuestions();
-    }
-
     @GetMapping("/{id}")
-    public ResponseEntity<Question> getQuestionById(@PathVariable Integer id) {
-        Optional<Question> question = questionService.getQuestionById(id);
-        return question.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    public QuestionDetailResponse getQuestionById(@PathVariable Integer id) {
+        return questionService.getQuestionDetail(id);
     }
 
-    @GetMapping("/{id}/answers")
-    public List<McAnswer> getAnswersForQuestion(@PathVariable Integer id) {
-        return questionService.getAnswersForQuestion(id);
-    }
-
-    @PostMapping("/{id}/check")
-    public ResponseEntity<Map<String, Object>> checkAnswer(
-            @PathVariable Integer id,
-            @RequestBody Map<String, Integer> body
-    ) {
-        Integer answerId = body.get("answerId");
-
-        if (answerId == null) {
-            return ResponseEntity.badRequest().body(Map.of(
-                    "error", "answerId fehlt"
-            ));
-        }
-
-        boolean correct = questionService.checkSingleChoiceAnswer(id, answerId);
-
-        return ResponseEntity.ok(Map.of(
-                "questionId", id,
-                "answerId", answerId,
-                "correct", correct
-        ));
+    @PostMapping("/submit")
+    public SubmitAnswerResponse submitAnswer(@Valid @RequestBody SubmitAnswerRequest request) {
+        return questionService.submitMcOrTfAnswer(request);
     }
 }
