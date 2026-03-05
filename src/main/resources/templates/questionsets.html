@@ -3,8 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Manage Question Sets</title>
+    <style>
+        #menu {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+<div id="menu">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/themes">Manage Themes</a></li>
+        <li><a href="/teams">Manage Teams</a></li>
+        <li><a href="/questionsets">Manage Question Sets</a></li>
+        <li><a href="/questions">Manage Questions</a></li>
+    </ul>
+</div>
 <h1>Manage Question Sets</h1>
 <h2>Existing Question Sets</h2>
 <table>
@@ -40,5 +54,21 @@
         <button type="submit">Add Question Set</button>
     </div>
 </form>
+
+<script>
+    document.addEventListener('keydown', function(event) {
+        if (event.ctrlKey && event.key === 'p') {
+            if (document.activeElement.tagName.toLowerCase() !== 'input' && document.activeElement.tagName.toLowerCase() !== 'textarea') {
+                event.preventDefault();
+                var menu = document.getElementById('menu');
+                if (menu.style.display === 'none') {
+                    menu.style.display = 'block';
+                } else {
+                    menu.style.display = 'none';
+                }
+            }
+        }
+    });
+</script>
 </body>
 </html>
