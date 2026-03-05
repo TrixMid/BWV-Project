@@ -1,6 +1,7 @@
 package objects;
 
-import javax.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name="mc_answer")
