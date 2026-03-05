@@ -1,21 +1,15 @@
 package de.bwvschule.itf233.gruppe3.quizgame.db.entities;
 
 import jakarta.persistence.*;
-import lombok.*;
 
 @Entity
 @Table(name = "gap_option")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class GapOption {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "gap_option_id")
-    private Integer gapOptionId;
+    private Integer id;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "gap_id", nullable = false)
@@ -29,4 +23,55 @@ public class GapOption {
 
     @Column(name = "option_order", nullable = false)
     private Integer optionOrder;
+
+    public GapOption() {
+    }
+
+    public GapOption(Integer id, GapField gapField, String optionText, Boolean isCorrect, Integer optionOrder) {
+        this.id = id;
+        this.gapField = gapField;
+        this.optionText = optionText;
+        this.isCorrect = isCorrect;
+        this.optionOrder = optionOrder;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public GapField getGapField() {
+        return gapField;
+    }
+
+    public void setGapField(GapField gapField) {
+        this.gapField = gapField;
+    }
+
+    public String getOptionText() {
+        return optionText;
+    }
+
+    public void setOptionText(String optionText) {
+        this.optionText = optionText;
+    }
+
+    public Boolean getIsCorrect() {
+        return isCorrect;
+    }
+
+    public void setIsCorrect(Boolean correct) {
+        isCorrect = correct;
+    }
+
+    public Integer getOptionOrder() {
+        return optionOrder;
+    }
+
+    public void setOptionOrder(Integer optionOrder) {
+        this.optionOrder = optionOrder;
+    }
 }

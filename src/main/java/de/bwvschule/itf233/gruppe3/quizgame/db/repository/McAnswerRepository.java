@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface McAnswerRepository extends JpaRepository<McAnswer, Integer> {
-    List<McAnswer> findByQuestionQuestionIdOrderByOptionOrderAsc(Integer questionId);
+    List<McAnswer> findByQuestionIdOrderByOptionOrderAsc(Integer questionId);
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Themes</title>
+</head>
+<body>
+<h1>Manage Themes</h1>
+<h2>Existing Themes</h2>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="theme : ${themes}">
+        <td th:text="${theme.id}"></td>
+        <td th:text="${theme.name}"></td>
+        <td th:text="${theme.description}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Add New Theme</h2>
+<form action="/themes" method="post" th:object="${theme}">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}">
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <input type="text" id="description" th:field="*{description}">
+    </div>
+    <div>
+        <button type="submit">Add Theme</button>
+    </div>
+</form>
+</body>
+</html>

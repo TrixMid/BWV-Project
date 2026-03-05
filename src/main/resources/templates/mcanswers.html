@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage MC Answers</title>
+</head>
+<body>
+<h1 th:text="'Manage Answers for Question: ' + ${question.startText}"></h1>
+<h2>Existing Answers</h2>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Option Text</th>
+        <th>Is Correct</th>
+        <th>Order</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="ans : ${mcAnswers}">
+        <td th:text="${ans.id}"></td>
+        <td th:text="${ans.optionText}"></td>
+        <td th:text="${ans.isCorrect}"></td>
+        <td th:text="${ans.optionOrder}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Add New Answer</h2>
+<form th:action="@{/questions/{id}/mcanswers(id=${question.id})}" method="post" th:object="${mcAnswer}">
+    <div>
+        <label for="optionText">Option Text:</label>
+        <input type="text" id="optionText" th:field="*{optionText}">
+    </div>
+    <div>
+        <label for="isCorrect">Is Correct:</label>
+        <input type="checkbox" id="isCorrect" th:field="*{isCorrect}">
+    </div>
+    <div>
+        <label for="optionOrder">Order:</label>
+        <input type="number" id="optionOrder" th:field="*{optionOrder}">
+    </div>
+    <div>
+        <button type="submit">Add Answer</button>
+    </div>
+</form>
+</body>
+</html>

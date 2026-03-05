@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Gap Fields</title>
+</head>
+<body>
+<h1 th:text="'Manage Gap Fields for Question: ' + ${question.startText}"></h1>
+<h2>Existing Gap Fields</h2>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Index</th>
+        <th>Text Before</th>
+        <th>Text After</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="gap : ${gapFields}">
+        <td th:text="${gap.id}"></td>
+        <td th:text="${gap.gapIndex}"></td>
+        <td th:text="${gap.textBefore}"></td>
+        <td th:text="${gap.textAfter}"></td>
+        <td>
+            <a th:href="@{/questions/{qId}/gapfields/{gfId}/gapoptions(qId=${question.id}, gfId=${gap.id})}">Manage Options</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Add New Gap Field</h2>
+<form th:action="@{/questions/{id}/gapfields(id=${question.id})}" method="post" th:object="${gapField}">
+    <div>
+        <label for="gapIndex">Index:</label>
+        <input type="number" id="gapIndex" th:field="*{gapIndex}">
+    </div>
+    <div>
+        <label for="textBefore">Text Before:</label>
+        <input type="text" id="textBefore" th:field="*{textBefore}">
+    </div>
+    <div>
+        <label for="textAfter">Text After:</label>
+        <input type="text" id="textAfter" th:field="*{textAfter}">
+    </div>
+    <div>
+        <button type="submit">Add Gap Field</button>
+    </div>
+</form>
+</body>
+</html>
