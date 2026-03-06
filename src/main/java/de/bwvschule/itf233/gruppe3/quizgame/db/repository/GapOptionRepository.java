@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface GapOptionRepository extends JpaRepository<GapOption, Integer> {
-    List<GapOption> findByGapFieldGapIdOrderByOptionOrderAsc(Integer gapId);
+    List<GapOption> findByGapFieldIdOrderByOptionOrderAsc(Integer gapId);
 }

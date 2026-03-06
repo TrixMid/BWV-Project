@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 *.xml
-=======
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
@@ -34,4 +32,6 @@ build/
 
 ### VS Code ###
 .vscode/
->>>>>>> origin/main
+
+### maven home
+.m2
