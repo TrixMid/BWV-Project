@@ -24,6 +24,10 @@ public class McAnswer {
     @Column(name = "option_order", nullable = false)
     private Integer optionOrder;
 
+    //zusatzliches Feld
+    @Column(name = "points", nullable = false)
+    private Integer points = 0;
+
     public McAnswer() {
     }
 
@@ -74,4 +78,13 @@ public class McAnswer {
     public void setOptionOrder(Integer optionOrder) {
         this.optionOrder = optionOrder;
     }
+
+    public Integer getPoints() {
+        return points;
+    }
+
+    public void setPoints(Integer points) {
+        this.points = points;
+    }
+
 }
