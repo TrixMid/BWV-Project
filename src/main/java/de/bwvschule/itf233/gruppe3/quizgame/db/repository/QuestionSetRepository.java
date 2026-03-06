@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface QuestionSetRepository extends JpaRepository<QuestionSet, Integer> {
-    List<QuestionSet> findByTeamTeamId(Integer teamId);
+    List<QuestionSet> findByTeamId(Integer teamId);
 }
