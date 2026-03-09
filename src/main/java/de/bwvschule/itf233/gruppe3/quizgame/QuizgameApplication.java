@@ -12,5 +12,4 @@ public class QuizgameApplication {
 				.initializers(new DBProfileSelector())
 				.run(args);
 	}
-
 }
