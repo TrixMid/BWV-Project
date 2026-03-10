@@ -5,12 +5,14 @@ import de.bwvschule.itf233.gruppe3.quizgame.db.repository.*;
 import de.bwvschule.itf233.gruppe3.quizgame.dto.*;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class QuestionService {
 
     private final QuestionRepository questionRepository;
@@ -25,9 +27,10 @@ public class QuestionService {
         this.gapOptionRepository = gapOptionRepository;
     }
 
-/*    public List<Question> getAllQuestions() {
-        return questionRepository.findAll();
-    }*/
+    public Question getQuestionById(Integer id) {
+        return questionRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Question not found: " + id));
+    }
 
     public QuestionDetailResponse getQuestionDetail(Integer questionId) {
         Question question = questionRepository.findById(questionId)

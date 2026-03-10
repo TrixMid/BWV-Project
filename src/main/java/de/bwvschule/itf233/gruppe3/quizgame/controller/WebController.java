@@ -10,4 +10,11 @@ public class WebController {
     public String index() {
         return "index";
     }
+
+
+    @GetMapping("/quiz")
+    public String quiz() {
+        return "quiz";
+    }
+
 }
