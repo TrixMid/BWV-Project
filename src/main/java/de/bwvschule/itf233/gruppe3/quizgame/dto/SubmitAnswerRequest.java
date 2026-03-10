@@ -7,6 +7,6 @@ import java.util.Set;
 
 public record SubmitAnswerRequest(
         @NotNull Integer questionId,
-        @NotEmpty Set<Integer> selectedAnswerIds
+        @NotEmpty Set<Integer> selectedAnswerIds // für MC/TF; bei GAP wird anders abgefragt
 ) {
 }

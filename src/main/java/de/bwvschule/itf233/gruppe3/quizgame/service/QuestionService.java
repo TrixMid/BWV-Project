@@ -27,9 +27,10 @@ public class QuestionService {
         this.gapOptionRepository = gapOptionRepository;
     }
 
-/*    public List<Question> getAllQuestions() {
-        return questionRepository.findAll();
-    }*/
+    public Question getQuestionById(Integer id) {
+        return questionRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Question not found: " + id));
+    }
 
     public QuestionDetailResponse getQuestionDetail(Integer questionId) {
         Question question = questionRepository.findById(questionId)
