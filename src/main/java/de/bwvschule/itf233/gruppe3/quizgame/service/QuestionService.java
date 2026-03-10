@@ -5,12 +5,14 @@ import de.bwvschule.itf233.gruppe3.quizgame.db.repository.*;
 import de.bwvschule.itf233.gruppe3.quizgame.dto.*;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class QuestionService {
 
     private final QuestionRepository questionRepository;

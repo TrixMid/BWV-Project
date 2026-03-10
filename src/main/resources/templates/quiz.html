@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+</head>
+
+<body>
+
+<h1>Quiz</h1>
+
+<div id="question"></div>
+
+<ul id="answers"></ul>
+
+<button onclick="nextQuestion()">Next Question</button>
+
+<script>
+
+    let questions = [];
+    let currentQuestionIndex = 0;
+    let selectedAnswers = [];
+
+    const params = new URLSearchParams(window.location.search);
+    const level = params.get("level") || 1;
+
+    fetch("/api/levels/" + level)
+    .then(response => response.json())
+    .then(data => {
+
+        questions = data;
+
+        showQuestion();
+
+    });
+
+    function showQuestion() {
+
+        const question = questions[currentQuestionIndex];
+
+        selectedAnswers = [];
+
+        document.getElementById("question").innerText = question.startText;
+
+        const answers = document.getElementById("answers");
+        answers.innerHTML = "";
+
+        fetch("/api/questions/" + question.id)
+        .then(response => response.json())
+        .then(detail => {
+
+            detail.answers.forEach(answer => {
+
+                const li = document.createElement("li");
+                li.innerText = answer.optionText;
+
+                li.style.cursor = "pointer";
+
+                li.onclick = function() {
+
+                    if (selectedAnswers.includes(answer.answerId)) {
+
+                        selectedAnswers = selectedAnswers.filter(id => id !== answer.answerId);
+                        li.style.background = "";
+
+                    } else {
+
+                        selectedAnswers.push(answer.answerId);
+                        li.style.background = "lightgreen";
+
+                    }
+
+                };
+
+                answers.appendChild(li);
+
+            });
+
+        });
+
+    }
+
+    function nextQuestion(){
+
+        currentQuestionIndex++;
+
+        if(currentQuestionIndex < questions.length){
+
+            showQuestion();
+
+        }else{
+
+            alert("Level beendet!");
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
