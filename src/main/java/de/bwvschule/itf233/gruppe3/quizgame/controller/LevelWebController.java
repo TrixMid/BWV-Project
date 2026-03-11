@@ -16,4 +16,14 @@ public class LevelWebController {
         return "levels2";
     }
 
+    @GetMapping("/levelroom")
+    public String levelroom() {
+        return "levelroom";
+    }
+
+    @GetMapping("/reviewroom")
+    public String reviewroom() {
+        return "reviewroom";
+    }
+
 }
