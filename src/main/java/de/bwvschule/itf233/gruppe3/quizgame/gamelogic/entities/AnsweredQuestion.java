@@ -33,6 +33,9 @@ public class AnsweredQuestion {
     @Column(name = "correct", nullable = false)
     private Boolean correct;
 
+    @Column(name = "selected_answer_ids", columnDefinition = "TEXT")
+    private String selectedAnswerIds;
+
     @Column(name = "answered_at", nullable = false)
     @Builder.Default
     private LocalDateTime answeredAt = LocalDateTime.now();
