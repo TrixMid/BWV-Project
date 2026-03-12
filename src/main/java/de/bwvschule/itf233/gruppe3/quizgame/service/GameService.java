@@ -9,14 +9,22 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import de.bwvschule.itf233.gruppe3.quizgame.dto.ReviewQuestionResponse;
+import de.bwvschule.itf233.gruppe3.quizgame.dto.ReviewAnswerResponse;
+
+import de.bwvschule.itf233.gruppe3.quizgame.dto.ReviewSummaryResponse;
+
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+
 
 @Service
 @RequiredArgsConstructor
 public class GameService {
 
     //diese GameService enthält die zentrale Spiellogik.
+    private final PlayerRepository playerRepository;
     private final GameSessionRepository gameSessionRepository;
     private final RoomProgressRepository roomProgressRepository;
     private final AnsweredQuestionRepository answeredQuestionRepository;
@@ -68,24 +76,55 @@ public class GameService {
         gameSessionRepository.save(session);
     }
 
+    @Transactional
+    public GameSession startSessionForPlayerName(String playerName) {
+        String cleanedName = playerName == null ? "" : playerName.trim();
+
+        if (cleanedName.isBlank()) {
+            throw new IllegalArgumentException("Playername darf nicht leer sein.");
+        }
+
+        Player player = playerRepository.findByUsername(cleanedName)
+                .orElseGet(() -> {
+                    Player newPlayer = new Player();
+                    newPlayer.setUsername(cleanedName);
+                    return playerRepository.save(newPlayer);
+                });
+
+        return gameSessionRepository
+                .findFirstByPlayerPlayerIdAndStatusOrderBySessionIdDesc(player.getPlayerId(), GameStatus.ACTIVE)
+                .orElseGet(() -> startNewSession(player));
+    }
     // MC/TF Antwort auswerten
     @Transactional
     public AnsweredQuestion evaluateMcAnswer(GameSession session, RoomProgress progress,
                                              Question question, List<Integer> selectedAnswerIds) {
         List<McAnswer> allAnswers = mcAnswerRepository.findByQuestionIdOrderByOptionOrderAsc(question.getId());
-        int pointsEarned = allAnswers.stream()
-                .filter(a -> selectedAnswerIds.contains(a.getId()))
-                .mapToInt(McAnswer::getPoints)
-                .sum();
 
-        boolean correct = (pointsEarned > 0); // einfache Definition: positiv = richtig
+        int pointsEarned = (int) allAnswers.stream()
+                .filter(answer -> selectedAnswerIds.contains(answer.getId()))
+                .filter(answer -> Boolean.TRUE.equals(answer.getIsCorrect()))
+                .count();
+
+        long correctAnswerCount = allAnswers.stream()
+                .filter(answer -> Boolean.TRUE.equals(answer.getIsCorrect()))
+                .count();
+
+        boolean correct = pointsEarned == correctAnswerCount && correctAnswerCount > 0;
+
+        String selectedAnswerIdsText = selectedAnswerIds.stream()
+                .map(String::valueOf)
+                .reduce((a, b) -> a + "," + b)
+                .orElse("");
 
         AnsweredQuestion aq = AnsweredQuestion.builder()
                 .roomProgress(progress)
                 .question(question)
                 .pointsEarned(pointsEarned)
                 .correct(correct)
+                .selectedAnswerIds(selectedAnswerIdsText)
                 .build();
+
         aq = answeredQuestionRepository.save(aq);
 
         progress.setPointsEarned(progress.getPointsEarned() + pointsEarned);
@@ -93,6 +132,53 @@ public class GameService {
 
         updateRoomCompletion(progress);
         return aq;
+    }
+
+    @Transactional(readOnly = true)
+    public ReviewSummaryResponse getReviewSummary(Integer sessionId) {
+        GameSession session = gameSessionRepository.findById(sessionId).orElseThrow();
+
+        RoomProgress progress = roomProgressRepository
+                .findByGameSessionSessionIdAndRoomRoomId(sessionId, session.getCurrentRoom().getRoomId())
+                .orElseThrow();
+
+        int totalPoints = progress.getPointsEarned();
+
+        int maxPoints = answeredQuestionRepository
+                .findByRoomProgressProgressIdOrderByAnsweredAtAsc(progress.getProgressId())
+                .stream()
+                .map(AnsweredQuestion::getQuestion)
+                .mapToInt(question -> {
+                    List<McAnswer> answers = mcAnswerRepository.findByQuestionIdOrderByOptionOrderAsc(question.getId());
+                    return (int) answers.stream()
+                            .filter(answer -> Boolean.TRUE.equals(answer.getIsCorrect()))
+                            .count();
+                })
+                .sum();
+
+        int scoreOutOf100 = maxPoints > 0
+                ? (int) Math.round((totalPoints * 100.0) / maxPoints)
+                : 0;
+
+        String medal;
+        if (scoreOutOf100 >= 90) {
+            medal = "GOLD";
+        } else if (scoreOutOf100 >= 75) {
+            medal = "SILVER";
+        } else if (scoreOutOf100 >= 50) {
+            medal = "BRONZE";
+        } else {
+            medal = "NONE";
+        }
+
+        return new ReviewSummaryResponse(
+                session.getSessionId(),
+                session.getPlayer().getUsername(),
+                totalPoints,
+                maxPoints,
+                scoreOutOf100,
+                medal
+        );
     }
 
     // GAP Antwort auswerten (pro Lücke eine gewählte Option)
@@ -119,6 +205,60 @@ public class GameService {
         progress.setPointsEarned(progress.getPointsEarned() + totalPoints);
         session.setTotalPoints(session.getTotalPoints() + totalPoints);
         updateRoomCompletion(progress);
+    }
+
+    private Set<Integer> parseSelectedAnswerIds(String selectedAnswerIds) {
+        if (selectedAnswerIds == null || selectedAnswerIds.isBlank()) {
+            return Set.of();
+        }
+
+        return java.util.Arrays.stream(selectedAnswerIds.split(","))
+                .map(String::trim)
+                .filter(s -> !s.isEmpty())
+                .map(Integer::valueOf)
+                .collect(java.util.stream.Collectors.toSet());
+    }
+
+    @Transactional(readOnly = true)
+    public List<ReviewQuestionResponse> getReviewForSession(Integer sessionId) {
+        GameSession session = gameSessionRepository.findById(sessionId).orElseThrow();
+
+        RoomProgress progress = roomProgressRepository
+                .findByGameSessionSessionIdAndRoomRoomId(sessionId, session.getCurrentRoom().getRoomId())
+                .orElseThrow();
+
+        List<AnsweredQuestion> answeredQuestions = answeredQuestionRepository.findByRoomProgressProgressIdOrderByAnsweredAtAsc(progress.getProgressId());
+
+        return answeredQuestions.stream().map(aq -> {
+            Question question = aq.getQuestion();
+
+            Set<Integer> selectedIds = parseSelectedAnswerIds(aq.getSelectedAnswerIds());
+
+            List<ReviewAnswerResponse> answers = mcAnswerRepository
+                    .findByQuestionIdOrderByOptionOrderAsc(question.getId())
+                    .stream()
+                    .map(answer -> new ReviewAnswerResponse(
+                            answer.getId(),
+                            answer.getOptionText(),
+                            answer.getOptionOrder(),
+                            answer.getIsCorrect(),
+                            selectedIds.contains(answer.getId())
+                    ))
+                    .toList();
+
+            int maxPoints = question.getPoints() != null ? question.getPoints() : 0;
+
+            return new ReviewQuestionResponse(
+                    question.getId(),
+                    question.getStartText(),
+                    question.getImageUrl(),
+                    question.getEndText(),
+                    aq.getPointsEarned(),
+                    maxPoints,
+                    aq.getCorrect(),
+                    answers
+            );
+        }).toList();
     }
 
     private void updateRoomCompletion(RoomProgress progress) {

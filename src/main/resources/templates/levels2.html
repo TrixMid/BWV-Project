@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Levelauswahl Klassenraum</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #dfe8f5;
+            font-family: Arial, sans-serif;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        #teamPanel {
+            position: fixed;
+            top: 16px;
+            right: 20px;
+            z-index: 9999;
+            background: rgba(255,255,255,0.92);
+            padding: 10px 14px;
+            border-radius: 10px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+            font-family: Arial, sans-serif;
+        }
+
+        #teamPanel label {
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        #teamPanel input {
+            padding: 6px 10px;
+            font-size: 15px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            width: 180px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="teamPanel">
+    <label for="teamName">Teamname:</label>
+    <input id="teamName" type="text" placeholder="Team eingeben" maxlength="50" />
+</div>
+
+<script>
+    const ROOM_WIDTH = 2000;
+    const ROOM_HEIGHT = Math.max(1100, window.innerHeight + 160);
+    const PLAYER_SPEED = 300;
+
+    const BASE_WIDTH = 1920;
+    const BASE_HEIGHT = 1080;
+    let uiScale = 1;
+
+    function getUiScale() {
+    return Math.max(0.9, Math.min(1.15, Math.min(window.innerWidth / BASE_WIDTH, window.innerHeight / BASE_HEIGHT)));
+    }
+
+    const config = {
+        type: Phaser.AUTO,
+        width: window.innerWidth,
+        height: window.innerHeight,
+        backgroundColor: "#dfe8f5",
+        physics: {
+            default: "arcade",
+            arcade: {
+                gravity: { y: 0 },
+                debug: false
+            }
+        },
+        scale: {
+            mode: Phaser.Scale.RESIZE,
+            autoCenter: Phaser.Scale.CENTER_BOTH
+        },
+        scene: {
+            preload,
+            create,
+            update
+        }
+    };
+
+    new Phaser.Game(config);
+
+    let player;
+    let cursors;
+    let keyA, keyD, keyW, keyS;
+    let interactHint;
+    let currentInteractable = null;
+    let enterKey;
+
+    let collisionObjects;
+    let level1Book, level2Book, level3Book;
+    let level1Zone, level2Zone, level3Zone;
+
+    function preload() {}
+
+    function create() {
+        uiScale = getUiScale();
+        createTextures.call(this);
+
+        this.physics.world.setBounds(0, 0, ROOM_WIDTH, ROOM_HEIGHT);
+        this.cameras.main.setBounds(0, 0, ROOM_WIDTH, ROOM_HEIGHT);
+
+        collisionObjects = this.physics.add.staticGroup();
+
+        drawClassroom.call(this);
+        createFurnitureCollisions.call(this);
+        createLevelDesk.call(this);
+        createPlayer.call(this);
+        createUI.call(this);
+
+        cursors = this.input.keyboard.createCursorKeys();
+        keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+        keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+        keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
+        keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
+        enterKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
+
+        this.physics.add.collider(player, collisionObjects);
+
+        this.physics.add.overlap(player, level1Zone, () => {
+            currentInteractable = { level: 1 };
+        }, null, this);
+
+        this.physics.add.overlap(player, level2Zone, () => {
+            currentInteractable = { level: 2 };
+        }, null, this);
+
+        this.physics.add.overlap(player, level3Zone, () => {
+            currentInteractable = { level: 3 };
+        }, null, this);
+
+        this.cameras.main.startFollow(player, true, 0.08, 0.08);
+        const zoom = Math.max(0.72, Math.min(0.95, Math.min(window.innerWidth / 1600, window.innerHeight / 900)));
+        this.cameras.main.setZoom(zoom);
+
+        this.scale.on("resize", resizeGame, this);
+    }
+
+    function update() {
+        handleMovement();
+        updateInteractionState.call(this);
+    }
+
+    async function startLevel(level) {
+        const teamInput = document.getElementById("teamName");
+        const playerName = teamInput ? teamInput.value.trim() : "";
+
+        if (!playerName) {
+            interactHint.setText("Bitte zuerst einen Teamnamen eingeben.");
+            return;
+        }
+
+        try {
+            const response = await fetch("/quizgame/session/start", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    playerName: playerName,
+                    level: level
+                })
+            });
+
+            if (!response.ok) {
+                interactHint.setText("Session konnte nicht gestartet werden.");
+                return;
+            }
+
+            const data = await response.json();
+            window.location.href = "/levelroom?level=" + level + "&sessionId=" + data.sessionId;
+        } catch (error) {
+            interactHint.setText("Fehler beim Starten der Session.");
+            console.error(error);
+        }
+    }
+
+    function createTextures() {
+        const g = this.make.graphics({ x: 0, y: 0, add: false });
+
+        g.fillStyle(0xf4efe6, 1);
+        g.fillRect(0, 0, 64, 64);
+        g.generateTexture("wall", 64, 64);
+        g.clear();
+
+        g.fillStyle(0xc7925b, 1);
+        g.fillRect(0, 0, 64, 64);
+        g.lineStyle(2, 0xb17f4f, 1);
+        g.lineBetween(0, 16, 64, 16);
+        g.lineBetween(0, 32, 64, 32);
+        g.lineBetween(0, 48, 64, 48);
+        g.generateTexture("floor", 64, 64);
+        g.clear();
+
+        g.fillStyle(0xffffff, 1);
+        g.fillRoundedRect(0, 0, 120, 140, 8);
+        g.fillStyle(0xa8d8ff, 1);
+        g.fillRoundedRect(8, 8, 104, 124, 6);
+        g.lineStyle(4, 0xffffff, 1);
+        g.lineBetween(60, 8, 60, 132);
+        g.lineBetween(8, 70, 112, 70);
+        g.generateTexture("window", 120, 140);
+        g.clear();
+
+        g.fillStyle(0x6b4423, 1);
+        g.fillRoundedRect(0, 0, 420, 180, 10);
+        g.fillStyle(0x2d5b37, 1);
+        g.fillRoundedRect(14, 14, 392, 152, 6);
+        g.generateTexture("board", 420, 180);
+        g.clear();
+
+        g.fillStyle(0x8b5a2b, 1);
+        g.fillRoundedRect(0, 0, 460, 100, 8);
+        g.fillStyle(0x6b3f1f, 1);
+        g.fillRect(24, 78, 18, 42);
+        g.fillRect(418, 78, 18, 42);
+        g.generateTexture("teacherDesk", 460, 120);
+        g.clear();
+
+        g.fillStyle(0x9a6232, 1);
+        g.fillRoundedRect(0, 0, 170, 72, 8);
+        g.fillStyle(0x73451f, 1);
+        g.fillRect(16, 58, 12, 32);
+        g.fillRect(142, 58, 12, 32);
+        g.generateTexture("studentDesk", 170, 90);
+        g.clear();
+
+        g.fillStyle(0x4c6b8a, 1);
+        g.fillRect(0, 18, 50, 12);
+        g.fillRect(8, 0, 34, 22);
+        g.fillRect(8, 30, 6, 24);
+        g.fillRect(36, 30, 6, 24);
+        g.generateTexture("chair", 50, 54);
+        g.clear();
+
+        g.fillStyle(0xd64545, 1);
+        g.fillRoundedRect(0, 0, 52, 18, 3);
+        g.generateTexture("bookRed", 52, 18);
+        g.clear();
+
+        g.fillStyle(0x3d73d6, 1);
+        g.fillRoundedRect(0, 0, 52, 18, 3);
+        g.generateTexture("bookBlue", 52, 18);
+        g.clear();
+
+        g.fillStyle(0x3aa65a, 1);
+        g.fillRoundedRect(0, 0, 52, 18, 3);
+        g.generateTexture("bookGreen", 52, 18);
+        g.clear();
+
+        g.fillStyle(0x1f1f1f, 1);
+        g.fillEllipse(28, 14, 34, 20);
+        g.fillStyle(0xf3c9a5, 1);
+        g.fillCircle(28, 22, 16);
+        g.lineStyle(2, 0x111111, 1);
+        g.strokeCircle(21, 22, 6);
+        g.strokeCircle(35, 22, 6);
+        g.lineBetween(27, 22, 29, 22);
+        g.fillStyle(0x4b6cb7, 1);
+        g.fillRoundedRect(14, 38, 28, 26, 6);
+        g.fillStyle(0xe8e8e8, 1);
+        g.fillRect(23, 38, 10, 10);
+        g.fillStyle(0x2f2f2f, 1);
+        g.fillRect(17, 64, 8, 22);
+        g.fillRect(31, 64, 8, 22);
+        g.fillStyle(0xf3c9a5, 1);
+        g.fillRect(8, 42, 8, 20);
+        g.fillRect(40, 42, 8, 20);
+        g.generateTexture("nerdPlayer", 56, 88);
+        g.clear();
+
+        g.fillStyle(0xf2d16b, 1);
+        g.fillEllipse(28, 12, 34, 18);
+        g.fillStyle(0xf1cfb1, 1);
+        g.fillCircle(28, 22, 15);
+        g.fillStyle(0x4f8d5d, 1);
+        g.fillRoundedRect(14, 38, 28, 22, 6);
+        g.fillStyle(0x2f2f2f, 1);
+        g.fillRect(18, 58, 7, 14);
+        g.fillRect(31, 58, 7, 14);
+        g.generateTexture("blondBoy", 56, 78);
+        g.clear();
+
+        g.fillStyle(0x111111, 1);
+        g.fillRoundedRect(10, 6, 36, 26, 10);
+        g.fillRect(10, 24, 10, 18);
+        g.fillRect(36, 24, 10, 18);
+        g.fillStyle(0xf3d6bd, 1);
+        g.fillCircle(28, 24, 15);
+        g.fillStyle(0xd65a7a, 1);
+        g.fillRoundedRect(14, 40, 28, 22, 6);
+        g.fillStyle(0x2f2f2f, 1);
+        g.fillRect(18, 60, 7, 14);
+        g.fillRect(31, 60, 7, 14);
+        g.generateTexture("chineseGirlLongHair", 56, 84);
+        g.clear();
+
+        g.fillStyle(0x3a2418, 1);
+        g.fillRoundedRect(11, 4, 34, 24, 10);
+        g.fillRect(12, 22, 8, 16);
+        g.fillRect(36, 22, 8, 16);
+        g.fillStyle(0xf0cfb4, 1);
+        g.fillCircle(28, 24, 15);
+        g.lineStyle(2, 0x111111, 1);
+        g.strokeCircle(21, 24, 6);
+        g.strokeCircle(35, 24, 6);
+        g.lineBetween(27, 24, 29, 24);
+        g.fillStyle(0x6d59b3, 1);
+        g.fillRoundedRect(14, 40, 28, 22, 6);
+        g.fillStyle(0x2f2f2f, 1);
+        g.fillRect(18, 60, 7, 14);
+        g.fillRect(31, 60, 7, 14);
+        g.generateTexture("longHairNerd", 56, 84);
+        g.clear();
+
+        g.fillStyle(0x111111, 1);
+        g.fillEllipse(28, 12, 34, 18);
+        g.fillStyle(0xefcfb6, 1);
+        g.fillCircle(28, 22, 15);
+        g.fillStyle(0x4e6cc9, 1);
+        g.fillRoundedRect(14, 38, 28, 22, 6);
+        g.fillStyle(0x2f2f2f, 1);
+        g.fillRect(18, 58, 7, 14);
+        g.fillRect(31, 58, 7, 14);
+        g.generateTexture("blackHairBoy", 56, 78);
+        g.clear();
+    }
+
+    function drawClassroom() {
+        const centerX = ROOM_WIDTH / 2;
+
+        this.add.rectangle(centerX, 170, ROOM_WIDTH, 340, 0xf4efe6).setDepth(-20);
+        this.add.rectangle(centerX, ROOM_HEIGHT - 110, ROOM_WIDTH, 320, 0xc7925b).setDepth(-20);
+
+        for (let y = 320; y < ROOM_HEIGHT; y += 64) {
+            for (let x = 0; x < ROOM_WIDTH; x += 64) {
+                this.add.image(x + 32, y + 32, "floor").setDepth(-19);
+            }
+        }
+
+        this.add.rectangle(centerX, 24, ROOM_WIDTH, 48, 0xe7dfd1).setDepth(-18);
+
+        [220, 390, 1280, 1450].forEach(x => {
+            this.add.image(x, 160, "window").setDepth(-10).setScale(uiScale);
+        });
+
+        this.add.image(760, 155, "board").setDepth(-9).setScale(uiScale);
+        this.add.text(760, 155, "3 Level zur Auswahl", {
+        fontFamily: "Arial Black, Arial, sans-serif",
+        fontSize: `${Math.round(32 * uiScale)}px`,
+        color: "#f5f5f5"
+        }).setOrigin(0.5).setDepth(-8);
+
+        this.add.circle(1050, 92, 32, 0xffffff).setDepth(-8);
+        this.add.circle(1050, 92, 32).setStrokeStyle(3, 0x444444).setDepth(-7);
+        this.add.line(0, 0, 1050, 92, 1050, 72, 0x444444).setLineWidth(3).setDepth(-6);
+        this.add.line(0, 0, 1050, 92, 1062, 92, 0x444444).setLineWidth(2).setDepth(-6);
+
+        this.add.image(760, 320, "teacherDesk").setDepth(1).setScale(uiScale);
+
+        const deskRows = [
+            { y: 520, xs: [430, 760, 1090, 1420] },
+            { y: 700, xs: [430, 760, 1090, 1420] },
+            { y: 880, xs: [430, 760, 1090, 1420] }
+        ];
+
+        for (const row of deskRows) {
+            for (const x of row.xs) {
+                this.add.image(x, row.y, "studentDesk").setDepth(1).setScale(uiScale);
+                this.add.image(x, row.y + 62, "chair").setDepth(0).setScale(uiScale);
+            }
+        }
+
+        this.add.image(760, 760, "blondBoy").setDepth(2).setScale(uiScale);
+        this.add.image(1090, 760, "chineseGirlLongHair").setDepth(2).setScale(uiScale);
+        this.add.image(1420, 760, "longHairNerd").setDepth(2).setScale(uiScale);
+        this.add.image(430, 760, "blackHairBoy").setDepth(2).setScale(uiScale);
+    }
+
+    function createFurnitureCollisions() {
+        createCollisionRect(ROOM_WIDTH / 2, ROOM_HEIGHT - 28, ROOM_WIDTH, 56);
+        createCollisionRect(20, ROOM_HEIGHT / 2, 40, ROOM_HEIGHT);
+        createCollisionRect(ROOM_WIDTH - 20, ROOM_HEIGHT / 2, 40, ROOM_HEIGHT);
+        createCollisionRect(ROOM_WIDTH / 2, 20, ROOM_WIDTH, 40);
+
+        createCollisionRect(760, 340, 430, 80);
+
+        const deskRows = [
+            { y: 545, xs: [430, 760, 1090, 1420] },
+            { y: 725, xs: [430, 760, 1090, 1420] },
+            { y: 905, xs: [430, 760, 1090, 1420] }
+        ];
+
+        for (const row of deskRows) {
+            for (const x of row.xs) {
+                createCollisionRect(x, row.y, 150, 60);
+            }
+        }
+    }
+
+    function createLevelDesk() {
+        level1Book = this.add.image(630, 292, "bookRed").setDepth(3).setScale(uiScale);
+        level2Book = this.add.image(760, 292, "bookBlue").setDepth(3).setScale(uiScale);
+        level3Book = this.add.image(890, 292, "bookGreen").setDepth(3).setScale(uiScale);
+
+        this.add.text(630, 260, "LEVEL 1", {
+            fontFamily: "Arial Black, Arial, sans-serif",
+            fontSize: `${Math.round(18 * uiScale)}px`,
+            color: "#ffffff",
+            stroke: "#111111",
+            strokeThickness: 4
+        }).setOrigin(0.5).setDepth(4);
+
+        this.add.text(760, 260, "LEVEL 2", {
+            fontFamily: "Arial Black, Arial, sans-serif",
+            fontSize: `${Math.round(18 * uiScale)}px`,
+            color: "#ffffff",
+            stroke: "#111111",
+            strokeThickness: 4
+        }).setOrigin(0.5).setDepth(4);
+
+        this.add.text(890, 260, "LEVEL 3", {
+            fontFamily: "Arial Black, Arial, sans-serif",
+            fontSize: `${Math.round(18 * uiScale)}px`,
+            color: "#ffffff",
+            stroke: "#111111",
+            strokeThickness: 4
+        }).setOrigin(0.5).setDepth(4);
+
+        level1Zone = this.add.zone(630, 308, 95, 90);
+        level2Zone = this.add.zone(760, 308, 95, 90);
+        level3Zone = this.add.zone(890, 308, 95, 90);
+
+        this.physics.world.enable([level1Zone, level2Zone, level3Zone]);
+
+        [level1Zone, level2Zone, level3Zone].forEach(zone => {
+            zone.body.setAllowGravity(false);
+            zone.body.moves = false;
+        });
+    }
+
+    function createPlayer() {
+        player = this.physics.add.sprite(930, ROOM_HEIGHT - 150, "nerdPlayer");
+        player.setScale(uiScale);
+        player.setCollideWorldBounds(true);
+        player.setDepth(5);
+        player.body.setSize(34 / uiScale, 62 / uiScale, true);
+        player.body.setOffset(11 / uiScale, 20 / uiScale);
+    }
+
+    function createUI() {
+        this.add.text(28, 18, "LEVELAUSWAHL KLASSENRAUM", {
+            fontFamily: "Arial Black, Arial, sans-serif",
+            fontSize: `${Math.round(24 * uiScale)}px`,
+            color: "#ffffff",
+            stroke: "#16324f",
+            strokeThickness: 6
+        }).setScrollFactor(0).setDepth(100);
+
+        this.add.text(28, 56, "Gehe zum Lehrertisch und wähle ein Level.", {
+            fontFamily: "Arial, sans-serif",
+            fontSize: `${Math.round(18 * uiScale)}px`,
+            color: "#ffffff",
+            stroke: "#000000",
+            strokeThickness: 4
+        }).setScrollFactor(0).setDepth(100);
+
+        interactHint = this.add.text(window.innerWidth / 2, window.innerHeight - 40, "", {
+            fontFamily: "Arial Black, Arial, sans-serif",
+            fontSize: `${Math.round(20 * uiScale)}px`,
+            color: "#ffffff",
+            stroke: "#111111",
+            strokeThickness: 5
+        }).setOrigin(0.5).setScrollFactor(0).setDepth(100);
+    }
+
+    function createCollisionRect(x, y, w, h) {
+        const rect = collisionObjects.create(x, y, null);
+        rect.setSize(w, h);
+        rect.refreshBody();
+        rect.visible = false;
+    }
+
+    function handleMovement() {
+        currentInteractable = null;
+
+        const left = cursors.left.isDown || keyA.isDown;
+        const right = cursors.right.isDown || keyD.isDown;
+        const up = cursors.up.isDown || keyW.isDown;
+        const down = cursors.down.isDown || keyS.isDown;
+
+        let vx = 0;
+        let vy = 0;
+
+        if (left && !right) vx = -PLAYER_SPEED;
+        else if (right && !left) vx = PLAYER_SPEED;
+
+        if (up && !down) vy = -PLAYER_SPEED;
+        else if (down && !up) vy = PLAYER_SPEED;
+
+        player.setVelocity(vx, vy);
+
+        if (vx < 0) {
+            player.setFlipX(true);
+        } else if (vx > 0) {
+            player.setFlipX(false);
+        }
+    }
+
+    function updateInteractionState() {
+        const nearLevel1 = this.physics.overlap(player, level1Zone);
+        const nearLevel2 = this.physics.overlap(player, level2Zone);
+        const nearLevel3 = this.physics.overlap(player, level3Zone);
+
+        if (nearLevel1) currentInteractable = { level: 1 };
+        else if (nearLevel2) currentInteractable = { level: 2 };
+        else if (nearLevel3) currentInteractable = { level: 3 };
+        else currentInteractable = null;
+
+        if (currentInteractable) {
+            interactHint.setText("ENTER drücken für LEVEL " + currentInteractable.level);
+
+            if (Phaser.Input.Keyboard.JustDown(cursors.space) || Phaser.Input.Keyboard.JustDown(cursors.shift)) {
+                startLevel(currentInteractable.level);
+            }
+        } else {
+            interactHint.setText("");
+        }
+
+        if (currentInteractable && Phaser.Input.Keyboard.JustDown(enterKey)) {
+            startLevel(currentInteractable.level);
+        }
+    }
+
+    function resizeGame(gameSize) {
+        this.cameras.resize(gameSize.width, gameSize.height);
+        if (interactHint) {
+            interactHint.setPosition(gameSize.width / 2, gameSize.height - 40);
+        }
+    }
+</script>
+
+</body>
+</html>

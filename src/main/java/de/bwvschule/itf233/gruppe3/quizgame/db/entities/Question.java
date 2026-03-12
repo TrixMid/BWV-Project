@@ -35,7 +35,7 @@ public class Question {
     @Column(nullable = false)
     private Integer points = 1;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "Question_Theme",
             joinColumns = @JoinColumn(name = "question_id"),

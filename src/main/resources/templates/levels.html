@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wirtschaft und Sozialkunde</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #69c6ff;
+            font-family: Arial, sans-serif;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<script>
+    const WORLD_WIDTH = 1400;
+    const WORLD_TOP = -6200;
+    const WORLD_BOTTOM_PADDING = 500;
+
+    const PLAYER_SPEED = 290;
+    const JUMP_FORCE = 760;
+    const GRAVITY_Y = 1180;
+
+    const COYOTE_TIME = 110;
+    const JUMP_BUFFER = 130;
+    const FALL_RESPAWN_MARGIN = 320;
+
+    const config = {
+        type: Phaser.AUTO,
+        width: window.innerWidth,
+        height: window.innerHeight,
+        backgroundColor: "#69c6ff",
+        physics: {
+            default: "arcade",
+            arcade: {
+                gravity: { y: GRAVITY_Y },
+                debug: false
+            }
+        },
+        scale: {
+            mode: Phaser.Scale.RESIZE,
+            autoCenter: Phaser.Scale.CENTER_BOTH
+        },
+        scene: { preload, create, update }
+    };
+
+    new Phaser.Game(config);
+
+    let sceneRef;
+    let player;
+    let platforms;
+    let movingPlatforms = [];
+    let staticCheckpointPlatforms = [];
+
+    let cursors, keyA, keyD, keyW, spaceKey;
+
+    let currentStandingPlatform = null;
+    let currentCheckpoint = { x: WORLD_WIDTH / 2, y: 0 };
+    let lastGroundedTime = 0;
+    let lastJumpPressedTime = -9999;
+
+    let levelPad1, levelPad2, levelPad3;
+    let level1Zone, level2Zone, level3Zone;
+    let levelLabel1, levelLabel2, levelLabel3;
+
+    let finalPathY = 0;
+
+    function preload() {
+        this.load.image("player", "https://labs.phaser.io/assets/sprites/phaser-dude.png");
+    }
+
+    function create() {
+        sceneRef = this;
+
+        createTextures.call(this);
+
+        const worldHeight = Math.abs(WORLD_TOP) + this.scale.height + WORLD_BOTTOM_PADDING;
+        this.physics.world.setBounds(0, WORLD_TOP, WORLD_WIDTH, worldHeight);
+
+        createBackground.call(this);
+
+        platforms = this.physics.add.group({
+            allowGravity: false,
+            immovable: true
+        });
+
+        buildLevel.call(this);
+        createLevelPads.call(this);
+
+        player = this.physics.add.sprite(currentCheckpoint.x, currentCheckpoint.y, "player");
+        player.setScale(1.8);
+        player.setCollideWorldBounds(true);
+        player.setBounce(0);
+        player.setDragX(1700);
+        player.setMaxVelocity(460, 1500);
+        player.body.setSize(player.width * 0.55, player.height * 0.92, true);
+
+        this.physics.add.collider(
+            player,
+            platforms,
+            onPlayerLand,
+            shouldCollideWithPlatform,
+            this
+        );
+
+        this.physics.add.overlap(player, level1Zone, () => { window.location.href = "/quiz?level=1"; });
+        this.physics.add.overlap(player, level2Zone, () => { window.location.href = "/quiz?level=2"; });
+        this.physics.add.overlap(player, level3Zone, () => { window.location.href = "/quiz?level=3"; });
+
+        cursors = this.input.keyboard.createCursorKeys();
+        keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+        keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+        keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
+        spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+
+        this.cameras.main.setBounds(0, WORLD_TOP, WORLD_WIDTH, worldHeight);
+        this.cameras.main.startFollow(player, true, 0.08, 0.08);
+        this.cameras.main.setDeadzone(120, 100);
+
+        this.add.text(24, 18, "WIRTSCHAFT & SOZIALKUNDE", {
+            fontFamily: "Arial Black, Arial, sans-serif",
+            fontSize: "26px",
+            color: "#ffffff",
+            stroke: "#184a22",
+            strokeThickness: 6
+        }).setScrollFactor(0).setDepth(100).setShadow(0, 2, "#000", 4, true, true);
+
+        this.scale.on("resize", resizeGame, this);
+    }
+
+    function update() {
+        const now = this.time.now;
+
+        updatePlatformDeltas();
+        handleMovement(now);
+        carryPlayerWithPlatform();
+        updateCheckpoint();
+        checkRespawn.call(this);
+    }
+
+    function createTextures() {
+        const g = this.make.graphics({ x: 0, y: 0, add: false });
+
+        g.fillGradientStyle(0x8fd6ff, 0x8fd6ff, 0xd7f4ff, 0xd7f4ff, 1);
+        g.fillRect(0, 0, 32, 256);
+        g.generateTexture("skyGrad", 32, 256);
+        g.clear();
+
+        g.fillStyle(0xffffff, 0.95);
+        g.fillCircle(30, 26, 18);
+        g.fillCircle(52, 22, 20);
+        g.fillCircle(74, 28, 16);
+        g.fillRoundedRect(20, 26, 68, 20, 10);
+        g.generateTexture("cloud", 110, 60);
+        g.clear();
+
+        g.fillStyle(0x74b96a, 1);
+        g.beginPath();
+        g.moveTo(0, 120);
+        g.lineTo(60, 30);
+        g.lineTo(120, 120);
+        g.closePath();
+        g.fillPath();
+        g.beginPath();
+        g.moveTo(90, 120);
+        g.lineTo(165, 10);
+        g.lineTo(240, 120);
+        g.closePath();
+        g.fillPath();
+        g.generateTexture("mountainsBack", 240, 120);
+        g.clear();
+
+        g.fillStyle(0x43a047, 1);
+        g.fillEllipse(90, 60, 180, 120);
+        g.fillEllipse(180, 55, 170, 110);
+        g.generateTexture("hillFront", 280, 120);
+        g.clear();
+
+        g.fillStyle(0x8b5a2b, 1);
+        g.fillRoundedRect(0, 12, 120, 24, 8);
+        g.fillStyle(0x5d3b1f, 1);
+        g.fillRoundedRect(0, 30, 120, 8, 4);
+        g.fillStyle(0x4caf50, 1);
+        g.fillRoundedRect(0, 0, 120, 16, 8);
+        g.fillStyle(0x81c784, 1);
+        g.fillRect(8, 4, 18, 4);
+        g.fillRect(36, 5, 14, 4);
+        g.fillRect(68, 3, 22, 4);
+        g.fillRect(98, 5, 12, 4);
+        g.generateTexture("platformCenter", 120, 40);
+        g.clear();
+
+        g.fillStyle(0x8b5a2b, 1);
+        g.fillRoundedRect(0, 18, 300, 44, 12);
+        g.fillStyle(0x5d3b1f, 1);
+        g.fillRoundedRect(0, 50, 300, 12, 6);
+        g.fillStyle(0x4caf50, 1);
+        g.fillRoundedRect(0, 0, 300, 22, 12);
+        g.fillStyle(0x81c784, 1);
+        for (let i = 10; i < 290; i += 36) {
+            g.fillRect(i, 5, 18, 5);
+        }
+        g.generateTexture("groundWide", 300, 62);
+        g.clear();
+
+        g.fillStyle(0xb36b00, 1);
+        g.fillRoundedRect(0, 14, 180, 34, 10);
+        g.fillStyle(0x734300, 1);
+        g.fillRoundedRect(0, 38, 180, 10, 5);
+        g.fillStyle(0xffc93c, 1);
+        g.fillRoundedRect(0, 0, 180, 18, 10);
+        g.fillStyle(0xffe082, 1);
+        g.fillRect(16, 5, 22, 4);
+        g.fillRect(56, 5, 16, 4);
+        g.fillRect(98, 5, 22, 4);
+        g.fillRect(140, 5, 16, 4);
+        g.generateTexture("levelPad", 180, 48);
+        g.clear();
+    }
+
+    function createBackground() {
+        const visibleBottom = this.scale.height + 300;
+
+        for (let y = WORLD_TOP; y < visibleBottom; y += 256) {
+            this.add.image(WORLD_WIDTH / 2, y, "skyGrad")
+                .setDisplaySize(WORLD_WIDTH, 256)
+                .setScrollFactor(0.05)
+                .setDepth(-100);
+        }
+
+        for (let i = 0; i < 18; i++) {
+            const x = Phaser.Math.Between(80, WORLD_WIDTH - 80);
+            const y = Phaser.Math.Between(WORLD_TOP + 80, this.scale.height - 100);
+            this.add.image(x, y, "cloud")
+                .setScale(Phaser.Math.FloatBetween(0.8, 1.4))
+                .setAlpha(0.95)
+                .setScrollFactor(0.18)
+                .setDepth(-90);
+        }
+
+        for (let y = this.scale.height + 100; y > WORLD_TOP; y -= 300) {
+            for (let x = 0; x < WORLD_WIDTH + 240; x += 220) {
+                this.add.image(x, y, "mountainsBack")
+                    .setOrigin(0, 1)
+                    .setAlpha(0.9)
+                    .setScrollFactor(0.3)
+                    .setDepth(-80);
+            }
+        }
+
+        for (let y = this.scale.height + 180; y > WORLD_TOP; y -= 260) {
+            for (let x = -40; x < WORLD_WIDTH + 240; x += 220) {
+                this.add.image(x, y, "hillFront")
+                    .setOrigin(0, 1)
+                    .setScrollFactor(0.45)
+                    .setDepth(-70);
+            }
+        }
+    }
+
+    function buildLevel() {
+        const bottomY = sceneRef.scale.height - 40;
+
+        const startGround = createStaticPlatform(WORLD_WIDTH / 2, bottomY, "groundWide", true);
+        createStaticPlatform(WORLD_WIDTH / 2, bottomY - 110, "groundWide", true);
+        createStaticPlatform(WORLD_WIDTH / 2 + 160, bottomY - 220, "platformCenter", false);
+        createStaticPlatform(WORLD_WIDTH / 2 - 140, bottomY - 330, "platformCenter", false);
+
+        currentCheckpoint = { x: startGround.x, y: startGround.y - 110 };
+
+        const stepPattern = [
+            { dy: 120, dx: 170,  texture: "platformCenter", moving: false },
+            { dy: 115, dx: -160, texture: "platformCenter", moving: false },
+            { dy: 120, dx: 180,  texture: "groundWide",     moving: true  },
+            { dy: 115, dx: -170, texture: "platformCenter", moving: false },
+            { dy: 120, dx: 160,  texture: "platformCenter", moving: true  },
+            { dy: 118, dx: -150, texture: "platformCenter", moving: false },
+            { dy: 122, dx: 180,  texture: "groundWide",     moving: false },
+            { dy: 115, dx: -160, texture: "platformCenter", moving: true  }
+        ];
+
+        let x = WORLD_WIDTH / 2 - 140;
+        let y = bottomY - 330;
+
+        for (let i = 0; i < 36; i++) {
+            const s = stepPattern[i % stepPattern.length];
+            y -= s.dy;
+            x = Phaser.Math.Clamp(x + s.dx, 170, WORLD_WIDTH - 170);
+
+            const checkpoint = i % 6 === 2 || i % 6 === 5;
+
+            if (s.moving) {
+                createMovingPlatform(x, y, s.texture, {
+                    range: s.texture === "groundWide" ? 110 : 90,
+                    duration: 4200 + (i % 5) * 350,
+                    delay: (i % 7) * 220
+                });
+            } else {
+                createStaticPlatform(x, y, s.texture, checkpoint);
+            }
+        }
+
+        finalPathY = y;
+
+        createStaticPlatform(WORLD_WIDTH / 2, finalPathY - 70, "groundWide", false);
+    }
+
+    function createStaticPlatform(x, y, texture = "platformCenter", checkpoint = false) {
+        const p = platforms.create(x, y, texture);
+        p.setOrigin(0.5, 0.5);
+        p.refreshBody();
+        p.isMovingPlatform = false;
+        p.isCheckpoint = checkpoint;
+
+        if (checkpoint) {
+            staticCheckpointPlatforms.push(p);
+        }
+        return p;
+    }
+
+    function createMovingPlatform(x, y, texture = "platformCenter", opts = {}) {
+        const range = opts.range ?? 90;
+        const duration = opts.duration ?? 4400;
+        const delay = opts.delay ?? 0;
+
+        const p = platforms.create(x, y, texture);
+        p.setOrigin(0.5, 0.5);
+        p.refreshBody();
+        p.isMovingPlatform = true;
+        p.prevX = x;
+        p.deltaX = 0;
+        p.isCheckpoint = false;
+
+        sceneRef.tweens.add({
+            targets: p,
+            x: x + range,
+            duration,
+            delay,
+            yoyo: true,
+            repeat: -1,
+            ease: "Sine.easeInOut",
+            onUpdate: () => {
+                p.body.updateFromGameObject();
+            }
+        });
+
+        movingPlatforms.push(p);
+        return p;
+    }
+
+    function createLevelPads() {
+        const topY = finalPathY - 200;
+
+        levelPad1 = createStaticPlatform(WORLD_WIDTH / 2 - 270, topY, "levelPad", false);
+        levelPad2 = createStaticPlatform(WORLD_WIDTH / 2,       topY, "levelPad", false);
+        levelPad3 = createStaticPlatform(WORLD_WIDTH / 2 + 270, topY, "levelPad", false);
+
+        levelLabel1 = addLevelLabel(levelPad1.x, topY, "LEVEL 1");
+        levelLabel2 = addLevelLabel(levelPad2.x, topY, "LEVEL 2");
+        levelLabel3 = addLevelLabel(levelPad3.x, topY, "LEVEL 3");
+
+        level1Zone = sceneRef.add.zone(levelPad1.x, topY - 8, 160, 90);
+        level2Zone = sceneRef.add.zone(levelPad2.x, topY - 8, 160, 90);
+        level3Zone = sceneRef.add.zone(levelPad3.x, topY - 8, 160, 90);
+
+        sceneRef.physics.world.enable([level1Zone, level2Zone, level3Zone]);
+
+        [level1Zone, level2Zone, level3Zone].forEach(zone => {
+            zone.body.setAllowGravity(false);
+            zone.body.moves = false;
+        });
+    }
+
+    function addLevelLabel(x, y, label) {
+        return sceneRef.add.text(x, y - 52, label, {
+            fontFamily: "Arial Black, Arial, sans-serif",
+            fontSize: "24px",
+            color: "#ffffff",
+            stroke: "#1b1b1b",
+            strokeThickness: 6,
+            shadow: {
+                offsetX: 0,
+                offsetY: 3,
+                color: "#000000",
+                blur: 4,
+                stroke: true,
+                fill: true
+            }
+        }).setOrigin(0.5).setDepth(10);
+    }
+
+    function shouldCollideWithPlatform(playerObj, platform) {
+        const body = playerObj.body;
+        const prevBottom = body.prev.y + body.height;
+        const platformTop = platform.body.top;
+
+        if (body.velocity.y < -20) return false;
+        if (prevBottom > platformTop + 8) return false;
+
+        return true;
+    }
+
+    function onPlayerLand(playerObj, platform) {
+        const body = playerObj.body;
+        const prevBottom = body.prev.y + body.height;
+        const platformTop = platform.body.top;
+
+        if (body.velocity.y >= -20 && prevBottom <= platformTop + 8) {
+            currentStandingPlatform = platform;
+            lastGroundedTime = sceneRef.time.now;
+        }
+    }
+
+    function handleMovement(now) {
+        const left = cursors.left.isDown || keyA.isDown;
+        const right = cursors.right.isDown || keyD.isDown;
+        const jumpJustPressed =
+            Phaser.Input.Keyboard.JustDown(cursors.up) ||
+            Phaser.Input.Keyboard.JustDown(keyW) ||
+            Phaser.Input.Keyboard.JustDown(spaceKey);
+
+        if (jumpJustPressed) {
+            lastJumpPressedTime = now;
+        }
+
+        if (left && !right) {
+            player.setVelocityX(-PLAYER_SPEED);
+            player.setFlipX(true);
+        } else if (right && !left) {
+            player.setVelocityX(PLAYER_SPEED);
+            player.setFlipX(false);
+        } else {
+            player.setVelocityX(0);
+        }
+
+        const onGround = player.body.blocked.down || player.body.touching.down;
+        if (onGround) {
+            lastGroundedTime = now;
+        }
+
+        const canUseCoyote = now - lastGroundedTime <= COYOTE_TIME;
+        const bufferedJump = now - lastJumpPressedTime <= JUMP_BUFFER;
+
+        if (bufferedJump && canUseCoyote) {
+            player.setVelocityY(-JUMP_FORCE);
+            lastJumpPressedTime = -9999;
+            lastGroundedTime = -9999;
+            currentStandingPlatform = null;
+        }
+    }
+
+    function updatePlatformDeltas() {
+        for (const p of movingPlatforms) {
+            const prev = p.prevX ?? p.x;
+            p.deltaX = p.x - prev;
+            p.prevX = p.x;
+        }
+    }
+
+    function carryPlayerWithPlatform() {
+        const onGround = player.body.blocked.down || player.body.touching.down;
+
+        if (!onGround) {
+            currentStandingPlatform = null;
+            return;
+        }
+
+        if (!currentStandingPlatform || !currentStandingPlatform.isMovingPlatform) {
+            return;
+        }
+
+        if (Math.abs(player.body.velocity.y) > 80) {
+            return;
+        }
+
+        const dx = currentStandingPlatform.deltaX ?? 0;
+        if (Math.abs(dx) > 0.001) {
+            player.x += dx;
+        }
+    }
+
+    function updateCheckpoint() {
+        const onGround = player.body.blocked.down || player.body.touching.down;
+        if (!onGround || !currentStandingPlatform) return;
+
+        if (currentStandingPlatform.isCheckpoint) {
+            currentCheckpoint = {
+                x: currentStandingPlatform.x,
+                y: currentStandingPlatform.y - 110
+            };
+        }
+    }
+
+    function checkRespawn() {
+        const cameraBottom = this.cameras.main.scrollY + this.cameras.main.height;
+        if (player.y > cameraBottom + FALL_RESPAWN_MARGIN) {
+            player.setVelocity(0, 0);
+            player.setPosition(currentCheckpoint.x, currentCheckpoint.y);
+            currentStandingPlatform = null;
+            lastGroundedTime = this.time.now;
+            lastJumpPressedTime = -9999;
+        }
+    }
+
+    function resizeGame(gameSize) {
+        this.cameras.resize(gameSize.width, gameSize.height);
+    }
+</script>
+</body>
+</html>
