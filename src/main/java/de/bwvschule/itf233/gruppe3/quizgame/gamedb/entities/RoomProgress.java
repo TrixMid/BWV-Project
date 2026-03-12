@@ -1,4 +1,4 @@
-package de.bwvschule.itf233.gruppe3.quizgame.gamelogic.entities;
+package de.bwvschule.itf233.gruppe3.quizgame.gamedb.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
