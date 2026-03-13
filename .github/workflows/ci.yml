@@ -1,50 +1,29 @@
+# .github/workflows/ci.yml
 name: Java CI with Maven
 
 on:
   push:
     branches: [ main ]
-    tags:
-      - 'v*'
   pull_request:
     branches: [ main ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
-      - uses: actions/checkout@v3
-
+      - uses: actions/checkout@v4
       - name: Set up JDK 21
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
           cache: maven
-
       - name: Grant execute permission for mvnw
         run: chmod +x mvnw
-
       - name: Restore original wrapper properties
         run: |
           printf 'wrapperVersion=3.3.4\n' > .mvn/wrapper/maven-wrapper.properties
           printf 'distributionType=only-script\n' >> .mvn/wrapper/maven-wrapper.properties
           printf 'distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.12/apache-maven-3.9.12-bin.zip\n' >> .mvn/wrapper/maven-wrapper.properties
-
-      - name: Build with Maven
+      - name: Build and Test
         run: ./mvnw test
-
-      - name: Package JAR
-        if: startsWith(github.ref, 'refs/tags/v')
-        run: ./mvnw package -DskipTests
-
-      - name: Create GitHub Release
-        if: startsWith(github.ref, 'refs/tags/v')
-        uses: softprops/action-gh-release@v1
-        with:
-          files: target/*.jar
-          generate_release_notes: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
