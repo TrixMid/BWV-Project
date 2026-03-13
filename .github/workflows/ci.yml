@@ -40,12 +40,6 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v')
         run: ./mvnw package -DskipTests
 
-      - name: Install Launch4j
-        if: startsWith(github.ref, 'refs/tags/v')
-        run: |
-          wget -q https://sourceforge.net/projects/launch4j/files/launch4j-3/3.50/launch4j-3.50-linux-x64.tgz
-          tar -xzf launch4j-3.50-linux-x64.tgz
-
       - name: Create Launch4j config
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
@@ -77,9 +71,16 @@ jobs:
           </launch4jConfig>
           EOF
 
+      - name: Install Launch4j
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          sudo apt-get install -y launch4j
+          which launch4j
+          launch4j --version
+
       - name: Build EXE with Launch4j
         if: startsWith(github.ref, 'refs/tags/v')
-        run: ./launch4j/launch4j launch4j-config.xml
+        run: launch4j launch4j-config.xml
 
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/v')
