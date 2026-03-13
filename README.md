@@ -45,3 +45,9 @@ Das spiel soll:
 
 ## Zeitraum
 - bis 18.03
+
+
+## How to start
+Wird immer funktionieren
+1. `source setup_maven.sh`
+2. `$MVNW_EXEC spring-boot:run`
