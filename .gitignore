@@ -35,3 +35,10 @@ build/
 
 ### maven home
 .m2
+.mvn/jvm.config
+.maven-repo
+.maven-local
+school-ca.pem
+school-proxy.crt
+school-truststore.jks
+my-cacerts
