@@ -74,13 +74,24 @@ jobs:
       - name: Install Launch4j
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
-          sudo apt-get install -y launch4j
-          which launch4j
-          launch4j --version
+          wget -q "https://sourceforge.net/projects/launch4j/files/launch4j-3/3.50/launch4j-3.50-linux-x64.tgz/download" -O launch4j.tgz
+          tar -xzf launch4j.tgz
+          echo "--- Launch4j extracted structure ---"
+          find . -name "launch4j*" -o -name "*.sh" | head -20
+          echo "------------------------------------"
+          ls -la launch4j/
 
-      - name: Build EXE with Launch4j
+      - name: Build EXE with jpackage
         if: startsWith(github.ref, 'refs/tags/v')
-        run: launch4j launch4j-config.xml
+        run: |
+          JAR_FILE=$(ls target/*.jar | grep -v original | head -1)
+          jpackage \
+            --input target \
+            --main-jar $(basename $JAR_FILE) \
+            --name quizgame \
+            --type exe \
+            --dest target/installer \
+            --win-console
 
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/v')
@@ -88,7 +99,7 @@ jobs:
         with:
           files: |
             target/*.jar
-            target/quizgame.exe
+            target/installer/quizgame*.exe
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
