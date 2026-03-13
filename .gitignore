@@ -34,7 +34,8 @@ build/
 .vscode/
 
 ### maven home
-.m2.mvn/jvm.config
+.m2
+.mvn/jvm.config
 .maven-repo
 .maven-local
 school-ca.pem
