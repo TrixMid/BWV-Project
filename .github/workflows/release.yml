@@ -54,15 +54,15 @@ jobs:
       - name: Build EXE with jpackage
         run: |
           $JAR_FILE = Get-ChildItem target/*.jar | Where-Object { $_.Name -notlike "*original*" } | Select-Object -First 1
+          New-Item -ItemType Directory -Force -Path target/installer
           jpackage `
-          --input target `
-          --main-jar $JAR_FILE.Name `
-          --name quizgame `
-          --type app-image `
-          --dest C:\out `
-          --win-console
+            --input target `
+            --main-jar $JAR_FILE.Name `
+            --name quizgame `
+            --type app-image `
+            --dest C:\out `
+            --win-console
           Compress-Archive -Path C:\out\quizgame -DestinationPath target/installer/quizgame-windows.zip
-
       - name: Upload EXE artifact
         uses: actions/upload-artifact@v4
         with:
