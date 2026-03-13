@@ -40,11 +40,54 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v')
         run: ./mvnw package -DskipTests
 
+      - name: Install Launch4j
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          wget -q https://sourceforge.net/projects/launch4j/files/launch4j-3/3.50/launch4j-3.50-linux-x64.tgz
+          tar -xzf launch4j-3.50-linux-x64.tgz
+
+      - name: Create Launch4j config
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          JAR_FILE=$(ls target/*.jar | grep -v original | head -1)
+          cat > launch4j-config.xml << EOF
+          <launch4jConfig>
+            <dontWrapJar>false</dontWrapJar>
+            <headerType>gui</headerType>
+            <jar>$JAR_FILE</jar>
+            <outfile>target/quizgame.exe</outfile>
+            <errTitle>quizgame</errTitle>
+            <cmdLine></cmdLine>
+            <chdir>.</chdir>
+            <priority>normal</priority>
+            <downloadUrl>https://adoptium.net</downloadUrl>
+            <supportUrl></supportUrl>
+            <stayAlive>false</stayAlive>
+            <restartOnCrash>false</restartOnCrash>
+            <manifest></manifest>
+            <jre>
+              <path></path>
+              <bundledJre64Bit>false</bundledJre64Bit>
+              <bundledJreAsFallback>false</bundledJreAsFallback>
+              <minVersion>17</minVersion>
+              <jdkPreference>preferJre</jdkPreference>
+              <initialHeapSize>256</initialHeapSize>
+              <maxHeapSize>512</maxHeapSize>
+            </jre>
+          </launch4jConfig>
+          EOF
+
+      - name: Build EXE with Launch4j
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: ./launch4j/launch4j launch4j-config.xml
+
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v1
         with:
-          files: target/*.jar
+          files: |
+            target/*.jar
+            target/quizgame.exe
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
