@@ -1,0 +1,92 @@
+# .github/workflows/release.yml
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release-jar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+      - name: Grant execute permission for mvnw
+        run: chmod +x mvnw
+      - name: Restore original wrapper properties
+        run: |
+          printf 'wrapperVersion=3.3.4\n' > .mvn/wrapper/maven-wrapper.properties
+          printf 'distributionType=only-script\n' >> .mvn/wrapper/maven-wrapper.properties
+          printf 'distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.12/apache-maven-3.9.12-bin.zip\n' >> .mvn/wrapper/maven-wrapper.properties
+      - name: Package JAR
+        run: ./mvnw package -DskipTests
+      - name: Upload JAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: quizgame-jar
+          path: target/*.jar
+
+  release-exe:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+      - name: Restore original wrapper properties
+        run: |
+          Set-Content .mvn/wrapper/maven-wrapper.properties "wrapperVersion=3.3.4`ndistributionType=only-script`ndistributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.12/apache-maven-3.9.12-bin.zip"
+      - name: Package JAR
+        run: ./mvnw package -DskipTests
+      - name: Build EXE with jpackage
+        run: |
+          $JAR_FILE = Get-ChildItem target/*.jar | Where-Object { $_.Name -notlike "*original*" } | Select-Object -First 1
+          jpackage `
+            --input target `
+            --main-jar $JAR_FILE.Name `
+            --name quizgame `
+            --type exe `
+            --dest target/installer `
+            --win-console
+      - name: Upload EXE artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: quizgame-exe
+          path: target/installer/*.exe
+
+  publish-release:
+    runs-on: ubuntu-latest
+    needs: [ release-jar, release-exe ]
+    permissions:
+      contents: write
+    steps:
+      - name: Download JAR
+        uses: actions/download-artifact@v4
+        with:
+          name: quizgame-jar
+          path: artifacts/
+      - name: Download EXE
+        uses: actions/download-artifact@v4
+        with:
+          name: quizgame-exe
+          path: artifacts/
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: artifacts/*
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
