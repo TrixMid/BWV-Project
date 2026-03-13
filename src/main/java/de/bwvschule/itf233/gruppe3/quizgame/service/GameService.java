@@ -23,7 +23,6 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class GameService {
 
-    //diese GameService enthält die zentrale Spiellogik.
     private final PlayerRepository playerRepository;
     private final GameSessionRepository gameSessionRepository;
     private final RoomProgressRepository roomProgressRepository;
