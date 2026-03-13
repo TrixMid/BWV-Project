@@ -100,6 +100,10 @@
     let levelBooks = [];
     let levelZones = [];
 
+    let titleText;
+    let subtitleText;
+    let reminderText;
+
     function preload() {}
 
     function create() {
@@ -484,31 +488,45 @@
     }
 
     function createUI() {
-        this.add.text(28, 18, "LEVELAUSWAHL KLASSENRAUM", {
-            fontFamily: "Arial Black, Arial, sans-serif",
-            fontSize: `${Math.round(24 * uiScale)}px`,
-            color: "#ffffff",
-            stroke: "#16324f",
-            strokeThickness: 6
-        }).setScrollFactor(0).setDepth(100);
+    const teamInput = document.getElementById("teamName");
+    const inputRect = teamInput.getBoundingClientRect();
 
-        this.add.text(28, 56, "Gehe zum Lehrertisch und wähle ein Level.", {
-            fontFamily: "Arial, sans-serif",
-            fontSize: `${Math.round(18 * uiScale)}px`,
-            color: "#ffffff",
-            stroke: "#000000",
-            strokeThickness: 4
-        }).setScrollFactor(0).setDepth(100);
+    const textX = inputRect.left + 12;
+    const titleY = inputRect.bottom + 8;
+    const subtitleY = inputRect.bottom + 38;
 
-        interactHint = this.add.text(window.innerWidth / 2, window.innerHeight - 40, "", {
-            fontFamily: "Arial Black, Arial, sans-serif",
-            fontSize: `${Math.round(20 * uiScale)}px`,
-            color: "#ffffff",
-            stroke: "#111111",
-            strokeThickness: 5
-        }).setOrigin(0.5).setScrollFactor(0).setDepth(100);
-    }
+    titleText = this.add.text(textX, titleY, "LEVELAUSWAHL KLASSENRAUM", {
+        fontFamily: "Arial Black, Arial, sans-serif",
+        fontSize: `${Math.round(22 * uiScale)}px`,
+        color: "#ffffff",
+        stroke: "#16324f",
+        strokeThickness: 6
+    }).setOrigin(0, 0).setScrollFactor(0).setDepth(100);
 
+    subtitleText = this.add.text(textX, subtitleY, "Gehe zum Lehrertisch und wähle ein Level.", {
+        fontFamily: "Arial, sans-serif",
+        fontSize: `${Math.round(17 * uiScale)}px`,
+        color: "#ffffff",
+        stroke: "#000000",
+        strokeThickness: 4
+    }).setOrigin(0, 0).setScrollFactor(0).setDepth(100);
+
+    reminderText = this.add.text(textX, subtitleY + 28, "Vergiss nicht dein Team einzutragen.", {
+        fontFamily: "Arial, sans-serif",
+        fontSize: `${Math.round(17 * uiScale)}px`,
+        color: "#ffffff",
+        stroke: "#000000",
+        strokeThickness: 4
+    }).setOrigin(0, 0).setScrollFactor(0).setDepth(100);
+
+    interactHint = this.add.text(window.innerWidth / 2, window.innerHeight - 40, "", {
+        fontFamily: "Arial Black, Arial, sans-serif",
+        fontSize: `${Math.round(20 * uiScale)}px`,
+        color: "#ffffff",
+        stroke: "#111111",
+        strokeThickness: 5
+    }).setOrigin(0.5).setScrollFactor(0).setDepth(100);
+}
     function createCollisionRect(x, y, w, h) {
         const rect = collisionObjects.create(x, y, null);
         rect.setSize(w, h);
@@ -568,11 +586,27 @@
     }
 
     function resizeGame(gameSize) {
-        this.cameras.resize(gameSize.width, gameSize.height);
-        if (interactHint) {
-            interactHint.setPosition(gameSize.width / 2, gameSize.height - 40);
-        }
+    this.cameras.resize(gameSize.width, gameSize.height);
+
+    const teamInput = document.getElementById("teamName");
+    const inputRect = teamInput.getBoundingClientRect();
+
+    if (titleText) {
+        titleText.setPosition(inputRect.left + 12, inputRect.bottom + 8);
     }
+
+    if (subtitleText) {
+        subtitleText.setPosition(inputRect.left + 12, inputRect.bottom + 38);
+    }
+
+    if (reminderText) {
+        reminderText.setPosition(inputRect.left + 12, inputRect.bottom + 66);
+    }
+
+    if (interactHint) {
+        interactHint.setPosition(gameSize.width / 2, gameSize.height - 40);
+    }
+}
 </script>
 
 </body>
