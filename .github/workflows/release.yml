@@ -61,7 +61,7 @@ jobs:
             --name quizgame `
             --type app-image `
             --dest C:\out `
-            --win-console
+            --arguments "--desktop"
           Compress-Archive -Path C:\out\quizgame -DestinationPath target/installer/quizgame-windows.zip
       - name: Upload EXE artifact
         uses: actions/upload-artifact@v4
