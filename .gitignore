@@ -33,6 +33,7 @@ build/
 ### VS Code ###
 .vscode/
 
+<<<<<<< HEAD
 ### maven home
 .m2
 .mvn/jvm.config
@@ -42,3 +43,20 @@ school-ca.pem
 school-proxy.crt
 school-truststore.jks
 my-cacerts
+=======
+### SQLite ###
+*.db
+>>>>>>> 5fc765e (feat: switch to SQLite and add 50Fragen seed data)
+
+### maven home
+.m2
+.mvn/jvm.config
+.maven-repo
+.maven-local
+school-ca.pem
+school-proxy.crt
+school-truststore.jks
+my-cacerts
+
+### SQLite ###
+*.db
