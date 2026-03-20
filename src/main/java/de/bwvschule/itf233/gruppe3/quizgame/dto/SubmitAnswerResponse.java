@@ -4,7 +4,7 @@ import java.util.Set;
 
 public record SubmitAnswerResponse(
         Integer questionId,
-        boolean correct,
+        Boolean correct,
         Integer earnedPoints,
         Set<Integer> correctAnswerIds
 ) {

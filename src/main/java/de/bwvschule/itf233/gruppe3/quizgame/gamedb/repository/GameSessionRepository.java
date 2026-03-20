@@ -1,7 +1,7 @@
-package de.bwvschule.itf233.gruppe3.quizgame.gamelogic.repository;
+package de.bwvschule.itf233.gruppe3.quizgame.gamedb.repository;
 
-import de.bwvschule.itf233.gruppe3.quizgame.gamelogic.entities.GameSession;
-import de.bwvschule.itf233.gruppe3.quizgame.gamelogic.entities.GameStatus;
+import de.bwvschule.itf233.gruppe3.quizgame.gamedb.entities.GameSession;
+import de.bwvschule.itf233.gruppe3.quizgame.gamedb.entities.GameStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
