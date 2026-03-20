@@ -5,12 +5,14 @@ import de.bwvschule.itf233.gruppe3.quizgame.db.repository.*;
 import de.bwvschule.itf233.gruppe3.quizgame.dto.*;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class QuestionService {
 
     private final QuestionRepository questionRepository;
@@ -25,9 +27,10 @@ public class QuestionService {
         this.gapOptionRepository = gapOptionRepository;
     }
 
-/*    public List<Question> getAllQuestions() {
-        return questionRepository.findAll();
-    }*/
+    public Question getQuestionById(Integer id) {
+        return questionRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Question not found: " + id));
+    }
 
     public QuestionDetailResponse getQuestionDetail(Integer questionId) {
         Question question = questionRepository.findById(questionId)
@@ -42,10 +45,10 @@ public class QuestionService {
         List<GapFieldResponse> gaps = List.of();
 
         if (question.getQuestionType() == QuestionType.MC || question.getQuestionType() == QuestionType.TF) {
-            answers = mcAnswerRepository.findByQuestionQuestionIdOrderByOptionOrderAsc(questionId)
+            answers = mcAnswerRepository.findByQuestionIdOrderByOptionOrderAsc(questionId)
                     .stream()
                     .map(a -> new McAnswerResponse(
-                            a.getAnswerId(),
+                            a.getId(),
                             a.getOptionText(),
                             a.getOptionOrder()
                     ))
@@ -53,17 +56,17 @@ public class QuestionService {
         }
 
         if (question.getQuestionType() == QuestionType.GAP) {
-            gaps = gapFieldRepository.findByQuestionQuestionIdOrderByGapIndexAsc(questionId)
+            gaps = gapFieldRepository.findByQuestionIdOrderByGapIndexAsc(questionId)
                     .stream()
                     .map(gap -> new GapFieldResponse(
-                            gap.getGapId(),
+                            gap.getId(),
                             gap.getGapIndex(),
                             gap.getTextBefore(),
                             gap.getTextAfter(),
-                            gapOptionRepository.findByGapFieldGapIdOrderByOptionOrderAsc(gap.getGapId())
+                            gapOptionRepository.findByGapFieldIdOrderByOptionOrderAsc(gap.getId())
                                     .stream()
                                     .map(opt -> new GapOptionResponse(
-                                            opt.getGapOptionId(),
+                                            opt.getId(),
                                             opt.getOptionText(),
                                             opt.getOptionOrder()
                                     ))
@@ -73,8 +76,8 @@ public class QuestionService {
         }
 
         return new QuestionDetailResponse(
-                question.getQuestionId(),
-                question.getQuestionSet().getQuestionSetId(),
+                question.getId(),
+                question.getQuestionSet().getId(),
                 question.getQuestionType(),
                 question.getStartText(),
                 question.getImageUrl(),
@@ -95,11 +98,11 @@ public class QuestionService {
             throw new IllegalArgumentException("Use a separate submit API for GAP questions.");
         }
 
-        List<McAnswer> allAnswers = mcAnswerRepository.findByQuestionQuestionIdOrderByOptionOrderAsc(question.getQuestionId());
+        List<McAnswer> allAnswers = mcAnswerRepository.findByQuestionIdOrderByOptionOrderAsc(question.getId());
 
         Set<Integer> correctAnswerIds = allAnswers.stream()
-                .filter(answer -> Boolean.TRUE.equals(answer.getIsCorrect()))
-                .map(McAnswer::getAnswerId)
+                .filter(McAnswer::getIsCorrect)
+                .map(McAnswer::getId)
                 .collect(Collectors.toSet());
 
         Set<Integer> selectedIds = request.selectedAnswerIds();
@@ -108,7 +111,7 @@ public class QuestionService {
         int earnedPoints = correct ? question.getPoints() : 0;
 
         return new SubmitAnswerResponse(
-                question.getQuestionId(),
+                question.getId(),
                 correct,
                 earnedPoints,
                 correctAnswerIds

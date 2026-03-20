@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Teams</title>
+    <style>
+        #menu {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="menu">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/themes">Manage Themes</a></li>
+        <li><a href="/teams">Manage Teams</a></li>
+        <li><a href="/questionsets">Manage Question Sets</a></li>
+        <li><a href="/questions">Manage Questions</a></li>
+    </ul>
+</div>
+<h1>Manage Teams</h1>
+<h2>Existing Teams</h2>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="team : ${teams}">
+        <td th:text="${team.id}"></td>
+        <td th:text="${team.name}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Add New Team</h2>
+<form action="/teams" method="post" th:object="${team}">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}">
+    </div>
+    <div>
+        <button type="submit">Add Team</button>
+    </div>
+</form>
+
+<script>
+    document.addEventListener('keydown', function(event) {
+        if (event.ctrlKey && event.key === 'p') {
+            if (document.activeElement.tagName.toLowerCase() !== 'input' && document.activeElement.tagName.toLowerCase() !== 'textarea') {
+                event.preventDefault();
+                var menu = document.getElementById('menu');
+                if (menu.style.display === 'none') {
+                    menu.style.display = 'block';
+                } else {
+                    menu.style.display = 'none';
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

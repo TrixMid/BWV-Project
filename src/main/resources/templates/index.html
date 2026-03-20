@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quizgame Admin</title>
+    <style>
+        #menu {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h1>Quizgame Admin</h1>
+<div id="menu">
+    <ul>
+        <li><a href="/themes">Manage Themes</a></li>
+        <li><a href="/teams">Manage Teams</a></li>
+        <li><a href="/questionsets">Manage Question Sets</a></li>
+        <li><a href="/questions">Manage Questions</a></li>
+    </ul>
+</div>
+
+<script>
+    document.addEventListener('keydown', function(event) {
+        if (event.ctrlKey && event.key === 'p') {
+            if (document.activeElement.tagName.toLowerCase() !== 'input' && document.activeElement.tagName.toLowerCase() !== 'textarea') {
+                event.preventDefault();
+                var menu = document.getElementById('menu');
+                if (menu.style.display === 'none') {
+                    menu.style.display = 'block';
+                } else {
+                    menu.style.display = 'none';
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>
