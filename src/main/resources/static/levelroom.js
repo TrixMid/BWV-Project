@@ -249,23 +249,14 @@ function drawQuestionRoom() {
 
     /* Uhr */
     const clockX = 1510;
-    const clockY = 55;
+    const clockY = 45;
     scene.add.circle(clockX, clockY, 30, 0xffffff).setDepth(-8);
     scene.add.circle(clockX, clockY, 30).setStrokeStyle(3, 0x444444).setDepth(-7);
     scene.add.line(0, 0, clockX, clockY, clockX, clockY - 18, 0x444444).setLineWidth(3).setDepth(-6);
     scene.add.line(0, 0, clockX, clockY, clockX + 12, clockY, 0x444444).setLineWidth(2).setDepth(-6);
 
     /* Lehrertisch */
-    scene.add.image(ROOM_WIDTH / 2, 365, "teacherDesk").setDepth(1).setScale(uiScale);
-
-    /* Sticky UI links oben */
-    scene.add.text(20, 16, "WIRTSCHAFT & SOZIALKUNDE - FRAGERAUM", {
-        fontFamily: "Arial Black, Arial, sans-serif",
-        fontSize: `${Math.round(26 * uiScale)}px`,
-        color: "#ffffff",
-        stroke: "#16324f",
-        strokeThickness: 6
-    }).setOrigin(0, 0).setScrollFactor(0).setDepth(100);
+    scene.add.image(ROOM_WIDTH / 2 - 120, 365, "teacherDesk").setDepth(1).setScale(uiScale);
 
     scene.add.text(20, 56, `Level ${level} - Frage ${currentQuestionIndex + 1}${questions.length ? " / " + questions.length : ""}`, {
         fontFamily: "Arial, sans-serif",

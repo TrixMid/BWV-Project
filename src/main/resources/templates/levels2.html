@@ -491,7 +491,7 @@
     const teamInput = document.getElementById("teamName");
     const inputRect = teamInput.getBoundingClientRect();
 
-    const textX = inputRect.left + 12;
+    const textX = inputRect.left + 8;
     const titleY = inputRect.bottom + 8;
     const subtitleY = inputRect.bottom + 38;
 
@@ -592,15 +592,15 @@
     const inputRect = teamInput.getBoundingClientRect();
 
     if (titleText) {
-        titleText.setPosition(inputRect.left + 12, inputRect.bottom + 8);
+        titleText.setPosition(inputRect.left + 8, inputRect.bottom + 8);
     }
 
     if (subtitleText) {
-        subtitleText.setPosition(inputRect.left + 12, inputRect.bottom + 38);
+        subtitleText.setPosition(inputRect.left + 8, inputRect.bottom + 38);
     }
 
     if (reminderText) {
-        reminderText.setPosition(inputRect.left + 12, inputRect.bottom + 66);
+        reminderText.setPosition(inputRect.left + 8, inputRect.bottom + 66);
     }
 
     if (interactHint) {
