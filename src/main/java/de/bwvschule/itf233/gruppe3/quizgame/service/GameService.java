@@ -11,19 +11,16 @@ import org.springframework.transaction.annotation.Transactional;
 
 import de.bwvschule.itf233.gruppe3.quizgame.dto.ReviewQuestionResponse;
 import de.bwvschule.itf233.gruppe3.quizgame.dto.ReviewAnswerResponse;
-
 import de.bwvschule.itf233.gruppe3.quizgame.dto.ReviewSummaryResponse;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-
 @Service
 @RequiredArgsConstructor
 public class GameService {
 
-    //diese GameService enthält die zentrale Spiellogik.
     private final PlayerRepository playerRepository;
     private final GameSessionRepository gameSessionRepository;
     private final RoomProgressRepository roomProgressRepository;
@@ -46,7 +43,6 @@ public class GameService {
                 .totalPoints(0)
                 .build();
         session = gameSessionRepository.save(session);
-        // Fortschritt für Startraum anlegen
         createRoomProgress(session, startRoom);
         return session;
     }
@@ -67,7 +63,6 @@ public class GameService {
     @Transactional
     public void changeRoom(GameSession session, Room targetRoom) {
         session.setCurrentRoom(targetRoom);
-        // Prüfen, ob bereits ein RoomProgress existiert
         Optional<RoomProgress> existing = roomProgressRepository
                 .findByGameSessionSessionIdAndRoomRoomId(session.getSessionId(), targetRoom.getRoomId());
         if (existing.isEmpty()) {
@@ -95,10 +90,11 @@ public class GameService {
                 .findFirstByPlayerPlayerIdAndStatusOrderBySessionIdDesc(player.getPlayerId(), GameStatus.ACTIVE)
                 .orElseGet(() -> startNewSession(player));
     }
-    // MC/TF Antwort auswerten
+
     @Transactional
     public AnsweredQuestion evaluateMcAnswer(GameSession session, RoomProgress progress,
                                              Question question, List<Integer> selectedAnswerIds) {
+        // Frage-ID ist Integer, Repository-Methode erwartet Integer
         List<McAnswer> allAnswers = mcAnswerRepository.findByQuestionIdOrderByOptionOrderAsc(question.getId());
 
         int pointsEarned = (int) allAnswers.stream()
@@ -181,7 +177,6 @@ public class GameService {
         );
     }
 
-    // GAP Antwort auswerten (pro Lücke eine gewählte Option)
     @Transactional
     public void evaluateGapAnswer(GameSession session, RoomProgress progress,
                                   List<GapAnswerDto> gapAnswers) {
@@ -192,6 +187,7 @@ public class GameService {
             totalPoints += selected.getPoints();
         }
 
+        // Frage-ID aus DTO ist Integer
         Question question = questionRepository.findById(gapAnswers.get(0).getQuestionId())
                 .orElseThrow();
         AnsweredQuestion aq = AnsweredQuestion.builder()
@@ -227,7 +223,8 @@ public class GameService {
                 .findByGameSessionSessionIdAndRoomRoomId(sessionId, session.getCurrentRoom().getRoomId())
                 .orElseThrow();
 
-        List<AnsweredQuestion> answeredQuestions = answeredQuestionRepository.findByRoomProgressProgressIdOrderByAnsweredAtAsc(progress.getProgressId());
+        List<AnsweredQuestion> answeredQuestions = answeredQuestionRepository
+                .findByRoomProgressProgressIdOrderByAnsweredAtAsc(progress.getProgressId());
 
         return answeredQuestions.stream().map(aq -> {
             Question question = aq.getQuestion();
