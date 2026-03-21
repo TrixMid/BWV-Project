@@ -52,7 +52,7 @@
 </div>
 
 <script>
-    const ROOM_WIDTH = 2000;
+    const ROOM_WIDTH = 2200;       // etwas breiter, damit 11 Bücher Platz haben
     const ROOM_HEIGHT = Math.max(1100, window.innerHeight + 160);
     const PLAYER_SPEED = 300;
 
@@ -61,7 +61,7 @@
     let uiScale = 1;
 
     function getUiScale() {
-    return Math.max(0.9, Math.min(1.15, Math.min(window.innerWidth / BASE_WIDTH, window.innerHeight / BASE_HEIGHT)));
+        return Math.max(0.9, Math.min(1.15, Math.min(window.innerWidth / BASE_WIDTH, window.innerHeight / BASE_HEIGHT)));
     }
 
     const config = {
@@ -130,7 +130,7 @@
 
         this.physics.add.collider(player, collisionObjects);
 
-       levelZones.forEach(zone => {
+        levelZones.forEach(zone => {
             this.physics.add.overlap(player, zone, () => {
                 currentInteractable = { level: zone.levelNumber };
             }, null, this);
@@ -216,12 +216,13 @@
         g.generateTexture("board", 420, 180);
         g.clear();
 
+        // Lehrer-Tisch breiter (1400px)
         g.fillStyle(0x8b5a2b, 1);
-        g.fillRoundedRect(0, 0, 980, 100, 8);
+        g.fillRoundedRect(0, 0, 1400, 100, 8);
         g.fillStyle(0x6b3f1f, 1);
         g.fillRect(24, 78, 18, 42);
-        g.fillRect(938, 78, 18, 42);
-        g.generateTexture("teacherDesk", 980, 120);
+        g.fillRect(1358, 78, 18, 42);
+        g.generateTexture("teacherDesk", 1400, 120);
         g.clear();
 
         g.fillStyle(0x9a6232, 1);
@@ -255,29 +256,44 @@
         g.generateTexture("bookGreen", 52, 18);
         g.clear();
 
-        g.fillStyle(0xf28c28, 1); // orange
+        g.fillStyle(0xf28c28, 1);
         g.fillRoundedRect(0, 0, 52, 18, 3);
         g.generateTexture("bookOrange", 52, 18);
         g.clear();
 
-        g.fillStyle(0x8e44ad, 1); // lila
+        g.fillStyle(0x8e44ad, 1);
         g.fillRoundedRect(0, 0, 52, 18, 3);
         g.generateTexture("bookPurple", 52, 18);
         g.clear();
 
-        g.fillStyle(0xf4d03f, 1); // gelb
+        g.fillStyle(0xf4d03f, 1);
         g.fillRoundedRect(0, 0, 52, 18, 3);
         g.generateTexture("bookYellow", 52, 18);
         g.clear();
 
-        g.fillStyle(0x16a085, 1); // türkis
+        g.fillStyle(0x16a085, 1);
         g.fillRoundedRect(0, 0, 52, 18, 3);
         g.generateTexture("bookTurquoise", 52, 18);
         g.clear();
 
-        g.fillStyle(0xe91e63, 1); // pink
+        g.fillStyle(0xe91e63, 1);
         g.fillRoundedRect(0, 0, 52, 18, 3);
         g.generateTexture("bookPink", 52, 18);
+        g.clear();
+
+        g.fillStyle(0x1abc9c, 1);
+        g.fillRoundedRect(0, 0, 52, 18, 3);
+        g.generateTexture("bookMint", 52, 18);
+        g.clear();
+
+        g.fillStyle(0xe67e22, 1);
+        g.fillRoundedRect(0, 0, 52, 18, 3);
+        g.generateTexture("bookCarrot", 52, 18);
+        g.clear();
+
+        g.fillStyle(0x2c3e50, 1);
+        g.fillRoundedRect(0, 0, 52, 18, 3);
+        g.generateTexture("bookNavy", 52, 18);
         g.clear();
 
         g.fillStyle(0x1f1f1f, 1);
@@ -377,10 +393,10 @@
         });
 
         this.add.image(760, 155, "board").setDepth(-9).setScale(uiScale);
-        this.add.text(760, 155, "8 Level zur Auswahl", {
-        fontFamily: "Arial Black, Arial, sans-serif",
-        fontSize: `${Math.round(32 * uiScale)}px`,
-        color: "#f5f5f5"
+        this.add.text(760, 155, "11 Level zur Auswahl", {
+            fontFamily: "Arial Black, Arial, sans-serif",
+            fontSize: `${Math.round(32 * uiScale)}px`,
+            color: "#f5f5f5"
         }).setOrigin(0.5).setDepth(-8);
 
         this.add.circle(1050, 92, 32, 0xffffff).setDepth(-8);
@@ -388,7 +404,8 @@
         this.add.line(0, 0, 1050, 92, 1050, 72, 0x444444).setLineWidth(3).setDepth(-6);
         this.add.line(0, 0, 1050, 92, 1062, 92, 0x444444).setLineWidth(2).setDepth(-6);
 
-        this.add.image(760, 320, "teacherDesk").setDepth(1).setScale(uiScale);
+        // Lehrertisch – neue Position, da breiter (x=ROOM_WIDTH/2, y=320)
+        this.add.image(ROOM_WIDTH / 2, 320, "teacherDesk").setDepth(1).setScale(uiScale);
 
         const deskRows = [
             { y: 520, xs: [430, 760, 1090, 1420] },
@@ -415,7 +432,8 @@
         createCollisionRect(ROOM_WIDTH - 20, ROOM_HEIGHT / 2, 40, ROOM_HEIGHT);
         createCollisionRect(ROOM_WIDTH / 2, 20, ROOM_WIDTH, 40);
 
-        createCollisionRect(760, 340, 900, 80);
+        // Kollision des Lehrertisches – nur den Tisch blockieren, nicht den Bereich davor
+        createCollisionRect(ROOM_WIDTH / 2, 320, 1300, 50);
 
         const deskRows = [
             { y: 545, xs: [430, 760, 1090, 1420] },
@@ -431,55 +449,63 @@
     }
 
     function createLevelDesk() {
-    const levelConfigs = [
-        { level: 1, texture: "bookRed" },
-        { level: 2, texture: "bookBlue" },
-        { level: 3, texture: "bookGreen" },
-        { level: 4, texture: "bookOrange" },
-        { level: 5, texture: "bookPurple" },
-        { level: 6, texture: "bookYellow" },
-        { level: 7, texture: "bookTurquoise" },
-        { level: 8, texture: "bookPink" }
-    ];
+        const levelConfigs = [
+            { level: 1, texture: "bookRed" },
+            { level: 2, texture: "bookBlue" },
+            { level: 3, texture: "bookGreen" },
+            { level: 4, texture: "bookOrange" },
+            { level: 5, texture: "bookPurple" },
+            { level: 6, texture: "bookYellow" },
+            { level: 7, texture: "bookTurquoise" },
+            { level: 8, texture: "bookPink" },
+            { level: 9, texture: "bookMint" },
+            { level: 10, texture: "bookCarrot" },
+            { level: 11, texture: "bookNavy" }
+        ];
 
-    const startX = 445;
-    const spacing = 90;
-    const bookY = 292;
-    const textY = 260;
-    const zoneY = 308;
+        const deskCenterX = ROOM_WIDTH / 2;
+        // Buchbreite + Abstand vergrößert
+        const bookWidth = 52 * uiScale;
+        const bookSpacing = 32 * uiScale; // mehr Abstand
+        const totalWidth = levelConfigs.length * (bookWidth + bookSpacing) - bookSpacing;
+        const startX = deskCenterX - totalWidth / 2 + bookWidth / 2;
 
-    levelBooks = [];
-    levelZones = [];
+        const bookY = 320 - 15;  // leicht über dem Tisch
+        const textY = bookY - 24;
+        const zoneY = bookY + 10;
 
-    levelConfigs.forEach((cfg, index) => {
-        const x = startX + index * spacing;
+        levelBooks = [];
+        levelZones = [];
 
-        const book = this.add.image(x, bookY, cfg.texture)
-            .setDepth(3)
-            .setScale(uiScale);
+        levelConfigs.forEach((cfg, index) => {
+            const x = startX + index * (bookWidth + bookSpacing);
 
-        this.add.text(x, textY, "LEVEL " + cfg.level, {
-            fontFamily: "Arial Black, Arial, sans-serif",
-            fontSize: `${Math.round(15 * uiScale)}px`,
-            color: "#ffffff",
-            stroke: "#111111",
-            strokeThickness: 4
-        }).setOrigin(0.5).setDepth(4);
+            const book = this.add.image(x, bookY, cfg.texture)
+                .setDepth(3)
+                .setScale(uiScale);
 
-        const zone = this.add.zone(x, zoneY, 80, 90);
-        this.physics.world.enable(zone);
-        zone.body.setAllowGravity(false);
-        zone.body.moves = false;
+            this.add.text(x, textY, "LEVEL " + cfg.level, {
+                fontFamily: "Arial Black, Arial, sans-serif",
+                fontSize: `${Math.round(15 * uiScale)}px`,
+                color: "#ffffff",
+                stroke: "#111111",
+                strokeThickness: 4
+            }).setOrigin(0.5).setDepth(4);
 
-        zone.levelNumber = cfg.level;
+            const zone = this.add.zone(x, zoneY, 70, 70);
+            this.physics.world.enable(zone);
+            zone.body.setAllowGravity(false);
+            zone.body.moves = false;
 
-        levelBooks.push(book);
-        levelZones.push(zone);
-    });
-}
+            zone.levelNumber = cfg.level;
+
+            levelBooks.push(book);
+            levelZones.push(zone);
+        });
+    }
 
     function createPlayer() {
-        player = this.physics.add.sprite(930, ROOM_HEIGHT - 150, "nerdPlayer");
+        player = this.physics.add.sprite(ROOM_WIDTH / 2, ROOM_HEIGHT - 150, "nerdPlayer");
         player.setScale(uiScale);
         player.setCollideWorldBounds(true);
         player.setDepth(5);
@@ -488,45 +514,46 @@
     }
 
     function createUI() {
-    const teamInput = document.getElementById("teamName");
-    const inputRect = teamInput.getBoundingClientRect();
+        const teamInput = document.getElementById("teamName");
+        const inputRect = teamInput.getBoundingClientRect();
 
-    const textX = inputRect.left + 8;
-    const titleY = inputRect.bottom + 8;
-    const subtitleY = inputRect.bottom + 38;
+        const textX = inputRect.left + 8;
+        const titleY = inputRect.bottom + 8;
+        const subtitleY = inputRect.bottom + 38;
 
-    titleText = this.add.text(textX, titleY, "LEVELAUSWAHL KLASSENRAUM", {
-        fontFamily: "Arial Black, Arial, sans-serif",
-        fontSize: `${Math.round(22 * uiScale)}px`,
-        color: "#ffffff",
-        stroke: "#16324f",
-        strokeThickness: 6
-    }).setOrigin(0, 0).setScrollFactor(0).setDepth(100);
+        titleText = this.add.text(textX, titleY, "LEVELAUSWAHL KLASSENRAUM", {
+            fontFamily: "Arial Black, Arial, sans-serif",
+            fontSize: `${Math.round(22 * uiScale)}px`,
+            color: "#ffffff",
+            stroke: "#16324f",
+            strokeThickness: 6
+        }).setOrigin(0, 0).setScrollFactor(0).setDepth(100);
 
-    subtitleText = this.add.text(textX, subtitleY, "Gehe zum Lehrertisch und wähle ein Level.", {
-        fontFamily: "Arial, sans-serif",
-        fontSize: `${Math.round(17 * uiScale)}px`,
-        color: "#ffffff",
-        stroke: "#000000",
-        strokeThickness: 4
-    }).setOrigin(0, 0).setScrollFactor(0).setDepth(100);
+        subtitleText = this.add.text(textX, subtitleY, "Gehe zum Lehrertisch und wähle ein Level.", {
+            fontFamily: "Arial, sans-serif",
+            fontSize: `${Math.round(17 * uiScale)}px`,
+            color: "#ffffff",
+            stroke: "#000000",
+            strokeThickness: 4
+        }).setOrigin(0, 0).setScrollFactor(0).setDepth(100);
 
-    reminderText = this.add.text(textX, subtitleY + 28, "Vergiss nicht dein Team einzutragen.", {
-        fontFamily: "Arial, sans-serif",
-        fontSize: `${Math.round(17 * uiScale)}px`,
-        color: "#ffffff",
-        stroke: "#000000",
-        strokeThickness: 4
-    }).setOrigin(0, 0).setScrollFactor(0).setDepth(100);
+        reminderText = this.add.text(textX, subtitleY + 28, "Vergiss nicht dein Team einzutragen.", {
+            fontFamily: "Arial, sans-serif",
+            fontSize: `${Math.round(17 * uiScale)}px`,
+            color: "#ffffff",
+            stroke: "#000000",
+            strokeThickness: 4
+        }).setOrigin(0, 0).setScrollFactor(0).setDepth(100);
 
-    interactHint = this.add.text(window.innerWidth / 2, window.innerHeight - 40, "", {
-        fontFamily: "Arial Black, Arial, sans-serif",
-        fontSize: `${Math.round(20 * uiScale)}px`,
-        color: "#ffffff",
-        stroke: "#111111",
-        strokeThickness: 5
-    }).setOrigin(0.5).setScrollFactor(0).setDepth(100);
-}
+        interactHint = this.add.text(window.innerWidth / 2, window.innerHeight - 40, "", {
+            fontFamily: "Arial Black, Arial, sans-serif",
+            fontSize: `${Math.round(20 * uiScale)}px`,
+            color: "#ffffff",
+            stroke: "#111111",
+            strokeThickness: 5
+        }).setOrigin(0.5).setScrollFactor(0).setDepth(100);
+    }
+
     function createCollisionRect(x, y, w, h) {
         const rect = collisionObjects.create(x, y, null);
         rect.setSize(w, h);
@@ -560,7 +587,7 @@
         }
     }
 
-        function updateInteractionState() {
+    function updateInteractionState() {
         currentInteractable = null;
 
         for (const zone of levelZones) {
@@ -586,27 +613,27 @@
     }
 
     function resizeGame(gameSize) {
-    this.cameras.resize(gameSize.width, gameSize.height);
+        this.cameras.resize(gameSize.width, gameSize.height);
 
-    const teamInput = document.getElementById("teamName");
-    const inputRect = teamInput.getBoundingClientRect();
+        const teamInput = document.getElementById("teamName");
+        const inputRect = teamInput.getBoundingClientRect();
 
-    if (titleText) {
-        titleText.setPosition(inputRect.left + 8, inputRect.bottom + 8);
+        if (titleText) {
+            titleText.setPosition(inputRect.left + 8, inputRect.bottom + 8);
+        }
+
+        if (subtitleText) {
+            subtitleText.setPosition(inputRect.left + 8, inputRect.bottom + 38);
+        }
+
+        if (reminderText) {
+            reminderText.setPosition(inputRect.left + 8, inputRect.bottom + 66);
+        }
+
+        if (interactHint) {
+            interactHint.setPosition(gameSize.width / 2, gameSize.height - 40);
+        }
     }
-
-    if (subtitleText) {
-        subtitleText.setPosition(inputRect.left + 8, inputRect.bottom + 38);
-    }
-
-    if (reminderText) {
-        reminderText.setPosition(inputRect.left + 8, inputRect.bottom + 66);
-    }
-
-    if (interactHint) {
-        interactHint.setPosition(gameSize.width / 2, gameSize.height - 40);
-    }
-}
 </script>
 
 </body>
