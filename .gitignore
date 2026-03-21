@@ -38,7 +38,12 @@ build/
 .mvn/jvm.config
 .maven-repo
 .maven-local
+.maven_local
 school-ca.pem
 school-proxy.crt
 school-truststore.jks
 my-cacerts
+
+*.log
+
+jcef-bundle
