@@ -27,7 +27,7 @@ class DatabaseIntegrationTest {
 
         // Verify team name
         teamRepository.findById(1).ifPresent(team -> {
-            assertThat(team.getName()).isEqualTo("BWV Wirtschaft und Sozialkunde");
+            assertThat(team.getName()).isEqualTo("KhitoGlebLih");
         });
     }
 }
