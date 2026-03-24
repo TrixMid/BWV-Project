@@ -19,10 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 import de.bwvschule.itf233.gruppe3.quizgame.dto.ReviewSummaryResponse;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 @RequestMapping("/quizgame")
@@ -39,7 +36,8 @@ public class GameController {
     @PostMapping("/session/{sessionId}/answer/mc")
     public SubmitAnswerResponse submitMcAnswer(@PathVariable Integer sessionId,
                                                @RequestBody SubmitAnswerRequest request) {
-        GameSession session = gameSessionRepository.findById(sessionId).orElseThrow();
+        GameSession session = gameSessionRepository.findById(sessionId)
+                .orElseThrow(() -> new NoSuchElementException("Session not found: " + sessionId));
         RoomProgress progress = roomProgressRepository
                 .findByGameSessionSessionIdAndRoomRoomId(sessionId, session.getCurrentRoom().getRoomId())
                 .orElseThrow();
@@ -86,7 +84,8 @@ public class GameController {
     @PostMapping("/session/{sessionId}/answer/gap")
     public void submitGapAnswer(@PathVariable Integer sessionId,
                                 @RequestBody List<GapAnswerDto> gapAnswers) {
-        GameSession session = gameSessionRepository.findById(sessionId).orElseThrow();
+        GameSession session = gameSessionRepository.findById(sessionId)
+                .orElseThrow(() -> new NoSuchElementException("Session not found: " + sessionId));
         RoomProgress progress = roomProgressRepository
                 .findByGameSessionSessionIdAndRoomRoomId(sessionId, session.getCurrentRoom().getRoomId())
                 .orElseThrow();
@@ -95,7 +94,8 @@ public class GameController {
 
     @PostMapping("/session/{sessionId}/change-room/{roomId}")
     public void changeRoom(@PathVariable Integer sessionId, @PathVariable Integer roomId) {
-        GameSession session = gameSessionRepository.findById(sessionId).orElseThrow();
+        GameSession session = gameSessionRepository.findById(sessionId)
+                .orElseThrow(() -> new NoSuchElementException("Session not found: " + sessionId));
         Room target = roomRepository.findById(roomId).orElseThrow();
         gameService.changeRoom(session, target);
     }
