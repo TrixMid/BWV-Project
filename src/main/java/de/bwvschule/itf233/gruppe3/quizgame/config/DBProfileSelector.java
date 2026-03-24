@@ -19,10 +19,10 @@ public class DBProfileSelector implements ApplicationContextInitializer<Configur
         try {
             Class.forName(mysqlDriver);
             DriverManager.getConnection(mysqlUrl, mysqlUsername, mysqlPassword).close();
-            environment.addActiveProfile("mysql");
+            environment.setActiveProfiles("mysql");
             System.out.println("Activating mysql profile.");
         } catch (Exception e) {
-            environment.addActiveProfile("sqlite");
+            environment.setActiveProfiles("sqlite");
             System.out.println("Activating sqlite profile.");
         }
     }
