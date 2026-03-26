@@ -296,31 +296,6 @@
         g.generateTexture("bookNavy", 52, 18);
         g.clear();
 
-        g.fillStyle(0x884ea0, 1);
-        g.fillRoundedRect(0, 0, 52, 18, 3);
-        g.generateTexture("bookViolet", 52, 18);
-        g.clear();
-
-        g.fillStyle(0x117a65, 1);
-        g.fillRoundedRect(0, 0, 52, 18, 3);
-        g.generateTexture("bookTeal", 52, 18);
-        g.clear();
-
-        g.fillStyle(0x784212, 1);
-        g.fillRoundedRect(0, 0, 52, 18, 3);
-        g.generateTexture("bookBrown", 52, 18);
-        g.clear();
-
-        g.fillStyle(0x717d7e, 1);
-        g.fillRoundedRect(0, 0, 52, 18, 3);
-        g.generateTexture("bookGray", 52, 18);
-        g.clear();
-
-        g.fillStyle(0xd4ac0d, 1);
-        g.fillRoundedRect(0, 0, 52, 18, 3);
-        g.generateTexture("bookGold", 52, 18);
-        g.clear();
-
         g.fillStyle(0x1f1f1f, 1);
         g.fillEllipse(28, 14, 34, 20);
         g.fillStyle(0xf3c9a5, 1);
@@ -418,7 +393,7 @@
         });
 
         this.add.image(760, 155, "board").setDepth(-9).setScale(uiScale);
-        this.add.text(760, 155, "16 Level zur Auswahl", {
+        this.add.text(760, 155, "11 Level zur Auswahl", {
             fontFamily: "Arial Black, Arial, sans-serif",
             fontSize: `${Math.round(32 * uiScale)}px`,
             color: "#f5f5f5"
@@ -458,7 +433,7 @@
         createCollisionRect(ROOM_WIDTH / 2, 20, ROOM_WIDTH, 40);
 
         // Kollision des Lehrertisches – nur den Tisch blockieren, nicht den Bereich davor
-        createCollisionRect(ROOM_WIDTH / 2, 320, 1400, 50);
+        createCollisionRect(ROOM_WIDTH / 2, 320, 1300, 50);
 
         const deskRows = [
             { y: 545, xs: [430, 760, 1090, 1420] },
@@ -485,12 +460,7 @@
             { level: 8, texture: "bookPink" },
             { level: 9, texture: "bookMint" },
             { level: 10, texture: "bookCarrot" },
-            { level: 11, texture: "bookNavy" },
-            { level: 12, texture: "bookViolet" },
-            { level: 13, texture: "bookTeal" },
-            { level: 14, texture: "bookBrown" },
-            { level: 15, texture: "bookGray" },
-            { level: 16, texture: "bookGold" }
+            { level: 11, texture: "bookNavy" }
         ];
 
         const deskCenterX = ROOM_WIDTH / 2;
@@ -535,7 +505,7 @@
     }
 
     function createPlayer() {
-        player = this.physics.add.sprite(ROOM_WIDTH / 2, 500, "nerdPlayer");
+        player = this.physics.add.sprite(ROOM_WIDTH / 2, ROOM_HEIGHT - 150, "nerdPlayer");
         player.setScale(uiScale);
         player.setCollideWorldBounds(true);
         player.setDepth(5);

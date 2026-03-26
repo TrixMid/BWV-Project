@@ -3,7 +3,7 @@ const sessionId = params.get("sessionId");
 const level = params.get("level") || "1";
 
 const ROOM_WIDTH = 2000;
-const ROOM_HEIGHT = Math.max(1500, window.innerHeight + 500);
+const ROOM_HEIGHT = window.innerHeight + 120;
 const PLAYER_SPEED = 300;
 
 let summaryShown = false;
@@ -166,36 +166,29 @@ function showSummaryScreen(summary) {
 
     summaryShown = true;
 
-    // Titel oben auf der Tafel
-    sceneRef.add.text(ROOM_WIDTH / 2, 108, "ABSCHLUSS", {
+    const title = sceneRef.add.text(ROOM_WIDTH / 2, 160, "ABSCHLUSS", {
         fontFamily: "Arial Black, Arial, sans-serif",
-        fontSize: "30px",
-        color: "#ffe066",
+        fontSize: "38px",
+        color: "#f5f5f5",
         stroke: "#111111",
-        strokeThickness: 5
+        strokeThickness: 6
     }).setOrigin(0.5).setDepth(20);
 
-    // Zusammenfassung – in der Tafel anzeigen
-    const medal = summary.medal || "NONE";
-    const medalLabel = medal === "GOLD" ? "GOLD" : medal === "SILVER" ? "SILBER" : medal === "BRONZE" ? "BRONZE" : "KEINE";
     const text =
-        "Team: " + (summary.playerName || "-") + "\n" +
-        "Punkte: " + (summary.totalPoints ?? 0) + " / " + (summary.maxPoints ?? 0) + "\n" +
-        "Score: " + (summary.scoreOutOf100 ?? 0) + " / 100\n" +
-        "Medaille: " + medalLabel;
+        "Team: " + (summary.playerName || "-") + "\n\n" +
+        "Punkte: " + (summary.totalPoints ?? 0) + " / " + (summary.maxPoints ?? 0) + "\n\n" +
+        "Score: " + (summary.scoreOutOf100 ?? 0) + " / 100\n\n" +
+        "Medaille: " + (summary.medal || "NONE");
 
-    const summaryText = sceneRef.add.text(ROOM_WIDTH / 2, 213, text, {
+    const summaryText = sceneRef.add.text(ROOM_WIDTH / 2, 330, text, {
         fontFamily: "Arial Black, Arial, sans-serif",
-        fontSize: "24px",
+        fontSize: "30px",
         color: "#ffffff",
         align: "center",
         stroke: "#111111",
-        strokeThickness: 4,
-        lineSpacing: 10
+        strokeThickness: 5,
+        lineSpacing: 12
     }).setOrigin(0.5).setDepth(20);
-
-    // fitTextToBox(text, maxWidth, maxHeight, startFontSize, minFontSize)
-    fitTextToBox(summaryText, 800, 160, 24, 14);
 
     createNextDoor();
 
