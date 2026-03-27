@@ -2,7 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Manage Teams</title>
+    <title>Teams verwalten</title>
+    <link rel="stylesheet" th:href="@{/admin.css}">
     <style>
         #menu {
             display: none;
@@ -12,20 +13,20 @@
 <body>
 <div id="menu">
     <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/themes">Manage Themes</a></li>
-        <li><a href="/teams">Manage Teams</a></li>
-        <li><a href="/questionsets">Manage Question Sets</a></li>
-        <li><a href="/questions">Manage Questions</a></li>
+        <li><a href="/">Startseite</a></li>
+        <li><a href="/themes">Themen verwalten</a></li>
+        <li><a href="/teams">Teams verwalten</a></li>
+        <li><a href="/questionsets">Fragensätze verwalten</a></li>
+        <li><a href="/questions">Fragen verwalten</a></li>
     </ul>
 </div>
-<h1>Manage Teams</h1>
-<h2>Existing Teams</h2>
+<h1>Teams verwalten</h1>
+<h2>Vorhandene Teams</h2>
 <table>
     <thead>
     <tr>
         <th>ID</th>
-        <th>Name</th>
+        <th>Teamname</th>
     </tr>
     </thead>
     <tbody>
@@ -36,14 +37,14 @@
     </tbody>
 </table>
 
-<h2>Add New Team</h2>
+<h2>Neues Team hinzufügen</h2>
 <form action="/teams" method="post" th:object="${team}">
     <div>
-        <label for="name">Name:</label>
+        <label for="name">Teamname:</label>
         <input type="text" id="name" th:field="*{name}">
     </div>
     <div>
-        <button type="submit">Add Team</button>
+        <button type="submit">Team hinzufügen</button>
     </div>
 </form>
 

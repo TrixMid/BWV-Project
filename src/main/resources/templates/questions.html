@@ -2,7 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Manage Questions</title>
+    <title>Fragen verwalten</title>
+    <link rel="stylesheet" th:href="@{/admin.css}">
     <style>
         #menu {
             display: none;
@@ -12,25 +13,25 @@
 <body>
 <div id="menu">
     <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/themes">Manage Themes</a></li>
-        <li><a href="/teams">Manage Teams</a></li>
-        <li><a href="/questionsets">Manage Question Sets</a></li>
-        <li><a href="/questions">Manage Questions</a></li>
+        <li><a href="/">Startseite</a></li>
+        <li><a href="/themes">Themen verwalten</a></li>
+        <li><a href="/teams">Teams verwalten</a></li>
+        <li><a href="/questionsets">Fragensätze verwalten</a></li>
+        <li><a href="/questions">Fragen verwalten</a></li>
     </ul>
 </div>
-<h1>Manage Questions</h1>
-<h2>Existing Questions</h2>
+<h1>Fragen verwalten</h1>
+<h2>Vorhandene Fragen</h2>
 <table>
     <thead>
     <tr>
         <th>ID</th>
-        <th>Start Text</th>
-        <th>Question Set</th>
-        <th>Type</th>
-        <th>Points</th>
-        <th>Themes</th>
-        <th>Actions</th>
+        <th>Fragetext</th>
+        <th>Fragensatz</th>
+        <th>Typ</th>
+        <th>Punkte</th>
+        <th>Themen</th>
+        <th>Aktionen</th>
     </tr>
     </thead>
     <tbody>
@@ -46,55 +47,55 @@
             </ul>
         </td>
         <td>
-            <a th:if="${q.questionType.name() == 'MC' or q.questionType.name() == 'TF'}" th:href="@{/questions/{id}/mcanswers(id=${q.id})}">Manage Answers</a>
-            <a th:if="${q.questionType.name() == 'GAP'}" th:href="@{/questions/{id}/gapfields(id=${q.id})}">Manage Gaps</a>
+            <a th:if="${q.questionType.name() == 'MC' or q.questionType.name() == 'TF'}" th:href="@{/questions/{id}/mcanswers(id=${q.id})}">Antworten verwalten</a>
+            <a th:if="${q.questionType.name() == 'GAP'}" th:href="@{/questions/{id}/gapfields(id=${q.id})}">Lücken verwalten</a>
         </td>
     </tr>
     </tbody>
 </table>
 
-<h2>Add New Question</h2>
+<h2>Neue Frage hinzufügen</h2>
 <form action="/questions" method="post" th:object="${question}">
     <div>
-        <label for="startText">Start Text:</label>
+        <label for="startText">Fragetext:</label>
         <textarea id="startText" th:field="*{startText}"></textarea>
     </div>
     <div>
-        <label for="endText">End Text:</label>
+        <label for="endText">Text am Ende:</label>
         <textarea id="endText" th:field="*{endText}"></textarea>
     </div>
     <div>
-        <label for="imageUrl">Image URL:</label>
+        <label for="imageUrl">Bild-URL:</label>
         <input type="text" id="imageUrl" th:field="*{imageUrl}">
     </div>
     <div>
-        <label for="points">Points:</label>
+        <label for="points">Punkte:</label>
         <input type="number" id="points" th:field="*{points}">
     </div>
     <div>
-        <label for="allowsMultiple">Allows Multiple:</label>
+        <label for="allowsMultiple">Mehrere Antworten erlauben:</label>
         <input type="checkbox" id="allowsMultiple" th:field="*{allowsMultiple}">
     </div>
     <div>
-        <label for="questionSet">Question Set:</label>
+        <label for="questionSet">Fragensatz:</label>
         <select id="questionSet" th:field="*{questionSet}">
             <option th:each="qs : ${questionSets}" th:value="${qs.id}" th:text="${qs.title}"></option>
         </select>
     </div>
     <div>
-        <label for="questionType">Question Type:</label>
+        <label for="questionType">Fragetyp:</label>
         <select id="questionType" th:field="*{questionType}">
             <option th:each="qt : ${questionTypes}" th:value="${qt}" th:text="${qt}"></option>
         </select>
     </div>
     <div>
-        <label for="themes">Themes:</label>
+        <label for="themes">Themen:</label>
         <select id="themes" th:field="*{themes}" multiple>
             <option th:each="theme : ${themes}" th:value="${theme.id}" th:text="${theme.name}"></option>
         </select>
     </div>
     <div>
-        <button type="submit">Add Question</button>
+        <button type="submit">Frage hinzufügen</button>
     </div>
 </form>
 
