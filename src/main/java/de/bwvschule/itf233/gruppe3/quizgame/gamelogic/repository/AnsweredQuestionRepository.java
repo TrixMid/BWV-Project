@@ -1,6 +1,5 @@
-package de.bwvschule.itf233.gruppe3.quizgame.gamedb.repository;
+package de.bwvschule.itf233.gruppe3.quizgame.gamelogic.repository;
 
-import de.bwvschule.itf233.gruppe3.quizgame.gamedb.entities.AnsweredQuestion;
 import de.bwvschule.itf233.gruppe3.quizgame.gamelogic.entities.AnsweredQuestion;
 import de.bwvschule.itf233.gruppe3.quizgame.gamelogic.entities.RoomProgress;
 import org.springframework.data.jpa.repository.JpaRepository;
