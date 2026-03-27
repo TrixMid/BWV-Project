@@ -61,7 +61,8 @@ jobs:
             --name quizgame `
             --type app-image `
             --dest C:\out `
-            --win-console
+            --win-console `
+            --java-options "-Dspring.profiles.active=sqlite"
           Compress-Archive -Path C:\out\quizgame -DestinationPath target/installer/quizgame-windows.zip
       - name: Upload EXE artifact
         uses: actions/upload-artifact@v4
