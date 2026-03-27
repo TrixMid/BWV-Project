@@ -362,3 +362,133 @@ INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_o
 INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (246, 49, 'Unternehmensmitbestimmung', 0, 6, 0);
 
 -- === SEED DATA: END ===
+
+
+INSERT INTO room (
+  name, description, image_url, map_x, map_y, max_points, min_points_required,
+  question_set_id, room_order, theme_id
+) VALUES (
+  'KhitoGlebLih',
+  NULL,
+  NULL,
+  1, 1, 100, 0,
+  1, 1, 3
+);
+
+
+INSERT INTO room (
+  name, description, image_url, map_x, map_y, max_points, min_points_required,
+  question_set_id, room_order, theme_id
+) VALUES (
+  'Cursed-Crib',
+  NULL,
+  NULL,
+  2, 1, 100, 0,
+  2, 2, 3
+);
+
+
+INSERT INTO room (
+  name, description, image_url, map_x, map_y, max_points, min_points_required,
+  question_set_id, room_order, theme_id
+) VALUES (
+  'xXx',
+  NULL,
+  NULL,
+  3, 1, 100, 0,
+  3, 3, 6
+);
+
+
+INSERT INTO room (
+  name, description, image_url, map_x, map_y, max_points, min_points_required,
+  question_set_id, room_order, theme_id
+) VALUES (
+  'SUD_LJ3Q3_Projektarbeit_2026',
+  NULL,
+  NULL,
+  4, 1, 100, 0,
+  7, 4, 3
+);
+
+
+INSERT INTO room (
+  name, description, image_url, map_x, map_y, max_points, min_points_required,
+  question_set_id, room_order, theme_id
+) VALUES (
+  'GBoyz',
+  NULL,
+  NULL,
+  1, 2, 100, 0,
+  8, 5, 5
+);
+
+INSERT INTO room (
+  name, description, image_url, map_x, map_y, max_points, min_points_required,
+  question_set_id, room_order, theme_id
+) VALUES (
+  'Bazinga',
+  NULL,
+  NULL,
+  2, 2, 100, 0,
+  9, 6, 4
+);
+
+
+INSERT INTO room (
+  name, description, image_url, map_x, map_y, max_points, min_points_required,
+  question_set_id, room_order, theme_id
+) VALUES (
+  'Feenstaub',
+  NULL,
+  NULL,
+  3, 2, 100, 0,
+  15, 7, 8
+);
+
+
+INSERT INTO room (
+  name, description, image_url, map_x, map_y, max_points, min_points_required,
+  question_set_id, room_order, theme_id
+) VALUES (
+  'Hard Workers',
+  NULL,
+  NULL,
+  4, 2, 100, 0,
+  16, 8, 8
+);
+
+
+INSERT INTO room (
+  name, description, image_url, map_x, map_y, max_points, min_points_required,
+  question_set_id, room_order, theme_id
+) VALUES (
+  'Dummy2Pro',
+  NULL,
+  NULL,
+  1, 3, 100, 0,
+  21, 9, 4
+);
+
+INSERT INTO room (
+  name, description, image_url, map_x, map_y, max_points, min_points_required,
+  question_set_id, room_order, theme_id
+) VALUES (
+  'Hammer',
+  NULL,
+  NULL,
+  2, 3, 100, 0,
+  22, 10, 5
+);
+
+
+INSERT INTO room (
+  name, description, image_url, map_x, map_y, max_points, min_points_required,
+  question_set_id, room_order, theme_id
+) VALUES (
+  'RandomMap',
+  NULL,
+  NULL,
+  3, 3, 100, 0,
+  23, 11, 8
+);
