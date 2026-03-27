@@ -10,13 +10,13 @@ import java.sql.DriverManager;
 @Configuration
 public class DBConfig {
 
-    @Value("${spring.datasource.url}")
+    @Value("${mysql.datasource.url}")
     private String mysqlUrl;
 
-    @Value("${spring.datasource.username}")
+    @Value("${mysql.datasource.username}")
     private String mysqlUsername;
 
-    @Value("${spring.datasource.password}")
+    @Value("${mysql.datasource.password}")
     private String mysqlPassword;
 
     @Bean
