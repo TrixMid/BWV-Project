@@ -1,1915 +1,3582 @@
--- === SEED DATA (generated from quizdb.sql) ===
+-- SQLite-compatible data.sql generated from quizdb.sql
 
--- Teams
-INSERT INTO team (team_id, name) VALUES
-(1, 'KhitoGlebLih'),
-(2, 'Cursed-Crib'),
-(3, 'xXx'),
-(4, 'SUD_LJ3Q3_Projektarbeit_2026'),
-(5, 'GBoyz'),
-(6, 'Bazinga'),
-(7, 'Feenstaub'),
-(8, 'Hard Workers'),
-(9, 'Dummy2Pro'),
-(10, 'Hammer'),
-(11, 'RandomMap');
+-- theme
+INSERT INTO theme (theme_id, name, description) VALUES (2, 'Recht', 'Alles was mit Gesetzesgrundlagen zu tun hat');
+INSERT INTO theme (theme_id, name, description) VALUES (3, 'Wirtschaft', 'Alles, was NICHT mit Recht, aber mit Wirtschaft zu tun hat (Kalkulation, Prozesse,...)');
+INSERT INTO theme (theme_id, name, description) VALUES (4, 'Datenbanken Modellierung', 'ERD, relationales Tabellenmodell');
+INSERT INTO theme (theme_id, name, description) VALUES (5, 'Datenbank - SQL', NULL);
+INSERT INTO theme (theme_id, name, description) VALUES (6, 'UML', 'Klassendiagramm, Sequenzdiagramm, Zustandsdiagramm, Use-Case Diagramm, Aktivitätsdiagramm');
+INSERT INTO theme (theme_id, name, description) VALUES (7, 'Maschinelles Lernen', NULL);
+INSERT INTO theme (theme_id, name, description) VALUES (8, 'Programmierung Pseudocode', NULL);
 
--- Themes
-INSERT INTO theme (theme_id, name, description) VALUES
-(2, 'Recht', 'Alles was mit Gesetzesgrundlagen zu tun hat'),
-(3, 'Wirtschaft', 'Alles, was NICHT mit Recht, aber mit Wirtschaft zu tun hat (Kalkulation, Prozesse,...)'),
-(4, 'Datenbanken Modellierung', 'ERD, relationales Tabellenmodell'),
-(5, 'Datenbank - SQL', NULL),
-(6, 'UML', 'Klassendiagramm, Sequenzdiagramm, Zustandsdiagramm, Use-Case Diagramm, Aktivitätsdiagramm'),
-(7, 'Maschinelles Lernen', NULL),
-(8, 'Programmierung Pseudocode', NULL);
+-- team
+INSERT INTO team (team_id, name) VALUES (1, 'KhitoGlebLih');
+INSERT INTO team (team_id, name) VALUES (2, 'Cursed-Crib');
+INSERT INTO team (team_id, name) VALUES (3, 'xXx');
+INSERT INTO team (team_id, name) VALUES (4, 'SUD_LJ3Q3_Projektarbeit_2026');
+INSERT INTO team (team_id, name) VALUES (5, 'GBoyz');
+INSERT INTO team (team_id, name) VALUES (6, 'Bazinga');
+INSERT INTO team (team_id, name) VALUES (7, 'Feenstaub');
+INSERT INTO team (team_id, name) VALUES (8, 'Hard Workers');
+INSERT INTO team (team_id, name) VALUES (9, 'Dummy2Pro');
+INSERT INTO team (team_id, name) VALUES (10, 'Hammer');
+INSERT INTO team (team_id, name) VALUES (11, 'RandomMap');
 
--- Question Sets
-INSERT INTO question_set (question_set_id, team_id, title) VALUES
-(1, 1, 'Wirtschaft & Sozialkunde – 50'),
-(2, 2, 'Cursed-Crib'),
-(3, 3, 'Klassendiagramm Quiz'),
-(4, 3, 'Sequenzdiagramm Quiz'),
-(5, 3, 'Aktivitätsdiagramm Quiz'),
-(6, 3, 'Zustandsdiagramm Quiz'),
-(7, 4, 'Wirtschaft Fragen Set'),
-(8, 5, 'GBoyz Datenbank - SQL'),
-(9, 6, 'NORMALISIERUNG'),
-(10, 6, 'SELECT_ABFRAGEN'),
-(11, 6, 'ER_MODELLIERUNG'),
-(12, 6, 'JOINS_SUBQUERIES'),
-(13, 6, 'SQL_GRUNDLAGEN'),
-(14, 6, 'DDL_DML'),
-(15, 7, 'Objektorientierung und Algorithmik'),
-(16, 8, 'Level 1'),
-(17, 8, 'Level 2'),
-(18, 8, 'Level 3'),
-(19, 8, 'Level 4'),
-(20, 8, 'Level 5'),
-(21, 9, 'Fragen von der Gruppe Dummy2Pro'),
-(22, 10, 'Hammer-Set'),
-(23, 11, 'Pseudocode und Algorithmen');
+-- question_set
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (1, 1, 'Wirtschaft & Sozialkunde – 50');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (2, 2, 'Cursed-Crib');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (3, 3, 'Klassendiagramm Quiz');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (4, 3, 'Sequenzdiagramm Quiz');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (5, 3, 'Aktivitätsdiagramm Quiz');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (6, 3, 'Zustandsdiagramm Quiz');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (7, 4, 'Wirtschaft Fragen Set');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (8, 5, 'GBoyz Datenbank - SQL');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (9, 6, 'NORMALISIERUNG');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (10, 6, 'SELECT_ABFRAGEN');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (11, 6, 'ER_MODELLIERUNG');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (12, 6, 'JOINS_SUBQUERIES');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (13, 6, 'SQL_GRUNDLAGEN');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (14, 6, 'DDL_DML');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (15, 7, 'Objektorientierung und Algorithmik');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (16, 8, 'Level 1');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (17, 8, 'Level 2');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (18, 8, 'Level 3');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (19, 8, 'Level 4');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (20, 8, 'Level 5');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (21, 9, 'Fragen von der Gruppe Dummy2Pro');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (22, 10, 'Hammer-Set');
+INSERT INTO question_set (question_set_id, team_id, title) VALUES (23, 11, 'Pseudocode und Algorithmen');
 
--- Questions
-INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES
-(1, 1, 'MC', 'Welche beiden Regelungen finden Sie in einem Manteltarifvertrag?', NULL, NULL, 1, 2),
-(2, 1, 'MC', 'In der MaHaG KG steht die Wahl des Betriebsrates an. Welche 3 Personen sind wahlberechtigt ?', NULL, NULL, 1, 3),
-(3, 1, 'MC', 'Mit Ihren Auszubildenen sprechen Sie über die anstehenden Betriebswahlen. Welche beiden Aussagen sind richtig ?', NULL, NULL, 1, 2),
-(4, 1, 'MC', 'Welche beiden Sachverhalte sind im Allgemeinen Gleichbehandlungsgesetz (AGG) geregelt?', NULL, NULL, 1, 2),
-(5, 1, 'MC', 'Die MaHaG KG plant, einen Fachinformatiker Anwendungsentwicklung (m/w/d) einzustellen. Nachdem Sie das Anforderungsprofil entworfen haben, weist Ihre Rechtsabteilung Sie darauf hin, dass eine Formulierung gegen das Allgemeine Gleichbehandlungsgesetz (AGG) verstößt. Was dürfen Sie nicht in eine Stellenbeschreibung nach dem AGG schreiben?', NULL, NULL, 0, 1),
-(6, 1, 'MC', 'Bei der Gestaltung der Ausbildungsverträge für volljährige und jugendliche Auszubildende müssen Sie darauf achten, dass gesetzliche Bestimmungen eingehalten werden. In welchen beiden Gesetzen schauen Sie nach, wenn Sie Inhalte eines Ausbildungsvertrages prüfen möchten?', NULL, NULL, 1, 2),
-(7, 1, 'MC', 'Welche zwei Bestimmungen finden Sie im Berufsbildungsgesetz?', NULL, NULL, 1, 2),
-(8, 1, 'MC', 'Jens Rievers hat am 16.07.2025 seine Ausbildung mit dem Bestehen der letzten Prüfung erfolgreich beendet. Weil sein Ausbildungsvertrag als Vertragsende den 31.07.2025 vorsieht, ist er der Meinung, dass er bis zu diesem Zeitpunkt arbeiten muss. Welche Rechtsfolge tritt ein, wenn er ab dem 17.07.2025 in der bisherigen Abteilung weiterarbeitet?', NULL, NULL, 0, 1),
-(9, 1, 'MC', 'Bei der MaHaG KG stehen Wahlen zur Jugend- und Auszubildendenvertretung an. Katja Sommer (Vertriebsmitarbeiterin, 24 Jahre alt), die bereits im Betriebsrat ist und umfangreiche Erfahrungen dort gesammelt hat, will nun auch für dieses Amt kandidieren. Prüfen Sie, ob das möglich ist. Beachten Sie hierzu den folgenden Gesetzestext:', NULL, NULL, 0, 1),
-(10, 1, 'MC', 'Bevor Sie die Ausbildungsverträge den Auszubildenden schicken, überprüfen Sie diese. Ein Ausbildungsvertrag weist einen Fehler auf, der gegen das Berufsbildungsgesetz verstößt. Um welchen Fehler handelt es sich hier?', NULL, NULL, 0, 1),
-(11, 1, 'MC', 'Unternehmen können in der Form einer Personengesellschaft oder als juristische Person geführt werden. Auf welchen der folgenden Begriffe trifft die Bezeichnung „Juristische Person des privaten Rechts“ zu?', NULL, NULL, 0, 1),
-(12, 1, 'MC', 'Zu den Kunden der MaHaG KG zählen neben den Personengesellschaften auch juristische Personen des privaten und des öffentlichen Rechts. Bei welchen beiden Kunden der MaHaG KG handelt es sich um juristische Personen des öffentlichen Rechts?', NULL, NULL, 1, 2),
-(13, 1, 'MC', 'Um ihr Kapital sinnvoll einzusetzen und zu verwerten, handelt die MaHaG KG zunächst einmal nach dem ökonomischen Prinzip.', NULL, NULL, 1, 2),
-(14, 1, 'MC', 'Prüfen Sie, welche der folgenden Maßnahmen der MaHaG KG keine ökologische Zielsetzung beinhaltet.', NULL, NULL, 0, 1),
-(15, 1, 'MC', 'Bei der Verfolgung ökonomischer Ziele berücksichtigt die MaHaG KG auch zunehmend Aspekte des Umweltschutzes. Prüfen Sie, wo Zielharmonie herrscht, also ökonomische und ökologische Aspekte im Einklang sind.', NULL, NULL, 1, 2),
-(16, 1, 'MC', 'Im Rahmen der von den Unternehmen praktizierten Kommunikationspolitik weisen Firmen verstärkt auf verantwortungsbewusstes und nachhaltiges Wirtschaften hin. Bei welcher Maßnahme wirtschaftet die MaHaG KG ökologisch nachhaltig und kann werbewirksam darauf hinweisen?', NULL, NULL, 0, 1),
-(17, 1, 'MC', 'Für ihre mittel- und langfristige Planung benötigt die MaHaG KG Informationen, in welcher Konjunkturphase sich aktuell die wirtschaftliche Entwicklung befindet. Welche Merkmale kennzeichnen den Abschwung?', NULL, NULL, 0, 1),
-(18, 1, 'MC', 'Wie sollte die Mannheimer Haushaltsgeräte KG im Falle eines beginnenden Abschwungs agieren?\n(2 Antworten)', NULL, NULL, 1, 2),
-(19, 1, 'MC', 'Auf einem Markt treffen Angebot und Nachfrage aufeinander.\nBei einem bestimmten Preis sind angebotene Menge und nachgefragte Menge genau gleich groß.', NULL, NULL, 0, 1),
-(20, 1, 'MC', 'Prüfen Sie, welche der nachstehenden Aussagen über den einfachen Wirtschaftskreislauf richtig ist.', NULL, NULL, 0, 1),
-(21, 1, 'MC', 'Die verschiedenen Konjunkturphasen veranlassen auch die Mannheimer Haushaltsgeräte KG, ihr wirtschaftliches Verhalten danach auszurichten. Prüfen Sie, in welcher Konjunkturphase sich die MaHaG KG ökonomisch sinnvoll verhält.', NULL, NULL, 0, 1),
-(22, 1, 'MC', 'Ein Auszubildender der MaHaG KG stürzt im Hauptlagerhaus beim Einsortieren von Waren von der Leiter und bricht sich ein Bein. Wem muss die entsprechende Unfallmeldung zugeleitet werden?', NULL, NULL, 0, 1),
-(23, 1, 'MC', 'Marga Schlöter, angehende Kauffrau für Büromanagement, informiert sich bei Ihnen über die Regelungen zur Arbeitsunfähigkeit. Welche zwei Aussagen hierzu sind richtig?', NULL, NULL, 1, 2),
-(24, 1, 'MC', 'Gerda Kalinov ist Prokuristin der Mannheimer Haushaltsgeräte KG und im Handelsregister eingetragen.', NULL, NULL, 1, 3),
-(25, 1, 'MC', 'Für welche Unternehmensform wird Claudia Both sich unter diesen Voraussetzungen entscheiden?', NULL, NULL, 0, 1),
-(26, 1, 'MC', 'Für ein Darlehen zur Existenzgründung verlangt die Bank von Claudia Both einen Businessplan. Wozu dient dieser?', NULL, NULL, 0, 1),
-(27, 1, 'MC', 'Carlos Ortega, 17 Jahre alt, beginnt am 01.08.2025 seine Berufsausbildung als Fachinformatiker bei der MaHaG KG. Der Auszubildende vollendet am 15.01.2026 das 18. Lebensjahr.', NULL, NULL, 0, 1),
-(28, 1, 'MC', 'Der Auszubildende Igor Czerwinski muss im Rahmen seiner Ausbildung immer wieder Tätigkeiten verrichten, die nach dem Berufsbild ausbildungsfremd und im betrieblichen Ausbildungsplan nicht vorgesehen sind.', NULL, NULL, 0, 1),
-(29, 1, 'MC', 'Fatima Kuslu, 17 Jahre alt, hat am 1. September ihre Berufsausbildung als Fachinformatikerin bei der MaHaG KG begonnen. Welche Vorschrift des Jugendarbeitsschutzgesetzes gilt für sie?', NULL, NULL, 0, 1),
-(30, 1, 'MC', 'Arbeitnehmer erhalten im Krankheitsfall weiterhin ihre Vergütung, obwohl sie ihre Arbeitsleistung nicht erbringen können. Gilt das auch gleichermaßen für Auszubildende?', NULL, NULL, 0, 1),
-(31, 1, 'MC', 'In der Mannheimer Haushaltsgeräte KG wurde dem Auszubildenden Mario Klug fristlos gekündigt, weil er beim Aufbrechen eines Spindes ertappt wurde. Der Betriebsrat wurde nach der fristlosen Kündigung informiert und stimmte dieser nachträglich bedenkenlos zu.', NULL, NULL, 0, 1),
-(32, 1, 'MC', 'In den Arbeitsverträgen der MaHaG KG ist wie auch in den Ausbildungsverträgen immer eine Probezeit vereinbart. Wodurch unterscheidet sich die Probezeit in einem Ausbildungsvertrag von der in einem Arbeitsvertrag? (Zwei Antworten)', NULL, NULL, 0, 1),
-(33, 1, 'MC', 'Ein Ausbildungsvertrag ist ein befristeter Vertrag, der automatisch durch Zeitablauf endet. Wann ist die Kündigung eines solchen Ausbildungsvertrages dennoch möglich? (Zwei Antworten)', NULL, NULL, 1, 2),
-(34, 1, 'MC', 'Der Betriebsrat hat abgestufte Rechte. In welchem Fall hat der Betriebsrat nur ein Informationsrecht?', NULL, NULL, 0, 1),
-(35, 1, 'MC', 'Jan Riekers möchte ein Praktikum im Ausland zur Verbesserung seiner Sprachkenntnisse machen. Sie weisen ihn auf den Europass hin.', NULL, NULL, 0, 1),
-(36, 1, 'MC', 'Am 28.10.20XX kündigt Mina Stiller (38 Jahre, seit 11 Jahren im Unternehmen) fristgerecht zum nächstmöglichen Termin.\nNennen Sie das Datum, an dem Frau Stiller frühestens eine neue Stelle antreten kann.', NULL, NULL, 0, 1),
-(37, 1, 'MC', 'In der MaHaG KG stehen Betriebsratswahlen an. Das Unternehmen hat 134 Beschäftigte (volljährig) und 16 Azubis (12 davon volljährig). Darüber hinaus sind 3 Zeitarbeitnehmer seit 4 Monaten im Betrieb damit beschäftigt, für die IT-Sicherheit zu sorgen.', NULL, NULL, 0, 1),
-(38, 1, 'MC', 'Zur Produktion ihrer Haushaltsgeräte benötigt die Mannheimer Haushaltsgeräte KG Ressourcen und kombiniert Produktionsfaktoren miteinander.', NULL, NULL, 1, 2),
-(39, 1, 'MC', 'Abfallvermeidung bedeutet neben der Entlastung der Umwelt auch Kosteneinsparungen bei der Mannheimer Haushaltsgeräte KG, also eine Zielharmonie zwischen Ökonomie und Ökologie. Welche der folgenden Maßnahmen gehört zur Abfallvermeidung?', NULL, NULL, 0, 1),
-(40, 1, 'MC', 'Immer wieder fragen Kunden nach einer weiteren Entwicklung vernetzter Haushaltsgeräte.\nBundesweit gibt es neben der MaHaG KG nur noch drei weitere Hersteller dieser zukunftsweisenden Technologie.', NULL, NULL, 0, 1),
-(41, 1, 'MC', 'Die Mannheimer Haushaltsgeräte KG steht bei ihrem Angebot an kleinen Haushaltsgeräten und Zubehör mit einer Vielzahl von Mitbewerbern mit kleinen Angebotsmengen am Markt in einem Wettbewerbsprozess. Auf der Nachfrageseite gibt es eine Vielzahl von Haushalten und Unternehmen mit ihren Werkskantinen.', NULL, NULL, 0, 1),
-(42, 1, 'MC', 'Die Wirtschaftsordnung der Bundesrepublik Deutschland bezeichnet man als „Soziale Marktwirtschaft“.\nBesonderes Merkmal dieser Wirtschaftsordnung ist ein funktionierender Markt. Welche Eigenschaften und Entwicklungen zeichnen diesen Markt aus?', NULL, NULL, 0, 1),
-(43, 1, 'MC', 'Ohne staatliche oder anderweitige Eingriffe in das Marktgeschehen bildet sich am Markt zwischen Angebot und Nachfrage der sog. „Gleichgewichtspreis“. Welche Funktion erfüllt dieser?', NULL, NULL, 0, 1),
-(44, 1, 'MC', 'Prüfen Sie, welche der nachstehenden Aussagen über den einfachen Wirtschaftskreislauf richtig ist.', NULL, NULL, 0, 1),
-(45, 1, 'MC', 'Die MaHaG KG ist in den letzten Jahren stark gewachsen. Die Geschäftsleitung denkt über eine Reorganisation des Unternehmens nach. Als Mitarbeiter/-in der Stabsstelle „Betriebswirtschaftliche Analyse und Planung“ sollen Sie die Aufbauorganisation Ihres Unternehmens überprüfen. Sie schauen sich auch die Organisationsstrukturen kooperierender Unternehmen an. Die MaHaG verwendet das Stabliniensystem.', NULL, NULL, 0, 1),
-(46, 1, 'MC', 'Clara Bürscheid (21 Jahre), Mitarbeiterin im Einkauf, möchte sich bei den anstehenden Wahlen der Jugend- und Auszubildendenvertretung als Kandidatin aufstellen lassen.', NULL, NULL, 0, 1),
-(47, 1, 'MC', 'Nachhaltiges Wirtschaften zeichnet sich insbesondere dadurch aus, dass Ressourcen wiederverwendet werden. Bei welcher der folgenden Maßnahmen handelt die Mannheimer Haushaltsgeräte KG nachhaltig?', NULL, NULL, 0, 1),
-(48, 1, 'MC', 'Aus gelieferten Edelstahlblechen fertigt die Mannheimer Haushaltsgeräte KG Edelstahlgehäuse für Waschmaschinen und Trockner. Beim Zuschneiden der Bleche fallen Reste an, die nicht unmittelbar verwendet werden können. Das Unternehmen liefert daher diese Reste an ein Edelstahlwerk, das diese einschmilzt und daraus neue Edelstahlbleche gewinnt. Welche Bezeichnung gibt es für diese Form der Rohstoffeinsparung?', NULL, NULL, 0, 1),
-(49, 1, 'MC', 'Die Tarifvertragsparteien – Arbeitgeberverbände und Gewerkschaften – können die Arbeits- und Wirtschaftsbedingungen ohne staatliche Einmischung frei gestalten.', NULL, NULL, 0, 1),
-(50, 2, 'MC', 'Was ist das Kernmerkmal des Minimalprinzips?', NULL, NULL, 0, 1),
-(51, 2, 'MC', 'Welches Szenario beschreibt ein Oligopol?', NULL, NULL, 0, 1),
-(52, 2, 'MC', 'Warum sinkt die Kaufkraft bei Inflation?', NULL, NULL, 0, 1),
-(53, 2, 'MC', 'Was wird im Bruttoinlandsprodukt (BIP) NICHT berücksichtigt?', NULL, NULL, 0, 1),
-(54, 2, 'MC', 'Wie reagiert der Gleichgewichtspreis, wenn das Angebot sinkt, die Nachfrage aber gleich bleibt?', NULL, NULL, 0, 1),
-(55, 2, 'MC', 'Was verstehen Ökonomen unter Opportunitätskosten?', NULL, NULL, 0, 1),
-(56, 2, 'MC', 'Wie unterscheidet sich die AG von der GmbH bei der Kapitalbeschaffung?', NULL, NULL, 0, 1),
-(57, 2, 'MC', 'Welcher Zielkonflikt besteht oft in Unternehmen?', NULL, NULL, 0, 1),
-(58, 2, 'MC', 'Wann ist Leasing für ein Unternehmen wirtschaftlich oft sinnvoll?', NULL, NULL, 0, 1),
-(59, 2, 'MC', 'Wie lautet die Formel zur Berechnung des Break-Even-Points (in Stück)?', NULL, NULL, 0, 1),
-(60, 2, 'MC', 'Welches Kriterium ist für ein Projekt essenziell?', NULL, NULL, 0, 1),
-(61, 2, 'MC', 'Wie beeinflussen sich die Faktoren im \"Magischen Dreieck\"?', NULL, NULL, 0, 1),
-(62, 2, 'MC', 'Warum ist der Projektstrukturplan so wichtig?', NULL, NULL, 0, 1),
-(63, 2, 'MC', 'Was passiert, wenn sich eine Aufgabe auf dem \"Kritischen Pfad\" verzögert?', NULL, NULL, 0, 1),
-(64, 2, 'MC', 'Wofür steht das \"R\" in der SMART-Methode?', NULL, NULL, 0, 1),
-(65, 2, 'MC', 'Warum ist der Abnahmebericht rechtlich wichtig?', NULL, NULL, 0, 1),
-(66, 2, 'MC', 'Was ist das Problem in einer Matrix-Organisation?', NULL, NULL, 0, 1),
-(67, 2, 'MC', 'Was ist der \"Freie Puffer\"?', NULL, NULL, 0, 1),
-(68, 2, 'MC', 'Welche Information liefert ein Gantt-Diagramm?', NULL, NULL, 0, 1),
-(69, 2, 'MC', 'Was ist die Hauptaufgabe des Scrum Masters?', NULL, NULL, 0, 1),
-(70, 3, 'TF', 'Welches UML-Diagramm wird hauptsächlich verwendet, um die statische Struktur eines Systems darzustellen?', NULL, NULL, 0, 1),
-(71, 3, 'TF', 'Welche Beziehung wird im UML-Klassendiagramm durch eine durchgezogene Linie mit einer ausgefüllten Raute dargestellt?', NULL, NULL, 0, 1),
-(72, 3, 'TF', 'Welche Art von Beziehung beschreibt eine Vererbung zwischen zwei Klassen?', NULL, NULL, 0, 1),
-(73, 3, 'MC', 'Welche Elemente können in einem UML-Klassendiagramm vorkommen?', NULL, NULL, 1, 1),
-(74, 3, 'MC', 'Welche UML-Diagramme zählen zu den Strukturdiagrammen?', NULL, NULL, 1, 1),
-(75, 3, 'MC', 'Welche Beziehungen können im Klassendiagramm dargestellt werden?', NULL, NULL, 1, 1),
-(76, 3, 'GAP', 'Ein UML-Klassendiagramm beschreibt die ', NULL, '.', 0, 1),
-(77, 3, 'GAP', 'Die Komposition wird im UML‑Klassendiagramm durch eine ', NULL, '.', 0, 1),
-(78, 3, 'GAP', 'In einem Klassendiagramm steht das Minuszeichen (–) für ', NULL, '.', 0, 1),
-(79, 3, 'TF', 'Eine Aggregation ist stärker als eine Komposition.', NULL, NULL, 0, 1),
-(80, 4, 'TF', 'Eine synchrone Nachricht blockiert den Sender, bis eine Antwort erfolgt.', NULL, NULL, 0, 1),
-(81, 4, 'TF', 'Ein opt-Fragment ist ein Spezialfall eines alt‑Fragments.', NULL, NULL, 0, 1),
-(82, 4, 'TF', 'Eine Aktivierung zeigt an, dass ein Objekt gerade eine Operation ausführt.', NULL, NULL, 0, 1),
-(83, 4, 'TF', 'Welches UML-Diagramm zeigt die Interaktion zwischen Objekten in zeitlicher Reihenfolge?', NULL, NULL, 0, 1),
-(84, 4, 'TF', 'Welche Aussage über Sequenzdiagramme trifft zu?', NULL, NULL, 0, 1),
-(85, 4, 'TF', 'Welche Aussage über kombinierte Fragmente ist korrekt?', NULL, NULL, 0, 1),
-(86, 4, 'MC', 'Welche Aussagen über Lebenslinien sind korrekt?', NULL, NULL, 1, 1),
-(87, 4, 'MC', 'Welche Elemente können in einem Sequenzdiagramm vorkommen?', NULL, NULL, 1, 1),
-(88, 4, 'GAP', 'Eine synchrone Nachricht blockiert den Sender, bis eine ', NULL, '.', 0, 1),
-(89, 4, 'GAP', 'Ein kombiniertes Fragment mit dem Operator ', NULL, '.', 0, 1),
-(90, 5, 'TF', 'Ein Aktivitätsdiagramm kann sowohl Kontroll‑ als auch Objektflüsse enthalten.', NULL, NULL, 0, 1),
-(91, 5, 'TF', 'Ein Fork-Knoten darf nur zwei ausgehende Kanten besitzen.', NULL, NULL, 0, 1),
-(92, 5, 'TF', 'Swimlanes dienen der Darstellung von Verantwortlichkeiten.', NULL, NULL, 0, 1),
-(93, 5, 'TF', 'Wofür wird ein Aktivitätsdiagramm hauptsächlich verwendet?', NULL, NULL, 0, 1),
-(94, 5, 'TF', 'Welche Aussage über Objektknoten ist korrekt?', NULL, NULL, 0, 1),
-(95, 5, 'TF', 'Welches Diagramm eignet sich am besten, um den Ablauf eines Prozesses mit Verzweigungen und Schleifen darzustellen?', NULL, NULL, 0, 1),
-(96, 5, 'MC', 'Welche Elemente können in einem Aktivitätsdiagramm vorkommen?', NULL, NULL, 1, 1),
-(97, 5, 'MC', 'Welche Aussagen über Partitionen (Swimlanes) sind korrekt?', NULL, NULL, 1, 1),
-(98, 5, 'GAP', 'Ein Fork-Knoten teilt einen Ablauf in mehrere ', NULL, '.', 0, 1),
-(99, 5, 'GAP', 'Ein Entscheidungsknoten teilt den Ablauf basierend auf ', NULL, '.', 0, 1),
-(100, 6, 'TF', 'Ein Übergang darf keine Aktion besitzen, wenn er aus einem Endzustand kommt.', NULL, NULL, 0, 1),
-(101, 6, 'TF', 'Ein Übergang kann mehrere Ereignisse gleichzeitig als Trigger besitzen.', NULL, NULL, 0, 1),
-(102, 6, 'TF', 'Ein Endzustand darf keine ausgehenden Übergänge besitzen.', NULL, NULL, 0, 1),
-(103, 6, 'TF', 'Welche Aussage über Zustandsdiagramme ist korrekt?', NULL, NULL, 0, 1),
-(104, 6, 'TF', 'Welche Aussage über Subzustände ist korrekt?', NULL, NULL, 0, 1),
-(105, 6, 'TF', 'Welche Darstellung gehört typischerweise zu einem Zustandsdiagramm?', NULL, NULL, 0, 1),
-(106, 6, 'MC', 'Welche Symbole können in einem Zustandsdiagramm vorkommen?', NULL, NULL, 1, 1),
-(107, 6, 'MC', 'Welche Aussagen über Übergänge sind korrekt?', NULL, NULL, 1, 1),
-(108, 6, 'GAP', 'Ein Zustand kann interne Aktivitäten besitzen, die als ', NULL, '.', 0, 1),
-(109, 6, 'GAP', 'Ein Zustandsdiagramm beschreibt, wie ein Objekt auf ', NULL, '.', 0, 1),
-(110, 7, 'TF', 'Bei einer Offenen Handelsgesellschaft (OHG) ist die Haftung auf das Gesellschaftsvermögen beschränkt.', NULL, NULL, 0, 1),
-(111, 7, 'TF', 'Die Marktform, bei der wenigen Anbietern sehr viele Nachfrager gegenüberstehen, nennt man Angebotsoligopol.', NULL, NULL, 0, 1),
-(112, 7, 'TF', 'In einer SWOT-Analyse beziehen sich die \"Stärken\" (Strengths) auf externe Faktoren, die für ein Unternehmen vorteilhaft sein könnten.', NULL, NULL, 0, 1),
-(113, 7, 'TF', 'Das primäre Ziel der Nutzwertanalyse (Scoring-Modell) bei der Entscheidungsfindung ist es, qualitative, schwer messbare Kriterien durch Gewichtung und Punktevergabe vergleichbar zu machen.', NULL, NULL, 0, 1),
-(114, 7, 'TF', 'Unter dem Begriff \"Green IT\" versteht man primär die Gestaltung der Informations- und Kommunikationstechnik über den gesamten Lebenszyklus hinweg unter ökologischen Gesichtspunkten.', NULL, NULL, 0, 1),
-(115, 7, 'TF', '\"Corporate Identity\" (CI) bezeichnet eine gesetzlich vorgeschriebene Identifikationsnummer für Unternehmen.', NULL, NULL, 0, 1),
-(116, 7, 'TF', 'Erhält ein Kunde eine Rechnung mit dem Vermerk \"Zahlbar bis zum 15. Mai\" und zahlt nicht, gerät er mit Ablauf des 15. Mai automatisch in Verzug, ohne dass eine Mahnung erforderlich ist.', NULL, NULL, 0, 1),
-(117, 7, 'TF', 'Das wesentliche Unterscheidungsmerkmal ist, dass die Hypothek vom Bestand der zu sichernden Forderung abhängig ist (akzessorisch), die Grundschuld hingegen davon unabhängig ist (abstrakt).', NULL, NULL, 0, 1),
-(118, 7, 'TF', 'Ein kennzeichnendes Merkmal für die Globalisierung der Weltwirtschaft ist die Konzentration der Produktion ausschließlich auf den nationalen Binnenmarkt.', NULL, NULL, 0, 1),
-(119, 7, 'TF', 'Damit man modellhaft von einem \"vollkommenen Markt\" spricht, müssen die gehandelten Güter völlig gleichartig (homogen) sein und es muss vollständige Markttransparenz herrschen.', NULL, NULL, 0, 1),
-(120, 7, 'TF', 'In der Wirtschaftstheorie handelt der sogenannte \"Homo oeconomicus\" rational und strebt nach maximalem Nutzen (Nutzenmaximierung).', NULL, NULL, 0, 1),
-(121, 7, 'MC', 'Herr Müller ist seit sechs Jahren in der XYZ GmbH beschäftigt (kein Tarifvertrag). Der Arbeitgeber möchte ihm ordentlich kündigen. Welche gesetzliche Kündigungsfrist muss beachtet werden?', NULL, NULL, 0, 1),
-(122, 7, 'MC', 'Ab welcher Anzahl von ständigen wahlberechtigten Arbeitnehmern können in einem Betrieb Betriebsräte gewählt werden?', NULL, NULL, 0, 1),
-(123, 7, 'MC', 'Ein IT-Systemhaus kauft Server-Hardware zum Listeneinkaufspreis von 10.000 €. Der Lieferant gewährt 10 % Rabatt. Bei Zahlung innerhalb von 10 Tagen können zudem 2 % Skonto abgezogen werden. Wie hoch ist der Bareinkaufspreis?', NULL, NULL, 0, 1),
-(124, 7, 'MC', 'Eine neue Maschine kostet 120.000 €. Die jährlichen Rückflüsse (Gewinn + Abschreibungen) betragen konstant 30.000 €. Wie hoch ist die statische Amortisationszeit?', NULL, NULL, 0, 1),
-(125, 7, 'MC', 'Welche der folgenden Personengruppen genießen in Deutschland einen besonderen Kündigungsschutz?', NULL, NULL, 1, 1),
-(126, 7, 'MC', 'Welche Phasen existieren im Produktlebenszyklus?', NULL, NULL, 1, 1),
-(127, 7, 'MC', 'Welche der folgenden Aussagen zu Kapitalgesellschaften (GmbH, AG) sind wahr?', NULL, NULL, 1, 1),
-(128, 7, 'MC', 'Welche der folgenden Berufe oder Branchen werden dem tertiären Wirtschaftssektor (Dienstleistungssektor) zugeordnet?', NULL, NULL, 1, 1),
-(129, 7, 'MC', 'Welche Merkmale treffen typischerweise auf die Fremdfinanzierung zu?', NULL, NULL, 1, 1),
-(130, 7, 'MC', 'Welche der folgenden Positionen werden in der Bezugskalkulation als Bezugskosten (Hinzurechnungen) gewertet, die den Preis erhöhen?', NULL, NULL, 1, 1),
-(131, 7, 'MC', 'Welche Maßnahme gehört eindeutig zum operativen Marketing (und nicht zum strategischen)?', NULL, NULL, 1, 1),
-(132, 7, 'MC', 'Welche der folgenden Maßnahmen tragen konkret zur Umsetzung von Green IT in einem Unternehmen bei?', NULL, NULL, 1, 1),
-(133, 7, 'MC', 'Welche der folgenden Aufgaben gehören typischerweise zu den Kernfunktionen des operativen Controllings?', NULL, NULL, 1, 1),
-(134, 7, 'MC', 'Welche der folgenden Auswirkungen werden typischerweise mit der Globalisierung verbunden?', NULL, NULL, 1, 1),
-(135, 7, 'MC', 'Welche Aussagen zum Themenkomplex Bedürfnis, Bedarf und Nachfrage sind korrekt?', NULL, NULL, 1, 1),
-(136, 7, 'MC', 'Wodurch zeichnen sich \"Wirtschaftsgüter\" (im Gegensatz zu freien Gütern) aus?', NULL, NULL, 1, 1),
-(137, 7, 'MC', 'Welche Rechte stehen einem Gläubiger (z. B. einem Lieferanten) grundsätzlich zu, wenn sich der Schuldner im Zahlungsverzug befindet?', NULL, NULL, 1, 1),
-(138, 7, 'MC', 'Welche der folgenden Kreditsicherheiten zählen zu den sogenannten Realsicherheiten (Sachsicherheiten)?', NULL, NULL, 1, 1),
-(139, 7, 'GAP', NULL, NULL, NULL, 0, 1),
-(140, 7, 'GAP', NULL, NULL, NULL, 0, 1),
-(141, 7, 'GAP', NULL, NULL, NULL, 0, 1),
-(142, 7, 'GAP', NULL, NULL, NULL, 0, 1),
-(143, 7, 'GAP', NULL, NULL, NULL, 0, 1),
-(144, 7, 'GAP', NULL, NULL, NULL, 0, 1),
-(196, 8, 'MC', 'In SQL wird ein SELECT-Statement verwendet, um Daten aus Tabellen zu lesen. Welche Anweisung liest alle Spalten einer Tabelle customer aus?', NULL, NULL, 0, 1),
-(197, 8, 'MC', 'Ein Primärschlüssel stellt Eindeutigkeit sicher. Welche Eigenschaft trifft nicht auf einen Primärschlüssel zu?', NULL, NULL, 0, 1),
-(198, 8, 'MC', 'Das WHERE-Statement dient der Filterung. Welche Abfrage liefert alle Kunden mit age > 30?', NULL, NULL, 0, 1),
-(199, 8, 'MC', 'Ein JOIN verbindet Tabellen basierend auf Beziehungen. Welche JOIN-Art liefert nur Zeilen mit passendem Match in beiden Tabellen?', NULL, NULL, 0, 1),
-(200, 8, 'MC', 'GROUP BY wird zur Aggregation genutzt. Welche Spalte muss im GROUP BY stehen?', NULL, NULL, 0, 1),
-(201, 8, 'MC', 'Aggregatfunktionen berechnen Werte über Zeilen hinweg. Welche der folgenden Funktionen sind Aggregatfunktionen? (Mehrfachauswahl)', NULL, NULL, 1, 1),
-(202, 8, 'MC', 'Transaktionen bündeln SQL-Operationen. Welche Anweisungen gehören zu Transaktionen? (Mehrfachauswahl)', NULL, NULL, 1, 1),
-(203, 8, 'MC', 'Um eine Ausgabe aus einer oder mehreren Tabellen in der absteigende Reihenfolge aufzulisten, verwendet man', NULL, NULL, 0, 1),
-(204, 8, 'MC', 'UPDATE verändert bestehende Zeilen. Welche Teile gehören zu einem vollständigen UPDATE?', NULL, NULL, 1, 1),
-(205, 8, 'MC', 'SQL-Tabellen nutzen definierte Datentypen. Welche gehören zu SQL-Standarddatentypen? (Mehrfachauswahl)', NULL, NULL, 1, 1),
-(206, 8, 'MC', 'Die Normalisierung reduziert Redundanz. Welche Normalform verlangt atomare Werte?', NULL, NULL, 0, 1),
-(207, 8, 'MC', 'SQL nutzt bestimmte Schlüsselwörter zum Filtern. Wähle das passende Schlüsselwort.', NULL, NULL, 0, 1),
-(208, 8, 'MC', 'SQL kennt unterschiedliche Delete-Operationen. Welche Operation löscht alle Zeilen und ist schneller als DELETE?', NULL, NULL, 0, 1),
-(209, 8, 'MC', 'Stored Procedures speichern SQL-Logik. Was zeichnet Stored Procedures aus? (Mehrfachauswahl)', NULL, NULL, 1, 1),
-(210, 8, 'MC', 'In SQL gibt es ein spezielles Schlüsselwort, das verwendet wird, um sicherzustellen, dass eine Abfrage nur eindeutige Werte aus einer Spalte zurückgibt.', NULL, NULL, 0, 1),
-(211, 8, 'TF', 'Ein PRIMARY KEY darf doppelte Werte enthalten.', NULL, NULL, 0, 1),
-(212, 8, 'TF', 'Ein FOREIGN KEY verweist auf einen PRIMARY KEY einer anderen Tabelle.', NULL, NULL, 0, 1),
-(213, 8, 'TF', 'SQL ist eine deklarative Sprache.', NULL, NULL, 0, 1),
-(214, 8, 'TF', 'SQL verwendet Schlüsselwörter zur Datenanalyse.', NULL, NULL, 0, 1),
-(215, 8, 'TF', 'DELETE löscht die gesamte Tabelle.', NULL, NULL, 0, 1),
-(216, 8, 'TF', 'Ein LEFT JOIN liefert auch Zeilen ohne Match.', NULL, NULL, 0, 1),
-(217, 8, 'TF', 'Ein Index kann Abfragen beschleunigen.', NULL, NULL, 0, 1),
-(218, 8, 'TF', 'NOT NULL bedeutet, dass ein Wort leer sein darf.', NULL, NULL, 0, 1),
-(219, 8, 'TF', 'COUNT(*) zählt nur nicht-NULL Werte.', NULL, NULL, 0, 1),
-(220, 8, 'TF', 'Ein View speichert keine Daten, sondern eine Abfrage.', NULL, NULL, 0, 1),
-(221, 8, 'TF', 'Ein UNIQUE-Constraint verhindert NULL-Werte.', NULL, NULL, 0, 1),
-(222, 8, 'TF', 'Tabellen können mehrere FOREIGN KEYS besitzen.', NULL, NULL, 0, 1),
-(223, 8, 'TF', 'DISTINCT entfernt doppelte Werte.', NULL, NULL, 0, 1),
-(224, 8, 'GAP', 'Der Operator für Mustervergleiche lautet', NULL, NULL, 0, 1),
-(225, 8, 'GAP', 'Die Klausel, die die Anzahl der Zeilen reduziert, heißt', NULL, '.', 0, 2),
-(226, 8, 'GAP', 'Mit', NULL, 'werden neue Zeilen eingefügt.', 0, 1),
-(227, 8, 'GAP', 'JOIN-Bedingungen stehen üblicherweise nach dem Schlüsselwort', NULL, '.', 0, 1),
-(228, 8, 'GAP', 'Eine SQL-Abfrage endet mit einem', NULL, '.', 0, 1),
-(229, 8, 'GAP', 'Ein Index wird mit', NULL, 'erstellt', 0, 1),
-(230, 8, 'GAP', 'Die Klausel', NULL, 'sortiert Abfrageergebnisse.', 0, 1),
-(231, 8, 'GAP', 'Mit', NULL, 'können Zeilen gruppiert werden.', 0, 1),
-(232, 8, 'GAP', 'Die Funktion', NULL, 'berechnet den Durchschnitt.', 0, 1),
-(233, 9, 'MC', 'Welche Aussage zur 2. Normalform (2NF) ist korrekt?', NULL, NULL, 0, 1),
-(234, 9, 'MC', 'Welche Aussagen zur Normalisierung sind korrekt?', NULL, NULL, 1, 1),
-(235, 10, 'MC', 'Welche SQL-Statements sind syntaktisch korrekt und sinnvoll?', NULL, NULL, 1, 1),
-(236, 11, 'MC', 'Welche Aussagen zur Umsetzung von Beziehungen im relationalen Modell sind korrekt?', NULL, NULL, 1, 1),
-(237, 11, 'TF', 'Ein Fremdschlüssel kann auf einen Primärschlüssel oder auf einen UNIQUE-Constraint einer anderen Tabelle zeigen.', NULL, NULL, 0, 3),
-(238, 12, 'TF', 'Ein JOIN in SQL ist ausschließlich für die Anzeige von Daten notwendig, er ändert die Tabellenstruktur nicht.', NULL, NULL, 0, 1),
-(239, 12, 'TF', 'Ein LEFT JOIN liefert nur Datensätze, die in beiden Tabellen übereinstimmen.', NULL, NULL, 0, 1),
-(240, 12, 'TF', 'Ein Subquery in der WHERE-Klausel kann mehrere Werte zurückgeben, wenn die Bedingung = verwendet wird.', NULL, NULL, 0, 1),
-(241, 12, 'GAP', NULL, NULL, NULL, 0, 1),
-(242, 11, 'GAP', NULL, NULL, NULL, 0, 1),
-(243, 9, 'MC', 'Welche Aussage zur 3. Normalform (3NF) ist korrekt?', NULL, NULL, 0, 3),
-(244, 13, 'MC', 'Welche Aussagen zu Primärschlüssel und UNIQUE sind korrekt?', NULL, NULL, 1, 2),
-(245, 13, 'MC', 'Welche Aussagen zu Indizes sind korrekt?', NULL, NULL, 1, 3),
-(246, 10, 'MC', 'Welche Aussagen zu GROUP BY und Aggregatfunktionen sind korrekt?', NULL, NULL, 1, 3),
-(247, 11, 'TF', 'Ein Fremdschlüssel darf NULL sein, wenn die Beziehung optional ist.', NULL, NULL, 0, 2),
-(248, 10, 'TF', 'Die WHERE-Klausel wird nach der GROUP BY-Klausel ausgeführt und kann aggregierte Werte filtern.', NULL, NULL, 0, 2),
-(249, 12, 'TF', 'Ein INNER JOIN liefert nur Datensätze, für die in beiden Tabellen passende Zeilen existieren.', NULL, NULL, 0, 1),
-(250, 13, 'TF', 'Ein UNIQUE-Constraint erlaubt in SQL niemals mehrere NULL-Werte in derselben Spalte.', NULL, NULL, 0, 2),
-(251, 11, 'GAP', NULL, NULL, NULL, 0, 1),
-(252, 12, 'GAP', NULL, NULL, NULL, 0, 4),
-(253, 14, 'MC', 'Welche SQL-Statements sind korrekt', NULL, NULL, 1, 4),
-(254, 13, 'MC', 'Welche Aussagen zu Datentypen sind korrekt?', NULL, NULL, 1, 2),
-(255, 10, 'MC', 'Welche Aggregatfunktionen gibt es?', NULL, NULL, 1, 2),
-(256, 10, 'MC', 'Welche Aussage zu WHERE und HAVING ist korrekt?', NULL, NULL, 0, 3),
-(257, 10, 'TF', 'COALESCE gibt den ersten nicht-NULL Wert zurück', NULL, NULL, 0, 2),
-(258, 10, 'TF', 'COUNT(*) zählt nur Nicht-NULL Werte', NULL, NULL, 0, 1),
-(259, 10, 'TF', 'AVG berücksichtigt NULL-Werte bei der Durchschnittsberechnung', NULL, NULL, 0, 2),
-(260, 10, 'TF', 'LIMIT begrenzt die Anzahl der ausgegebenen Zeilen', NULL, NULL, 0, 1),
-(261, 10, 'GAP', NULL, NULL, NULL, 0, 1),
-(262, 14, 'GAP', NULL, NULL, NULL, 0, 4),
-(263, 14, 'MC', 'Wofür steht ACID?', NULL, NULL, 0, 1),
-(264, 14, 'MC', 'Welche Aussagen über Trigger in SQL sind zutreffend?', NULL, NULL, 1, 1),
-(265, 14, 'MC', 'Welche Eigenschaft kennzeichnet eine Transaktion im Datenbankkontext (ACID)?', NULL, NULL, 1, 2),
-(266, 14, 'MC', 'Was ist der Hauptunterschied zwischen DROP und DELETE?', NULL, NULL, 0, 3),
-(267, 13, 'TF', 'Mit dem REVOKE-Befehl können einem Benutzer zuvor erteilte Rechte wieder entzogen werden.', NULL, NULL, 0, 2),
-(268, 12, 'TF', 'Ein INNER JOIN und ein WHERE-Join (verknüpfte Tabellen in der WHERE-Klausel) sind funktional identisch.', NULL, NULL, 0, 1),
-(269, 14, 'TF', 'Ein TRUNCATE TABLE-Befehl kann durch ein ROLLBACK rückgängig gemacht werden.', NULL, NULL, 0, 3),
-(270, 14, 'TF', 'Ein DEFAULT-Wert in einer Tabellenspalte verhindert die Eingabe von NULL-Werten.', NULL, NULL, 0, 2),
-(271, 12, 'GAP', NULL, NULL, NULL, 0, 4),
-(272, 14, 'GAP', NULL, NULL, NULL, 0, 4),
-(273, 10, 'MC', 'Welche Aussage zu GROUP BY ist korrekt?', NULL, NULL, 0, 2),
-(274, 11, 'MC', 'Welche Aussagen zu Fremdschlüsseln sind korrekt?', NULL, NULL, 1, 2),
-(275, 9, 'MC', 'Welche Aussagen zu Normalformen sind korrekt?', NULL, NULL, 1, 5),
-(276, 14, 'MC', 'Welche Aussagen zu Transaktionen sind korrekt?', NULL, NULL, 1, 4),
-(277, 12, 'MC', 'Welche Aussagen zu JOIN-Typen sind korrekt?', NULL, NULL, 1, 2),
-(278, 13, 'MC', 'Welche Aussagen zu Indizes sind korrekt?', NULL, NULL, 1, 3),
-(279, 11, 'TF', 'Eine Tabelle kann mehrere Fremdschlüssel besitzen.', NULL, NULL, 0, 2),
-(280, 10, 'TF', 'HAVING kann ohne GROUP BY verwendet werden.', NULL, NULL, 0, 2),
-(281, 14, 'TF', 'Ein CHECK-Constraint kann Wertebereiche für eine Spalte einschränken.', NULL, NULL, 0, 1),
-(282, 13, 'TF', 'Ein INDEX garantiert automatisch die Eindeutigkeit der Werte.', NULL, NULL, 0, 1),
-(283, 10, 'GAP', NULL, NULL, NULL, 0, 3),
-(284, 11, 'GAP', NULL, NULL, NULL, 0, 3),
-(285, 15, 'MC', 'Welches Entwurfsmuster stellt sicher, dass von einer Klasse nur eine Instanz existiert?', NULL, NULL, 0, 1),
-(286, 15, 'MC', 'Welche Zeitkomplexität (Big-O) hat die binäre Suche im Worst-Case?', NULL, NULL, 0, 1),
-(287, 15, 'MC', 'Welche Datenstruktur arbeitet nach dem FIFO-Prinzip (First-In-First-Out)?', NULL, NULL, 0, 1),
-(288, 15, 'MC', 'Was beschreibt eine Komposition in einem UML-Klassendiagramm?', NULL, NULL, 0, 1),
-(289, 15, 'MC', 'Welches SOLID-Prinzip besagt, dass eine Klasse nur einen Grund für Änderungen haben sollte?', NULL, NULL, 0, 1),
-(290, 15, 'MC', 'Was passiert beim \"Overloading\" (Überladen) einer Methode?', NULL, NULL, 0, 1),
-(291, 15, 'MC', 'Welcher Sortieralgorithmus nutzt das \"Divide and Conquer\"-Verfahren?', NULL, NULL, 0, 1),
-(292, 15, 'MC', 'In einem PAP (Programmablaufplan) steht ein Parallelogramm für?', NULL, NULL, 0, 1),
-(293, 15, 'MC', 'Was ist ein \"Pointer\" (Zeiger)?', NULL, NULL, 0, 1),
-(294, 15, 'MC', 'Was beschreibt das \"Liskovsche Substitutionsprinzip\"?', NULL, NULL, 0, 1),
-(295, 15, 'MC', 'Welche Fehlermeldung tritt auf, wenn auf ein Objekt zugegriffen wird, das nicht instanziiert wurde?', NULL, NULL, 0, 1),
-(296, 15, 'MC', 'Was ist der Vorteil eines Binärbaums gegenüber einer linearen Liste?', NULL, NULL, 0, 1),
-(297, 15, 'MC', 'Wofür steht das \"M\" im MVC-Entwurfsmuster?', NULL, NULL, 0, 1),
-(298, 15, 'MC', 'Welches Keyword verhindert in Java, dass eine Klasse weiter vererbt werden kann?', NULL, NULL, 0, 1),
-(299, 15, 'GAP', 'Lückentext 1.1', NULL, NULL, 0, 1),
-(300, 15, 'GAP', 'Lückentext 2', NULL, NULL, 0, 1),
-(301, 15, 'GAP', 'Lückentext 3', NULL, NULL, 0, 1),
-(302, 15, 'GAP', 'Lückentext 4', NULL, NULL, 0, 1),
-(303, 15, 'GAP', 'Lückentext 5', NULL, NULL, 0, 1),
-(304, 15, 'GAP', 'Lückentext 6', NULL, NULL, 0, 1),
-(305, 15, 'GAP', 'Lückentext 7', NULL, NULL, 0, 1),
-(306, 15, 'GAP', 'Lückentext 8', NULL, NULL, 0, 1),
-(307, 15, 'GAP', 'Lückentext 9', NULL, NULL, 0, 1),
-(308, 15, 'GAP', 'Lückentext 10', NULL, NULL, 0, 1),
-(309, 15, 'GAP', 'Lückentet 11', NULL, NULL, 0, 1),
-(310, 15, 'GAP', 'Lückentext 12', NULL, NULL, 0, 1),
-(311, 15, 'MC', 'Welche Datenstruktur eignet sich besonders gut zur Implementierung von Rekursionen?', NULL, NULL, 0, 1),
-(312, 15, 'MC', 'Welche Aussage beschreibt eine Hash-Tabelle am besten?', NULL, NULL, 0, 1),
-(313, 15, 'MC', 'Welcher Algorithmus wird häufig zum Finden des kürzesten Weges in einem Graphen verwendet?', NULL, NULL, 0, 1),
-(314, 15, 'MC', 'Welche Eigenschaft beschreibt \"Kapselung\" in der objektorientierten Programmierung?', NULL, NULL, 0, 1),
-(315, 15, 'MC', 'Was beschreibt ein Interface in Java am besten?', NULL, NULL, 0, 1),
-(316, 15, 'MC', 'Welche Traversierung besucht bei einem Binärbaum zuerst die Wurzel, dann den linken und anschließend den rechten Teilbaum?', NULL, NULL, 0, 1),
-(317, 15, 'MC', 'Welcher Datentyp speichert in Java eine Folge von Zeichen?', NULL, NULL, 0, 1),
-(318, 15, 'MC', 'Was beschreibt Polymorphismus in der objektorientierten Programmierung?', NULL, NULL, 0, 1),
-(319, 15, 'MC', 'Welcher Algorithmus durchsucht zuerst möglichst tief einen Graphen, bevor er zurückgeht?', NULL, NULL, 0, 1),
-(320, 15, 'MC', 'Welche Aussage über Bubble Sort ist korrekt?', NULL, NULL, 0, 1),
-(321, 15, 'MC', 'Welcher Sortieralgorithmus hat im Durchschnitt eine Zeitkomplexität von $O(n log n)$?', NULL, NULL, 0, 1),
-(322, 15, 'MC', 'Welche Eigenschaft beschreibt eine rekursive Methode?', NULL, NULL, 0, 1),
-(323, 15, 'MC', 'Was ist ein Graph in der Informatik?', NULL, NULL, 0, 1),
-(324, 15, 'MC', 'Welche Aufgabe hat ein Konstruktor in einer Klasse?', NULL, NULL, 0, 1),
-(325, 16, 'TF', 'Finally wird immer ausgeführt, unabhängig davon, ob eine Ausnahme aufgetreten ist oder nicht.', NULL, NULL, 0, 1),
-(326, 16, 'MC', 'Was wird die Ausgabe des folgenden Programms sein?\r\n\r\nclass CustomException extends Exception {\r\npublic CustomException(String message) {\r\nsuper(message);
-INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES
-(486, 22, 'MC', 'Was ist eine Entität im ERM?', NULL, 'Eine Entität ist ein eindeutig identifizierbares Objekt der realen Welt, das in der Datenbank abgebildet werden soll. Im ER-Diagramm wird sie als Rechteck dargestellt.', 0, 1),
-(487, 22, 'MC', 'Was versteht man unter einem Attribut im ERM?', NULL, 'Attribute beschreiben Eigenschaften einer Entität oder Beziehung. Im ER-Diagramm als Ellipse dargestellt. Schlüsselattribute werden unterstrichen.', 0, 1),
-(488, 22, 'MC', 'Was ist ein Primärschlüssel?', NULL, 'Ein Primärschlüssel identifiziert jeden Datensatz in einer Tabelle eindeutig. Er darf nicht NULL sein und muss für jede Zeile einmalig sein.', 0, 1),
-(489, 22, 'MC', 'Was ist ein Fremdschlüssel?', NULL, 'Ein Fremdschlüssel ist ein Attribut in einer Tabelle, das auf den Primärschlüssel einer anderen Tabelle verweist und damit referentielle Integrität sicherstellt.', 0, 1),
-(490, 22, 'MC', 'Was bedeutet die Kardinalität 1:n in einer Beziehung?', NULL, 'Bei einer 1:n-Beziehung kann einem Datensatz auf der 1-Seite mehrere Datensätze auf der n-Seite zugeordnet sein, aber jeder n-Datensatz gehört genau einem 1-Datensatz.', 0, 1),
-(491, 22, 'MC', 'Wie wird eine m:n-Beziehung im relationalen Modell umgesetzt', NULL, 'Eine m:n-Beziehung kann im relationalen Modell nicht direkt abgebildet werden. Sie wird durch eine Zwischentabelle aufgelöst, die die Primärschlüssel beider Tabellen als Fremdschlüssel enthält.', 0, 1),
-(492, 22, 'MC', 'Was ist ein zusammengesetzter Primärschlüssel?', NULL, 'Ein zusammengesetzter Primärschlüssel besteht aus mehreren Attributen, die gemeinsam einen Datensatz eindeutig identifizieren. Kein einzelnes Attribut allein reicht dafür aus.', 0, 1),
-(493, 22, 'MC', 'Was besagt die Erste Normalform (1NF)?', NULL, '1NF fordert atomare Attributwerte – keine Mengen, Listen oder Wiederholungsgruppen in einer Zelle. Eine Zelle enthält genau einen Wert.', 0, 1),
-(494, 22, 'MC', 'Ein Datenbankfeld enthält den Wert „Müller, Schmidt, Wagner\" als eine einzige Zeichenkette. Welche Normalform ist verletzt?', NULL, 'Der Wert ist nicht atomar – er enthält mehrere Namen in einem Feld. Das verletzt die 1NF, die atomare Werte fordert.', 0, 1),
-(495, 22, 'MC', 'Was ist Voraussetzung für die Zweite Normalform (2NF)?', NULL, '2NF setzt 1NF voraus. Zusätzlich muss jedes Nicht-Schlüssel-Attribut voll funktional vom gesamten Primärschlüssel abhängen – nicht nur von einem Teil davon (keine partiellen Abhängigkeiten).', 0, 1),
-(496, 22, 'MC', 'Eine Tabelle mit dem zusammengesetzten Schlüssel (BestellungID, ArtikelID) enthält das Attribut „KundenName\", das nur von „BestellungID\" abhängt. Welche Normalform ist verletzt?', NULL, 'KundenName hängt nur von BestellungID ab – einem Teil des zusammengesetzten Primärschlüssels. Das ist eine partielle Abhängigkeit und verletzt die 2NF.', 0, 1),
-(497, 22, 'MC', 'Was beschreibt die Dritte Normalform (3NF)?', NULL, '3NF setzt 2NF voraus und verlangt zusätzlich, dass keine transitiven Abhängigkeiten zwischen Nicht-Schlüssel-Attributen existieren. Kein Nicht-Schlüssel-Attribut darf von einem anderen Nicht-Schlüssel-Attribut abhängen.', 0, 1),
-(498, 22, 'MC', 'Eine Tabelle enthält: MitarbeiterID → AbteilungsID → AbteilungsLeiter. Welche Normalform ist verletzt?', NULL, 'AbteilungsLeiter hängt nicht direkt vom Primärschlüssel (MitarbeiterID) ab, sondern transitiv über AbteilungsID. Das verletzt die 3NF.', 0, 1),
-(499, 22, 'GAP', 'Was ist eine Einfügeanomalie?', NULL, 'Eine Einfügeanomalie liegt vor, wenn ein neuer Datensatz nicht eingefügt werden kann, ohne gleichzeitig andere, nicht relevante Daten einzutragen – typisches Symptom einer nicht normalisierten Tabelle.', 0, 1),
-(500, 22, 'MC', 'Was ist eine Löschanomalie?', NULL, 'Eine Löschanomalie tritt auf, wenn beim Löschen eines Datensatzes unbeabsichtigt andere relevante Informationen verloren gehen, weil Daten unnötig zusammengefasst wurden.', 0, 1),
-(501, 22, 'MC', 'Was ist eine Änderungsanomalie?', NULL, 'Wenn dieselbe Information mehrfach in einer Tabelle gespeichert ist, muss sie bei einer Änderung an mehreren Stellen manuell aktualisiert werden. Wird eine Stelle vergessen, entstehen inkonsistente Daten.', 0, 1),
-(502, 22, 'GAP', 'Was versteht man unter referentieller Integrität?', NULL, 'Referentielle Integrität bedeutet, dass ein Fremdschlüsselwert entweder NULL ist oder auf einen tatsächlich existierenden Primärschlüssel in der referenzierten Tabelle zeigen muss.', 0, 1),
-(503, 22, 'MC', 'Was passiert, wenn referentielle Integrität verletzt wird?', NULL, 'Bei einer Verletzung der referentiellen Integrität existiert ein Fremdschlüsselwert, dem kein entsprechender Primärschlüssel in der referenzierten Tabelle gegenübersteht – ein sogenannter Dangling Reference.', 0, 1),
-(504, 22, 'TF', 'Eine schwache Entität kann durch eigene Attribute alleine eindeutig identifiziert werden. Sie ist für ihre Existenz und Identifikation auf eine starke Entität angewiesen. Im ER-Diagramm als doppeltes Rechteck dargestellt.', NULL, 'Eine schwache Entität kann nicht durch eigene Attribute alleine eindeutig identifiziert werden. Sie ist für ihre Existenz und Identifikation auf eine starke Entität angewiesen. Im ER-Diagramm als doppeltes Rechteck dargestellt.', 0, 1),
-(505, 22, 'MC', 'Was ist eine rekursive Beziehung im ERM?', NULL, 'Eine rekursive (unäre) Beziehung verbindet eine Entität mit sich selbst. Klassisches Beispiel: Ein Mitarbeiter kann Vorgesetzter anderer Mitarbeiter sein – beides sind Instanzen derselben Entität.', 0, 1),
-(506, 22, 'MC', 'Was ist ein Schlüsselkandidat (Candidate Key)?', NULL, 'Ein Kandidatenschlüssel ist jede minimale Attributkombination, die alle Zeilen einer Tabelle eindeutig identifizieren kann. Aus allen Kandidatenschlüsseln wird einer als Primärschlüssel ausgewählt.', 0, 1),
-(507, 22, 'MC', 'Was unterscheidet einen natürlichen Schlüssel von einem Surrogatschlüssel?', NULL, 'Ein natürlicher Schlüssel ist ein fachliches Attribut mit eigener Bedeutung (z.B. Steuernummer, ISBN). Ein Surrogatschlüssel ist ein künstlich erzeugter Wort ohne fachliche Bedeutung (z.B. auto-increment ID).', 0, 1),
-(508, 22, 'MC', 'Wie wird eine 1:1-Beziehung im relationalen Modell typischerweise umgesetzt?', NULL, 'Bei einer 1:1-Beziehung kann der Primärschlüssel einer Tabelle als Fremdschlüssel in der anderen eingetragen werden, oder beide Entitäten werden zu einer einzigen Tabelle zusammengeführt.', 0, 1),
-(509, 22, 'MC', 'Was beschreibt Funktionale Abhängigkeit im Kontext der Normalisierung?', NULL, 'Attribut B ist funktional abhängig von Attribut A (A → B), wenn jeder Wert von A genau einen Wert von B bestimmt. Dies ist die Grundlage aller Normalformen.', 0, 1),
-(510, 22, 'MC', 'Welche Modellierungsregel gilt beim Überführen eines ERM ins relationale Modell für m:n-Beziehungen?', NULL, 'm:n-Beziehungen können im relationalen Modell nicht direkt abgebildet werden. Es wird eine eigene Zwischentabelle erstellt, die die Primärschlüssel beider Entitäten als Fremdschlüssel und ggf. eigene Beziehungsattribute enthält.', 0, 1),
-(511, 22, 'MC', 'Warum sollte man NULL-Werte bei Primärschlüsseln verbieten?', NULL, 'Ein Primärschlüssel muss jeden Datensatz eindeutig identifizieren können. NULL bedeutet \'unbekannt\' und erlaubt keine eindeutige Identifikation – daher ist NULL in Primärschlüsseln grundsätzlich verboten.', 0, 1),
-(512, 22, 'MC', 'Was ist der Unterschied zwischen einem konzeptionellen und einem logischen Datenmodell?', NULL, 'Das konzeptionelle Modell (ERM) beschreibt fachliche Zusammenhänge unabhängig von Technik und Implementierung. Das logische Modell (relationales Schema) überführt das ERM in konkrete Tabellenstrukturen.', 0, 1),
-(513, 22, 'MC', 'Was versteht man unter Denormalisierung?', NULL, 'Denormalisierung ist das bewusste Einführen von Redundanz in ein normalisiertes Schema, um Leseperformance zu steigern. Dabei werden Tabellen zusammengeführt oder Daten dupliziert – auf Kosten der Datenkonsistenz.', 0, 1),
-(514, 22, 'MC', 'Welche Kardinalitätsnotation drückt aus, dass ein Kunde mindestens eine, aber beliebig viele Bestellungen haben kann?', NULL, 'Die Notation 1:n (bzw. in Min-Max-Notation (1,1) auf Kundenseite und (1,n) auf Bestellungsseite) drückt aus, dass jeder Kunde mindestens eine Bestellung hat und beliebig viele haben kann.', 0, 1),
-(515, 22, 'MC', 'Was bedeutet die Min-Max-Notation (0,1) bei einer Beziehung?', NULL, 'Die Notation (0,1) bedeutet, dass die Entität an der Beziehung mit keinem oder genau einem Partner beteiligt sein kann – die Teilnahme ist also optional, aber höchstens einmal möglich.', 0, 1),
-(516, 22, 'MC', 'Ein Attribut enthält sowohl Straße als auch Hausnummer als einen gemeinsamen String. Welche Lösung entspricht der 1NF?', NULL, 'Die 1NF fordert atomare Werte. Straße und Hausnummer sind zwei verschiedene Informationen und müssen in separate Attribute aufgeteilt werden.', 0, 1),
-(517, 22, 'MC', 'Was ist ein zusammengesetztes Attribut im ERM?', NULL, 'Ein zusammengesetztes Attribut besteht aus mehreren Teilattributen, z.B. ist Adresse zusammengesetzt aus Straße, PLZ und Ort. Im ER-Diagramm verzweigt sich die Ellipse in Teilellipsen.', 0, 1),
-(518, 22, 'MC', 'Was ist ein mehrwertiges Attribut im ERM?', NULL, 'Ein mehrwertiges Attribut kann für eine Entität mehrere Werte annehmen, z.B. kann ein Kunde mehrere Telefonnummern haben. Im ER-Diagramm durch eine doppelte Ellipse dargestellt.', 0, 1),
-(519, 22, 'MC', 'Wie wird ein mehrwertiges Attribut im relationalen Modell korrekt abgebildet?', NULL, 'Mehrwertige Attribute können nicht direkt in einer Spalte gespeichert werden (das würde 1NF verletzen). Sie werden in eine eigene Tabelle ausgelagert mit einem Fremdschlüssel auf die Ursprungsentität.', 0, 1),
-(520, 22, 'MC', 'Was ist der Unterschied zwischen einer Entität und einem Entitätstyp?', NULL, 'Ein Entitätstyp beschreibt die Klasse aller gleichartigen Objekte (z.B. \'Kunde\' als Konzept). Eine Entität ist eine konkrete Instanz dieses Typs (z.B. der Kunde \'Müller mit KundenID 42\').', 0, 1),
-(521, 22, 'MC', 'Warum werden Beziehungen im ERM in eigene Tabellen überführt, auch wenn sie nur Fremdschlüssel enthalten?', NULL, 'Bei m:n-Beziehungen ist eine Zwischentabelle technisch notwendig, da das relationale Modell keine direkten m:n-Beziehungen unterstützt. Nur so können die Verknüpfungen ohne Redundanz abgebildet werden.', 0, 1),
-(522, 22, 'MC', 'Was ist ein abgeleitetes Attribut im ERM?', NULL, 'Ein abgeleitetes Attribut ist ein Attribut, dessen Wert aus anderen gespeicherten Attributen berechnet werden kann. Es wird im ER-Diagramm durch eine gestrichelte Ellipse dargestellt und muss nicht physisch gespeichert werden.', 0, 1),
-(523, 22, 'MC', 'Welche Situation ist ein typisches Zeichen für eine fehlende Normalisierung?', NULL, 'Wenn dieselbe Information – z.B. eine Kundenadresse – in mehreren Zeilen wiederholt gespeichert wird, deutet das auf fehlende Normalisierung hin. Jede Änderung muss dann an mehreren Stellen vorgenommen werden.', 0, 1),
-(524, 22, 'MC', 'Gegeben ist ein ERM mit den Entitäten „Student\" und „Kurs\" in einer m:n-Beziehung „belegt\". Welche Tabellen entstehen beim Überführen ins relationale Modell?', NULL, 'Aus den zwei Entitäten werden zwei Tabellen (Student, Kurs). Die m:n-Beziehung wird durch eine dritte Tabelle (z.B. Belegung) aufgelöst, die StudentID und KursID als Fremdschlüssel enthält.', 0, 1),
-(525, 22, 'TF', 'Quellcode ist automatisch durch das Urheberrecht geschützt, auch ohne Registrierung.', NULL, 'Quellcode ist automatisch urheberrechtlich geschützt.', 0, 1),
-(526, 22, 'TF', 'Ein Werkvertrag verpflichtet den Auftragnehmer zur Erbringung eines bestimmten Erfolgs.', NULL, 'Ein Werkvertrag schuldet einen Erfolg.', 0, 1),
-(527, 22, 'MC', 'Welche Aussage beschreibt eine AGB am besten?', NULL, 'AGB sind vorformulierte Vertragsbedingungen.', 0, 1),
-(528, 22, 'MC', 'Welche Lizenz erlaubt die kommerzielle Nutzung ohne Einschränkungen?', NULL, 'Die MIT‑Lizenz erlaubt kommerzielle Nutzung ohne Einschränkungen.', 0, 1),
-(529, 22, 'MC', 'Welche Pflicht ergibt sich aus der DSGVO für Unternehmen?', NULL, 'Datenminimierung ist eine Pflicht der DSGVO.', 0, 1),
-(530, 22, 'GAP', NULL, NULL, 'Bei einem **Dienstvertrag** schuldet der Auftragnehmer keinen Erfolg.', 0, 1),
-(531, 22, 'GAP', NULL, NULL, 'Das **Urheberrecht** schützt Softwareentwickler.', 0, 1),
-(532, 22, 'GAP', 'Personenbezogene Daten dürfen nur verarbeitet werden,', NULL, NULL, 0, 1),
-(533, 22, 'GAP', 'Ein Kunde kann bei mangelhafter', NULL, NULL, 0, 1),
-(534, 22, 'GAP', 'Die DSGVO gilt für alle Unternehmen,', NULL, NULL, 0, 1),
-(535, 22, 'TF', 'Variable Kosten steigen mit der Produktionsmenge.', NULL, 'Variable Kosten steigen mit der Menge.', 0, 1),
-(536, 22, 'TF', 'Der Break-even-Point ist erreicht, wenn Gewinn = 0 ist.', NULL, 'Break-even bedeutet Gewinn = 0.', 0, 1),
-(537, 22, 'MC', 'Was gehört NICHT zu den drei Zielen des magischen Dreiecks?', NULL, 'Kundenzufriedenheit gehört nicht zum magischen Dreieck.', 0, 1),
-(538, 22, 'MC', 'Welche Kostenart zählt zu den fixen Kosten?', NULL, 'Miete ist eine fixe Kostenart.', 0, 1),
-(539, 22, 'MC', 'Was beschreibt eine Make-or-Buy-Entscheidung?', NULL, 'Make-or-Buy entscheidet über Eigenentwicklung oder Einkauf.', 0, 1),
-(540, 22, 'GAP', NULL, NULL, 'Der **Break-even-Point** zeigt die Kostendeckung.', 0, 1),
-(541, 22, 'GAP', 'Die Liquidität beschreibt die Fähigkeit,', NULL, 'Liquidität beschreibt die Fähigkeit, **Verbindlichkeiten** zu bezahlen.', 0, 1),
-(542, 22, 'GAP', NULL, NULL, 'Eine **Kosten-Nutzen-Analyse** vergleicht Aufwand und Nutzen.', 0, 1),
-(543, 22, 'GAP', 'Fixe Kosten bleiben unabhängig von der', NULL, 'Fixe Kosten bleiben unabhängig von der **Menge** konstant.', 0, 1),
-(544, 22, 'GAP', NULL, NULL, 'Ein Budget ist eine **Planung** für zukünftige Ausgaben.', 0, 1),
-(545, 22, 'TF', 'Ein Use-Case-Diagramm zeigt die Interaktionen zwischen Akteuren und System.', NULL, 'Use-Case-Diagramme zeigen Interaktionen.', 0, 1),
-(546, 22, 'TF', 'Eine Aggregation ist stärker als eine Komposition.', NULL, 'Aggregation ist schwächer als Komposition.', 0, 1),
-(547, 22, 'MC', 'Welches Diagramm zeigt den Ablauf von Nachrichten zwischen Objekten?', NULL, 'Sequenzdiagramm zeigt Nachrichtenabläufe.', 0, 1),
-(548, 22, 'MC', 'Welche Beziehung zeigt eine „ist-ein“-Beziehung?', NULL, 'Vererbung zeigt eine „ist-ein“-Beziehung.', 0, 1),
-(549, 22, 'MC', 'Was zeigt ein Klassendiagramm NICHT?', NULL, 'Zeitlicher Ablauf gehört nicht ins Klassendiagramm.', 0, 1),
-(550, 22, 'GAP', NULL, NULL, 'Ein **Aktivitätsdiagramm** beschreibt Abläufe.', 0, 1),
-(551, 22, 'GAP', NULL, NULL, 'In einem Klassendiagramm verbinden **Beziehungen** die Klassen.', 0, 1),
-(552, 22, 'GAP', NULL, NULL, NULL, 0, 1),
-(553, 22, 'GAP', NULL, NULL, NULL, 0, 1),
-(554, 22, 'GAP', NULL, NULL, NULL, 0, 1),
-(555, 22, 'TF', 'Overfitting bedeutet, dass ein Modell zu stark an die Trainingsdaten angepasst ist.', NULL, 'Overfitting = zu starke Anpassung an Trainingsdaten.', 0, 1),
-(556, 22, 'TF', 'Unüberwachtes Lernen benötigt gelabelte Daten.', NULL, 'Unüberwachtes Lernen benötigt **keine** gelabelten Daten.', 0, 1),
-(557, 22, 'MC', 'Was ist ein Beispiel für überwachtes Lernen?', NULL, 'Klassifikation ist überwachtes Lernen.', 0, 1),
-(558, 22, 'MC', 'Was ist ein Neuron im neuronalen Netz?', NULL, 'Ein Neuron ist eine mathematische Funktion.', 0, 1),
-(559, 22, 'MC', 'Welche Metrik misst die Genauigkeit eines Klassifikationsmodells?', NULL, 'Accuracy misst die Genauigkeit.', 0, 1),
-(560, 22, 'TF', 'Eine While-Schleife wird ausgeführt, solange die Bedingung wahr ist.', NULL, 'While-Schleife läuft, solange die Bedingung wahr ist.', 0, 1),
-(561, 22, 'TF', 'Call-by-Reference übergibt eine Kopie des Werts.', NULL, 'Call-by-Reference übergibt **keine Kopie**, sondern eine Referenz.', 0, 1),
-(562, 22, 'MC', 'Welche Struktur beschreibt eine Verzweigung?', NULL, 'if beschreibt eine Verzweigung.', 0, 1),
-(563, 22, 'MC', 'Welche Suche prüft jedes Element nacheinander?', NULL, 'Lineare Suche prüft jedes Element.', 0, 1),
-(564, 22, 'MC', 'Was ist ein Algorithmus?', NULL, 'Ein Algorithmus ist eine eindeutige Schrittfolge.', 0, 1),
-(565, 23, 'MC', 'Was beschreibt Pseudocode am besten?', NULL, NULL, 0, 1),
-(566, 23, 'MC', 'Welche Struktur wird typischerweise für Wiederholungen im Pseudocode genutzt?', NULL, NULL, 0, 1),
-(567, 23, 'MC', 'Welche Kontrollstruktur dient zur Entscheidung?', NULL, NULL, 0, 1),
-(568, 23, 'MC', 'Was ist ein Objekt in der OOP?', NULL, NULL, 0, 1),
-(569, 23, 'MC', 'Welche Schleife eignet sich, wenn die Anzahl der Wiederholungen bekannt ist?', NULL, NULL, 0, 1),
-(570, 23, 'MC', 'Welche typische Schreibweise beschreibt eine Methode im Pseudocode?', NULL, NULL, 0, 1),
-(571, 23, 'MC', 'Welche Datenstruktur speichert Elemente in Reihenfolge?', NULL, NULL, 0, 1),
-(572, 23, 'MC', 'Welche Schleife wird mindestens einmal ausgeführt?', NULL, NULL, 0, 1),
-(573, 23, 'MC', 'Welche Aussage beschreibt Vererbung?', NULL, NULL, 0, 1),
-(574, 23, 'MC', 'Was beschreibt Polymorphie?', NULL, NULL, 0, 1),
-(575, 23, 'MC', 'Welche Elemente gehören zu einer Klasse?', NULL, NULL, 1, 3),
-(576, 23, 'MC', 'Welche Schritte gehören typischerweise zu einem Algorithmus?', NULL, NULL, 1, 3),
-(577, 23, 'MC', 'Welche Eigenschaften hat guter Pseudocode?', NULL, NULL, 1, 2),
-(578, 23, 'MC', 'Welche OOP‑Konzepte gehören zu den „vier Grundpfeilern“?', NULL, NULL, 1, 3),
-(579, 23, 'MC', 'Welche Strukturen sind Kontrollstrukturen?', NULL, NULL, 1, 3),
-(580, 23, 'TF', 'Pseudocode muss sich an die Syntax einer Programmiersprache halten.', NULL, NULL, 0, 1),
-(581, 23, 'TF', 'Ein Algorithmus muss endlich sein.', NULL, NULL, 0, 1),
-(582, 23, 'TF', 'Ein Konstruktor initialisiert ein Objekt.', NULL, NULL, 0, 1),
-(583, 23, 'TF', 'Ein Algorithmus muss immer deterministisch sein.', NULL, NULL, 0, 1),
-(584, 23, 'TF', 'Eine Klasse kann Methoden und Attribute enthalten.', NULL, NULL, 0, 1),
-(585, 23, 'TF', 'Polymorphie bedeutet, dass eine Klasse keine Attribute besitzt.', NULL, NULL, 0, 1),
-(586, 23, 'TF', 'WHILE-Schleifen werden immer mindestens einmal ausgeführt.', NULL, NULL, 0, 1),
-(587, 23, 'TF', 'Objekte entstehen aus Klassen.', NULL, NULL, 0, 1),
-(588, 23, 'TF', 'Pseudocode ist immer ausführbar', NULL, NULL, 0, 1),
-(589, 23, 'TF', 'Eine Liste kann mehrere Elemente enthalten.', NULL, NULL, 0, 1),
-(590, 23, 'MC', 'Was ist ein Attribut?', NULL, NULL, 0, 1),
-(591, 23, 'MC', 'Was ist ein Parameter?', NULL, NULL, 0, 1),
-(592, 23, 'MC', 'Was beschreibt Kapselung?', NULL, NULL, 0, 1),
-(593, 23, 'MC', 'Was ist ein Rückgabewert?', NULL, NULL, 0, 1),
-(594, 23, 'MC', 'Was ist ein Algorithmus?', NULL, NULL, 0, 1),
-(595, 23, 'MC', 'Wofür wird Pseudocode hauptsächlich verwendet?', NULL, NULL, 0, 1),
-(596, 23, 'MC', 'Welche Schreibweise ist typisch für eine Zuweisung im Pseudocode?', NULL, NULL, 0, 1),
-(597, 23, 'MC', 'Welche Struktur beschreibt eine Wiederholung bis eine Bedingung erfüllt ist?', NULL, NULL, 0, 1),
-(598, 23, 'MC', 'Was ist ein Vorteil von Pseudocode?', NULL, NULL, 0, 1),
-(599, 23, 'MC', 'Welche Struktur wird genutzt, um eine Liste zu durchlaufen?', NULL, NULL, 0, 1),
-(600, 23, 'MC', 'Was bedeutet „INITIALISIERE x MIT 0“?', NULL, NULL, 0, 1),
-(601, 23, 'MC', 'Welche Schreibweise beschreibt eine Bedingung?', NULL, NULL, 0, 1),
-(602, 23, 'MC', 'Was bedeutet „GIB x AUS“ im Pseudocode?', NULL, NULL, 0, 1),
-(603, 23, 'MC', 'Welche Struktur beendet eine Schleife sofort?', NULL, NULL, 0, 1),
-(604, 23, 'MC', 'Was ist ein typischer Fehler im Pseudocode?', NULL, NULL, 0, 1),
-(605, 23, 'MC', 'Welche Elemente können in Pseudocode vorkommen?', NULL, NULL, 1, 1),
-(606, 23, 'MC', 'Welche Vorteile hat Pseudocode?', NULL, NULL, 1, 3),
-(607, 23, 'MC', 'Welche typischen Schlüsselwörter findet man in Pseudocode?', NULL, NULL, 1, 3),
-(608, 23, 'TF', 'Pseudocode ist eine formale Sprache.', NULL, NULL, 0, 1),
-(609, 23, 'TF', 'Pseudocode kann zur Kommunikation zwischen Entwicklern genutzt werden.', NULL, NULL, 0, 1),
-(610, 23, 'TF', 'Pseudocode ist immer identisch mit der späteren Programmiersprache.', NULL, NULL, 0, 1),
-(611, 23, 'TF', 'Pseudocode kann Kommentare enthalten.', NULL, NULL, 0, 1),
-(612, 23, 'TF', 'Pseudocode kann zur Planung von Algorithmen verwendet werden.', NULL, NULL, 0, 1),
-(613, 23, 'MC', 'Welche Aussagen über Pseudocode sind korrekt?', NULL, NULL, 1, 1),
-(614, 23, 'MC', 'Welche Aussagen über Algorithmen sind korrekt?', NULL, NULL, 1, 3);
+-- question
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (1, 1, 'MC', 'Welche beiden Regelungen finden Sie in einem Manteltarifvertrag?', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (2, 1, 'MC', 'In der MaHaG KG steht die Wahl des Betriebsrates an. Welche 3 Personen sind wahlberechtigt ?', NULL, NULL, 1, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (3, 1, 'MC', 'Mit Ihren Auszubildenen sprechen Sie über die anstehenden Betriebswahlen. Welche beiden Aussagen sind richtig ?', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (4, 1, 'MC', 'Welche beiden Sachverhalte sind im Allgemeinen Gleichbehandlungsgesetz (AGG) geregelt?', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (5, 1, 'MC', 'Die MaHaG KG plant, einen Fachinformatiker Anwendungsentwicklung (m/w/d) einzustellen. Nachdem Sie das Anforderungsprofil entworfen haben, weist Ihre Rechtsabteilung Sie darauf hin, dass eine Formulierung gegen das Allgemeine Gleichbehandlungsgesetz (AGG) verstößt. Was dürfen Sie nicht in eine Stellenbeschreibung nach dem AGG schreiben?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (6, 1, 'MC', 'Bei der Gestaltung der Ausbildungsverträge für volljährige und jugendliche Auszubildende müssen Sie darauf achten, dass gesetzliche Bestimmungen eingehalten werden. In welchen beiden Gesetzen schauen Sie nach, wenn Sie Inhalte eines Ausbildungsvertrages prüfen möchten?', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (7, 1, 'MC', 'Welche zwei Bestimmungen finden Sie im Berufsbildungsgesetz?', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (8, 1, 'MC', 'Jens Rievers hat am 16.07.2025 seine Ausbildung mit dem Bestehen der letzten Prüfung erfolgreich beendet. Weil sein Ausbildungsvertrag als Vertragsende den 31.07.2025 vorsieht, ist er der Meinung, dass er bis zu diesem Zeitpunkt arbeiten muss. Welche Rechtsfolge tritt ein, wenn er ab dem 17.07.2025 in der bisherigen Abteilung weiterarbeitet?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (9, 1, 'MC', 'Bei der MaHaG KG stehen Wahlen zur Jugend- und Auszubildendenvertretung an. Katja Sommer (Vertriebsmitarbeiterin, 24 Jahre alt), die bereits im Betriebsrat ist und umfangreiche Erfahrungen dort gesammelt hat, will nun auch für dieses Amt kandidieren. Prüfen Sie, ob das möglich ist. Beachten Sie hierzu den folgenden Gesetzestext:', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (10, 1, 'MC', 'Bevor Sie die Ausbildungsverträge den Auszubildenden schicken, überprüfen Sie diese. Ein Ausbildungsvertrag weist einen Fehler auf, der gegen das Berufsbildungsgesetz verstößt. Um welchen Fehler handelt es sich hier?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (11, 1, 'MC', 'Unternehmen können in der Form einer Personengesellschaft oder als juristische Person geführt werden. Auf welchen der folgenden Begriffe trifft die Bezeichnung „Juristische Person des privaten Rechts“ zu?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (12, 1, 'MC', 'Zu den Kunden der MaHaG KG zählen neben den Personengesellschaften auch juristische Personen des privaten und des öffentlichen Rechts. Bei welchen beiden Kunden der MaHaG KG handelt es sich um juristische Personen des öffentlichen Rechts?', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (13, 1, 'MC', 'Um ihr Kapital sinnvoll einzusetzen und zu verwerten, handelt die MaHaG KG zunächst einmal nach dem ökonomischen Prinzip.', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (14, 1, 'MC', 'Prüfen Sie, welche der folgenden Maßnahmen der MaHaG KG keine ökologische Zielsetzung beinhaltet.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (15, 1, 'MC', 'Bei der Verfolgung ökonomischer Ziele berücksichtigt die MaHaG KG auch zunehmend Aspekte des Umweltschutzes. Prüfen Sie, wo Zielharmonie herrscht, also ökonomische und ökologische Aspekte im Einklang sind.', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (16, 1, 'MC', 'Im Rahmen der von den Unternehmen praktizierten Kommunikationspolitik weisen Firmen verstärkt auf verantwortungsbewusstes und nachhaltiges Wirtschaften hin. Bei welcher Maßnahme wirtschaftet die MaHaG KG ökologisch nachhaltig und kann werbewirksam darauf hinweisen?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (17, 1, 'MC', 'Für ihre mittel- und langfristige Planung benötigt die MaHaG KG Informationen, in welcher Konjunkturphase sich aktuell die wirtschaftliche Entwicklung befindet. Welche Merkmale kennzeichnen den Abschwung?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (18, 1, 'MC', 'Wie sollte die Mannheimer Haushaltsgeräte KG im Falle eines beginnenden Abschwungs agieren?\n(2 Antworten)', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (19, 1, 'MC', 'Auf einem Markt treffen Angebot und Nachfrage aufeinander.\nBei einem bestimmten Preis sind angebotene Menge und nachgefragte Menge genau gleich groß.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (20, 1, 'MC', 'Prüfen Sie, welche der nachstehenden Aussagen über den einfachen Wirtschaftskreislauf richtig ist.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (21, 1, 'MC', 'Die verschiedenen Konjunkturphasen veranlassen auch die Mannheimer Haushaltsgeräte KG, ihr wirtschaftliches Verhalten danach auszurichten. Prüfen Sie, in welcher Konjunkturphase sich die MaHaG KG ökonomisch sinnvoll verhält.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (22, 1, 'MC', 'Ein Auszubildender der MaHaG KG stürzt im Hauptlagerhaus beim Einsortieren von Waren von der Leiter und bricht sich ein Bein. Wem muss die entsprechende Unfallmeldung zugeleitet werden?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (23, 1, 'MC', 'Marga Schlöter, angehende Kauffrau für Büromanagement, informiert sich bei Ihnen über die Regelungen zur Arbeitsunfähigkeit. Welche zwei Aussagen hierzu sind richtig?', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (24, 1, 'MC', 'Gerda Kalinov ist Prokuristin der Mannheimer Haushaltsgeräte KG und im Handelsregister eingetragen.', NULL, NULL, 1, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (25, 1, 'MC', 'Für welche Unternehmensform wird Claudia Both sich unter diesen Voraussetzungen entscheiden?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (26, 1, 'MC', 'Für ein Darlehen zur Existenzgründung verlangt die Bank von Claudia Both einen Businessplan. Wozu dient dieser?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (27, 1, 'MC', 'Carlos Ortega, 17 Jahre alt, beginnt am 01.08.2025 seine Berufsausbildung als Fachinformatiker bei der MaHaG KG. Der Auszubildende vollendet am 15.01.2026 das 18. Lebensjahr.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (28, 1, 'MC', 'Der Auszubildende Igor Czerwinski muss im Rahmen seiner Ausbildung immer wieder Tätigkeiten verrichten, die nach dem Berufsbild ausbildungsfremd und im betrieblichen Ausbildungsplan nicht vorgesehen sind.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (29, 1, 'MC', 'Fatima Kuslu, 17 Jahre alt, hat am 1. September ihre Berufsausbildung als Fachinformatikerin bei der MaHaG KG begonnen. Welche Vorschrift des Jugendarbeitsschutzgesetzes gilt für sie?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (30, 1, 'MC', 'Arbeitnehmer erhalten im Krankheitsfall weiterhin ihre Vergütung, obwohl sie ihre Arbeitsleistung nicht erbringen können. Gilt das auch gleichermaßen für Auszubildende?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (31, 1, 'MC', 'In der Mannheimer Haushaltsgeräte KG wurde dem Auszubildenden Mario Klug fristlos gekündigt, weil er beim Aufbrechen eines Spindes ertappt wurde. Der Betriebsrat wurde nach der fristlosen Kündigung informiert und stimmte dieser nachträglich bedenkenlos zu.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (32, 1, 'MC', 'In den Arbeitsverträgen der MaHaG KG ist wie auch in den Ausbildungsverträgen immer eine Probezeit vereinbart. Wodurch unterscheidet sich die Probezeit in einem Ausbildungsvertrag von der in einem Arbeitsvertrag? (Zwei Antworten)', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (33, 1, 'MC', 'Ein Ausbildungsvertrag ist ein befristeter Vertrag, der automatisch durch Zeitablauf endet. Wann ist die Kündigung eines solchen Ausbildungsvertrages dennoch möglich? (Zwei Antworten)', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (34, 1, 'MC', 'Der Betriebsrat hat abgestufte Rechte. In welchem Fall hat der Betriebsrat nur ein Informationsrecht?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (35, 1, 'MC', 'Jan Riekers möchte ein Praktikum im Ausland zur Verbesserung seiner Sprachkenntnisse machen. Sie weisen ihn auf den Europass hin.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (36, 1, 'MC', 'Am 28.10.20XX kündigt Mina Stiller (38 Jahre, seit 11 Jahren im Unternehmen) fristgerecht zum nächstmöglichen Termin.\nNennen Sie das Datum, an dem Frau Stiller frühestens eine neue Stelle antreten kann.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (37, 1, 'MC', 'In der MaHaG KG stehen Betriebsratswahlen an. Das Unternehmen hat 134 Beschäftigte (volljährig) und 16 Azubis (12 davon volljährig). Darüber hinaus sind 3 Zeitarbeitnehmer seit 4 Monaten im Betrieb damit beschäftigt, für die IT-Sicherheit zu sorgen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (38, 1, 'MC', 'Zur Produktion ihrer Haushaltsgeräte benötigt die Mannheimer Haushaltsgeräte KG Ressourcen und kombiniert Produktionsfaktoren miteinander.', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (39, 1, 'MC', 'Abfallvermeidung bedeutet neben der Entlastung der Umwelt auch Kosteneinsparungen bei der Mannheimer Haushaltsgeräte KG, also eine Zielharmonie zwischen Ökonomie und Ökologie. Welche der folgenden Maßnahmen gehört zur Abfallvermeidung?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (40, 1, 'MC', 'Immer wieder fragen Kunden nach einer weiteren Entwicklung vernetzter Haushaltsgeräte.\nBundesweit gibt es neben der MaHaG KG nur noch drei weitere Hersteller dieser zukunftsweisenden Technologie.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (41, 1, 'MC', 'Die Mannheimer Haushaltsgeräte KG steht bei ihrem Angebot an kleinen Haushaltsgeräten und Zubehör mit einer Vielzahl von Mitbewerbern mit kleinen Angebotsmengen am Markt in einem Wettbewerbsprozess. Auf der Nachfrageseite gibt es eine Vielzahl von Haushalten und Unternehmen mit ihren Werkskantinen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (42, 1, 'MC', 'Die Wirtschaftsordnung der Bundesrepublik Deutschland bezeichnet man als „Soziale Marktwirtschaft“.\nBesonderes Merkmal dieser Wirtschaftsordnung ist ein funktionierender Markt. Welche Eigenschaften und Entwicklungen zeichnen diesen Markt aus?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (43, 1, 'MC', 'Ohne staatliche oder anderweitige Eingriffe in das Marktgeschehen bildet sich am Markt zwischen Angebot und Nachfrage der sog. „Gleichgewichtspreis“. Welche Funktion erfüllt dieser?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (44, 1, 'MC', 'Prüfen Sie, welche der nachstehenden Aussagen über den einfachen Wirtschaftskreislauf richtig ist.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (45, 1, 'MC', 'Die MaHaG KG ist in den letzten Jahren stark gewachsen. Die Geschäftsleitung denkt über eine Reorganisation des Unternehmens nach. Als Mitarbeiter/-in der Stabsstelle „Betriebswirtschaftliche Analyse und Planung“ sollen Sie die Aufbauorganisation Ihres Unternehmens überprüfen. Sie schauen sich auch die Organisationsstrukturen kooperierender Unternehmen an. Die MaHaG verwendet das Stabliniensystem.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (46, 1, 'MC', 'Clara Bürscheid (21 Jahre), Mitarbeiterin im Einkauf, möchte sich bei den anstehenden Wahlen der Jugend- und Auszubildendenvertretung als Kandidatin aufstellen lassen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (47, 1, 'MC', 'Nachhaltiges Wirtschaften zeichnet sich insbesondere dadurch aus, dass Ressourcen wiederverwendet werden. Bei welcher der folgenden Maßnahmen handelt die Mannheimer Haushaltsgeräte KG nachhaltig?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (48, 1, 'MC', 'Aus gelieferten Edelstahlblechen fertigt die Mannheimer Haushaltsgeräte KG Edelstahlgehäuse für Waschmaschinen und Trockner. Beim Zuschneiden der Bleche fallen Reste an, die nicht unmittelbar verwendet werden können. Das Unternehmen liefert daher diese Reste an ein Edelstahlwerk, das diese einschmilzt und daraus neue Edelstahlbleche gewinnt. Welche Bezeichnung gibt es für diese Form der Rohstoffeinsparung?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (49, 1, 'MC', 'Die Tarifvertragsparteien – Arbeitgeberverbände und Gewerkschaften – können die Arbeits- und Wirtschaftsbedingungen ohne staatliche Einmischung frei gestalten.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (50, 2, 'MC', 'Was ist das Kernmerkmal des Minimalprinzips?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (51, 2, 'MC', 'Welches Szenario beschreibt ein Oligopol?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (52, 2, 'MC', 'Warum sinkt die Kaufkraft bei Inflation?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (53, 2, 'MC', 'Was wird im Bruttoinlandsprodukt (BIP) NICHT berücksichtigt?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (54, 2, 'MC', 'Wie reagiert der Gleichgewichtspreis, wenn das Angebot sinkt, die Nachfrage aber gleich bleibt?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (55, 2, 'MC', 'Was verstehen Ökonomen unter Opportunitätskosten?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (56, 2, 'MC', 'Wie unterscheidet sich die AG von der GmbH bei der Kapitalbeschaffung?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (57, 2, 'MC', 'Welcher Zielkonflikt besteht oft in Unternehmen?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (58, 2, 'MC', 'Wann ist Leasing für ein Unternehmen wirtschaftlich oft sinnvoll?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (59, 2, 'MC', 'Wie lautet die Formel zur Berechnung des Break-Even-Points (in Stück)?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (60, 2, 'MC', 'Welches Kriterium ist für ein Projekt essenziell?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (61, 2, 'MC', 'Wie beeinflussen sich die Faktoren im \"Magischen Dreieck\"?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (62, 2, 'MC', 'Warum ist der Projektstrukturplan so wichtig?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (63, 2, 'MC', 'Was passiert, wenn sich eine Aufgabe auf dem \"Kritischen Pfad\" verzögert?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (64, 2, 'MC', 'Wofür steht das \"R\" in der SMART-Methode?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (65, 2, 'MC', 'Warum ist der Abnahmebericht rechtlich wichtig?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (66, 2, 'MC', 'Was ist das Problem in einer Matrix-Organisation?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (67, 2, 'MC', 'Was ist der \"Freie Puffer\"?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (68, 2, 'MC', 'Welche Information liefert ein Gantt-Diagramm?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (69, 2, 'MC', 'Was ist die Hauptaufgabe des Scrum Masters?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (70, 3, 'TF', 'Welches UML-Diagramm wird hauptsächlich verwendet, um die statische Struktur eines Systems darzustellen?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (71, 3, 'TF', 'Welche Beziehung wird im UML-Klassendiagramm durch eine durchgezogene Linie mit einer ausgefüllten Raute dargestellt?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (72, 3, 'TF', 'Welche Art von Beziehung beschreibt eine Vererbung zwischen zwei Klassen?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (73, 3, 'MC', 'Welche Elemente können in einem UML-Klassendiagramm vorkommen?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (74, 3, 'MC', 'Welche UML-Diagramme zählen zu den Strukturdiagrammen?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (75, 3, 'MC', 'Welche Beziehungen können im Klassendiagramm dargestellt werden?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (76, 3, 'GAP', 'Ein UML-Klassendiagramm beschreibt die ', NULL, '.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (77, 3, 'GAP', 'Die Komposition wird im UML‑Klassendiagramm durch eine ', NULL, '.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (78, 3, 'GAP', 'In einem Klassendiagramm steht das Minuszeichen (–) für ', NULL, '.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (79, 3, 'TF', 'Eine Aggregation ist stärker als eine Komposition.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (80, 4, 'TF', 'Eine synchrone Nachricht blockiert den Sender, bis eine Antwort erfolgt.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (81, 4, 'TF', 'Ein opt-Fragment ist ein Spezialfall eines alt‑Fragments.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (82, 4, 'TF', 'Eine Aktivierung zeigt an, dass ein Objekt gerade eine Operation ausführt.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (83, 4, 'TF', 'Welches UML-Diagramm zeigt die Interaktion zwischen Objekten in zeitlicher Reihenfolge?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (84, 4, 'TF', 'Welche Aussage über Sequenzdiagramme trifft zu?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (85, 4, 'TF', 'Welche Aussage über kombinierte Fragmente ist korrekt?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (86, 4, 'MC', 'Welche Aussagen über Lebenslinien sind korrekt?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (87, 4, 'MC', 'Welche Elemente können in einem Sequenzdiagramm vorkommen?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (88, 4, 'GAP', 'Eine synchrone Nachricht blockiert den Sender, bis eine ', NULL, '.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (89, 4, 'GAP', 'Ein kombiniertes Fragment mit dem Operator ', NULL, '.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (90, 5, 'TF', 'Ein Aktivitätsdiagramm kann sowohl Kontroll‑ als auch Objektflüsse enthalten.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (91, 5, 'TF', 'Ein Fork-Knoten darf nur zwei ausgehende Kanten besitzen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (92, 5, 'TF', 'Swimlanes dienen der Darstellung von Verantwortlichkeiten.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (93, 5, 'TF', 'Wofür wird ein Aktivitätsdiagramm hauptsächlich verwendet?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (94, 5, 'TF', 'Welche Aussage über Objektknoten ist korrekt?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (95, 5, 'TF', 'Welches Diagramm eignet sich am besten, um den Ablauf eines Prozesses mit Verzweigungen und Schleifen darzustellen?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (96, 5, 'MC', 'Welche Elemente können in einem Aktivitätsdiagramm vorkommen?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (97, 5, 'MC', 'Welche Aussagen über Partitionen (Swimlanes) sind korrekt?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (98, 5, 'GAP', 'Ein Fork-Knoten teilt einen Ablauf in mehrere ', NULL, '.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (99, 5, 'GAP', 'Ein Entscheidungsknoten teilt den Ablauf basierend auf ', NULL, '.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (100, 6, 'TF', 'Ein Übergang darf keine Aktion besitzen, wenn er aus einem Endzustand kommt.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (101, 6, 'TF', 'Ein Übergang kann mehrere Ereignisse gleichzeitig als Trigger besitzen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (102, 6, 'TF', 'Ein Endzustand darf keine ausgehenden Übergänge besitzen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (103, 6, 'TF', 'Welche Aussage über Zustandsdiagramme ist korrekt?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (104, 6, 'TF', 'Welche Aussage über Subzustände ist korrekt?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (105, 6, 'TF', 'Welche Darstellung gehört typischerweise zu einem Zustandsdiagramm?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (106, 6, 'MC', 'Welche Symbole können in einem Zustandsdiagramm vorkommen?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (107, 6, 'MC', 'Welche Aussagen über Übergänge sind korrekt?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (108, 6, 'GAP', 'Ein Zustand kann interne Aktivitäten besitzen, die als ', NULL, '.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (109, 6, 'GAP', 'Ein Zustandsdiagramm beschreibt, wie ein Objekt auf ', NULL, '.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (110, 7, 'TF', 'Bei einer Offenen Handelsgesellschaft (OHG) ist die Haftung auf das Gesellschaftsvermögen beschränkt.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (111, 7, 'TF', 'Die Marktform, bei der wenigen Anbietern sehr viele Nachfrager gegenüberstehen, nennt man Angebotsoligopol.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (112, 7, 'TF', 'In einer SWOT-Analyse beziehen sich die \"Stärken\" (Strengths) auf externe Faktoren, die für ein Unternehmen vorteilhaft sein könnten.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (113, 7, 'TF', 'Das primäre Ziel der Nutzwertanalyse (Scoring-Modell) bei der Entscheidungsfindung ist es, qualitative, schwer messbare Kriterien durch Gewichtung und Punktevergabe vergleichbar zu machen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (114, 7, 'TF', 'Unter dem Begriff \"Green IT\" versteht man primär die Gestaltung der Informations- und Kommunikationstechnik über den gesamten Lebenszyklus hinweg unter ökologischen Gesichtspunkten.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (115, 7, 'TF', '\"Corporate Identity\" (CI) bezeichnet eine gesetzlich vorgeschriebene Identifikationsnummer für Unternehmen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (116, 7, 'TF', 'Erhält ein Kunde eine Rechnung mit dem Vermerk \"Zahlbar bis zum 15. Mai\" und zahlt nicht, gerät er mit Ablauf des 15. Mai automatisch in Verzug, ohne dass eine Mahnung erforderlich ist.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (117, 7, 'TF', 'Das wesentliche Unterscheidungsmerkmal ist, dass die Hypothek vom Bestand der zu sichernden Forderung abhängig ist (akzessorisch), die Grundschuld hingegen davon unabhängig ist (abstrakt).', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (118, 7, 'TF', 'Ein kennzeichnendes Merkmal für die Globalisierung der Weltwirtschaft ist die Konzentration der Produktion ausschließlich auf den nationalen Binnenmarkt.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (119, 7, 'TF', 'Damit man modellhaft von einem \"vollkommenen Markt\" spricht, müssen die gehandelten Güter völlig gleichartig (homogen) sein und es muss vollständige Markttransparenz herrschen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (120, 7, 'TF', 'In der Wirtschaftstheorie handelt der sogenannte \"Homo oeconomicus\" rational und strebt nach maximalem Nutzen (Nutzenmaximierung).', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (121, 7, 'MC', 'Herr Müller ist seit sechs Jahren in der XYZ GmbH beschäftigt (kein Tarifvertrag). Der Arbeitgeber möchte ihm ordentlich kündigen. Welche gesetzliche Kündigungsfrist muss beachtet werden?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (122, 7, 'MC', 'Ab welcher Anzahl von ständigen wahlberechtigten Arbeitnehmern können in einem Betrieb Betriebsräte gewählt werden?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (123, 7, 'MC', 'Ein IT-Systemhaus kauft Server-Hardware zum Listeneinkaufspreis von 10.000 €. Der Lieferant gewährt 10 % Rabatt. Bei Zahlung innerhalb von 10 Tagen können zudem 2 % Skonto abgezogen werden. Wie hoch ist der Bareinkaufspreis?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (124, 7, 'MC', 'Eine neue Maschine kostet 120.000 €. Die jährlichen Rückflüsse (Gewinn + Abschreibungen) betragen konstant 30.000 €. Wie hoch ist die statische Amortisationszeit?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (125, 7, 'MC', 'Welche der folgenden Personengruppen genießen in Deutschland einen besonderen Kündigungsschutz?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (126, 7, 'MC', 'Welche Phasen existieren im Produktlebenszyklus?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (127, 7, 'MC', 'Welche der folgenden Aussagen zu Kapitalgesellschaften (GmbH, AG) sind wahr?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (128, 7, 'MC', 'Welche der folgenden Berufe oder Branchen werden dem tertiären Wirtschaftssektor (Dienstleistungssektor) zugeordnet?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (129, 7, 'MC', 'Welche Merkmale treffen typischerweise auf die Fremdfinanzierung zu?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (130, 7, 'MC', 'Welche der folgenden Positionen werden in der Bezugskalkulation als Bezugskosten (Hinzurechnungen) gewertet, die den Preis erhöhen?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (131, 7, 'MC', 'Welche Maßnahme gehört eindeutig zum operativen Marketing (und nicht zum strategischen)?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (132, 7, 'MC', 'Welche der folgenden Maßnahmen tragen konkret zur Umsetzung von Green IT in einem Unternehmen bei?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (133, 7, 'MC', 'Welche der folgenden Aufgaben gehören typischerweise zu den Kernfunktionen des operativen Controllings?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (134, 7, 'MC', 'Welche der folgenden Auswirkungen werden typischerweise mit der Globalisierung verbunden?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (135, 7, 'MC', 'Welche Aussagen zum Themenkomplex Bedürfnis, Bedarf und Nachfrage sind korrekt?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (136, 7, 'MC', 'Wodurch zeichnen sich \"Wirtschaftsgüter\" (im Gegensatz zu freien Gütern) aus?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (137, 7, 'MC', 'Welche Rechte stehen einem Gläubiger (z. B. einem Lieferanten) grundsätzlich zu, wenn sich der Schuldner im Zahlungsverzug befindet?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (138, 7, 'MC', 'Welche der folgenden Kreditsicherheiten zählen zu den sogenannten Realsicherheiten (Sachsicherheiten)?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (139, 7, 'GAP', NULL, NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (140, 7, 'GAP', NULL, NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (141, 7, 'GAP', NULL, NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (142, 7, 'GAP', NULL, NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (143, 7, 'GAP', NULL, NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (144, 7, 'GAP', NULL, NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (196, 8, 'MC', 'In SQL wird ein SELECT-Statement verwendet, um Daten aus Tabellen zu lesen. Welche Anweisung liest alle Spalten einer Tabelle customer aus?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (197, 8, 'MC', 'Ein Primärschlüssel stellt Eindeutigkeit sicher. Welche Eigenschaft trifft nicht auf einen Primärschlüssel zu?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (198, 8, 'MC', 'Das WHERE-Statement dient der Filterung. Welche Abfrage liefert alle Kunden mit age > 30?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (199, 8, 'MC', 'Ein JOIN verbindet Tabellen basierend auf Beziehungen. Welche JOIN-Art liefert nur Zeilen mit passendem Match in beiden Tabellen?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (200, 8, 'MC', 'GROUP BY wird zur Aggregation genutzt. Welche Spalte muss im GROUP BY stehen?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (201, 8, 'MC', 'Aggregatfunktionen berechnen Werte über Zeilen hinweg. Welche der folgenden Funktionen sind Aggregatfunktionen? (Mehrfachauswahl)', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (202, 8, 'MC', 'Transaktionen bündeln SQL-Operationen. Welche Anweisungen gehören zu Transaktionen? (Mehrfachauswahl)', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (203, 8, 'MC', 'Um eine Ausgabe aus einer oder mehreren Tabellen in der absteigende Reihenfolge aufzulisten, verwendet man', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (204, 8, 'MC', 'UPDATE verändert bestehende Zeilen. Welche Teile gehören zu einem vollständigen UPDATE?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (205, 8, 'MC', 'SQL-Tabellen nutzen definierte Datentypen. Welche gehören zu SQL-Standarddatentypen? (Mehrfachauswahl)', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (206, 8, 'MC', 'Die Normalisierung reduziert Redundanz. Welche Normalform verlangt atomare Werte?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (207, 8, 'MC', 'SQL nutzt bestimmte Schlüsselwörter zum Filtern. Wähle das passende Schlüsselwort.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (208, 8, 'MC', 'SQL kennt unterschiedliche Delete-Operationen. Welche Operation löscht alle Zeilen und ist schneller als DELETE?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (209, 8, 'MC', 'Stored Procedures speichern SQL-Logik. Was zeichnet Stored Procedures aus? (Mehrfachauswahl)', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (210, 8, 'MC', 'In SQL gibt es ein spezielles Schlüsselwort, das verwendet wird, um sicherzustellen, dass eine Abfrage nur eindeutige Werte aus einer Spalte zurückgibt.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (211, 8, 'TF', 'Ein PRIMARY KEY darf doppelte Werte enthalten.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (212, 8, 'TF', 'Ein FOREIGN KEY verweist auf einen PRIMARY KEY einer anderen Tabelle.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (213, 8, 'TF', 'SQL ist eine deklarative Sprache.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (214, 8, 'TF', 'SQL verwendet Schlüsselwörter zur Datenanalyse.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (215, 8, 'TF', 'DELETE löscht die gesamte Tabelle.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (216, 8, 'TF', 'Ein LEFT JOIN liefert auch Zeilen ohne Match.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (217, 8, 'TF', 'Ein Index kann Abfragen beschleunigen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (218, 8, 'TF', 'NOT NULL bedeutet, dass ein Wort leer sein darf.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (219, 8, 'TF', 'COUNT(*) zählt nur nicht-NULL Werte.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (220, 8, 'TF', 'Ein View speichert keine Daten, sondern eine Abfrage.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (221, 8, 'TF', 'Ein UNIQUE-Constraint verhindert NULL-Werte.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (222, 8, 'TF', 'Tabellen können mehrere FOREIGN KEYS besitzen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (223, 8, 'TF', 'DISTINCT entfernt doppelte Werte.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (224, 8, 'GAP', 'Der Operator für Mustervergleiche lautet', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (225, 8, 'GAP', 'Die Klausel, die die Anzahl der Zeilen reduziert, heißt', NULL, '.', 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (226, 8, 'GAP', 'Mit', NULL, 'werden neue Zeilen eingefügt.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (227, 8, 'GAP', 'JOIN-Bedingungen stehen üblicherweise nach dem Schlüsselwort', NULL, '.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (228, 8, 'GAP', 'Eine SQL-Abfrage endet mit einem', NULL, '.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (229, 8, 'GAP', 'Ein Index wird mit', NULL, 'erstellt', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (230, 8, 'GAP', 'Die Klausel', NULL, 'sortiert Abfrageergebnisse.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (231, 8, 'GAP', 'Mit', NULL, 'können Zeilen gruppiert werden.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (232, 8, 'GAP', 'Die Funktion', NULL, 'berechnet den Durchschnitt.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (233, 9, 'MC', 'Welche Aussage zur 2. Normalform (2NF) ist korrekt?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (234, 9, 'MC', 'Welche Aussagen zur Normalisierung sind korrekt?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (235, 10, 'MC', 'Welche SQL-Statements sind syntaktisch korrekt und sinnvoll?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (236, 11, 'MC', 'Welche Aussagen zur Umsetzung von Beziehungen im relationalen Modell sind korrekt?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (237, 11, 'TF', 'Ein Fremdschlüssel kann auf einen Primärschlüssel oder auf einen UNIQUE-Constraint einer anderen Tabelle zeigen.', NULL, NULL, 0, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (238, 12, 'TF', 'Ein JOIN in SQL ist ausschließlich für die Anzeige von Daten notwendig, er ändert die Tabellenstruktur nicht.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (239, 12, 'TF', 'Ein LEFT JOIN liefert nur Datensätze, die in beiden Tabellen übereinstimmen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (240, 12, 'TF', 'Ein Subquery in der WHERE-Klausel kann mehrere Werte zurückgeben, wenn die Bedingung = verwendet wird.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (241, 12, 'GAP', NULL, NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (242, 11, 'GAP', NULL, NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (243, 9, 'MC', 'Welche Aussage zur 3. Normalform (3NF) ist korrekt?', NULL, NULL, 0, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (244, 13, 'MC', 'Welche Aussagen zu Primärschlüssel und UNIQUE sind korrekt?', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (245, 13, 'MC', 'Welche Aussagen zu Indizes sind korrekt?', NULL, NULL, 1, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (246, 10, 'MC', 'Welche Aussagen zu GROUP BY und Aggregatfunktionen sind korrekt?', NULL, NULL, 1, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (247, 11, 'TF', 'Ein Fremdschlüssel darf NULL sein, wenn die Beziehung optional ist.', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (248, 10, 'TF', 'Die WHERE-Klausel wird nach der GROUP BY-Klausel ausgeführt und kann aggregierte Werte filtern.', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (249, 12, 'TF', 'Ein INNER JOIN liefert nur Datensätze, für die in beiden Tabellen passende Zeilen existieren.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (250, 13, 'TF', 'Ein UNIQUE-Constraint erlaubt in SQL niemals mehrere NULL-Werte in derselben Spalte.', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (251, 11, 'GAP', NULL, NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (252, 12, 'GAP', NULL, NULL, NULL, 0, 4);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (253, 14, 'MC', 'Welche SQL-Statements sind korrekt', NULL, NULL, 1, 4);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (254, 13, 'MC', 'Welche Aussagen zu Datentypen sind korrekt?', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (255, 10, 'MC', 'Welche Aggregatfunktionen gibt es?', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (256, 10, 'MC', 'Welche Aussage zu WHERE und HAVING ist korrekt?', NULL, NULL, 0, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (257, 10, 'TF', 'COALESCE gibt den ersten nicht-NULL Wert zurück', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (258, 10, 'TF', 'COUNT(*) zählt nur Nicht-NULL Werte', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (259, 10, 'TF', 'AVG berücksichtigt NULL-Werte bei der Durchschnittsberechnung', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (260, 10, 'TF', 'LIMIT begrenzt die Anzahl der ausgegebenen Zeilen', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (261, 10, 'GAP', NULL, NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (262, 14, 'GAP', NULL, NULL, NULL, 0, 4);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (263, 14, 'MC', 'Wofür steht ACID?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (264, 14, 'MC', 'Welche Aussagen über Trigger in SQL sind zutreffend?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (265, 14, 'MC', 'Welche Eigenschaft kennzeichnet eine Transaktion im Datenbankkontext (ACID)?', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (266, 14, 'MC', 'Was ist der Hauptunterschied zwischen DROP und DELETE?', NULL, NULL, 0, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (267, 13, 'TF', 'Mit dem REVOKE-Befehl können einem Benutzer zuvor erteilte Rechte wieder entzogen werden.', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (268, 12, 'TF', 'Ein INNER JOIN und ein WHERE-Join (verknüpfte Tabellen in der WHERE-Klausel) sind funktional identisch.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (269, 14, 'TF', 'Ein TRUNCATE TABLE-Befehl kann durch ein ROLLBACK rückgängig gemacht werden.', NULL, NULL, 0, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (270, 14, 'TF', 'Ein DEFAULT-Wert in einer Tabellenspalte verhindert die Eingabe von NULL-Werten.', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (271, 12, 'GAP', NULL, NULL, NULL, 0, 4);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (272, 14, 'GAP', NULL, NULL, NULL, 0, 4);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (273, 10, 'MC', 'Welche Aussage zu GROUP BY ist korrekt?', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (274, 11, 'MC', 'Welche Aussagen zu Fremdschlüsseln sind korrekt?', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (275, 9, 'MC', 'Welche Aussagen zu Normalformen sind korrekt?', NULL, NULL, 1, 5);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (276, 14, 'MC', 'Welche Aussagen zu Transaktionen sind korrekt?', NULL, NULL, 1, 4);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (277, 12, 'MC', 'Welche Aussagen zu JOIN-Typen sind korrekt?', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (278, 13, 'MC', 'Welche Aussagen zu Indizes sind korrekt?', NULL, NULL, 1, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (279, 11, 'TF', 'Eine Tabelle kann mehrere Fremdschlüssel besitzen.', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (280, 10, 'TF', 'HAVING kann ohne GROUP BY verwendet werden.', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (281, 14, 'TF', 'Ein CHECK-Constraint kann Wertebereiche für eine Spalte einschränken.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (282, 13, 'TF', 'Ein INDEX garantiert automatisch die Eindeutigkeit der Werte.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (283, 10, 'GAP', NULL, NULL, NULL, 0, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (284, 11, 'GAP', NULL, NULL, NULL, 0, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (285, 15, 'MC', 'Welches Entwurfsmuster stellt sicher, dass von einer Klasse nur eine Instanz existiert?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (286, 15, 'MC', 'Welche Zeitkomplexität (Big-O) hat die binäre Suche im Worst-Case?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (287, 15, 'MC', 'Welche Datenstruktur arbeitet nach dem FIFO-Prinzip (First-In-First-Out)?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (288, 15, 'MC', 'Was beschreibt eine Komposition in einem UML-Klassendiagramm?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (289, 15, 'MC', 'Welches SOLID-Prinzip besagt, dass eine Klasse nur einen Grund für Änderungen haben sollte?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (290, 15, 'MC', 'Was passiert beim \"Overloading\" (Überladen) einer Methode?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (291, 15, 'MC', 'Welcher Sortieralgorithmus nutzt das \"Divide and Conquer\"-Verfahren?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (292, 15, 'MC', 'In einem PAP (Programmablaufplan) steht ein Parallelogramm für?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (293, 15, 'MC', 'Was ist ein \"Pointer\" (Zeiger)?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (294, 15, 'MC', 'Was beschreibt das \"Liskovsche Substitutionsprinzip\"?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (295, 15, 'MC', 'Welche Fehlermeldung tritt auf, wenn auf ein Objekt zugegriffen wird, das nicht instanziiert wurde?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (296, 15, 'MC', 'Was ist der Vorteil eines Binärbaums gegenüber einer linearen Liste?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (297, 15, 'MC', 'Wofür steht das \"M\" im MVC-Entwurfsmuster?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (298, 15, 'MC', 'Welches Keyword verhindert in Java, dass eine Klasse weiter vererbt werden kann?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (299, 15, 'GAP', 'Lückentext 1.1', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (300, 15, 'GAP', 'Lückentext 2', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (301, 15, 'GAP', 'Lückentext 3', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (302, 15, 'GAP', 'Lückentext 4', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (303, 15, 'GAP', 'Lückentext 5', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (304, 15, 'GAP', 'Lückentext 6', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (305, 15, 'GAP', 'Lückentext 7', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (306, 15, 'GAP', 'Lückentext 8', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (307, 15, 'GAP', 'Lückentext 9', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (308, 15, 'GAP', 'Lückentext 10', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (309, 15, 'GAP', 'Lückentet 11', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (310, 15, 'GAP', 'Lückentext 12', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (311, 15, 'MC', 'Welche Datenstruktur eignet sich besonders gut zur Implementierung von Rekursionen?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (312, 15, 'MC', 'Welche Aussage beschreibt eine Hash-Tabelle am besten?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (313, 15, 'MC', 'Welcher Algorithmus wird häufig zum Finden des kürzesten Weges in einem Graphen verwendet?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (314, 15, 'MC', 'Welche Eigenschaft beschreibt \"Kapselung\" in der objektorientierten Programmierung?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (315, 15, 'MC', 'Was beschreibt ein Interface in Java am besten?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (316, 15, 'MC', 'Welche Traversierung besucht bei einem Binärbaum zuerst die Wurzel, dann den linken und anschließend den rechten Teilbaum?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (317, 15, 'MC', 'Welcher Datentyp speichert in Java eine Folge von Zeichen?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (318, 15, 'MC', 'Was beschreibt Polymorphismus in der objektorientierten Programmierung?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (319, 15, 'MC', 'Welcher Algorithmus durchsucht zuerst möglichst tief einen Graphen, bevor er zurückgeht?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (320, 15, 'MC', 'Welche Aussage über Bubble Sort ist korrekt?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (321, 15, 'MC', 'Welcher Sortieralgorithmus hat im Durchschnitt eine Zeitkomplexität von $O(n log n)$?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (322, 15, 'MC', 'Welche Eigenschaft beschreibt eine rekursive Methode?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (323, 15, 'MC', 'Was ist ein Graph in der Informatik?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (324, 15, 'MC', 'Welche Aufgabe hat ein Konstruktor in einer Klasse?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (325, 16, 'TF', 'Finally wird immer ausgeführt, unabhängig davon, ob eine Ausnahme aufgetreten ist oder nicht.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (326, 16, 'MC', 'Was wird die Ausgabe des folgenden Programms sein?\r\n\r\nclass CustomException extends Exception {\r\npublic CustomException(String message) {\r\nsuper(message);\r\n}\r\n}\r\n\r\npublic class Printer {\r\npublic static void main(String[] args) {\r\ntry {\r\nthrow new CustomException(\"Custom error occurred\");\r\n} catch (CustomException e) {\r\nSystem.out.println(e.getMessage());\r\n}\r\n}\r\n}', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (327, 16, 'MC', 'Welche der folgenden Möglichkeiten ist die korrekte Deklaration eines Arrays in Java?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (328, 16, 'TF', 'Auf das dritte Element des Arrays arr wird mit arr[2] zugegriffen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (329, 16, 'MC', 'Was wird die Ausgabe des folgenden Codes sein?\r\nclass A {\r\nvoid display() {\r\nSystem.out.println(\"Class A\");\r\n}\r\n}\r\nclass B extends A {\r\nvoid display() {\r\nSystem.out.println(\"Class B\");\r\n}\r\n}\r\npublic class Main {\r\npublic static void main(String[] args) {\r\nA obj = new B();\r\nobj.display();\r\n}\r\n}', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (330, 16, 'MC', 'Welches Schlüsselwort wird verwendet, um eine Unterklasse in Java zu erstellen?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (331, 16, 'MC', 'Was passiert, wenn eine abstrakte Klasse keine abstrakten Methoden hat?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (332, 16, 'MC', 'Was ist der Standardwert eines boolean in Java?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (333, 16, 'MC', 'Was wird die Ausgabe dieses Codes sein?\r\n\r\nint a = 7;\r\ndouble b = 2;\r\nSystem.out.println(a / b);', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (334, 16, 'MC', 'Was wird die Ausgabe dieses Codes sein?\r\n\r\nbyte x = 127;\r\nx++;\r\nSystem.out.println(x);', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (335, 17, 'MC', 'Welche Aussage über final, finally und finalize ist korrekt?', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (336, 17, 'MC', 'Wie groß ist der Datentyp char in Java?', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (337, 17, 'MC', 'Ausgabe des folgenden Java-Programms:\r\n\r\nclass Main {\r\npublic static void main(String args[]){\r\nfinal int i;\r\ni = 20;\r\nSystem.out.println(i);\r\n}\r\n}', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (338, 17, 'MC', 'Wofür wird das Schlüsselwort final in Java verwendet?', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (339, 17, 'MC', 'Was passiert, wenn kein Konstruktor in einer Java-Klasse definiert wird?', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (340, 17, 'TF', 'Kann ein Java-Konstruktor privat sein und trotzdem zur Instanziierung verwendet werden?', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (341, 17, 'MC', 'Was ist der Zweck eines Konstruktors?', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (342, 17, 'MC', 'Welches Schlüsselwort verweist auf das unmittelbare Elternklassenobjekt?', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (343, 17, 'MC', 'Worauf verweist das Schlüsselwort this?', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (344, 17, 'TF', 'Kompilierung ist ein OOP-Konzept in Java.', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (345, 18, 'TF', 'Der Stack hat etwa 1 - 2 MB und die Heap-Größe ist dynamisch.', NULL, NULL, 0, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (346, 18, 'MC', 'Was von folgendem befindet sich auf dem Heap in Java?', NULL, NULL, 0, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (347, 18, 'MC', 'Was wird im Stack gespeichert?', NULL, NULL, 0, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (348, 18, 'GAP', 'public static void main(String... args) {\n   int a = 5;\n   String s = new String(\"Hello\");\n}\n\nDie Variable a wird im _ gespeichert und die Referenzvariable s wird im _ gespeichert.\nDas eigentliche String-Objekt wird im _ gespeichert.', NULL, NULL, 0, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (349, 18, 'GAP', 'Der float ist _ Bytes, der double ist _ Bytes, der int ist _ Bytes und ein char ist _ Bytes in Java auf einem 64-Bit-System.', NULL, NULL, 0, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (350, 18, 'MC', 'Was ist ein Unterschied zwischen int und Integer?', NULL, NULL, 0, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (351, 18, 'GAP', 'switch(x) {\n    default:\n        System.out.println(\"Hello\");\n}\n\nAkzeptable Typen für x sind _ und _.', NULL, NULL, 0, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (352, 18, 'MC', '1  double d1 = 5f;\n2  double d2 = 5.0;\n3  float f1 = 5f;\n4  float f2 = 5.0;\n\nIn welcher Zeile tritt zuerst ein Compilerfehler auf?', NULL, NULL, 0, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (353, 18, 'MC', 'Wie erzwingt man die Garbage Collection an einem bestimmten Punkt?', NULL, NULL, 0, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (354, 18, 'MC', 'Welche der folgenden Aussagen über Java-Speicher und Objektlebenszyklus ist korrekt?', NULL, NULL, 0, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (355, 19, 'MC', 'Was bedeutet es, einen Singleton für den Logger zu haben?', NULL, NULL, 0, 4);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (356, 19, 'MC', 'Was ist gemäß Clean-Code-Prinzipien falsch an dieser Methode?\nMehrere Antworten sind korrekt.\n\npublic static void doStuff(int a, int b, boolean flag, String s) {\n    int x = a + b;\n    if(flag) {\n        x *= 2;\n        System.out.println(s + x);\n    } else {\n        for(int i=0;i<3;i++) {\n            x += i;\n            System.out.println(x);\n        }\n    }\n}', NULL, NULL, 1, 4);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (357, 19, 'MC', 'Welche der folgenden Aussagen über Vererbung ist falsch?', NULL, NULL, 0, 4);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (358, 19, 'MC', 'Welche Aussage über Vererbung in der objektorientierten Programmierung ist korrekt?', NULL, NULL, 0, 4);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (359, 19, 'MC', 'Was ist der Hauptzweck eines Debuggers?', NULL, NULL, 0, 4);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (360, 19, 'TF', 'Kapselung in der objektorientierten Programmierung bedeutet, den direkten Zugriff auf bestimmte Daten und Methoden eines Objekts einzuschränken.', NULL, NULL, 0, 4);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (361, 19, 'TF', 'Eine interpretierte Sprache übersetzt das gesamte Programm vor der Ausführung in Maschinencode, während eine kompilierte Sprache den Code Zeile für Zeile ausführt.', NULL, NULL, 0, 4);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (362, 19, 'MC', 'Was ist der Unterschied zwischen einer ArrayList und einem Array? (Alle richtigen Antworten auswählen)', NULL, NULL, 1, 4);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (363, 19, 'MC', 'Was ist Polymorphismus in der objektorientierten Programmierung?', NULL, NULL, 0, 4);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (364, 19, 'TF', 'In der objektorientierten Programmierung wird ein Konstruktor automatisch aufgerufen, wenn ein Objekt erstellt wird.', NULL, NULL, 0, 4);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (365, 20, 'TF', 'Zwei Variablen, die auf dasselbe Objekt im Speicher verweisen, spiegeln beide Änderungen wider, die über eine der beiden Variablen vorgenommen werden.', NULL, NULL, 0, 5);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (366, 20, 'TF', 'Hochsprachen werden direkt auf der Hardware ohne Übersetzung ausgeführt.', NULL, NULL, 0, 5);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (367, 20, 'TF', 'Ein Programm, das erfolgreich kompiliert wird, läuft garantiert ohne Fehler.', NULL, NULL, 0, 5);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (368, 20, 'TF', 'Ein Deadlock kann auftreten, wenn mehrere Threads unbegrenzt auf Ressourcen warten, die jeweils von den anderen gehalten werden.', NULL, NULL, 0, 5);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (369, 20, 'MC', 'Welcher Faktor bestimmt hauptsächlich die Effizienz eines Algorithmus?', NULL, NULL, 0, 5);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (370, 20, 'MC', 'Was ist der Hauptzweck von Versionskontrollsystemen?', NULL, NULL, 0, 5);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (371, 20, 'MC', 'Welche Datenbankoperation wird verwendet, um bestehende Daten zu ändern?', NULL, NULL, 0, 5);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (372, 20, 'MC', 'Welches Protokoll wird hauptsächlich für sichere Webkommunikation verwendet?', NULL, NULL, 0, 5);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (373, 20, 'MC', 'Warum wird die Big-O-Notation hauptsächlich in der Informatik verwendet?', NULL, NULL, 0, 5);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (374, 20, 'MC', 'Was ist der Hauptzweck des Prozess-Schedulings?', NULL, NULL, 0, 5);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (375, 21, 'TF', 'Darf ein Primärschlüssel NULL enthalten.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (376, 21, 'TF', 'Normalisierung kann Abfragen manchmal langsamer machen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (377, 21, 'TF', 'LEFT JOIN liefert auch Zeilen der linken Tabelle ohne entsprechenden Match.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (378, 21, 'TF', 'WHERE filtert vor GROUP BY.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (379, 21, 'TF', 'HAVING ohne GROUP BY ist möglich.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (380, 21, 'TF', 'COUNT(*) zählt auch Zeilen, in denen alles NULL ist.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (381, 21, 'TF', 'COUNT(spalte) zählt Zeilen, in denen alles NULL ist, mit.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (382, 21, 'TF', 'INNER JOIN und JOIN sind gleichbedeutend.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (383, 21, 'TF', 'Transaktionen verhindern parallele Änderungen in derselben Zeile.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (384, 21, 'TF', 'DELETE FROM t; und TRUNCATE t; sind immer gleich.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (385, 21, 'TF', 'Rollback kann Änderungen rückgängig machen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (386, 21, 'TF', 'Ein Primärschlüssel muss eindeutig sein.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (387, 21, 'TF', 'Ein Fremdschlüssel verhindert automatisch doppelte Werte in der Fremdschlüssel-Spalte.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (388, 21, 'TF', 'In einer 1:n-Beziehung liegt der Fremdschlüssel auf der n-Seite.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (389, 21, 'TF', 'Normalisierung reduziert Datenredundanz.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (390, 21, 'TF', 'Indizes machen Schreibvorgänge (Insert/Update/Delete) grundsätzlich schneller.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (391, 21, 'TF', 'Ein Default-Wert wird genutzt, wenn beim Insert kein Wert geliefert wird.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (392, 21, 'TF', 'Ein Audit-Log ist dasselbe wie ein Backup.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (393, 21, 'TF', 'Ein Backup schützt vor Datenverlust durch „DROP TABLE“ oder versehentliches Löschen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (394, 21, 'TF', 'Datenbank-Migrationen sind nur bei großen Firmen sinnvoll.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (395, 21, 'TF', 'In der Anwendung sollte man Eingaben validieren.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (396, 21, 'TF', '1NF verbietet mehrere Werte in einer Spalte (z. B. Listen in einer Zelle).', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (397, 21, 'TF', '2NF ist nur bei zusammengesetzten Primärschlüsseln relevant.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (398, 21, 'TF', '3NF bedeutet „keine Abhängigkeit von Nicht-Schlüsselattributen“.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (399, 21, 'TF', 'Denormalisierung reduziert Redundanz.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (400, 21, 'TF', 'SELECT gehört zu DQL.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (401, 21, 'TF', 'Eine Transaktion kann mehrere DML-Operationen zusammenfassen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (402, 21, 'MC', 'Welche Aggregation zählt nur nicht-NULL (gefüllte) Werte in email?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (403, 21, 'MC', 'Welche Klausel filtert nach dem Gruppieren?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (404, 21, 'MC', 'Welche Abfrage ist korrekt, um nach Datum absteigend zu sortieren?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (405, 21, 'MC', 'Was liefert DISTINCT?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (406, 21, 'MC', 'Was beschreibt eine n:m-Beziehung korrekt?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (407, 21, 'MC', 'Welche Eigenschaft ist typisch für einen Primary Key?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (408, 21, 'MC', 'Was stellt ein Foreign Key sicher?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (409, 21, 'MC', 'Was ist ein typisches Ziel von Normalisierung?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (410, 21, 'MC', 'Hauptziel der Normalisierung ist…', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (411, 21, 'MC', 'Was ist ein Beispiel für eine Änderungsanomalie?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (412, 21, 'MC', 'Denormalisierung macht man oft, wenn…', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (413, 21, 'MC', 'Was ist eine typische Nebenwirkung vieler Indizes?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (414, 21, 'MC', 'Welche Spalte ist häufig ein guter Index-Kandidat?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (415, 21, 'MC', 'Wie schützt man sich am zuverlässigsten gegen SQL-Injection?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (416, 21, 'MC', 'Was ist bei Passwörtern korrekt?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (417, 21, 'MC', 'Welche Beziehung wird typischerweise durch eine Zwischentabelle modelliert?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (418, 21, 'MC', 'Was beschreibt „Kardinalität“?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (419, 21, 'MC', 'Was ist ein „Attribut“ in einem ER-Modell?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (420, 21, 'MC', 'Was ist eine Entität?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (421, 21, 'MC', 'Welche Option ist ein Beispiel für eine schwache Entität?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (422, 21, 'MC', 'Was ist ein zusammengesetzter Primärschlüssel?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (423, 21, 'MC', 'Warum ist 1:1 selten als eigene Tabelle nötig?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (424, 21, 'MC', 'Was bedeutet „optional“ in einer Beziehung?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (425, 21, 'MC', 'Ein typisches Symptom schlechter Normalisierung ist…', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (426, 21, 'MC', 'Was ist eine „Löschanomalie“?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (427, 21, 'MC', 'Was ist eine „Einfügeanomalie“?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (428, 21, 'MC', 'Wofür ist ein Index primär da?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (429, 21, 'MC', 'Warum können viele Indizes Schreibzugriffe verlangsamen?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (430, 21, 'MC', 'Was bedeutet „Selektivität“ einer Spalte?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (431, 21, 'MC', 'Welche Spalte ist meistens ein schlechter Index-Kandidat?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (432, 21, 'MC', 'Wo gehört der Fremdschlüssel bei 1:n normalerweise hin?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (433, 21, 'MC', 'Ein zusammengesetzter Primary Key besteht aus:', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (434, 21, 'MC', 'Welche Aussage passt zu „Datenintegrität“ am besten?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (435, 21, 'MC', 'Ein Beispiel für „Redundanz“ ist:', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (436, 21, 'MC', 'Wofür nutzt man NOT NULL?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (437, 21, 'MC', 'Was ist bei „leer“ vs. „NULL“ korrekt?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (438, 21, 'MC', 'Wo sollte Validierung stattfinden?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (439, 21, 'MC', 'Wann brauchst du typischerweise eine Transaktion?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (440, 21, 'MC', 'Was ist das Ziel einer Transaktion?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (441, 21, 'MC', 'Was ist ein typisches Problem ohne Transaktion?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (442, 21, 'MC', 'Was bedeutet „Rollback“?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (443, 21, 'MC', 'Warum ist „alles in eine große Transaktion“ nicht immer gut?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (444, 21, 'MC', 'Was ist ein Index am ehesten?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (445, 21, 'MC', 'Wann bringen Indizes besonders viel?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (446, 21, 'MC', 'Warum können viele Indizes schaden?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (447, 21, 'MC', 'Was ist „Performance“ bei DB?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (448, 21, 'MC', 'Was schützt am besten vor Datenbank-Zugriff durch gestohlene App-Credentials?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (449, 21, 'MC', 'Was ist ein häufiger Sinn von Test-/Staging-Umgebungen für DB?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (450, 21, 'MC', 'Was ist bezüglich des Sicherns richtig?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (451, 21, 'MC', 'Was ist typisch für relationale Datenbanken?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (452, 21, 'MC', 'Ein Vorteil relationaler DBs ist oft:', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (453, 21, 'MC', 'Normalform (1NF) verlangt vor allem:', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (454, 21, 'MC', 'Was ist ein klassischer Verstoß gegen 1NF?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (455, 21, 'MC', '2NF ist relevant, wenn…', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (456, 21, 'MC', 'Ein typischer Verstoß gegen 2NF ist:', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (457, 21, 'MC', '3NF zielt besonders darauf ab, zu vermeiden:', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (458, 21, 'MC', 'Beispiel: In Tabelle „Bestellung“ stehen kunden_plz und kunden_ort. Der Ort hängt von der PLZ ab. Das ist typischerweise ein Problem für:', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (459, 21, 'MC', 'DDL steht für…', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (460, 21, 'MC', 'Was gehört zu DDL?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (461, 21, 'MC', 'Was gehört zu DQL?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (462, 21, 'MC', 'Was gehört zu DML?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (463, 21, 'MC', '„Referenzielle Integrität“ bedeutet:', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (464, 21, 'MC', 'Wozu dient ein Foreign Key primär?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (465, 21, 'MC', 'Ein UNIQUE-Constraint sorgt für:', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (466, 21, 'MC', 'Was ist KEIN Merkmal einer relationalen Datenbank?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (467, 21, 'MC', 'Was ist KEIN Beispiel für eine relationale Datenbank?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (468, 21, 'MC', 'Was sind Bestandteile einer relationalen Datenbank?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (469, 21, 'MC', 'Was ist KEIN Vorteil einer relationalen Datenbank?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (470, 21, 'MC', 'Was ist ein Nachteil von relationalen Datenbanken?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (471, 21, 'MC', 'Was ist ein natürlicher Schlüssel?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (472, 21, 'MC', 'Was ist ein künstlicher Schlüssel?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (473, 21, 'MC', 'Welcher dieser Schlüssel ist ein natürlicher Schlüssel?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (474, 21, 'MC', 'Welcher dieser Schlüssel ist ein künstlicher Schlüssel?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (475, 21, 'MC', 'Welcher dieser Schlüssel ist ein anonymer Schlüssel?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (476, 21, 'MC', 'Welcher dieser Schlüssel ist ein bedeutender Schlüssel?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (477, 21, 'GAP', 'Lückentext 1', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (478, 21, 'GAP', 'Lückentext 2', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (479, 21, 'GAP', 'Lückentext 3 – Welche Datenbanktypen gibt es?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (480, 22, 'MC', 'Was bewirkt die SQL-Anweisung \"SELECT\"?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (481, 22, 'GAP', 'Wozu dient ein JOIN?', NULL, NULL, 0, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (482, 22, 'MC', 'Wofür wird GROUP BY verwendet?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (483, 22, 'MC', 'Was bedeutet 3.  Normalform?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (484, 22, 'TF', 'Bei der 1. Normalform enthalten alle Attribute atomare Werte und keine Wiederholungsgruppen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (485, 22, 'MC', 'Was beschreibt ein Entity-Relationship-Modell (ERM)?', NULL, 'Das ERM ist ein konzeptionelles Modell, das Objekte der realen Welt (Entities) und ihre Beziehungen grafisch darstellt – unabhängig von einer konkreten Datenbankimplementierung.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (486, 22, 'MC', 'Was ist eine Entität im ERM?', NULL, 'Eine Entität ist ein eindeutig identifizierbares Objekt der realen Welt, das in der Datenbank abgebildet werden soll. Im ER-Diagramm wird sie als Rechteck dargestellt.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (487, 22, 'MC', 'Was versteht man unter einem Attribut im ERM?', NULL, 'Attribute beschreiben Eigenschaften einer Entität oder Beziehung. Im ER-Diagramm als Ellipse dargestellt. Schlüsselattribute werden unterstrichen.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (488, 22, 'MC', 'Was ist ein Primärschlüssel?', NULL, 'Ein Primärschlüssel identifiziert jeden Datensatz in einer Tabelle eindeutig. Er darf nicht NULL sein und muss für jede Zeile einmalig sein.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (489, 22, 'MC', 'Was ist ein Fremdschlüssel?', NULL, 'Ein Fremdschlüssel ist ein Attribut in einer Tabelle, das auf den Primärschlüssel einer anderen Tabelle verweist und damit referentielle Integrität sicherstellt.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (490, 22, 'MC', 'Was bedeutet die Kardinalität 1:n in einer Beziehung?', NULL, 'Bei einer 1:n-Beziehung kann einem Datensatz auf der 1-Seite mehrere Datensätze auf der n-Seite zugeordnet sein, aber jeder n-Datensatz gehört genau einem 1-Datensatz.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (491, 22, 'MC', 'Wie wird eine m:n-Beziehung im relationalen Modell umgesetzt', NULL, 'Eine m:n-Beziehung kann im relationalen Modell nicht direkt abgebildet werden. Sie wird durch eine Zwischentabelle aufgelöst, die die Primärschlüssel beider Tabellen als Fremdschlüssel enthält.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (492, 22, 'MC', 'Was ist ein zusammengesetzter Primärschlüssel?', NULL, 'Ein zusammengesetzter Primärschlüssel besteht aus mehreren Attributen, die gemeinsam einen Datensatz eindeutig identifizieren. Kein einzelnes Attribut allein reicht dafür aus.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (493, 22, 'MC', 'Was besagt die Erste Normalform (1NF)?', NULL, '1NF fordert atomare Attributwerte – keine Mengen, Listen oder Wiederholungsgruppen in einer Zelle. Eine Zelle enthält genau einen Wert.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (494, 22, 'MC', 'Ein Datenbankfeld enthält den Wert „Müller, Schmidt, Wagner\" als eine einzige Zeichenkette. Welche Normalform ist verletzt?', NULL, 'Der Wert ist nicht atomar – er enthält mehrere Namen in einem Feld. Das verletzt die 1NF, die atomare Werte fordert.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (495, 22, 'MC', 'Was ist Voraussetzung für die Zweite Normalform (2NF)?', NULL, '2NF setzt 1NF voraus. Zusätzlich muss jedes Nicht-Schlüssel-Attribut voll funktional vom gesamten Primärschlüssel abhängen – nicht nur von einem Teil davon (keine partiellen Abhängigkeiten).', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (496, 22, 'MC', 'Eine Tabelle mit dem zusammengesetzten Schlüssel (BestellungID, ArtikelID) enthält das Attribut „KundenName\", das nur von „BestellungID\" abhängt. Welche Normalform ist verletzt?', NULL, 'KundenName hängt nur von BestellungID ab – einem Teil des zusammengesetzten Primärschlüssels. Das ist eine partielle Abhängigkeit und verletzt die 2NF.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (497, 22, 'MC', 'Was beschreibt die Dritte Normalform (3NF)?', NULL, '3NF setzt 2NF voraus und verlangt zusätzlich, dass keine transitiven Abhängigkeiten zwischen Nicht-Schlüssel-Attributen existieren. Kein Nicht-Schlüssel-Attribut darf von einem anderen Nicht-Schlüssel-Attribut abhängen.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (498, 22, 'MC', 'Eine Tabelle enthält: MitarbeiterID → AbteilungsID → AbteilungsLeiter. Welche Normalform ist verletzt?', NULL, 'AbteilungsLeiter hängt nicht direkt vom Primärschlüssel (MitarbeiterID) ab, sondern transitiv über AbteilungsID. Das verletzt die 3NF.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (499, 22, 'GAP', 'Was ist eine Einfügeanomalie?', NULL, 'Eine Einfügeanomalie liegt vor, wenn ein neuer Datensatz nicht eingefügt werden kann, ohne gleichzeitig andere, nicht relevante Daten einzutragen – typisches Symptom einer nicht normalisierten Tabelle.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (500, 22, 'MC', 'Was ist eine Löschanomalie?', NULL, 'Eine Löschanomalie tritt auf, wenn beim Löschen eines Datensatzes unbeabsichtigt andere relevante Informationen verloren gehen, weil Daten unnötig zusammengefasst wurden.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (501, 22, 'MC', 'Was ist eine Änderungsanomalie?', NULL, 'Wenn dieselbe Information mehrfach in einer Tabelle gespeichert ist, muss sie bei einer Änderung an mehreren Stellen manuell aktualisiert werden. Wird eine Stelle vergessen, entstehen inkonsistente Daten.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (502, 22, 'GAP', 'Was versteht man unter referentieller Integrität?', NULL, 'Referentielle Integrität bedeutet, dass ein Fremdschlüsselwert entweder NULL ist oder auf einen tatsächlich existierenden Primärschlüssel in der referenzierten Tabelle zeigen muss.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (503, 22, 'MC', 'Was passiert, wenn referentielle Integrität verletzt wird?', NULL, 'Bei einer Verletzung der referentiellen Integrität existiert ein Fremdschlüsselwert, dem kein entsprechender Primärschlüssel in der referenzierten Tabelle gegenübersteht – ein sogenannter Dangling Reference.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (504, 22, 'TF', 'Eine schwache Entität kann durch eigene Attribute alleine eindeutig identifiziert werden. Sie ist für ihre Existenz und Identifikation auf eine starke Entität angewiesen. Im ER-Diagramm als doppeltes Rechteck dargestellt.', NULL, 'Eine schwache Entität kann nicht durch eigene Attribute alleine eindeutig identifiziert werden. Sie ist für ihre Existenz und Identifikation auf eine starke Entität angewiesen. Im ER-Diagramm als doppeltes Rechteck dargestellt.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (505, 22, 'MC', 'Was ist eine rekursive Beziehung im ERM?', NULL, 'Eine rekursive (unäre) Beziehung verbindet eine Entität mit sich selbst. Klassisches Beispiel: Ein Mitarbeiter kann Vorgesetzter anderer Mitarbeiter sein – beides sind Instanzen derselben Entität.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (506, 22, 'MC', 'Was ist ein Schlüsselkandidat (Candidate Key)?', NULL, 'Ein Kandidatenschlüssel ist jede minimale Attributkombination, die alle Zeilen einer Tabelle eindeutig identifizieren kann. Aus allen Kandidatenschlüsseln wird einer als Primärschlüssel ausgewählt.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (507, 22, 'MC', 'Was unterscheidet einen natürlichen Schlüssel von einem Surrogatschlüssel?', NULL, 'Ein natürlicher Schlüssel ist ein fachliches Attribut mit eigener Bedeutung (z.B. Steuernummer, ISBN). Ein Surrogatschlüssel ist ein künstlich erzeugter Wort ohne fachliche Bedeutung (z.B. auto-increment ID).', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (508, 22, 'MC', 'Wie wird eine 1:1-Beziehung im relationalen Modell typischerweise umgesetzt?', NULL, 'Bei einer 1:1-Beziehung kann der Primärschlüssel einer Tabelle als Fremdschlüssel in der anderen eingetragen werden, oder beide Entitäten werden zu einer einzigen Tabelle zusammengeführt.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (509, 22, 'MC', 'Was beschreibt Funktionale Abhängigkeit im Kontext der Normalisierung?', NULL, 'Attribut B ist funktional abhängig von Attribut A (A → B), wenn jeder Wert von A genau einen Wert von B bestimmt. Dies ist die Grundlage aller Normalformen.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (510, 22, 'MC', 'Welche Modellierungsregel gilt beim Überführen eines ERM ins relationale Modell für m:n-Beziehungen?', NULL, 'm:n-Beziehungen können im relationalen Modell nicht direkt abgebildet werden. Es wird eine eigene Zwischentabelle erstellt, die die Primärschlüssel beider Entitäten als Fremdschlüssel und ggf. eigene Beziehungsattribute enthält.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (511, 22, 'MC', 'Warum sollte man NULL-Werte bei Primärschlüsseln verbieten?', NULL, 'Ein Primärschlüssel muss jeden Datensatz eindeutig identifizieren können. NULL bedeutet \'unbekannt\' und erlaubt keine eindeutige Identifikation – daher ist NULL in Primärschlüsseln grundsätzlich verboten.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (512, 22, 'MC', 'Was ist der Unterschied zwischen einem konzeptionellen und einem logischen Datenmodell?', NULL, 'Das konzeptionelle Modell (ERM) beschreibt fachliche Zusammenhänge unabhängig von Technik und Implementierung. Das logische Modell (relationales Schema) überführt das ERM in konkrete Tabellenstrukturen.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (513, 22, 'MC', 'Was versteht man unter Denormalisierung?', NULL, 'Denormalisierung ist das bewusste Einführen von Redundanz in ein normalisiertes Schema, um Leseperformance zu steigern. Dabei werden Tabellen zusammengeführt oder Daten dupliziert – auf Kosten der Datenkonsistenz.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (514, 22, 'MC', 'Welche Kardinalitätsnotation drückt aus, dass ein Kunde mindestens eine, aber beliebig viele Bestellungen haben kann?', NULL, 'Die Notation 1:n (bzw. in Min-Max-Notation (1,1) auf Kundenseite und (1,n) auf Bestellungsseite) drückt aus, dass jeder Kunde mindestens eine Bestellung hat und beliebig viele haben kann.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (515, 22, 'MC', 'Was bedeutet die Min-Max-Notation (0,1) bei einer Beziehung?', NULL, 'Die Notation (0,1) bedeutet, dass die Entität an der Beziehung mit keinem oder genau einem Partner beteiligt sein kann – die Teilnahme ist also optional, aber höchstens einmal möglich.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (516, 22, 'MC', 'Ein Attribut enthält sowohl Straße als auch Hausnummer als einen gemeinsamen String. Welche Lösung entspricht der 1NF?', NULL, 'Die 1NF fordert atomare Werte. Straße und Hausnummer sind zwei verschiedene Informationen und müssen in separate Attribute aufgeteilt werden.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (517, 22, 'MC', 'Was ist ein zusammengesetztes Attribut im ERM?', NULL, 'Ein zusammengesetztes Attribut besteht aus mehreren Teilattributen, z.B. ist Adresse zusammengesetzt aus Straße, PLZ und Ort. Im ER-Diagramm verzweigt sich die Ellipse in Teilellipsen.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (518, 22, 'MC', 'Was ist ein mehrwertiges Attribut im ERM?', NULL, 'Ein mehrwertiges Attribut kann für eine Entität mehrere Werte annehmen, z.B. kann ein Kunde mehrere Telefonnummern haben. Im ER-Diagramm durch eine doppelte Ellipse dargestellt.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (519, 22, 'MC', 'Wie wird ein mehrwertiges Attribut im relationalen Modell korrekt abgebildet?', NULL, 'Mehrwertige Attribute können nicht direkt in einer Spalte gespeichert werden (das würde 1NF verletzen). Sie werden in eine eigene Tabelle ausgelagert mit einem Fremdschlüssel auf die Ursprungsentität.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (520, 22, 'MC', 'Was ist der Unterschied zwischen einer Entität und einem Entitätstyp?', NULL, 'Ein Entitätstyp beschreibt die Klasse aller gleichartigen Objekte (z.B. \'Kunde\' als Konzept). Eine Entität ist eine konkrete Instanz dieses Typs (z.B. der Kunde \'Müller mit KundenID 42\').', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (521, 22, 'MC', 'Warum werden Beziehungen im ERM in eigene Tabellen überführt, auch wenn sie nur Fremdschlüssel enthalten?', NULL, 'Bei m:n-Beziehungen ist eine Zwischentabelle technisch notwendig, da das relationale Modell keine direkten m:n-Beziehungen unterstützt. Nur so können die Verknüpfungen ohne Redundanz abgebildet werden.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (522, 22, 'MC', 'Was ist ein abgeleitetes Attribut im ERM?', NULL, 'Ein abgeleitetes Attribut ist ein Attribut, dessen Wert aus anderen gespeicherten Attributen berechnet werden kann. Es wird im ER-Diagramm durch eine gestrichelte Ellipse dargestellt und muss nicht physisch gespeichert werden.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (523, 22, 'MC', 'Welche Situation ist ein typisches Zeichen für eine fehlende Normalisierung?', NULL, 'Wenn dieselbe Information – z.B. eine Kundenadresse – in mehreren Zeilen wiederholt gespeichert wird, deutet das auf fehlende Normalisierung hin. Jede Änderung muss dann an mehreren Stellen vorgenommen werden.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (524, 22, 'MC', 'Gegeben ist ein ERM mit den Entitäten „Student\" und „Kurs\" in einer m:n-Beziehung „belegt\". Welche Tabellen entstehen beim Überführen ins relationale Modell?', NULL, 'Aus den zwei Entitäten werden zwei Tabellen (Student, Kurs). Die m:n-Beziehung wird durch eine dritte Tabelle (z.B. Belegung) aufgelöst, die StudentID und KursID als Fremdschlüssel enthält.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (525, 22, 'TF', 'Quellcode ist automatisch durch das Urheberrecht geschützt, auch ohne Registrierung.', NULL, 'Quellcode ist automatisch urheberrechtlich geschützt.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (526, 22, 'TF', 'Ein Werkvertrag verpflichtet den Auftragnehmer zur Erbringung eines bestimmten Erfolgs.', NULL, 'Ein Werkvertrag schuldet einen Erfolg.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (527, 22, 'MC', 'Welche Aussage beschreibt eine AGB am besten?', NULL, 'AGB sind vorformulierte Vertragsbedingungen.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (528, 22, 'MC', 'Welche Lizenz erlaubt die kommerzielle Nutzung ohne Einschränkungen?', NULL, 'Die MIT‑Lizenz erlaubt kommerzielle Nutzung ohne Einschränkungen.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (529, 22, 'MC', 'Welche Pflicht ergibt sich aus der DSGVO für Unternehmen?', NULL, 'Datenminimierung ist eine Pflicht der DSGVO.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (530, 22, 'GAP', NULL, NULL, 'Bei einem **Dienstvertrag** schuldet der Auftragnehmer keinen Erfolg.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (531, 22, 'GAP', NULL, NULL, 'Das **Urheberrecht** schützt Softwareentwickler.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (532, 22, 'GAP', 'Personenbezogene Daten dürfen nur verarbeitet werden,', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (533, 22, 'GAP', 'Ein Kunde kann bei mangelhafter', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (534, 22, 'GAP', 'Die DSGVO gilt für alle Unternehmen,', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (535, 22, 'TF', 'Variable Kosten steigen mit der Produktionsmenge.', NULL, 'Variable Kosten steigen mit der Menge.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (536, 22, 'TF', 'Der Break-even-Point ist erreicht, wenn Gewinn = 0 ist.', NULL, 'Break-even bedeutet Gewinn = 0.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (537, 22, 'MC', 'Was gehört NICHT zu den drei Zielen des magischen Dreiecks?', NULL, 'Kundenzufriedenheit gehört nicht zum magischen Dreieck.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (538, 22, 'MC', 'Welche Kostenart zählt zu den fixen Kosten?', NULL, 'Miete ist eine fixe Kostenart.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (539, 22, 'MC', 'Was beschreibt eine Make-or-Buy-Entscheidung?', NULL, 'Make-or-Buy entscheidet über Eigenentwicklung oder Einkauf.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (540, 22, 'GAP', NULL, NULL, 'Der **Break-even-Point** zeigt die Kostendeckung.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (541, 22, 'GAP', 'Die Liquidität beschreibt die Fähigkeit,', NULL, 'Liquidität beschreibt die Fähigkeit, **Verbindlichkeiten** zu bezahlen.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (542, 22, 'GAP', NULL, NULL, 'Eine **Kosten-Nutzen-Analyse** vergleicht Aufwand und Nutzen.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (543, 22, 'GAP', 'Fixe Kosten bleiben unabhängig von der', NULL, 'Fixe Kosten bleiben unabhängig von der **Menge** konstant.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (544, 22, 'GAP', NULL, NULL, 'Ein Budget ist eine **Planung** für zukünftige Ausgaben.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (545, 22, 'TF', 'Ein Use-Case-Diagramm zeigt die Interaktionen zwischen Akteuren und System.', NULL, 'Use-Case-Diagramme zeigen Interaktionen.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (546, 22, 'TF', 'Eine Aggregation ist stärker als eine Komposition.', NULL, 'Aggregation ist schwächer als Komposition.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (547, 22, 'MC', 'Welches Diagramm zeigt den Ablauf von Nachrichten zwischen Objekten?', NULL, 'Sequenzdiagramm zeigt Nachrichtenabläufe.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (548, 22, 'MC', 'Welche Beziehung zeigt eine „ist-ein“-Beziehung?', NULL, 'Vererbung zeigt eine „ist-ein“-Beziehung.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (549, 22, 'MC', 'Was zeigt ein Klassendiagramm NICHT?', NULL, 'Zeitlicher Ablauf gehört nicht ins Klassendiagramm.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (550, 22, 'GAP', NULL, NULL, 'Ein **Aktivitätsdiagramm** beschreibt Abläufe.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (551, 22, 'GAP', NULL, NULL, 'In einem Klassendiagramm verbinden **Beziehungen** die Klassen.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (552, 22, 'GAP', NULL, NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (553, 22, 'GAP', NULL, NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (554, 22, 'GAP', NULL, NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (555, 22, 'TF', 'Overfitting bedeutet, dass ein Modell zu stark an die Trainingsdaten angepasst ist.', NULL, 'Overfitting = zu starke Anpassung an Trainingsdaten.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (556, 22, 'TF', 'Unüberwachtes Lernen benötigt gelabelte Daten.', NULL, 'Unüberwachtes Lernen benötigt **keine** gelabelten Daten.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (557, 22, 'MC', 'Was ist ein Beispiel für überwachtes Lernen?', NULL, 'Klassifikation ist überwachtes Lernen.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (558, 22, 'MC', 'Was ist ein Neuron im neuronalen Netz?', NULL, 'Ein Neuron ist eine mathematische Funktion.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (559, 22, 'MC', 'Welche Metrik misst die Genauigkeit eines Klassifikationsmodells?', NULL, 'Accuracy misst die Genauigkeit.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (560, 22, 'TF', 'Eine While-Schleife wird ausgeführt, solange die Bedingung wahr ist.', NULL, 'While-Schleife läuft, solange die Bedingung wahr ist.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (561, 22, 'TF', 'Call-by-Reference übergibt eine Kopie des Werts.', NULL, 'Call-by-Reference übergibt **keine Kopie**, sondern eine Referenz.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (562, 22, 'MC', 'Welche Struktur beschreibt eine Verzweigung?', NULL, 'if beschreibt eine Verzweigung.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (563, 22, 'MC', 'Welche Suche prüft jedes Element nacheinander?', NULL, 'Lineare Suche prüft jedes Element.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (564, 22, 'MC', 'Was ist ein Algorithmus?', NULL, 'Ein Algorithmus ist eine eindeutige Schrittfolge.', 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (565, 23, 'MC', 'Was beschreibt Pseudocode am besten?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (566, 23, 'MC', 'Welche Struktur wird typischerweise für Wiederholungen im Pseudocode genutzt?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (567, 23, 'MC', 'Welche Kontrollstruktur dient zur Entscheidung?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (568, 23, 'MC', 'Was ist ein Objekt in der OOP?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (569, 23, 'MC', 'Welche Schleife eignet sich, wenn die Anzahl der Wiederholungen bekannt ist?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (570, 23, 'MC', 'Welche typische Schreibweise beschreibt eine Methode im Pseudocode?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (571, 23, 'MC', 'Welche Datenstruktur speichert Elemente in Reihenfolge?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (572, 23, 'MC', 'Welche Schleife wird mindestens einmal ausgeführt?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (573, 23, 'MC', 'Welche Aussage beschreibt Vererbung?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (574, 23, 'MC', 'Was beschreibt Polymorphie?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (575, 23, 'MC', 'Welche Elemente gehören zu einer Klasse?', NULL, NULL, 1, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (576, 23, 'MC', 'Welche Schritte gehören typischerweise zu einem Algorithmus?', NULL, NULL, 1, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (577, 23, 'MC', 'Welche Eigenschaften hat guter Pseudocode?', NULL, NULL, 1, 2);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (578, 23, 'MC', 'Welche OOP‑Konzepte gehören zu den „vier Grundpfeilern“?', NULL, NULL, 1, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (579, 23, 'MC', 'Welche Strukturen sind Kontrollstrukturen?', NULL, NULL, 1, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (580, 23, 'TF', 'Pseudocode muss sich an die Syntax einer Programmiersprache halten.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (581, 23, 'TF', 'Ein Algorithmus muss endlich sein.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (582, 23, 'TF', 'Ein Konstruktor initialisiert ein Objekt.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (583, 23, 'TF', 'Ein Algorithmus muss immer deterministisch sein.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (584, 23, 'TF', 'Eine Klasse kann Methoden und Attribute enthalten.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (585, 23, 'TF', 'Polymorphie bedeutet, dass eine Klasse keine Attribute besitzt.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (586, 23, 'TF', 'WHILE-Schleifen werden immer mindestens einmal ausgeführt.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (587, 23, 'TF', 'Objekte entstehen aus Klassen.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (588, 23, 'TF', 'Pseudocode ist immer ausführbar', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (589, 23, 'TF', 'Eine Liste kann mehrere Elemente enthalten.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (590, 23, 'MC', 'Was ist ein Attribut?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (591, 23, 'MC', 'Was ist ein Parameter?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (592, 23, 'MC', 'Was beschreibt Kapselung?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (593, 23, 'MC', 'Was ist ein Rückgabewert?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (594, 23, 'MC', 'Was ist ein Algorithmus?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (595, 23, 'MC', 'Wofür wird Pseudocode hauptsächlich verwendet?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (596, 23, 'MC', 'Welche Schreibweise ist typisch für eine Zuweisung im Pseudocode?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (597, 23, 'MC', 'Welche Struktur beschreibt eine Wiederholung bis eine Bedingung erfüllt ist?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (598, 23, 'MC', 'Was ist ein Vorteil von Pseudocode?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (599, 23, 'MC', 'Welche Struktur wird genutzt, um eine Liste zu durchlaufen?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (600, 23, 'MC', 'Was bedeutet „INITIALISIERE x MIT 0“?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (601, 23, 'MC', 'Welche Schreibweise beschreibt eine Bedingung?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (602, 23, 'MC', 'Was bedeutet „GIB x AUS“ im Pseudocode?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (603, 23, 'MC', 'Welche Struktur beendet eine Schleife sofort?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (604, 23, 'MC', 'Was ist ein typischer Fehler im Pseudocode?', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (605, 23, 'MC', 'Welche Elemente können in Pseudocode vorkommen?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (606, 23, 'MC', 'Welche Vorteile hat Pseudocode?', NULL, NULL, 1, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (607, 23, 'MC', 'Welche typischen Schlüsselwörter findet man in Pseudocode?', NULL, NULL, 1, 3);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (608, 23, 'TF', 'Pseudocode ist eine formale Sprache.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (609, 23, 'TF', 'Pseudocode kann zur Kommunikation zwischen Entwicklern genutzt werden.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (610, 23, 'TF', 'Pseudocode ist immer identisch mit der späteren Programmiersprache.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (611, 23, 'TF', 'Pseudocode kann Kommentare enthalten.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (612, 23, 'TF', 'Pseudocode kann zur Planung von Algorithmen verwendet werden.', NULL, NULL, 0, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (613, 23, 'MC', 'Welche Aussagen über Pseudocode sind korrekt?', NULL, NULL, 1, 1);
+INSERT INTO question (question_id, question_set_id, question_type, start_text, image_url, end_text, allows_multiple, points) VALUES (614, 23, 'MC', 'Welche Aussagen über Algorithmen sind korrekt?', NULL, NULL, 1, 3);
 
--- MC Answers
-INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES
-(1, 1, 'Beginn und Ende der den Arbeitnehmern zustehenden Pausen', 0, 1, 0),
-(2, 1, 'Höhe der Ausbildungsvergütung', 0, 2, 0),
-(3, 1, 'Höhe des Tarifgehaltes', 0, 3, 0),
-(4, 1, 'Dauer der wöchentlichen Arbeitszeit', 1, 4, 0),
-(5, 1, 'Höhe des jährlichen Urlaubanspruchs', 1, 5, 0),
-(6, 1, 'Nutzung betrieblicher sozialer Einrichtungen', 0, 6, 0),
-(7, 2, 'Die geschäftsführende Gesellschafterin Lea Hofmann.', 0, 1, 0),
-(8, 2, 'Anja Melter, eine 30-jährige Mitarbeiterin eines Zeitarbeitsunternehmens, die vor 4 Monaten dem Unternehmen zur Umstellung der Software-Anwendungen auf unbestimmte Zeit überlassen wurde.', 1, 2, 0),
-(9, 2, 'Marga Becker, eine 16-jährige Schülerpraktikantin, die in ihren sechswöchigen Sommerferien im Unternehmen tätig ist.', 0, 3, 0),
-(10, 2, 'Die Handelsvertreterin Claudia Roth, die seit 15 Jahren end mit der MaHaG KG zusammenarbeitet.', 0, 4, 0),
-(11, 2, 'Carlos Brentiger, ein Mitarbeiter, der mittels Telearbeitsplatz wöchentlich zu Hause 30 Stunden für die MaHaG tätig ist.', 1, 5, 0),
-(12, 2, 'Die 17-jährige Auszubildende Bea Timmermann.', 1, 6, 0),
-(13, 3, 'Ohne Zustimmung der Komplementärin Lea Hollermann kann kein neuer Betriebsrat gewählt werden.', 0, 1, 0),
-(14, 3, 'Der amtierende Betriebsrat kann nicht wiedergewählt werden.', 0, 2, 0),
-(15, 3, 'Ein Mitglied der Jugend und Auszubildendenvertretung kann nicht gleichzeitig Mitglied des Betriebsrates sein.', 0, 3, 0),
-(16, 3, 'Aktives Wahlrecht ist das Recht , sich zur Wahl des Betriebsrates als Kandidat aufstellen zu lassen.', 1, 4, 0),
-(17, 3, 'Einem Mitglied des Betriebsrates kann während seiner Amtszeit nur außerordentlich gekündigt werden .', 1, 5, 0),
-(18, 3, 'Die regelmäßige Amtszeit des Betriebsrates beträgt 5 Jahre.', 0, 6, 0),
-(19, 4, 'Das AGG regelt, dass Benachteiligungen aus Gründen der ethischen Herkunft, des Geschlechts, der Religion oder Weltanschauung, einer Behinderung, des Alters oder der sexuellen Identität beim Auswahlverfahren nicht zulässig sind.', 1, 1, 0),
-(20, 4, 'Die Benachteiligungsverbote des AGG erstrecken sich auch auf Ungleichbehandlungen beim beruflichen Aufstieg und die Beschäftigung- und Arbeitsbedingungen.', 1, 2, 0),
-(21, 4, 'Bei Verstoß gegen das AGG hat der betroffene Arbeitnehmer keinen Anspruch auf Schadensersatz.', 0, 3, 0),
-(22, 4, 'Bei einer Stellenausschreibung, muss der Arbeitgeber nicht geschlechtsneutral ausschreiben.', 0, 4, 0),
-(23, 5, 'Sie beherrschen die englische Sprache in Word und Schrift.', 0, 1, 0),
-(24, 5, 'Sie sind in der Lage, dynamische Webseiten zu programmieren.', 0, 2, 0),
-(25, 5, 'Sie passen in unser Team, wenn Sie nicht älter als 30 Jahre sind.', 1, 3, 0),
-(26, 5, 'Sie sind mobil and auch bereit, unsere Kunden deutschlandweit zu besuchen.', 0, 4, 0),
-(27, 6, 'Jugendschutzgesetz', 0, 1, 0),
-(28, 6, 'Arbeitssicherheitsgesetz', 0, 2, 0),
-(29, 6, 'Berufsbildungsgesetz', 1, 3, 0),
-(30, 6, 'Betriebsverfassungsgesetz', 0, 4, 0),
-(31, 6, 'Jugendarbeitsschutzgesetz', 1, 5, 0),
-(32, 7, 'Sollte die IHK-Prüfung vorher bestanden werden, endet das Ausbildungsverhältnis dennoch erst mit Ablauf der vertraglich festgelegten Ausbildungszeit.', 0, 1, 0),
-(33, 7, 'Will ein Auszubildender eine Ausbildung in einem anderen Beruf beginnen, so kann er das Ausbildungsverhältnis auch nach der Probezeit noch beenden.', 1, 2, 0),
-(34, 7, 'Jugendliche Auszubildende haben einen Anspruch auf eine einstündige Pause, wenn sie mehr als 6 Stunden beschäftigt werden.', 0, 3, 0),
-(35, 7, 'Bei der Beendigung eines Berufsausbildungsverhältnisses hat der Auszubildende Anspruch auf ein Zeugnis. Er hat die Möglichkeit, ein qualifiziertes Zeugnis zu verlangen.', 1, 4, 0),
-(36, 7, 'Die Ausbildung endet in jedem Fall mit dem letzten Termin der mündlichen Prüfung.', 0, 5, 0),
-(37, 8, 'Er muss weiterarbeiten, weil sein Ausbildungsvertrag das vorsieht.', 0, 1, 0),
-(38, 8, 'Es handelt sich um einen schwebend-unwirksamen Arbeitsvertrag, der angefochten werden kann.', 0, 2, 0),
-(39, 8, 'Die Weiterbeschäftigung kann jederzeit von beiden Seiten ohne Kündigung beendet werden.', 0, 3, 0),
-(40, 8, 'Es wird ein neues Arbeitsverhältnis begründet mit einer neuen Probezeit von drei Monaten.', 0, 4, 0),
-(41, 8, 'Jens Rievers begründet damit ein neues unbefristetes Arbeitsverhältnis und hat Anspruch auf Zahlung eines Gehalts ab dem 17.07.2025.', 1, 5, 0),
-(42, 9, 'Ausschnitt aus dem Betriebsverfassungsgesetz – Erster Abschnitt: Jugend- und Auszubildendenvertretung', 0, 1, 0),
-(43, 9, 'Frau Sommer kann kandidieren, weil sie ja Praxiserfahrung aus ihrer Tätigkeit im Betriebsrat hat.', 0, 2, 0),
-(44, 9, 'Frau Sommer kann nicht kandidieren, weil dem Arbeitgeber doppelte Kosten nicht zuzumuten sind.', 0, 3, 0),
-(45, 9, 'Frau Sommer kann nicht kandidieren, weil das Betriebsverfassungsgesetz so etwas ausschließt.', 1, 4, 0),
-(46, 9, 'Frau Sommer kann kandidieren, weil es sich um zwei verschiedene Organe der Betriebsverfassung handelt.', 0, 5, 0),
-(47, 10, 'Für die verschiedenen Ausbildungsjahre ist bereits jetzt die jeweilige Vergütung gestaffelt nach Ausbildungsjahren eingetragen.', 0, 1, 0),
-(48, 10, 'Persönliche Angaben zu den Eltern, wie etwa Beruf und Konfession, fehlen.', 0, 2, 0),
-(49, 10, 'Die Dauer der Ausbildung beträgt 36 Monate.', 0, 3, 0),
-(50, 10, 'Die Probezeit beträgt 6 Monate.', 1, 4, 0),
-(51, 10, 'Es sind nur die Kündigungsvoraussetzungen einer ordentlichen Kündigung aufgeführt, nicht aber die erforderlichen Gründe einer außerordentlichen.', 0, 5, 0),
-(52, 11, 'König GmbH', 1, 1, 0),
-(53, 11, 'Berufsgenossenschaft Bergmannsheil', 0, 2, 0),
-(54, 11, 'Industrie- und Handelskammer Mannheim', 0, 3, 0),
-(55, 11, 'Dr. Michaela Kluge, RA und Notarin', 0, 4, 0),
-(56, 11, 'Gerichtsvollzieher Ferdinand Piersch', 0, 5, 0),
-(57, 12, 'Schützenverein Mannheim 1896 e. V.', 0, 1, 0),
-(58, 12, 'Stadt Mannheim', 1, 2, 0),
-(59, 12, 'Universität Heidelberg', 1, 3, 0),
-(60, 12, 'Großküchenausstatter Bößle GmbH', 0, 4, 0),
-(61, 12, 'Rechtsanwaltssozietät Edel & Stark', 0, 5, 0),
-(62, 12, 'Mülldeponie Stuttgart KG', 0, 6, 0),
-(63, 13, 'In welchen beiden Fällen handelt es sich um die Anwendung des Maximalprinzips?', 0, 1, 0),
-(64, 13, 'Der Absatz der Mikrowellengeräte soll im kommenden Geschäftsjahr das Vorjahresniveau erreichen, der Materialverbrauch soll dabei aber um 4 % gesenkt werden.', 0, 2, 0),
-(65, 13, 'Mitarbeiter der MaHaG KG haben im Rahmen des betrieblichen Vorschlagswesens ein verbessertes Produktionsverfahren entwickelt. Bei der Herstellung ihrer Dampfgarer hat die MaHaG KG bei höherer Produktionsmenge gleiche Stückkosten. Die Geschäftsleitung greift den Verbesserungsvorschlag ihrer Mitarbeiter auf.', 1, 3, 0),
-(66, 13, 'Für die Ausstattung der PC-Arbeitsplätze wurde ein Budget von 60.000 € veranschlagt. Durch Verhandlungen mit ihrem Geschäftspartner erreichen Sie, dass das neueste und verbesserte Betriebssystem auf allen Rechnern vorinstalliert ist.', 1, 4, 0),
-(67, 13, 'Nach der anhaltenden Nachfrage nach Kaffee-Vollautomaten beschließt die Geschäftsleitung, die Produktion vorsichtig um 5 % zu erhöhen. Dies geht einher mit einem verstärkten Material- und Personaleinsatz.', 0, 5, 0),
-(68, 14, 'Statt der vielen unterschiedlichen Arbeitsplatzdrucker werden abteilungsbezogen leistungs- und netzwerkfähige Multifunktionsdrucker genutzt.', 0, 1, 0),
-(69, 14, 'Beim Kauf von Büromaschinen wird auf die Energieeffizienz geachtet.', 0, 2, 0),
-(70, 14, 'In der Betriebskantine der MaHaG KG werden vorzugsweise saisonale und vegane Speisen angeboten.', 0, 3, 0),
-(71, 14, 'Das Unternehmen wechselt zu einem kostengünstigen Stromanbieter, der auf fossile Energieträger setzt.', 1, 4, 0),
-(72, 15, 'In der Betriebskantine werden nur noch Steaks aus artgerechter argentinischer Rinderzucht serviert.', 0, 1, 0),
-(73, 15, 'Das Verwaltungsgebäude der Mannheimer Haushaltsgeräte KG erhält eine Klimaanlage.', 0, 2, 0),
-(74, 15, 'Drucker und Plotter mit einem hohen Geräuschpegel werden mit einer Schallschutzhaube ausgestattet.', 1, 3, 0),
-(75, 15, 'Es werden nur noch LEDs für die Beleuchtung eingesetzt.', 1, 4, 0),
-(76, 15, 'Eine hochtourig laufende Drehmaschine wird mit einer Sicherheitseinrichtung nachgerüstet.', 0, 5, 0),
-(77, 16, 'Für die Produktion ihrer Haushaltsgeräte stellt die MaHaG KG um auf Just-in-time.', 0, 1, 0),
-(78, 16, 'Zur Kosteneinsparung nutzt die MaHaG KG die Vorteile des Outsourcings: einige Funktionsbereiche werden ausgelagert.', 0, 2, 0),
-(79, 16, 'Die MaHaG KG setzt ihre Ressourcen sparsam ein, versucht, Brauchwasser nach Kühlung wieder dem Produktionsprozess zuzuführen, vermeidet aufwendige Verpackungen und publiziert diese Aktionen auf ihrer Internetseite.', 1, 3, 0),
-(80, 16, 'Bei der Einstellung von Mitarbeitern bevorzugt die MaHaG KG junge Mitarbeiter, zeichnen sich diese doch durch mäßige Gehaltsansprüche aus. Damit lassen sich die Lohnkosten deutlich senken.', 0, 4, 0),
-(81, 17, 'Die Nachfrage auf dem Arbeitsmarkt nimmt zu.', 0, 1, 0),
-(82, 17, 'Die Kapazitätsauslastung nähert sich ihrem Höhepunkt.', 0, 2, 0),
-(83, 17, 'Die Nachfrage nach Krediten nimmt zu, weil die Unternehmen in dieser Situation verstärkt investieren.', 0, 3, 0),
-(84, 17, 'Ein wirtschaftlicher Abschwung führt zum Abbau von Überstunden und von Arbeitsplätzen.', 1, 4, 0),
-(85, 18, 'Sie sollte langsam die Produktionsmenge reduzieren.', 1, 1, 0),
-(86, 18, 'Sie sollte bei der Bundesagentur für Arbeit Kurzarbeitergeld beantragen.', 0, 2, 0),
-(87, 18, 'Sie sollte vorhandene Überstunden abbauen.', 1, 3, 0),
-(88, 18, 'Sie kann optimistisch in die Zukunft blicken und vorsichtig Produktion und ggf. Mitarbeiterzahl erhöhen.', 0, 4, 0),
-(89, 18, 'Sie sollte den Betriebsrat über betriebsbedingte Kündigungen rechtzeitig informieren.', 0, 5, 0),
-(90, 19, 'Mindestpreis', 0, 1, 0),
-(91, 19, 'Käufermarkt', 0, 2, 0),
-(92, 19, 'Verkäufermarkt', 0, 3, 0),
-(93, 19, 'Nachgefragte Menge', 0, 4, 0),
-(94, 19, 'Angebotene Menge', 0, 5, 0),
-(95, 19, 'Gleichgewichtspreis', 1, 6, 0),
-(96, 20, 'Die Einkommen in Form von Löhnen und Gehältern fließen von den privaten Haushalten in die Unternehmen.', 0, 1, 0),
-(97, 20, 'Die Konsumgüterausgaben für Güter fließen von den Unternehmen in die privaten Haushalte.', 0, 2, 0),
-(98, 20, 'Produktionsgüter sind Teil des Güterstroms von den privaten Haushalten in die Richtung der Unternehmen.', 0, 3, 0),
-(99, 20, 'Die Einkommen in Form von Löhnen und Gehältern sind Teil des Geldstromes, der von den Unternehmen zu den Haushalten fließt.', 1, 4, 0),
-(100, 21, 'Konjunkturphase Rezession: Die Nachfrage nach Haushaltsgeräten wird ihren Tiefstand erreichen, was einhergeht mit einer hohen Arbeitslosigkeit. Die MaHaG KG hält das bisherige Produktionsniveau aufrecht, um bei künftiger Nachfrage lieferbereit zu sein.', 0, 1, 0),
-(101, 21, 'Konjunkturphase Depression: Die Wirtschaft hat ihren Tiefpunkt erreicht. Die MaHaG KG baut daher Überstunden ab und richtet sich auf die Einrichtung von Kurzarbeit ein.', 0, 2, 0),
-(102, 21, 'Konjunkturphase Expansion: Die MaHaG KG verzeichnet eine zunehmende Nachfrage. Sie erhöht vorsichtig die Produktionskapazität und fragt verstärkt Personal nach.', 1, 3, 0),
-(103, 21, 'Konjunkturphase Boom: Die steigende Nachfrage bleibt auf hohem Niveau;
-INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES
-(851, 275, 'Normalform erlaubt transitive Abhängigkeiten.', 0, 4, 0),
-(852, 276, 'Ein COMMIT kann durch ROLLBACK rückgängig gemacht werden.', 0, 1, 0),
-(853, 276, 'ROLLBACK setzt alle Änderungen seit BEGIN TRANSACTION zurück.', 1, 2, 0),
-(854, 276, 'Jede einzelne SQL-Anweisung ist automatisch eine vollständige ACID-Transaktion ohne Ausnahme.', 0, 3, 0),
-(855, 276, 'Ohne COMMIT bleiben Änderungen in einer Transaktion nicht dauerhaft gespeichert.', 1, 4, 0),
-(856, 277, 'Ein RIGHT JOIN liefert alle Datensätze der rechten Tabelle.', 1, 1, 0),
-(857, 277, 'Ein FULL OUTER JOIN liefert alle Datensätze beider Tabellen.', 1, 2, 0),
-(858, 277, 'Ein INNER JOIN liefert immer alle Datensätze der linken Tabelle.', 0, 3, 0),
-(859, 277, 'Ein CROSS JOIN benötigt zwingend eine ON-Bedingung.', 0, 4, 0),
-(860, 278, 'Ein zusammengesetzter Index kann mehrere Spalten enthalten.', 1, 1, 0),
-(861, 278, 'Indizes verbessern ausschließlich INSERT-Operationen.', 0, 2, 0),
-(862, 278, 'Ein Index kann die Performance von WHERE- und ORDER BY-Klauseln verbessern.', 1, 3, 0),
-(863, 278, 'Indizes verändern automatisch die Sortierung einer Tabelle.', 0, 4, 0),
-(864, 279, 'Wahr', 1, 1, 0),
-(865, 279, 'Falsch', 0, 2, 0),
-(866, 280, 'Wahr', 1, 1, 0),
-(867, 280, 'Falsch', 0, 2, 0),
-(868, 281, 'Wahr', 1, 1, 0),
-(869, 281, 'Falsch', 0, 2, 0),
-(870, 282, 'Wahr', 0, 1, 0),
-(871, 282, 'Falsch', 1, 2, 0),
-(872, 285, 'Factory Pattern', 0, 1, 0),
-(873, 285, 'Singleton Pattern', 1, 2, 0),
-(874, 285, 'Observer Pattern', 0, 3, 0),
-(875, 285, 'Strategy Pattern', 0, 4, 0),
-(876, 286, '$O(n)$', 0, 1, 0),
-(877, 286, '$O(n^2)$', 0, 2, 0),
-(878, 286, '$O(log n)$', 1, 3, 0),
-(879, 286, '$O(1)$', 0, 4, 0),
-(880, 287, 'Stack', 0, 1, 0),
-(881, 287, 'Binary Tree', 0, 2, 0),
-(882, 287, 'Queue', 1, 3, 0),
-(883, 287, 'Hash Table', 0, 4, 0),
-(884, 288, 'Eine \"Ist-ein\"-Beziehung', 0, 1, 0),
-(885, 288, 'Eine \"Hat-ein\"-Beziehung, bei der die Teile ohne das Ganze nicht existieren können', 1, 2, 0),
-(886, 288, 'Eine lose Verbindung zwischen zwei unabhängigen Klassen', 0, 3, 0),
-(887, 288, 'Die Vererbung von Methoden', 0, 4, 0),
-(888, 289, 'Open-Closed Principle', 0, 1, 0),
-(889, 289, 'Open-Closed Principle', 0, 2, 0),
-(890, 289, 'Single Responsibility Principle', 1, 3, 0),
-(891, 289, 'Dependency Inversion Principle', 0, 4, 0),
-(892, 290, 'Die Methode der Oberklasse wird komplett ersetzt.', 0, 1, 0),
-(893, 290, 'Mehrere Methoden haben denselben Namen, aber unterschiedliche Parameter.', 1, 2, 0),
-(894, 290, 'Eine Methode ruft sich selbst so oft auf, bis der Stack überläuft.', 0, 3, 0),
-(895, 290, 'Die Sichtbarkeit einer Methode wird zur Laufzeit geändert.', 0, 4, 0),
-(896, 291, 'Bubble Sort', 0, 1, 0),
-(897, 291, 'Selection Sort', 0, 2, 0),
-(898, 291, 'Quick Sort', 1, 3, 0),
-(899, 291, 'Insertion Sort', 0, 4, 0),
-(900, 292, 'Prozess / Verarbeitung', 0, 1, 0),
-(901, 292, 'Start / Ende', 0, 2, 0),
-(902, 292, 'Entscheidung / Verzweigung', 0, 3, 0),
-(903, 292, 'Ein- / Ausgabe', 1, 4, 0),
-(904, 293, 'Eine Variable, die einen Wahrheitswert speichert.', 0, 1, 0),
-(905, 293, 'Eine Variable, die die Speicheradresse einer anderen Variablen speichert.', 1, 2, 0),
-(906, 293, 'Ein Tool zur Fehlersuche im Code.', 0, 3, 0),
-(907, 293, 'Eine spezielle Art von Schleife.', 0, 4, 0),
-(908, 294, 'Unterklassen müssen so einsetzbar sein, dass sie ihre Basisklassen ersetzen können.', 1, 1, 0),
-(909, 294, 'Jede Methode darf maximal 20 Zeilen Code haben.', 0, 2, 0),
-(910, 294, 'Variablen müssen immer initialisiert werden.', 0, 3, 0),
-(911, 294, 'Klassen dürfen nicht von Interfaces erben.', 0, 4, 0),
-(912, 295, 'StackOverflowError', 0, 1, 0),
-(913, 295, 'NullPointerException', 1, 2, 0),
-(914, 295, 'IndexOutOfBoundsException', 0, 3, 0),
-(915, 295, 'CompilationError', 0, 4, 0),
-(916, 296, 'Er braucht weniger Speicher.', 0, 1, 0),
-(917, 296, 'Das Suchen von Elementen ist im Durchschnitt schneller ($O(log n)$).', 1, 2, 0),
-(918, 296, 'Er kann nur Zahlen speichern.', 0, 3, 0),
-(919, 296, 'Er ist einfacher zu programmieren.', 0, 4, 0),
-(920, 297, 'Method', 0, 1, 0),
-(921, 297, 'Main', 0, 2, 0),
-(922, 297, 'Model', 1, 3, 0),
-(923, 297, 'Module', 0, 4, 0),
-(924, 298, 'static', 0, 1, 0),
-(925, 298, 'abstract', 0, 2, 0),
-(926, 298, 'final', 1, 3, 0),
-(927, 298, 'private', 0, 4, 0),
-(928, 311, 'Queue', 0, 1, 0),
-(929, 311, 'Stack', 1, 2, 0),
-(930, 311, 'Graph', 0, 3, 0),
-(931, 311, 'Heap', 0, 4, 0),
-(932, 312, 'Elemente werden immer sortiert gespeichert.', 0, 1, 0),
-(933, 312, 'Schlüssel werden mit einer Hashfunktion auf Speicherpositionen abgebildet.', 1, 2, 0),
-(934, 312, 'Sie kann nur Ganzzahlen speichern.', 0, 3, 0),
-(935, 312, 'Sie arbeitet immer nach dem FIFO-Prinzip.', 0, 4, 0),
-(936, 313, 'Bubble Sort', 0, 1, 0),
-(937, 313, 'Depth-First Search', 0, 2, 0),
-(938, 313, 'Dijkstra-Algorithmus', 1, 3, 0),
-(939, 313, 'Binary Search', 0, 4, 0),
-(940, 314, 'Daten und Methoden werden in einer Klasse zusammengefasst und geschützt.', 1, 1, 0),
-(941, 314, 'Klassen können mehrere Oberklassen haben.', 0, 2, 0),
-(942, 314, 'Methoden können mehrfach überladen werden.', 0, 3, 0),
-(943, 314, 'Programme werden ausschließlich funktional geschrieben.', 0, 4, 0),
-(944, 315, 'Eine Klasse ohne Konstruktor', 0, 1, 0),
-(945, 315, 'Eine Klasse mit nur privaten Methoden', 0, 2, 0),
-(946, 315, 'Eine Sammlung von Methodensignaturen ohne Implementierung', 1, 3, 0),
-(947, 315, 'Eine spezielle Schleifenstruktur', 0, 4, 0),
-(948, 316, 'Preorder-Traversierung', 1, 1, 0),
-(949, 316, 'Inorder-Traversierung', 0, 2, 0),
-(950, 316, 'Postorder-Traversierung', 0, 3, 0),
-(951, 316, 'Levelorder-Traversierung', 0, 4, 0),
-(952, 317, 'char', 0, 1, 0),
-(953, 317, 'String', 1, 2, 0),
-(954, 317, 'text', 0, 3, 0),
-(955, 317, 'varchar', 0, 4, 0),
-(956, 318, 'Klassen dürfen nur eine Methode enthalten.', 0, 1, 0),
-(957, 318, 'Methoden dürfen nur einmal definiert werden.', 0, 2, 0),
-(958, 318, 'Eine Methode kann unterschiedliche Implementierungen besitzen.', 1, 3, 0),
-(959, 318, 'Eine Klasse darf nur ein Objekt erzeugen.', 0, 4, 0),
-(960, 319, 'Breadth-First Search', 0, 1, 0),
-(961, 319, 'Depth-First Search', 1, 2, 0),
-(962, 319, 'Binary Search', 0, 3, 0),
-(963, 319, 'Linear Search', 0, 4, 0),
-(964, 320, 'Er ist der schnellste Sortieralgorithmus.', 0, 1, 0),
-(965, 320, 'Er vergleicht benachbarte Elemente und tauscht sie bei Bedarf.', 1, 2, 0),
-(966, 320, 'Er funktioniert nur mit Zahlen.', 0, 3, 0),
-(967, 320, 'Er nutzt eine Hashfunktion zum Sortieren.', 0, 4, 0),
-(968, 321, 'Bubble Sort', 0, 1, 0),
-(969, 321, 'Merge Sort', 1, 2, 0),
-(970, 321, 'Insertion Sort', 0, 3, 0),
-(971, 321, 'Selection Sort', 0, 4, 0),
-(972, 322, 'Sie kann nur einmal aufgerufen werden.', 0, 1, 0),
-(973, 322, 'Sie wird nur vom Compiler ausgeführt.', 0, 2, 0),
-(974, 322, 'Sie ruft sich selbst innerhalb ihrer Implementierung auf.', 1, 3, 0),
-(975, 322, 'Sie arbeitet ausschließlich mit Schleifen.', 0, 4, 0),
-(976, 323, 'Eine Tabelle mit sortierten Zahlen', 0, 1, 0),
-(977, 323, 'Eine Datenstruktur aus Knoten (Vertices) und Kanten (Edges)', 1, 2, 0),
-(978, 323, 'Eine spezielle Art von Array', 0, 3, 0),
-(979, 323, 'Eine Liste von Zeichenketten', 0, 4, 0),
-(980, 324, 'Er löscht Objekte aus dem Speicher.', 0, 1, 0),
-(981, 324, 'Er führt Berechnungen in Schleifen aus.', 0, 2, 0),
-(982, 324, 'Er initialisiert ein Objekt beim Erzeugen.', 1, 3, 0),
-(983, 324, 'Er verhindert Vererbung.', 0, 4, 0),
-(984, 325, 'True', 1, 1, 0),
-(985, 325, 'False', 0, 2, 0),
-(986, 326, 'Custom error occurred', 1, 1, 0),
-(987, 326, 'Runtime Exception', 0, 2, 0),
-(988, 326, 'Compilation Error', 0, 3, 0),
-(989, 326, 'Keine Ausgabe', 0, 4, 0),
-(990, 327, 'int arr[5];
-INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES
-(1780, 578, 'Kapselung', 1, 3, 0),
-(1781, 578, 'Wiederholung', 0, 4, 0),
-(1782, 579, 'IF', 1, 1, 0),
-(1783, 579, 'WHILE', 1, 2, 0),
-(1784, 579, 'CLASS', 0, 3, 0),
-(1785, 579, 'FOR', 1, 4, 0),
-(1786, 580, 'True', 0, 1, 0),
-(1787, 580, 'False', 1, 2, 0),
-(1788, 581, 'True', 1, 1, 0),
-(1789, 581, 'False', 0, 2, 0),
-(1790, 582, 'True', 1, 1, 0),
-(1791, 582, 'False', 0, 2, 0),
-(1792, 583, 'True', 1, 1, 0),
-(1793, 583, 'False', 0, 2, 0),
-(1794, 584, 'True', 1, 1, 0),
-(1795, 584, 'False', 0, 2, 0),
-(1796, 585, 'True', 0, 1, 0),
-(1797, 585, 'False', 1, 2, 0),
-(1798, 586, 'True', 0, 1, 0),
-(1799, 586, 'False', 1, 2, 0),
-(1800, 587, 'True', 1, 1, 0),
-(1801, 587, 'False', 0, 2, 0),
-(1802, 588, 'True', 0, 1, 0),
-(1803, 588, 'False', 1, 2, 0),
-(1804, 589, 'True', 1, 1, 0),
-(1805, 589, 'False', 0, 2, 0),
-(1806, 590, 'Eine Eigenschaft eines Objekts', 1, 1, 0),
-(1807, 590, 'Eine Schleife', 0, 2, 0),
-(1808, 590, 'Eine Klasse', 0, 3, 0),
-(1809, 590, 'Ein Algorithmus', 0, 4, 0),
-(1810, 591, 'Ein Wert, der an eine Methode übergeben wird', 1, 1, 0),
-(1811, 591, 'Eine Klasse', 0, 2, 0),
-(1812, 591, 'Ein Objekt', 0, 3, 0),
-(1813, 591, 'Ein Rückgabewert', 0, 4, 0),
-(1814, 592, 'Verbergen interner Daten', 1, 1, 0),
-(1815, 592, 'Wiederholung von Code', 0, 2, 0),
-(1816, 592, 'Sortieren von Listen', 0, 3, 0),
-(1817, 592, 'Erzeugen von Objekten', 0, 4, 0),
-(1818, 593, 'Der Wert, den eine Methode liefert', 1, 1, 0),
-(1819, 593, 'Eine Klasse', 0, 2, 0),
-(1820, 593, 'Eine Schleife', 0, 3, 0),
-(1821, 593, 'Ein Objekt', 0, 4, 0),
-(1822, 594, 'Eine endliche Folge von Schritten zur Lösung eines Problems', 1, 1, 0),
-(1823, 594, 'Eine Klasse', 0, 2, 0),
-(1824, 594, 'Ein Objekt', 0, 3, 0),
-(1825, 594, 'Eine Datei', 0, 4, 0),
-(1826, 595, 'Um Programme direkt auszuführen', 0, 1, 0),
-(1827, 595, 'Um Algorithmen verständlich zu beschreiben', 1, 2, 0),
-(1828, 595, 'Um Datenbanken zu modellieren', 0, 3, 0),
-(1829, 595, 'Um Hardware anzusteuer', 0, 4, 0),
-(1830, 596, 'x == 5', 0, 1, 0),
-(1831, 596, 'x := 5', 1, 2, 0),
-(1832, 596, 'x => 5', 0, 3, 0),
-(1833, 596, 'x << 5', 0, 4, 0),
-(1834, 597, 'IF', 0, 1, 0),
-(1835, 597, 'REPEAT UNTIL', 1, 2, 0),
-(1836, 597, 'METHOD', 0, 3, 0),
-(1837, 597, 'CLASS', 0, 4, 0),
-(1838, 598, 'Er ist sprachabhängig', 0, 1, 0),
-(1839, 598, 'Er ist schwer zu lesen', 0, 2, 0),
-(1840, 598, 'Er ist leicht verständlich', 1, 3, 0),
-(1841, 598, 'Er ist nur für Experten geeignet', 0, 4, 0),
-(1842, 599, 'IF', 0, 1, 0),
-(1843, 599, 'FOREACH', 1, 2, 0),
-(1844, 599, 'RETURN', 0, 3, 0),
-(1845, 599, 'CLASS', 0, 4, 0),
-(1846, 600, 'x wird gelöscht', 0, 1, 0),
-(1847, 600, 'x wird auf 0 gesetzt', 1, 2, 0),
-(1848, 600, 'x wird mit einer Liste verbunden', 0, 3, 0),
-(1849, 600, 'x wird ausgegeben', 0, 4, 0),
-(1850, 601, 'IF x > 10 THEN', 1, 1, 0),
-(1851, 601, 'LOOP x', 0, 2, 0),
-(1852, 601, 'METHOD x', 0, 3, 0),
-(1853, 601, 'CLASS x', 0, 4, 0),
-(1854, 602, 'x wird gelöscht', 0, 1, 0),
-(1855, 602, 'x wird ausgegeben', 1, 2, 0),
-(1856, 602, 'x wird erhöht', 0, 3, 0),
-(1857, 602, 'x wird kopiert', 0, 4, 0),
-(1858, 603, 'STOP', 0, 1, 0),
-(1859, 603, 'BREAK', 1, 2, 0),
-(1860, 603, 'EXIT PROGRAM', 0, 3, 0),
-(1861, 603, 'RETURN', 0, 4, 0),
-(1862, 604, 'Zu viele Kommentare', 0, 1, 0),
-(1863, 604, 'Zu konkrete Programmiersyntax', 1, 2, 0),
-(1864, 604, 'Zu einfache Formulierungen', 0, 3, 0),
-(1865, 604, 'Zu kurze Variablennamen', 0, 4, 0),
-(1866, 605, 'Bedingungen', 1, 1, 0),
-(1867, 605, 'Schleifen', 1, 2, 0),
-(1868, 605, 'Klassen', 1, 3, 0),
-(1869, 605, 'Compilerbefehle', 0, 4, 0),
-(1870, 606, 'Unabhängig von Programmiersprachen', 1, 1, 0),
-(1871, 606, 'Gut für Planung', 1, 2, 0),
-(1872, 606, 'Direkt ausführbar', 0, 3, 0),
-(1873, 606, 'Leicht verständlich', 1, 4, 0),
-(1874, 607, 'IF', 1, 1, 0),
-(1875, 607, 'WHILE', 1, 2, 0),
-(1876, 607, 'METHOD', 1, 3, 0),
-(1877, 607, 'DATABASE', 0, 4, 0),
-(1878, 608, 'True', 0, 1, 0),
-(1879, 608, 'False', 1, 2, 0),
-(1880, 609, 'True', 1, 1, 0),
-(1881, 609, 'False', 0, 2, 0),
-(1882, 610, 'True', 1, 1, 0),
-(1883, 610, 'False', 1, 2, 0),
-(1884, 611, 'True', 1, 1, 0),
-(1885, 611, 'False', 0, 2, 0),
-(1886, 612, 'True', 1, 1, 0),
-(1887, 612, 'False', 0, 2, 0),
-(1888, 613, 'Pseudocode muss einer bestimmten Programmiersprache exakt entsprechen', 0, 1, 0),
-(1889, 613, 'Pseudocode dient dazu, Algorithmen verständlich darzustellen', 1, 2, 0),
-(1890, 613, 'Pseudocode kann frei formuliert werden und ist nicht streng standardisiert', 1, 3, 0),
-(1891, 613, 'Pseudocode wird direkt von Computern ausgeführt', 0, 4, 0),
-(1892, 614, 'Ein Algorithmus ist eine endliche Folge von klar definierten Schritten', 1, 1, 0),
-(1893, 614, 'Ein Algorithmus darf unendlich lange laufen, ohne Ergebnis zu liefern', 0, 2, 0),
-(1894, 614, 'Algorithmen lösen Probleme systematisch', 1, 3, 0),
-(1895, 614, 'Algorithmen können nur in Programmiersprachen geschrieben werden', 0, 4, 0);
+-- question_theme
+INSERT INTO question_theme (question_id, theme_id) VALUES (1, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (2, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (3, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (4, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (5, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (6, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (7, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (8, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (9, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (10, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (11, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (12, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (13, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (14, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (15, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (16, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (17, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (18, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (19, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (20, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (21, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (22, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (23, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (24, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (25, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (26, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (27, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (28, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (29, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (30, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (31, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (32, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (33, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (34, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (35, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (36, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (37, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (38, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (39, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (40, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (41, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (42, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (43, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (44, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (45, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (46, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (47, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (48, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (49, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (50, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (51, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (52, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (53, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (54, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (55, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (56, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (57, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (58, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (59, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (60, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (61, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (62, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (63, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (64, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (65, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (66, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (67, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (68, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (69, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (70, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (71, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (72, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (73, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (74, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (75, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (76, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (77, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (78, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (79, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (80, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (81, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (82, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (83, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (84, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (85, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (86, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (87, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (88, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (89, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (90, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (91, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (92, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (93, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (94, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (95, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (96, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (97, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (98, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (99, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (100, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (101, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (102, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (103, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (104, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (105, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (106, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (107, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (108, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (109, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (110, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (111, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (112, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (113, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (114, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (115, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (116, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (117, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (118, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (119, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (120, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (121, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (122, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (123, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (124, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (125, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (126, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (127, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (128, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (129, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (130, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (131, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (132, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (133, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (134, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (135, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (136, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (137, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (138, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (139, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (140, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (141, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (142, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (143, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (144, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (196, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (197, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (198, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (199, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (200, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (201, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (202, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (203, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (204, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (205, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (206, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (207, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (208, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (209, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (210, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (211, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (212, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (213, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (214, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (215, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (216, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (217, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (218, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (219, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (220, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (221, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (222, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (223, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (224, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (225, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (226, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (227, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (228, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (229, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (230, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (231, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (232, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (233, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (234, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (235, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (236, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (237, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (238, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (239, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (240, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (241, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (242, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (243, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (244, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (245, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (246, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (247, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (248, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (249, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (250, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (251, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (252, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (253, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (254, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (255, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (256, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (257, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (258, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (259, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (260, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (261, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (262, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (263, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (264, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (265, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (266, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (267, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (268, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (269, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (270, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (271, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (272, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (273, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (274, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (275, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (276, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (277, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (278, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (279, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (280, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (281, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (282, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (283, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (284, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (285, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (286, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (287, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (288, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (289, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (290, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (291, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (292, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (293, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (294, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (295, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (296, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (297, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (298, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (299, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (300, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (301, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (302, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (303, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (304, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (305, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (306, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (307, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (308, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (309, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (310, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (311, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (312, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (313, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (314, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (315, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (316, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (317, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (318, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (319, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (320, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (321, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (322, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (323, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (324, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (325, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (326, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (327, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (328, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (329, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (330, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (331, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (332, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (333, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (334, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (335, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (336, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (337, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (338, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (339, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (340, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (341, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (342, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (343, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (344, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (345, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (346, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (347, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (348, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (349, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (350, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (351, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (352, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (353, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (354, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (355, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (356, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (357, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (358, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (359, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (360, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (361, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (362, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (363, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (364, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (365, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (366, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (367, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (368, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (369, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (370, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (371, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (372, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (373, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (374, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (375, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (376, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (377, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (378, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (379, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (380, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (381, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (382, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (383, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (384, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (385, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (386, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (387, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (388, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (389, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (390, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (391, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (392, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (393, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (394, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (395, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (396, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (397, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (398, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (399, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (400, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (401, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (402, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (403, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (404, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (405, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (406, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (407, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (408, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (409, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (410, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (411, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (412, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (413, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (414, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (415, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (416, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (417, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (418, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (419, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (420, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (421, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (422, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (423, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (424, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (425, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (426, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (427, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (428, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (429, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (430, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (431, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (432, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (433, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (434, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (435, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (436, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (437, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (438, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (439, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (440, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (441, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (442, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (443, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (444, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (445, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (446, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (447, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (448, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (449, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (450, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (451, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (452, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (453, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (454, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (455, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (456, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (457, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (458, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (459, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (460, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (461, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (462, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (463, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (464, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (465, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (466, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (467, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (468, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (469, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (470, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (471, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (472, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (473, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (474, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (475, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (476, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (477, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (478, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (479, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (480, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (481, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (482, 5);
+INSERT INTO question_theme (question_id, theme_id) VALUES (483, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (484, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (485, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (486, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (487, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (488, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (489, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (490, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (491, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (492, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (493, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (494, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (495, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (496, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (497, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (498, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (499, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (500, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (501, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (502, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (503, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (504, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (505, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (506, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (507, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (508, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (509, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (510, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (511, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (512, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (513, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (514, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (515, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (516, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (517, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (518, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (519, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (520, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (521, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (522, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (523, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (524, 4);
+INSERT INTO question_theme (question_id, theme_id) VALUES (525, 2);
+INSERT INTO question_theme (question_id, theme_id) VALUES (526, 2);
+INSERT INTO question_theme (question_id, theme_id) VALUES (527, 2);
+INSERT INTO question_theme (question_id, theme_id) VALUES (528, 2);
+INSERT INTO question_theme (question_id, theme_id) VALUES (529, 2);
+INSERT INTO question_theme (question_id, theme_id) VALUES (530, 2);
+INSERT INTO question_theme (question_id, theme_id) VALUES (531, 2);
+INSERT INTO question_theme (question_id, theme_id) VALUES (532, 2);
+INSERT INTO question_theme (question_id, theme_id) VALUES (533, 2);
+INSERT INTO question_theme (question_id, theme_id) VALUES (534, 2);
+INSERT INTO question_theme (question_id, theme_id) VALUES (535, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (536, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (537, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (538, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (539, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (540, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (541, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (542, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (543, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (544, 3);
+INSERT INTO question_theme (question_id, theme_id) VALUES (545, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (546, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (547, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (548, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (549, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (550, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (551, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (552, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (553, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (554, 6);
+INSERT INTO question_theme (question_id, theme_id) VALUES (555, 7);
+INSERT INTO question_theme (question_id, theme_id) VALUES (556, 7);
+INSERT INTO question_theme (question_id, theme_id) VALUES (557, 7);
+INSERT INTO question_theme (question_id, theme_id) VALUES (558, 7);
+INSERT INTO question_theme (question_id, theme_id) VALUES (559, 7);
+INSERT INTO question_theme (question_id, theme_id) VALUES (560, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (561, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (562, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (563, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (564, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (565, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (566, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (567, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (568, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (569, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (570, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (571, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (572, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (573, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (574, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (575, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (576, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (577, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (578, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (579, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (580, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (581, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (582, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (583, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (584, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (585, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (586, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (587, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (588, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (589, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (590, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (591, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (592, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (593, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (594, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (595, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (596, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (597, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (598, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (599, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (600, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (601, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (602, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (603, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (604, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (605, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (606, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (607, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (608, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (609, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (610, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (611, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (612, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (613, 8);
+INSERT INTO question_theme (question_id, theme_id) VALUES (614, 8);
 
--- Gap Fields
-INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES
-(1, 76, 1, NULL, ' Struktur eines Systems und zeigt unter anderem Klassen, Attribute und '),
-(2, 76, 2, NULL, NULL),
-(3, 77, 1, NULL, ' Raute dargestellt und beschreibt eine besonders starke '),
-(4, 77, 2, NULL, '-Teil-Beziehung'),
-(5, 78, 1, NULL, ' Sichtbarkeit, während das Pluszeichen (+) für '),
-(6, 78, 2, NULL, ' Sichtbarkeit steht'),
-(7, 88, 1, NULL, ' erfolgt, während eine asynchrone Nachricht '),
-(8, 88, 2, NULL, ' ausgeführt wird'),
-(9, 89, 1, NULL, ' beschreibt alternative Abläufe, während der Operator '),
-(10, 89, 2, NULL, 'Wiederholungen modelliert'),
-(11, 98, 1, NULL, ' Kontrollflüsse auf, während ein Join-Knoten diese wieder zu einem '),
-(12, 98, 2, NULL, ' Kontrollfluss zusammenführt'),
-(13, 99, 1, NULL, ' auf, während ein Zusammenführungsknoten mehrere '),
-(14, 99, 2, NULL, ' wieder zusammenführt'),
-(15, 108, 1, NULL, ', '),
-(16, 108, 2, NULL, ' oder '),
-(17, 108, 3, NULL, ' bezeichnet werden'),
-(18, 109, 1, NULL, ' reagiert und dabei von einem Zustand in den '),
-(19, 109, 2, NULL, ' übergeht'),
-(20, 139, 1, 'Die Beendigung von Arbeitsverhältnissen durch Kündigung oder Auflösungsvertrag bedarf zu ihrer Wirksamkeit der ', NULL),
-(21, 139, 2, ' die elektronische Form ist ', '.'),
-(22, 140, 1, 'Der Stückdeckungsbeitrag ist die Differenz zwischen dem Nettoverkaufserlös und den ', NULL),
-(23, 140, 2, ' Kosten eines Produkts. Er dient in erster Linie dazu, die im Unternehmen anfallenden ', ' Kosten zu decken.'),
-(24, 141, 1, 'Das ', NULL),
-(25, 141, 2, ' beschreibt die theoretisch maximal mögliche Absatzmenge eines Produktes in einem bestimmten Zeitraum, während das ', ' den tatsächlichen Gesamtabsatz aller Anbieter auf diesem Markt darstellt.'),
-(26, 142, 1, 'Der primäre Sektor befasst sich mit der Gewinnung von ', NULL),
-(27, 142, 2, ' , wie beispielsweise in der Forstwirtschaft oder Fischerei. Im Gegensatz dazu umfasst der sekundäre Sektor die ', ' von Gütern, wie etwa im Handwerk oder der Industrie.'),
-(28, 143, 1, 'Beim Factoring verkauft ein Unternehmen seine offenen ', ' an ein Finanzierungsinstitut (den Factor), um sofortige Liquidität zu erhalten und das Ausfallrisiko zu übertragen.'),
-(29, 144, 1, 'Der finale Preis, der sich ergibt, nachdem vom Listeneinkaufspreis alle Preisnachlässe (Rabatte, Skonti) abgezogen und alle Bezugskosten (wie Fracht und Verpackung) hinzugerechnet wurden, wird als ', ' (oder Einstandspreis) bezeichnet.'),
-(42, 224, 1, NULL, NULL),
-(43, 225, 1, NULL, NULL),
-(44, 226, 1, NULL, NULL),
-(45, 227, 1, NULL, NULL),
-(46, 228, 1, NULL, NULL),
-(47, 229, 1, NULL, NULL),
-(48, 230, 1, NULL, NULL),
-(49, 231, 1, NULL, NULL),
-(50, 232, 1, NULL, NULL),
-(51, 241, 1, 'Gegeben sind die Tabellen kunde(id, name) und bestellung(id, kunden_id, betrag). Gesucht wird die Gesamtsumme aller Bestellungen pro Kunde auch wenn ein Kunde keine Bestellungen hat. SELECT k.', ', SUM(b.'),
-(52, 241, 2, ', SUM(b.', ') FROM'),
-(53, 241, 3, ') FROM', 'k LEFT JOIN'),
-(54, 241, 4, 'k LEFT JOIN', 'b ON k.id = b.kunden_id GROUP BY k.'),
-(55, 241, 5, 'b ON k.id = b.kunden_id GROUP BY k.', ';
+-- mc_answer
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1, 1, 'Beginn und Ende der den Arbeitnehmern zustehenden Pausen', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (2, 1, 'Höhe der Ausbildungsvergütung', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (3, 1, 'Höhe des Tarifgehaltes', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (4, 1, 'Dauer der wöchentlichen Arbeitszeit', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (5, 1, 'Höhe des jährlichen Urlaubanspruchs', 1, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (6, 1, 'Nutzung betrieblicher sozialer Einrichtungen', 0, 6, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (7, 2, 'Die geschäftsführende Gesellschafterin Lea Hofmann.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (8, 2, 'Anja Melter, eine 30-jährige Mitarbeiterin eines Zeitarbeitsunternehmens, die vor 4 Monaten dem Unternehmen zur Umstellung der Software-Anwendungen auf unbestimmte Zeit überlassen wurde.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (9, 2, 'Marga Becker, eine 16-jährige Schülerpraktikantin, die in ihren sechswöchigen Sommerferien im Unternehmen tätig ist.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (10, 2, 'Die Handelsvertreterin Claudia Roth, die seit 15 Jahren end mit der MaHaG KG zusammenarbeitet.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (11, 2, 'Carlos Brentiger, ein Mitarbeiter, der mittels Telearbeitsplatz wöchentlich zu Hause 30 Stunden für die MaHaG tätig ist.', 1, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (12, 2, 'Die 17-jährige Auszubildende Bea Timmermann.', 1, 6, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (13, 3, 'Ohne Zustimmung der Komplementärin Lea Hollermann kann kein neuer Betriebsrat gewählt werden.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (14, 3, 'Der amtierende Betriebsrat kann nicht wiedergewählt werden.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (15, 3, 'Ein Mitglied der Jugend und Auszubildendenvertretung kann nicht gleichzeitig Mitglied des Betriebsrates sein.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (16, 3, 'Aktives Wahlrecht ist das Recht , sich zur Wahl des Betriebsrates als Kandidat aufstellen zu lassen.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (17, 3, 'Einem Mitglied des Betriebsrates kann während seiner Amtszeit nur außerordentlich gekündigt werden .', 1, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (18, 3, 'Die regelmäßige Amtszeit des Betriebsrates beträgt 5 Jahre.', 0, 6, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (19, 4, 'Das AGG regelt, dass Benachteiligungen aus Gründen der ethischen Herkunft, des Geschlechts, der Religion oder Weltanschauung, einer Behinderung, des Alters oder der sexuellen Identität beim Auswahlverfahren nicht zulässig sind.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (20, 4, 'Die Benachteiligungsverbote des AGG erstrecken sich auch auf Ungleichbehandlungen beim beruflichen Aufstieg und die Beschäftigung- und Arbeitsbedingungen.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (21, 4, 'Bei Verstoß gegen das AGG hat der betroffene Arbeitnehmer keinen Anspruch auf Schadensersatz.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (22, 4, 'Bei einer Stellenausschreibung, muss der Arbeitgeber nicht geschlechtsneutral ausschreiben.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (23, 5, 'Sie beherrschen die englische Sprache in Word und Schrift.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (24, 5, 'Sie sind in der Lage, dynamische Webseiten zu programmieren.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (25, 5, 'Sie passen in unser Team, wenn Sie nicht älter als 30 Jahre sind.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (26, 5, 'Sie sind mobil and auch bereit, unsere Kunden deutschlandweit zu besuchen.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (27, 6, 'Jugendschutzgesetz', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (28, 6, 'Arbeitssicherheitsgesetz', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (29, 6, 'Berufsbildungsgesetz', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (30, 6, 'Betriebsverfassungsgesetz', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (31, 6, 'Jugendarbeitsschutzgesetz', 1, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (32, 7, 'Sollte die IHK-Prüfung vorher bestanden werden, endet das Ausbildungsverhältnis dennoch erst mit Ablauf der vertraglich festgelegten Ausbildungszeit.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (33, 7, 'Will ein Auszubildender eine Ausbildung in einem anderen Beruf beginnen, so kann er das Ausbildungsverhältnis auch nach der Probezeit noch beenden.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (34, 7, 'Jugendliche Auszubildende haben einen Anspruch auf eine einstündige Pause, wenn sie mehr als 6 Stunden beschäftigt werden.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (35, 7, 'Bei der Beendigung eines Berufsausbildungsverhältnisses hat der Auszubildende Anspruch auf ein Zeugnis. Er hat die Möglichkeit, ein qualifiziertes Zeugnis zu verlangen.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (36, 7, 'Die Ausbildung endet in jedem Fall mit dem letzten Termin der mündlichen Prüfung.', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (37, 8, 'Er muss weiterarbeiten, weil sein Ausbildungsvertrag das vorsieht.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (38, 8, 'Es handelt sich um einen schwebend-unwirksamen Arbeitsvertrag, der angefochten werden kann.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (39, 8, 'Die Weiterbeschäftigung kann jederzeit von beiden Seiten ohne Kündigung beendet werden.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (40, 8, 'Es wird ein neues Arbeitsverhältnis begründet mit einer neuen Probezeit von drei Monaten.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (41, 8, 'Jens Rievers begründet damit ein neues unbefristetes Arbeitsverhältnis und hat Anspruch auf Zahlung eines Gehalts ab dem 17.07.2025.', 1, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (42, 9, 'Ausschnitt aus dem Betriebsverfassungsgesetz – Erster Abschnitt: Jugend- und Auszubildendenvertretung', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (43, 9, 'Frau Sommer kann kandidieren, weil sie ja Praxiserfahrung aus ihrer Tätigkeit im Betriebsrat hat.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (44, 9, 'Frau Sommer kann nicht kandidieren, weil dem Arbeitgeber doppelte Kosten nicht zuzumuten sind.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (45, 9, 'Frau Sommer kann nicht kandidieren, weil das Betriebsverfassungsgesetz so etwas ausschließt.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (46, 9, 'Frau Sommer kann kandidieren, weil es sich um zwei verschiedene Organe der Betriebsverfassung handelt.', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (47, 10, 'Für die verschiedenen Ausbildungsjahre ist bereits jetzt die jeweilige Vergütung gestaffelt nach Ausbildungsjahren eingetragen.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (48, 10, 'Persönliche Angaben zu den Eltern, wie etwa Beruf und Konfession, fehlen.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (49, 10, 'Die Dauer der Ausbildung beträgt 36 Monate.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (50, 10, 'Die Probezeit beträgt 6 Monate.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (51, 10, 'Es sind nur die Kündigungsvoraussetzungen einer ordentlichen Kündigung aufgeführt, nicht aber die erforderlichen Gründe einer außerordentlichen.', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (52, 11, 'König GmbH', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (53, 11, 'Berufsgenossenschaft Bergmannsheil', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (54, 11, 'Industrie- und Handelskammer Mannheim', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (55, 11, 'Dr. Michaela Kluge, RA und Notarin', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (56, 11, 'Gerichtsvollzieher Ferdinand Piersch', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (57, 12, 'Schützenverein Mannheim 1896 e. V.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (58, 12, 'Stadt Mannheim', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (59, 12, 'Universität Heidelberg', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (60, 12, 'Großküchenausstatter Bößle GmbH', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (61, 12, 'Rechtsanwaltssozietät Edel & Stark', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (62, 12, 'Mülldeponie Stuttgart KG', 0, 6, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (63, 13, 'In welchen beiden Fällen handelt es sich um die Anwendung des Maximalprinzips?', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (64, 13, 'Der Absatz der Mikrowellengeräte soll im kommenden Geschäftsjahr das Vorjahresniveau erreichen, der Materialverbrauch soll dabei aber um 4 % gesenkt werden.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (65, 13, 'Mitarbeiter der MaHaG KG haben im Rahmen des betrieblichen Vorschlagswesens ein verbessertes Produktionsverfahren entwickelt. Bei der Herstellung ihrer Dampfgarer hat die MaHaG KG bei höherer Produktionsmenge gleiche Stückkosten. Die Geschäftsleitung greift den Verbesserungsvorschlag ihrer Mitarbeiter auf.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (66, 13, 'Für die Ausstattung der PC-Arbeitsplätze wurde ein Budget von 60.000 € veranschlagt. Durch Verhandlungen mit ihrem Geschäftspartner erreichen Sie, dass das neueste und verbesserte Betriebssystem auf allen Rechnern vorinstalliert ist.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (67, 13, 'Nach der anhaltenden Nachfrage nach Kaffee-Vollautomaten beschließt die Geschäftsleitung, die Produktion vorsichtig um 5 % zu erhöhen. Dies geht einher mit einem verstärkten Material- und Personaleinsatz.', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (68, 14, 'Statt der vielen unterschiedlichen Arbeitsplatzdrucker werden abteilungsbezogen leistungs- und netzwerkfähige Multifunktionsdrucker genutzt.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (69, 14, 'Beim Kauf von Büromaschinen wird auf die Energieeffizienz geachtet.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (70, 14, 'In der Betriebskantine der MaHaG KG werden vorzugsweise saisonale und vegane Speisen angeboten.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (71, 14, 'Das Unternehmen wechselt zu einem kostengünstigen Stromanbieter, der auf fossile Energieträger setzt.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (72, 15, 'In der Betriebskantine werden nur noch Steaks aus artgerechter argentinischer Rinderzucht serviert.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (73, 15, 'Das Verwaltungsgebäude der Mannheimer Haushaltsgeräte KG erhält eine Klimaanlage.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (74, 15, 'Drucker und Plotter mit einem hohen Geräuschpegel werden mit einer Schallschutzhaube ausgestattet.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (75, 15, 'Es werden nur noch LEDs für die Beleuchtung eingesetzt.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (76, 15, 'Eine hochtourig laufende Drehmaschine wird mit einer Sicherheitseinrichtung nachgerüstet.', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (77, 16, 'Für die Produktion ihrer Haushaltsgeräte stellt die MaHaG KG um auf Just-in-time.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (78, 16, 'Zur Kosteneinsparung nutzt die MaHaG KG die Vorteile des Outsourcings: einige Funktionsbereiche werden ausgelagert.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (79, 16, 'Die MaHaG KG setzt ihre Ressourcen sparsam ein, versucht, Brauchwasser nach Kühlung wieder dem Produktionsprozess zuzuführen, vermeidet aufwendige Verpackungen und publiziert diese Aktionen auf ihrer Internetseite.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (80, 16, 'Bei der Einstellung von Mitarbeitern bevorzugt die MaHaG KG junge Mitarbeiter, zeichnen sich diese doch durch mäßige Gehaltsansprüche aus. Damit lassen sich die Lohnkosten deutlich senken.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (81, 17, 'Die Nachfrage auf dem Arbeitsmarkt nimmt zu.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (82, 17, 'Die Kapazitätsauslastung nähert sich ihrem Höhepunkt.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (83, 17, 'Die Nachfrage nach Krediten nimmt zu, weil die Unternehmen in dieser Situation verstärkt investieren.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (84, 17, 'Ein wirtschaftlicher Abschwung führt zum Abbau von Überstunden und von Arbeitsplätzen.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (85, 18, 'Sie sollte langsam die Produktionsmenge reduzieren.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (86, 18, 'Sie sollte bei der Bundesagentur für Arbeit Kurzarbeitergeld beantragen.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (87, 18, 'Sie sollte vorhandene Überstunden abbauen.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (88, 18, 'Sie kann optimistisch in die Zukunft blicken und vorsichtig Produktion und ggf. Mitarbeiterzahl erhöhen.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (89, 18, 'Sie sollte den Betriebsrat über betriebsbedingte Kündigungen rechtzeitig informieren.', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (90, 19, 'Mindestpreis', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (91, 19, 'Käufermarkt', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (92, 19, 'Verkäufermarkt', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (93, 19, 'Nachgefragte Menge', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (94, 19, 'Angebotene Menge', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (95, 19, 'Gleichgewichtspreis', 1, 6, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (96, 20, 'Die Einkommen in Form von Löhnen und Gehältern fließen von den privaten Haushalten in die Unternehmen.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (97, 20, 'Die Konsumgüterausgaben für Güter fließen von den Unternehmen in die privaten Haushalte.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (98, 20, 'Produktionsgüter sind Teil des Güterstroms von den privaten Haushalten in die Richtung der Unternehmen.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (99, 20, 'Die Einkommen in Form von Löhnen und Gehältern sind Teil des Geldstromes, der von den Unternehmen zu den Haushalten fließt.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (100, 21, 'Konjunkturphase Rezession: Die Nachfrage nach Haushaltsgeräten wird ihren Tiefstand erreichen, was einhergeht mit einer hohen Arbeitslosigkeit. Die MaHaG KG hält das bisherige Produktionsniveau aufrecht, um bei künftiger Nachfrage lieferbereit zu sein.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (101, 21, 'Konjunkturphase Depression: Die Wirtschaft hat ihren Tiefpunkt erreicht. Die MaHaG KG baut daher Überstunden ab und richtet sich auf die Einrichtung von Kurzarbeit ein.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (102, 21, 'Konjunkturphase Expansion: Die MaHaG KG verzeichnet eine zunehmende Nachfrage. Sie erhöht vorsichtig die Produktionskapazität und fragt verstärkt Personal nach.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (103, 21, 'Konjunkturphase Boom: Die steigende Nachfrage bleibt auf hohem Niveau; um der bevorstehenden Depression zu begegnen, baut die MaHaG KG Überstunden ab und verstärkt ihre Werbemaßnahmen.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (104, 22, 'Der Industrie- und Handelskammer', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (105, 22, 'Der Betriebshaftpflichtversicherung', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (106, 22, 'Der Berufsgenossenschaft', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (107, 22, 'Der Personalabteilung der MaHaG KG', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (108, 22, 'Dem Betriebsarzt', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (109, 22, 'Dem Sicherheitsbeauftragten', 0, 6, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (110, 23, 'Im Krankheitsfall erhalten Auszubildende keine Entgeltfortzahlung, weil sie keine Arbeitnehmer sind.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (111, 23, 'Die Mannheimer Haushaltsgeräte KG kann schon am 1. Tag der Arbeitsunfähigkeit eine ärztliche Bescheinigung von ihren Auszubildenden verlangen.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (112, 23, 'Ärztliche Bescheinigungen zur Arbeitsunfähigkeit müssen spätestens am 5. Tag nach Erkrankung eingereicht werden.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (113, 23, 'Erst nach einer Anwartschaft von einem Jahr bei der MaHaG KG haben alle Mitarbeiter Anspruch auf Fortzahlung ihres Gehaltes bei Arbeitsunfähigkeit.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (114, 23, 'Entgeltfortzahlung im Krankheitsfall gibt es nur bei unverschuldeter Arbeitsunfähigkeit.', 1, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (115, 24, 'Welche drei Wirkungen haben Einträge von Vollmachten in das Handelsregister?', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (116, 24, 'Die Eintragung über eine erteilte Prokura in das Handelsregister hat konstitutive Wirkung.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (117, 24, 'Die Eintragung über den Widerruf einer erteilten Prokura hat konstitutive Wirkung.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (118, 24, 'Wurde einem Prokuristen die Prokura entzogen, so gelten seine Willenserklärungen weiterhin bis zum endgültigen Eintrag in das Handelsregister.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (119, 24, 'Die Eintragung über eine erteilte Prokura in das Handelsregister hat deklaratorische Wirkung.', 1, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (120, 24, 'Die Eintragung über den Widerruf einer erteilten Prokura hat deklaratorische Wirkung.', 1, 6, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (121, 25, 'Kommanditgesellschaft (KG)', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (122, 25, 'Gesellschaft mit beschränkter Haftung (GmbH)', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (123, 25, 'Offene Handelsgesellschaft (OHG)', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (124, 25, 'Einzelunternehmung (e. Kfr.)', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (125, 26, 'Der Businessplan …', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (126, 26, '… wird vom Amt für Wirtschaftsförderung ausgestellt.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (127, 26, '… dient ausschließlich der Sicherheit bei einer Kreditaufnahme.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (128, 26, '… muss nur bei der Gründung von Kapitalgesellschaften erstellt werden.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (129, 26, '… legt die strategischen Ziele eines Unternehmens fest.', 1, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (130, 26, '… wird beim Amtsgericht (Handelsregister) hinterlegt.', 0, 6, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (131, 27, 'Ermitteln Sie aus den folgenden Gesetzesauszügen, wie viele Arbeitstage Urlaub ihm für das Kalenderjahr 2026 zustehen.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (132, 27, 'mindestens 30 Werktage, wenn der Jugendliche zu Beginn des Kalenderjahrs noch nicht 16 Jahre alt ist,', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (133, 27, 'mindestens 27 Werktage, wenn der Jugendliche zu Beginn des Kalenderjahrs noch nicht 17 Jahre alt ist,', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (134, 27, 'mindestens 25 Werktage, wenn der Jugendliche zu Beginn des Kalenderjahrs noch nicht 18 Jahre alt ist.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (135, 27, 'Die Dauer des Erholungsurlaubs beträgt für alle Beschäftigten der MaHaG KG 30 Arbeitstage.', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (136, 28, 'Berufsgenossenschaft', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (137, 28, 'Arbeitsgericht', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (138, 28, 'Industrie- und Handelskammer', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (139, 28, 'Metall-Arbeitgeberverband', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (140, 28, 'Dienstleistungsgewerkschaft ver.di', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (141, 28, 'Amtsgericht', 0, 6, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (142, 29, 'Sie darf maximal 48 Stunden in der Woche arbeiten.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (143, 29, 'Sie darf nur an 5 Tagen in der Woche beschäftigt werden.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (144, 29, 'Sie hat Anspruch auf 45 Minuten Pause bei einer 8-stündigen Arbeitszeit.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (145, 29, 'Die Freizeit zwischen zwei Arbeitstagen muss mindestens 10 Stunden betragen.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (146, 29, 'Spätestens 3 Monate nach Ausbildungsbeginn muss eine ärztliche Erstuntersuchung erfolgen', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (147, 30, 'Bei der Ausübung gefährlicher Sportarten ist der Arbeitgeber generell von der Entgeltfortzahlungspflicht befreit.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (148, 30, 'Nur bei unverschuldeter Krankheit muss der Arbeitgeber die Ausbildungsvergütung weiterzahlen.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (149, 30, 'Ein Auszubildender erhält nur für die Dauer von vier Wochen weiterhin seine Ausbildungsvergütung.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (150, 30, 'Statt des Anspruchs auf Weiterzahlung der Ausbildungsvergütung hat der Auszubildende einen Anspruch auf Zahlung von Krankengeld.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (151, 31, 'Welche Rechtsfolgen hat die Kündigung durch den ausbildenden Betrieb?', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (152, 31, 'Die Kündigung ist unwirksam.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (153, 31, 'Ein Auszubildender muss in jedem Fall bis zum Vertragsende des Ausbildungsvertrages beschäftigt und ausgebildet werden.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (154, 31, 'Bei einem Straftatbestand wie Diebstahl oder einem schweren Vertrauensbruch ist die Kündigung immer wirksam, auch ohne Anhörung des Betriebsrates.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (155, 31, 'Bei einem Auszubildenden muss die Jugend- und Auszubildendenvertretung gehört werden. Weil dies nicht geschehen ist, ist die Kündigung aus diesem Grunde unwirksam.', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (156, 32, 'Anders als Arbeitnehmer müssen Azubis im Falle der Kündigung in der Probezeit immer den Grund angeben.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (157, 32, 'Für Ausbildungsverhältnisse beträgt die Mindest-Probezeit zwei, für Arbeitsverhältnisse vier Monate.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (158, 32, 'Die Höchstdauer der Probezeit beträgt bei Arbeitsverhältnissen sechs, bei einem Ausbildungsverhältnis vier Monate.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (159, 32, 'In einem Arbeitsverhältnis muss eine Probezeit vereinbart werden, in einem Ausbildungsverhältnis kann diese entfallen.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (160, 32, 'In Ausbildungsverträgen muss, in Arbeitsverträgen kann eine Probezeit vereinbart werden.', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (161, 33, 'Bei einem Wechsel des Berufswunsches kann das bestehende Ausbildungsverhältnis auch nach der Probezeit durch den Auszubildenden noch wirksam gekündigt werden.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (162, 33, 'Nur in der Probezeit ist eine Kündigung möglich, nach der Probezeit kann das Ausbildungsverhältnis in keinem Fall mehr gekündigt werden.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (163, 33, 'Die Kündigung eines Ausbildungsverhältnisses ist jederzeit formfrei möglich.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (164, 33, 'Der Wunsch nach einem Studium rechtfertigt eine Kündigung auch noch nach der Probezeit.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (165, 33, 'Es ist von beiden Vertragsparteien nur eine außerordentliche Kündigung bei einem Ausbildungsverhältnis möglich.', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (166, 34, 'Der Mitarbeiterin Claudia Funke soll gekündigt werden, weil sie Betriebs- und Geschäftsgeheimnisse verraten hat.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (167, 34, 'Der Betriebsrat möchte Auswahlrichtlinien erstellen für personelle Einzelmaßnahmen.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (168, 34, 'Die Geschäftsleitung der MaHaG KG möchte einen verbindlichen Betriebsurlaub für alle Beschäftigten in den Sommerferien festlegen.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (169, 34, 'Die MaHaG KG möchte auf allen Servern und Arbeitsplatzrechnern das bestehende Betriebssystem ersetzen durch das frei verfügbare Betriebssystem Linux.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (170, 34, 'Die MaHaG KG möchte Überwachungskameras im Lager installieren.', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (171, 35, 'Welche Aussage dazu ist falsch?', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (172, 35, 'Europass ist ein kostenpflichtiger Service der EU für Bewerbung und Jobsuche.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (173, 35, 'Europass Mobilitätsnachweis dokumentiert Ergebnisse von Lernaufenthalten im Ausland, wie z. B. Praktika während der Ausbildung oder des Studiums.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (174, 35, 'Europass hilft beim Erstellen von Bewerbungsunterlagen und der Karriereplanung.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (175, 35, 'Europass dient der Dokumentation von Kompetenzen und dem Vergleich von Qualifikationen.', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (176, 35, 'Europass bietet hilfreiche Tools für alle, die sich bewerben oder weiterbilden wollen.', 0, 6, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (177, 36, '15.11.20XX', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (178, 36, '30.11.20XX', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (179, 36, '01.12.20XX', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (180, 36, '31.12.20XX', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (181, 37, '5 Mitglieder', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (182, 37, '7 Mitglieder', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (183, 37, '9 Mitglieder', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (184, 37, '11 Mitglieder', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (185, 38, 'Bei welchen zwei der unten angegebenen Beispiele handelt es sich um betriebswirtschaftliche Produktionsfaktoren?', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (186, 38, 'Edelstahl für die Innenausstattung der Dampfgarer', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (187, 38, 'Darlehen der Sparkasse Mannheim', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (188, 38, 'Arbeitsleistung eines Metallmeisters in der Fertigung', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (189, 38, 'Privatgrundstück von Lea Hollermann', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (190, 38, 'Eigenkapital von Lea Hollermann', 0, 6, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (191, 39, 'Für die Betriebskantine verwendet die Mannheimer Haushaltsgeräte KG Pfandflaschen.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (192, 39, 'Toner-Kassetten und Plastikmaterialien werden dem Grünen Punkt zugeführt.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (193, 39, 'Beim Zuschneiden von Edelstahlblechen wird der Verschnitt dem Wirtschaftskreislauf wieder zugeführt.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (194, 39, 'Alle Heizkörper der Mannheimer Haushaltsgeräte KG werden mit Thermostatventilen ausgestattet.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (195, 39, 'Gebrauchte Ordner werden mit einem neuen Ordnerrücken versehen und wiederverwendet.', 1, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (196, 40, 'Nachfragemonopol', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (197, 40, 'Nachfrageoligopol', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (198, 40, 'Angebotsmonopol', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (199, 40, 'Angebotsoligopol', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (200, 40, 'Zweiseitiges Duopol', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (201, 40, 'Polypol', 0, 6, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (202, 41, 'Was passiert in dieser Marktsituation, wenn sich die Preise ändern?', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (203, 41, 'Das Angebot sinkt bei steigenden Preisen.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (204, 41, 'Die Nachfrage steigt bei sinkenden Preisen.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (205, 41, 'Angebot und Nachfrage steigen gleichermaßen bei sinkenden Preisen.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (206, 41, 'Das Angebot steigt bei sinkenden Preisen.', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (207, 41, 'Die Nachfrage sinkt bei sinkenden Preisen.', 0, 6, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (208, 42, 'In Zeiten der Globalisierung gibt es solche klassischen funktionierenden Märkte nicht mehr.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (209, 42, 'E-Commerce ist schon lange ein Ersatz für den Markt im herkömmlichen Sinne.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (210, 42, 'Einen wirklich funktionierenden Markt gibt es nur an der Börse.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (211, 42, 'Auch in Zeiten der Digitalisierung und des Online-Handels ist und bleibt der Markt als Zusammentreffen von Angebot und Nachfrage immer noch die zentrale Instanz für die Güterproduktion und -verteilung.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (212, 43, 'Güter und Dienstleistungen werden dadurch auf leistungsstarke Nachfrager verteilt.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (213, 43, 'Der Gleichgewichtspreis sorgt dafür, dass Angebot und Nachfrage ausgeglichen sind.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (214, 43, 'Er lenkt das Angebot hin zu den Marktteilnehmern, die bereit sind, auch mehr als den Gleichgewichtspreis zu bezahlen.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (215, 43, 'Er warnt vor einem zu hohen Angebotspreis.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (216, 44, 'Die Einkommen in Form von Löhnen und Gehältern fließen von den privaten Haushalten in die Unternehmen.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (217, 44, 'Die Einkommen in Form von Löhnen und Gehältern sind Teil des Geldstromes, der von den Unternehmen zu den Haushalten fließt.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (218, 44, 'Die Konsumausgaben für Güter fließen von den Unternehmen in die privaten Haushalte.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (219, 44, 'Produktionsgüter sind Teil des Güterstroms von den privaten Haushalten in die Richtung der Unternehmen.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (220, 45, 'Welche Nachteile hat das Leitungssystem der STAEKI AG?', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (221, 45, 'Es ist eine eindeutige Kompetenz und Aufgabenzuordnung festgelegt.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (222, 45, 'Jede Stelle weist exakt nur eine übergeordnete und eine untergeordnete Stelle auf.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (223, 45, 'Ein Mitarbeiter kann von mehreren übergeordneten Stellen Anweisungen erhalten, was zu Kompetenzschwierigkeiten führen kann.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (224, 45, 'Jeder Mitarbeiter kann Weisungen nur von einer Stelle bekommen.', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (225, 45, 'Informationen werden schnell weitergeleitet.', 0, 6, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (226, 46, 'Welche Voraussetzung hierzu muss sie erfüllen?', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (227, 46, 'Sie muss mindestens im 2. Ausbildungsjahr sein.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (228, 46, 'Sie muss die deutsche Staatsangehörigkeit aufweisen.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (229, 46, 'Sie muss bereits Erfahrung als Mitglied des Betriebsrates gesammelt haben.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (230, 46, 'Sie darf nicht Mitglied des Betriebsrates sein.', 1, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (231, 46, 'Sie muss mindestens 3 Monate dem Betrieb angehören.', 0, 6, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (232, 47, 'Sie ersetzt in der Werkskantine Getränkedosen durch Flaschen.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (233, 47, 'Sie nimmt Transportpaletten nach erfolgter Lieferung zurück und verwendet diese für weitere Lieferungen.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (234, 47, 'Überall im Unternehmen gibt es Behälter für Batterien, die an Sammelstellen zurückgegeben werden.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (235, 47, 'Bei der Produktion entstehende Metallreste werden eingeschmolzen und zur Herstellung neuer Bleche verwendet.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (236, 48, 'Energetische Abfallverwertung', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (237, 48, 'Recycling', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (238, 48, 'Rohstoffnutzung im Dualen System', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (239, 48, 'Energieeffizienz', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (240, 48, 'Abfallverminderung', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (241, 49, 'Wie nennt man dieses im Grundgesetz verankerte Prinzip der sozialen Marktwirtschaft?', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (242, 49, 'Betriebsverfassung', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (243, 49, 'Tarifautonomie', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (244, 49, 'Koalitionsfreiheit', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (245, 49, 'Tariffreiheit', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (246, 49, 'Unternehmensmitbestimmung', 0, 6, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (247, 50, 'Mit gegebenen Mitteln den maximalen Erfolg erzielen.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (248, 50, 'Ein festes Ziel mit so wenig Mitteln wie möglich erreichen.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (249, 50, 'Den Gewinn durch unbegrenzte Ressourcen maximieren.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (250, 50, 'Die Fixkosten auf null senken.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (251, 51, 'Ein einziger Anbieter beherrscht den gesamten Markt.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (252, 51, 'Viele kleine Anbieter stehen vielen Nachfrager gegenüber.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (253, 51, 'Wenige Anbieter bedienen viele Nachfrager.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (254, 51, 'Der Staat legt die Preise für alle Teilnehmer fest.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (255, 52, 'Weil die Zinsen für Kredite fallen.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (256, 52, 'Weil das Geld an Wert verliert und man weniger Waren für den gleichen Betrag erhält', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (257, 52, 'Weil die Unternehmen die Produktion drosseln.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (258, 52, 'Weil der Wechselkurs zum Dollar steigt.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (259, 53, 'Medizinische Dienstleistungen.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (260, 53, 'In Deutschland produzierte Autos für den Export.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (261, 53, 'Unbezahlte Hausarbeit und Ehrenämter.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (262, 53, 'Investitionen von Unternehmen in neue Maschinen.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (263, 54, 'Er steigt.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (264, 54, 'Er sinkt.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (265, 54, 'Er bleibt unverändert.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (266, 54, 'Er fällt unter die Herstellungskosten.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (267, 55, 'Die Kosten für Marketing und Werbung.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (268, 55, 'Den entgangenen Nutzen der nächstbesten Alternative (Verzichtskosten).', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (269, 55, 'Die Summe aus fixen und variablen Kosten.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (270, 55, 'Die Zinsen, die an die Bank gezahlt werden müssen.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (271, 56, 'Die AG kann kein Fremdkapital aufnehmen.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (272, 56, 'Die AG kann leichter Kapital über die Börse beschaffen.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (273, 56, 'Die GmbH haftet unbeschränkt mit dem Privatvermögen.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (274, 56, 'Die AG benötigt kein Mindestkapital.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (275, 57, 'Zwischen Marketing und Vertrieb.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (276, 57, 'Zwischen Forschung und Entwicklung.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (277, 57, 'Zwischen hohen Preisen und hohen Gewinnen.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (278, 57, 'Zwischen ökologischen Zielen (teure Filter) und Gewinnmaximierung.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (279, 58, 'Wenn Zinsen für Kredite bei 0% liegen.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (280, 58, 'Wenn das Gut über 50 Jahre genutzt werden soll.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (281, 58, 'Wenn die Liquidität geschont werden soll oder Technik schnell veraltet.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (282, 58, 'Wenn das Unternehmen über extrem hohe Cash-Reserven verfügt.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (283, 59, 'Fixkosten / (Preis - variable Stückkosten)', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (284, 59, 'Gesamtkosten / Preis', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (285, 59, 'Umsatz - Gewinn', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (286, 59, 'Variable Kosten * Fixkosten', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (287, 60, 'Es muss unbefristet sein.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (288, 60, 'Es darf keine Kosten verursachen.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (289, 60, 'Es hat eine spezifische Organisation und ist zeitlich begrenzt.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (290, 60, 'Es muss von mindestens 100 Personen bearbeitet werden.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (291, 61, 'Wenn die Qualität sinkt, steigen immer die Kosten.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (292, 61, 'Sie sind völlig unabhängig voneinander.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (293, 61, 'Ändert sich ein Faktor (z.B. Zeitverkürzung), leiden Kosten oder Qualität.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (294, 61, 'Zeit und Kosten dürfen nie gleichzeitig betrachtet werden.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (295, 62, 'Er dient nur der grafischen Darstellung des Teams.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (296, 62, 'Er zerlegt das Projekt in planbare Arbeitspakete.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (297, 62, 'Er ersetzt die Stakeholder-Analyse.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (298, 62, 'Er wird erst nach Projektabschluss erstellt.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (299, 63, 'Nichts, da der Puffer die Zeit auffängt.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (300, 63, 'Das Team bekommt automatisch mehr Budget.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (301, 63, 'Der Endtermin des Gesamtprojekts verschiebt sich.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (302, 63, 'Nur die Qualität der Aufgabe sinkt.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (303, 64, 'Risikoreich.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (304, 64, 'Realistisch.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (305, 64, 'Rentabel.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (306, 64, 'Rückläufig.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (307, 65, 'Er dient als Grundlage für die nächste Weihnachtsfeier.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (308, 65, 'Ohne Bericht darf kein Kaffee mehr im Projektraum getrunken werden.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (309, 65, 'Er ist die Voraussetzung für die Einstellung von Praktikanten.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (310, 65, 'Er dokumentiert die Lieferung.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (311, 66, 'Die Mitarbeiter haben keine Aufgaben.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (312, 66, 'Kompetenzkonflikte, da Mitarbeiter \"zwei Chefs\" haben.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (313, 66, 'Es gibt keine Hierarchien mehr.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (314, 66, 'Projekte werden grundsätzlich verboten.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (315, 67, 'Die Zeit, um die sich das Projektende verschieben darf.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (316, 67, 'Die Zeit, um die sich eine Aufgabe verschieben darf, ohne den Nachfolger zu gefährden.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (317, 67, 'Die Zeit für unvorhergesehene Teamevents.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (318, 67, 'Die Zeit zwischen zwei Projekten.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (319, 68, 'Die psychologische Struktur des Teams.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (320, 68, 'Den exakten Kontostand des Unternehmens.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (321, 68, 'Den zeitlichen Ablauf und die Abhängigkeiten von Aufgaben.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (322, 68, 'Die chemische Zusammensetzung der verwendeten Materialien.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (323, 69, 'Er priorisiert die Anforderungen im Product Backlog.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (324, 69, 'Er coacht das Team und räumt Hindernisse aus dem Weg.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (325, 69, 'Er schreibt den Code für die Software.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (326, 69, 'Er entscheidet allein über das Projektbudget.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (327, 70, 'Sequenzdiagramm', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (328, 70, 'Aktivitätsdiagramm', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (329, 70, 'Klassendiagramm', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (330, 70, 'Zustandsdiagramm', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (331, 71, 'Komposition', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (332, 71, 'Aggregation', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (333, 71, 'Assoziation', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (334, 71, 'Generalisierung', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (335, 72, 'Abhängigkeit', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (336, 72, 'Assoziation', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (337, 72, 'Generalisierung', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (338, 72, 'Realisation', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (339, 73, 'Attribute', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (340, 73, 'Operationen', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (341, 73, 'Lebenslinien', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (342, 73, 'Pakete', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (343, 74, 'Klassendiagramm', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (344, 74, 'Sequenzdiagramm', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (345, 74, 'Komponentendiagramm', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (346, 74, 'Paketdiagramm', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (347, 75, 'Aggregation', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (348, 75, 'Komposition', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (349, 75, 'Vererbung (Generalisierung)', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (350, 75, 'Aktivitätsfluss', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (351, 79, 'Wahr', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (352, 79, 'Falsch', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (353, 80, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (354, 80, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (355, 81, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (356, 81, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (357, 82, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (358, 82, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (359, 83, 'Komponentendiagramm', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (360, 83, 'Use-Case-Diagramm', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (361, 83, 'Sequenzdiagramm', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (362, 83, 'Paketdiagramm', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (363, 84, 'Nachrichten dürfen keine Rückgabewerte enthalten', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (364, 84, 'Parallele Abläufe werden durch kombinierte Fragmente dargestellt', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (365, 84, 'Ein Objekt kann nur eine Lebenslinie besitzen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (366, 84, 'Ein Sequenzdiagramm zeigt ausschließlich synchrone Kommunikation', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (367, 85, 'Ein loop-Fragment darf keine Bedingungen enthalten', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (368, 85, 'Ein alt-Fragment benötigt mindestens zwei Akteure', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (369, 85, 'Ein par-Fragment erzwingt synchrone Ausführung', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (370, 85, 'Ein opt-Fragment ist ein Spezialfall von alt', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (371, 86, 'Eine Lebenslinie kann mehrere Aktivierungen besitzen', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (372, 86, 'Eine Lebenslinie endet immer im Endzustand', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (373, 86, 'Eine Lebenslinie kann durch ein X beendet werden', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (374, 86, 'Eine Lebenslinie darf keine Nachrichten senden', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (375, 87, 'Nachrichten', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (376, 87, 'Zustände', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (377, 87, 'Aktivierungen (Execution Specifications)', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (378, 87, 'Lebenslinien', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (379, 90, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (380, 90, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (381, 91, 'Wahr', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (382, 91, 'Falsch', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (383, 92, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (384, 92, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (385, 93, 'Darstellung der Klassenhierarchie', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (386, 93, 'Modellierung von Abläufen und Workflows', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (387, 93, 'Beschreibung der Systemarchitektur', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (388, 93, 'Darstellung von Objektinteraktionen über Zeit', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (389, 94, 'Sie dürfen nur in Sequenzdiagrammen verwendet werden', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (390, 94, 'Sie können Datenflüsse innerhalb eines Aktivitätsdiagramms darstellen', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (391, 94, 'Sie ersetzen Kontrollflüsse vollständig', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (392, 94, 'Sie dürfen keine Typen besitzen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (393, 95, 'Klassendiagramm', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (394, 95, 'Sequenzdiagramm', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (395, 95, 'Aktivitätsdiagramm', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (396, 95, 'Zustandsdiagramm', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (397, 96, 'Aktionen', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (398, 96, 'Entscheidungsknoten', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (399, 96, 'Lebenslinien', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (400, 96, 'Start- und Endknoten', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (401, 97, 'Sie ordnen Aktivitäten Verantwortlichkeiten zu', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (402, 97, 'Sie dürfen nur horizontal dargestellt werden', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (403, 97, 'Sie können sowohl Personen als auch Systeme repräsentieren', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (404, 97, 'Sie beeinflussen die Ausführung der Aktivitäten', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (405, 100, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (406, 100, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (407, 101, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (408, 101, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (409, 102, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (410, 102, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (411, 103, 'Ein Zustand darf niemals interne Aktivitäten enthalten', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (412, 103, 'Ein Übergang kann eine Bedingung und eine Aktion besitzen', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (413, 103, 'Ein Zustand kann nur genau einen eingehenden Übergang haben', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (414, 103, 'Ein Endzustand darf weitere Übergänge besitzen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (415, 104, 'Ein Zustand darf nur genau einen Subzustand besitzen', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (416, 104, 'Subzustände sind nur in parallelen Regionen erlaubt', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (417, 104, 'Subzustände ermöglichen hierarchische Zustandsmaschinen', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (418, 104, 'Subzustände dürfen keine Übergänge besitzen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (419, 105, 'Lebenslinien', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (420, 105, 'Zustände und Übergänge', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (421, 105, 'Komponenten und Schnittstellen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (422, 105, 'Pakete und Abhängigkeiten', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (423, 106, 'Zustände', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (424, 106, 'Übergänge', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (425, 106, 'Swimlanes', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (426, 106, 'Ereignisse', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (427, 107, 'Ein Übergang kann mehrere Aktionen enthalten', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (428, 107, 'Ein Übergang kann eine Bedingung besitzen', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (429, 107, 'Ein Übergang darf keinen Zielzustand haben', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (430, 107, 'Ein Übergang kann ein Ereignis auslösen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (431, 110, 'Wahr', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (432, 110, 'Falsch', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (433, 111, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (434, 111, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (435, 112, 'Wahr', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (436, 112, 'Falsch', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (437, 113, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (438, 113, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (439, 114, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (440, 114, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (441, 115, 'Wahr', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (442, 115, 'Falsch', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (443, 116, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (444, 116, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (445, 117, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (446, 117, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (447, 118, 'Wahr', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (448, 118, 'Falsch', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (449, 119, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (450, 119, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (451, 120, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (452, 120, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (453, 121, '4 Wochen zum 15. oder zum Ende eines Kalendermonats', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (454, 121, '1 Monat zum Ende eines Kalendermonats', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (455, 121, '2 Monate zum Ende eines Kalendermonats', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (456, 121, '3 Monate zum Ende eines Kalendermonats', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (457, 122, 'Ab 20 Arbeitnehmern', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (458, 122, 'Ab 5 Arbeitnehmern', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (459, 122, 'Ab 100 Arbeitnehmern', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (460, 122, 'Ab 3 Arbeitnehmern, wenn diese leitende Angestellte sind', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (461, 123, '8.800 €', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (462, 123, '8.820 €', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (463, 123, '9.000 €', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (464, 123, '8.900 €', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (465, 124, '3 Jahre', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (466, 124, '4 Jahre', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (467, 124, '5 Jahre', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (468, 124, '6 Jahre', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (469, 125, 'Mitglieder des Betriebsrats', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (470, 125, 'Werksstudenten', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (471, 125, 'Schwangere Arbeitnehmerinnen', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (472, 125, 'Schwerbehinderte Menschen', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (473, 125, 'Leitende Angestellte', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (474, 126, 'Wachstumsphase', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (475, 126, 'Sättigungsphase', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (476, 126, 'Startphase', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (477, 126, 'Degenerationsphase', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (478, 126, 'Durstphase', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (479, 127, 'Die Aktiengesellschaft (AG) benötigt ein Mindestkapital von 50.000 Euro.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (480, 127, 'Eine GmbH zählt zu den Personengesellschaften.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (481, 127, 'Bei der GmbH ist eine Fremdorganschaft (Geschäftsführung durch Nicht-Gesellschafter) möglich.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (482, 127, 'Sowohl GmbH als auch AG werden in die Abteilung B des Handelsregisters (HRB) eingetragen.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (483, 127, 'Das Mindestkapital einer GmbH beträgt 1 Euro.', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (484, 128, 'Landwirt (Urproduktion)', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (485, 128, 'Speditionskaufmann', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (486, 128, 'Friseur', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (487, 128, 'Automobilindustrie (Produktion)', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (488, 128, 'Rechtsanwalt', 1, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (489, 129, 'Das Kapital steht dem Unternehmen meist nur befristet zur Verfügung.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (490, 129, 'Der Kapitalgeber erhält volles Stimmrecht in der Gesellschafterversammlung.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (491, 129, 'Die Zinsaufwendungen mindern als Betriebsausgaben den steuerpflichtigen Gewinn.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (492, 129, 'Der Kapitalgeber wird Miteigentümer des Unternehmens.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (493, 129, 'Es besteht ein rechtlicher Anspruch auf Rückzahlung des Kapitals.', 1, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (494, 130, 'Lieferantenrabatt', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (495, 130, 'Transportversicherung', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (496, 130, 'Zollgebühren bei Importware', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (497, 130, 'Lieferskonto', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (498, 130, 'Verpackungskosten', 1, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (499, 131, 'Markenpositionierung festlegen', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (500, 131, 'Neue Auslandsmärkte erschließen', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (501, 131, 'Kurzfristige Social-Media-Rabattaktion', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (502, 131, 'Langfristige Umsatzziele definieren', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (503, 131, 'Kernzielgruppen bestimmen', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (504, 132, 'Konsolidierung von Servern durch Virtualisierung (Reduzierung der Hardware).', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (505, 132, 'Deaktivierung der Energiesparmodi an Arbeitsplatzrechnern.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (506, 132, 'Beschaffung von Hardware mit Umweltzertifikaten (z. B. Energy Star, Blauer Engel).', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (507, 132, 'Fachgerechtes Recycling von Elektroschrott.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (508, 132, 'Ausdrucken aller E-Mails zur Archivierung.', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (509, 133, 'Durchführung der externen Wirtschaftsprüfung', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (510, 133, 'Soll-Ist-Abweichungsanalysen', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (511, 133, 'Erstellung der Jahresbilanz für das Finanzamt', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (512, 133, 'Laufende Budgetierung und Kostenkontrolle', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (513, 133, 'Entwicklung einer langfristigen Unternehmensvision', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (514, 134, 'Verschärfter internationaler Preis- und Wettbewerbsdruck.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (515, 134, 'Vollständige Unabhängigkeit der nationalen Volkswirtschaften voneinander.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (516, 134, 'Zugang zu neuen Absatzmärkten im Ausland.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (517, 134, 'Verlagerung von Arbeitsplätzen in Niedriglohnländer.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (518, 134, 'Vereinheitlichung aller kultureBräuche weltweit innerhalb eines Jahres.', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (519, 135, 'Ein \"Bedürfnis\" ist das Empfinden eines Mangels verbunden mit dem Wunsch, diesen zu beseitigen.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (520, 135, 'Jeder Wunsch führt automatisch zu einer wirtschaftlichen Nachfrage am Markt.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (521, 135, '\"Bedarf\" entsteht, wenn ein Bedürfnis durch Kaufkraft (Geld) abgedeckt ist.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (522, 135, 'Die Nachfrage ist unabhängig vom Preis des Gutes.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (523, 135, 'Zur \"Nachfrage\" wird der Bedarf erst, wenn der Kaufwille hinzukommt und dieser am Markt wirksam wird.', 1, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (524, 136, 'Sie stehen unbegrenzt zur Verfügung (z. B. Sonnenlicht, Luft).', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (525, 136, 'Sie sind knapp und haben einen Preis.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (526, 136, 'Ihre Herstellung verursacht Kosten.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (527, 136, 'Sie können nicht gehandelt werden.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (528, 136, 'Sie sind Gegenstand des wirtschaftlichen Handelns.', 1, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (529, 137, 'Er kann Verzugszinsen verlangen.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (530, 137, 'Er kann (nach Ablauf einer angemessenen Nachfrist) vom Vertrag zurücktreten.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (531, 137, 'Er darf sofort und eigenmächtig Waren aus dem Lager des Schuldners abholen.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (532, 137, 'Er kann unter bestimmten Voraussetzungen Schadensersatz für den durch die Verzögerung entstandenen Schaden verlangen.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (533, 137, 'Er kann die Geschäftsleitung des Schuldners sofort haftbar machen und verhaften lassen.', 0, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (534, 138, 'Sicherungsübereignung eines Firmenwagens.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (535, 138, 'Selbstschuldnerische Bürgschaft durch einen Gesellschafter.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (536, 138, 'Eintragung einer Grundschuld auf das Betriebsgelände.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (537, 138, 'Garantieerklärung einer Bank.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (538, 138, 'Verpfändung von Wertpapieren (Lombardkredit).', 1, 5, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (658, 196, 'SELECT customer FROM *;', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (659, 196, 'SELECT all FROM customer;', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (660, 196, 'SELECT * FROM customer;', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (661, 196, 'GET ALL customer;', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (662, 197, 'Eindeutigkeit muss gewährleistet werden.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (663, 197, 'NULL-Werte sind zulässig.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (664, 197, 'Er identifiziert eine Zeile eindeutig.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (665, 197, 'Er besteht aus einer oder mehreren Spalten.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (666, 198, 'SELECT * FROM customer WHERE age > 30;', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (667, 198, 'SELECT * FROM customer HAVING age > 30;', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (668, 198, 'FILTER customer BY age > 30;', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (669, 198, 'SELECT age > 30 FROM customer;', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (670, 199, 'FULL OUTER JOIN', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (671, 199, 'LEFT JOIN', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (672, 199, 'INNER JOIN', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (673, 199, 'RIGHT JOIN', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (674, 200, 'Jede Spalte, die nicht aggregiert wird.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (675, 200, 'Nur Spalten mit Datentyp INT.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (676, 200, 'Nur Primärschlüssel.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (677, 200, 'Keine Spalten.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (678, 201, 'COUNT()', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (679, 201, 'SUM()', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (680, 201, 'MAX()', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (681, 201, 'WHERE', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (682, 202, 'COMMIT', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (683, 202, 'ROLLBACK', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (684, 202, 'SAVEPOINT', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (685, 202, 'TRUNCATE', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (686, 203, 'AVG()', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (687, 203, 'HAVING', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (688, 203, 'DESC', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (689, 203, 'COUNT()', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (690, 204, 'UPDATE-Klausel', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (691, 204, 'SET-Klausel', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (692, 204, 'WHERE-Klausel (optional)', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (693, 204, 'ORDER-BY-Klausel', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (694, 205, 'VARCHAR', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (695, 205, 'BOOLEAN', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (696, 205, 'INTEGER', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (697, 205, 'STRING', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (698, 206, '1. Normalform', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (699, 206, '2. Normalform', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (700, 206, '3. Normalform', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (701, 206, 'Boyce-Codd Normalforn', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (702, 207, 'UNIQUE', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (703, 207, 'ORDER', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (704, 207, 'WHERE', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (705, 207, 'JOIN', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (706, 208, 'CLEAR TABLE', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (707, 208, 'TRUNCATE', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (708, 208, 'FAST DELETE', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (709, 208, 'DROP ALL', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (710, 209, 'Können Parameter besitzen', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (711, 209, 'Sind reine Views', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (712, 209, 'Können Schleifen enthalten', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (713, 209, 'Werden automatisch bei jedem SELECT ausgeführt', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (714, 210, 'GROUP', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (715, 210, 'DISTINCT', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (716, 210, 'INDEX', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (717, 210, 'FOREIGN', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (718, 211, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (719, 211, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (720, 212, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (721, 212, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (722, 213, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (723, 213, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (724, 214, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (725, 214, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (726, 215, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (727, 215, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (728, 216, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (729, 216, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (730, 217, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (731, 217, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (732, 218, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (733, 218, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (734, 219, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (735, 219, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (736, 220, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (737, 220, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (738, 221, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (739, 221, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (740, 222, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (741, 222, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (742, 223, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (743, 223, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (744, 233, 'Sie erlaubt transitive Abhängigkeite.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (745, 233, 'Sie beseitigt partielle Abhängigkeiten von einem zusammengesetzten Primärschlüssel', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (746, 233, 'Sie verlangt ausschließlich atomare Attribute', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (747, 233, 'Sie ist nur bei 1:1-Beziehungen relevant', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (748, 234, 'Die 1. Normalform verlangt atomare Attribute', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (749, 234, 'Die 2. Normalform verhindert transitive Abhängigkeiten', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (750, 234, 'Die 3. Normalform verhindert partielle Abhängigkeiten', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (751, 234, 'Die 3. Normalform verhindert transitive Abhängigkeiten', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (752, 235, 'SELECT k.name, COUNT(b.id) FROM kunde k INNER JOIN bestellung b ON k.id = b.kunden_id GROUP BY k.name;', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (753, 235, 'SELECT k.name, COUNT(b.id) FROM kunde k INNER JOIN bestellung b ON k.id = b.kunden_id;', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (754, 235, 'SELECT k.name FROM kunde k LEFT JOIN bestellung b ON k.id = b.kunden_id WHERE b.id IS NULL;', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (755, 235, 'SELECT name, COUNT(*) FROM kunde GROUP BY id;', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (756, 236, '1:n-Beziehungen werden durch einen Fremdschlüssel auf der n-Seite umgesetzt', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (757, 236, '1:1-Beziehungen benötigen immer zwei Fremdschlüssel', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (758, 236, 'Beziehungen können durch Fremdschlüssel technisch realisiert werden', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (759, 236, 'n:m-Beziehungen erfordern eine zusätzliche Tabelle', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (760, 237, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (761, 237, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (762, 238, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (763, 238, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (764, 239, 'Wahr', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (765, 239, 'Falsch', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (766, 240, 'Wahr', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (767, 240, 'Falsch', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (768, 243, '3NF bedeutet, dass jede Tabelle genau einen Primärschlüssel haben muss.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (769, 243, '3NF ist erfüllt, wenn keine transitiven Abhängigkeiten von Nicht-Schlüsselattributen auf den Primärschlüssel bestehen.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (770, 243, '3NF erlaubt partielle Abhängigkeiten, solange es einen zusammengesetzten Schlüssel gibt.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (771, 243, '3NF ist nur bei Tabellen ohne Fremdschlüssel relevant.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (772, 244, 'Ein Primärschlüssel ist eindeutig und darf nicht NULL sein.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (773, 244, 'Ein UNIQUE-Constraint erlaubt grundsätzlich keine NULL-Werte.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (774, 244, 'Eine Tabelle kann mehrere UNIQUE-Constraints besitzen.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (775, 244, 'Eine Tabelle kann mehrere Primärschlüssel besitzen.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (776, 245, 'Indizes können SELECT-Abfragen (z. B. mit WHERE) beschleunigen.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (777, 245, 'Indizes beschleunigen INSERT/UPDATE/DELETE immer, weil weniger gesucht werden muss.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (778, 245, 'Ein Index verhindert automatisch doppelte Werte in einer Spalte.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (779, 245, 'Ein Index benötigt zusätzlichen Speicherplatz.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (780, 246, 'In einer SELECT-Liste dürfen bei GROUP BY nur Aggregatfunktionen stehen.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (781, 246, 'Alle nicht-aggregierten Spalten in SELECT müssen in der GROUP BY-Klausel enthalten sein.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (782, 246, 'HAVING filtert Gruppen nach der Aggregation.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (783, 246, 'WHERE kann nur nach GROUP BY verwendet werden.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (784, 247, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (785, 247, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (786, 248, 'Wahr', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (787, 248, 'Falsch', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (788, 249, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (789, 249, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (790, 250, 'Wahr', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (791, 250, 'Falsch', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (792, 253, 'CREATE DATABASE test;', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (793, 253, 'DROP TABLE kunde;', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (794, 253, 'INSERT INTO kunde VALUES (\'Max\');', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (795, 253, 'ALTER TABLE kunde ADD email VARCHAR(50);', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (796, 254, 'VARCHAR speichert Zeichenketten variabler Länge', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (797, 254, 'CHAR speichert Zeichenketten mit fixer Länge', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (798, 254, 'DATE speichert Datum und Uhrzeit', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (799, 254, 'INT speichert Dezimalzahlen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (800, 255, 'ROUND', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (801, 255, 'COUNT', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (802, 255, 'SUM', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (803, 255, 'AVG', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (804, 256, 'WHERE kann aggregierte Werte filtern', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (805, 256, 'HAVING wird vor GROUP BY ausgeführt', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (806, 256, 'WHERE filtert Datensätze vor der Gruppierung', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (807, 256, 'HAVING ersetzt die WHERE-Klausel vollständig', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (808, 257, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (809, 257, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (810, 258, 'Wahr', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (811, 258, 'Falsch', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (812, 259, 'Wahr', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (813, 259, 'Falsch', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (814, 260, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (815, 260, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (816, 263, 'Atomarität, Konsistenz, Isolation, Dauerhaftigkeit', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (817, 263, 'Ausführung, Konsistenz, Integrität, Datenschutz', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (818, 263, 'Atomarität, Commit, Indizierung, Datentyp', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (819, 263, 'Abfrage, Commit, Integrität, Datensatz', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (820, 264, 'Ein Trigger ist eine gespeicherte Prozedur, die automatisch bei einem Datenbank-Ereignis ausgeführt wird.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (821, 264, 'Trigger werden hauptsächlich für komplexe SELECT-Abfragen verwendet.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (822, 264, 'Ein Trigger kann nicht auf UPDATE-Ereignisse reagieren.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (823, 264, 'Trigger können zur Sicherstellung komplexer Geschäftsregeln oder der referentiellen Integrität beitragen.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (824, 265, 'Atomarität: Eine Transaktion wird entweder ganz oder gar nicht ausgeführt', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (825, 265, 'Isolation: Alle Benutzer haben die gleichen Zugriffsrechte.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (826, 265, 'Konsistenz: Die Transaktion überführt die Datenbank von einem konsistenten in einen anderen konsistenten Zustand.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (827, 265, 'Dauerhafigkeit: Nach einem ROLLBACK sind die Daten dauerhaft verloren.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (828, 266, 'DROP löscht Datensätze, DELETE löscht Tabellen.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (829, 266, 'DROP entfernt Tabellen oder Datenbanken, DELETE löscht Datensätze.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (830, 266, 'DROP kann rückgängig gemacht werden, DELETE nicht.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (831, 266, 'Es gibt keinen Unterschied.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (832, 267, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (833, 267, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (834, 268, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (835, 268, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (836, 269, 'Wahr', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (837, 269, 'Falsch', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (838, 270, 'Wahr', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (839, 270, 'Falsch', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (840, 273, 'GROUP BY sortiert automatisch die Ergebnisse', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (841, 273, 'Alle nicht aggregierten Spalten müssen in GROUP BY stehen', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (842, 273, 'GROUP BY kann nur mit COUNT verwendet werden', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (843, 273, 'GROUP BY ersetzt ORDER BY', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (844, 274, 'Ein Fremdschlüssel stellt referentielle Integrität sicher', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (845, 274, 'Ein Fremdschlüssel muss immer auf einen Primärschlüssel zeigen', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (846, 274, 'Ein Fremdschlüssel kann NULL sein, wenn die Beziehung optional ist', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (847, 274, 'Ein Fremdschlüssel kann nicht in derselben Tabelle referenzieren', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (848, 275, 'Normalform verlangt atomare (unteilbare) Attribute.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (849, 275, 'Normalform ist automatisch erfüllt, wenn ein Primärschlüssel existiert.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (850, 275, 'Normalform verbietet partielle Abhängigkeiten bei zusammengesetzten Schlüsseln.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (851, 275, 'Normalform erlaubt transitive Abhängigkeiten.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (852, 276, 'Ein COMMIT kann durch ROLLBACK rückgängig gemacht werden.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (853, 276, 'ROLLBACK setzt alle Änderungen seit BEGIN TRANSACTION zurück.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (854, 276, 'Jede einzelne SQL-Anweisung ist automatisch eine vollständige ACID-Transaktion ohne Ausnahme.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (855, 276, 'Ohne COMMIT bleiben Änderungen in einer Transaktion nicht dauerhaft gespeichert.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (856, 277, 'Ein RIGHT JOIN liefert alle Datensätze der rechten Tabelle.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (857, 277, 'Ein FULL OUTER JOIN liefert alle Datensätze beider Tabellen.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (858, 277, 'Ein INNER JOIN liefert immer alle Datensätze der linken Tabelle.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (859, 277, 'Ein CROSS JOIN benötigt zwingend eine ON-Bedingung.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (860, 278, 'Ein zusammengesetzter Index kann mehrere Spalten enthalten.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (861, 278, 'Indizes verbessern ausschließlich INSERT-Operationen.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (862, 278, 'Ein Index kann die Performance von WHERE- und ORDER BY-Klauseln verbessern.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (863, 278, 'Indizes verändern automatisch die Sortierung einer Tabelle.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (864, 279, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (865, 279, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (866, 280, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (867, 280, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (868, 281, 'Wahr', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (869, 281, 'Falsch', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (870, 282, 'Wahr', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (871, 282, 'Falsch', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (872, 285, 'Factory Pattern', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (873, 285, 'Singleton Pattern', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (874, 285, 'Observer Pattern', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (875, 285, 'Strategy Pattern', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (876, 286, '$O(n)$', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (877, 286, '$O(n^2)$', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (878, 286, '$O(log n)$', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (879, 286, '$O(1)$', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (880, 287, 'Stack', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (881, 287, 'Binary Tree', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (882, 287, 'Queue', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (883, 287, 'Hash Table', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (884, 288, 'Eine \"Ist-ein\"-Beziehung', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (885, 288, 'Eine \"Hat-ein\"-Beziehung, bei der die Teile ohne das Ganze nicht existieren können', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (886, 288, 'Eine lose Verbindung zwischen zwei unabhängigen Klassen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (887, 288, 'Die Vererbung von Methoden', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (888, 289, 'Open-Closed Principle', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (889, 289, 'Open-Closed Principle', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (890, 289, 'Single Responsibility Principle', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (891, 289, 'Dependency Inversion Principle', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (892, 290, 'Die Methode der Oberklasse wird komplett ersetzt.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (893, 290, 'Mehrere Methoden haben denselben Namen, aber unterschiedliche Parameter.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (894, 290, 'Eine Methode ruft sich selbst so oft auf, bis der Stack überläuft.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (895, 290, 'Die Sichtbarkeit einer Methode wird zur Laufzeit geändert.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (896, 291, 'Bubble Sort', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (897, 291, 'Selection Sort', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (898, 291, 'Quick Sort', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (899, 291, 'Insertion Sort', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (900, 292, 'Prozess / Verarbeitung', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (901, 292, 'Start / Ende', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (902, 292, 'Entscheidung / Verzweigung', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (903, 292, 'Ein- / Ausgabe', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (904, 293, 'Eine Variable, die einen Wahrheitswert speichert.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (905, 293, 'Eine Variable, die die Speicheradresse einer anderen Variablen speichert.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (906, 293, 'Ein Tool zur Fehlersuche im Code.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (907, 293, 'Eine spezielle Art von Schleife.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (908, 294, 'Unterklassen müssen so einsetzbar sein, dass sie ihre Basisklassen ersetzen können.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (909, 294, 'Jede Methode darf maximal 20 Zeilen Code haben.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (910, 294, 'Variablen müssen immer initialisiert werden.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (911, 294, 'Klassen dürfen nicht von Interfaces erben.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (912, 295, 'StackOverflowError', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (913, 295, 'NullPointerException', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (914, 295, 'IndexOutOfBoundsException', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (915, 295, 'CompilationError', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (916, 296, 'Er braucht weniger Speicher.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (917, 296, 'Das Suchen von Elementen ist im Durchschnitt schneller ($O(log n)$).', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (918, 296, 'Er kann nur Zahlen speichern.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (919, 296, 'Er ist einfacher zu programmieren.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (920, 297, 'Method', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (921, 297, 'Main', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (922, 297, 'Model', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (923, 297, 'Module', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (924, 298, 'static', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (925, 298, 'abstract', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (926, 298, 'final', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (927, 298, 'private', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (928, 311, 'Queue', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (929, 311, 'Stack', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (930, 311, 'Graph', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (931, 311, 'Heap', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (932, 312, 'Elemente werden immer sortiert gespeichert.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (933, 312, 'Schlüssel werden mit einer Hashfunktion auf Speicherpositionen abgebildet.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (934, 312, 'Sie kann nur Ganzzahlen speichern.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (935, 312, 'Sie arbeitet immer nach dem FIFO-Prinzip.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (936, 313, 'Bubble Sort', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (937, 313, 'Depth-First Search', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (938, 313, 'Dijkstra-Algorithmus', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (939, 313, 'Binary Search', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (940, 314, 'Daten und Methoden werden in einer Klasse zusammengefasst und geschützt.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (941, 314, 'Klassen können mehrere Oberklassen haben.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (942, 314, 'Methoden können mehrfach überladen werden.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (943, 314, 'Programme werden ausschließlich funktional geschrieben.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (944, 315, 'Eine Klasse ohne Konstruktor', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (945, 315, 'Eine Klasse mit nur privaten Methoden', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (946, 315, 'Eine Sammlung von Methodensignaturen ohne Implementierung', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (947, 315, 'Eine spezielle Schleifenstruktur', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (948, 316, 'Preorder-Traversierung', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (949, 316, 'Inorder-Traversierung', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (950, 316, 'Postorder-Traversierung', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (951, 316, 'Levelorder-Traversierung', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (952, 317, 'char', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (953, 317, 'String', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (954, 317, 'text', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (955, 317, 'varchar', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (956, 318, 'Klassen dürfen nur eine Methode enthalten.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (957, 318, 'Methoden dürfen nur einmal definiert werden.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (958, 318, 'Eine Methode kann unterschiedliche Implementierungen besitzen.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (959, 318, 'Eine Klasse darf nur ein Objekt erzeugen.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (960, 319, 'Breadth-First Search', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (961, 319, 'Depth-First Search', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (962, 319, 'Binary Search', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (963, 319, 'Linear Search', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (964, 320, 'Er ist der schnellste Sortieralgorithmus.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (965, 320, 'Er vergleicht benachbarte Elemente und tauscht sie bei Bedarf.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (966, 320, 'Er funktioniert nur mit Zahlen.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (967, 320, 'Er nutzt eine Hashfunktion zum Sortieren.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (968, 321, 'Bubble Sort', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (969, 321, 'Merge Sort', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (970, 321, 'Insertion Sort', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (971, 321, 'Selection Sort', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (972, 322, 'Sie kann nur einmal aufgerufen werden.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (973, 322, 'Sie wird nur vom Compiler ausgeführt.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (974, 322, 'Sie ruft sich selbst innerhalb ihrer Implementierung auf.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (975, 322, 'Sie arbeitet ausschließlich mit Schleifen.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (976, 323, 'Eine Tabelle mit sortierten Zahlen', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (977, 323, 'Eine Datenstruktur aus Knoten (Vertices) und Kanten (Edges)', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (978, 323, 'Eine spezielle Art von Array', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (979, 323, 'Eine Liste von Zeichenketten', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (980, 324, 'Er löscht Objekte aus dem Speicher.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (981, 324, 'Er führt Berechnungen in Schleifen aus.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (982, 324, 'Er initialisiert ein Objekt beim Erzeugen.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (983, 324, 'Er verhindert Vererbung.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (984, 325, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (985, 325, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (986, 326, 'Custom error occurred', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (987, 326, 'Runtime Exception', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (988, 326, 'Compilation Error', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (989, 326, 'Keine Ausgabe', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (990, 327, 'int arr[5];', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (991, 327, 'int arr = new int(5);', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (992, 327, 'int[] arr = new int[5];', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (993, 327, 'array<int> arr = new int[5];', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (994, 328, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (995, 328, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (996, 329, 'Class A', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (997, 329, 'Class B', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (998, 329, 'Compilerfehler', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (999, 329, 'Laufzeitfehler', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1000, 330, 'implements', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1001, 330, 'inherits', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1002, 330, 'extends', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1003, 330, 'interface', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1004, 331, 'Sie wird nicht kompiliert.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1005, 331, 'Die Klasse kann trotzdem abstrakt sein.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1006, 331, 'Java stellt automatisch eine abstrakte Methode bereit.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1007, 331, 'Sie wird zu einer konkreten Klasse.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1008, 332, 'true', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1009, 332, 'false', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1010, 332, 'null', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1011, 332, '0', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1012, 333, '3', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1013, 333, '3.5', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1014, 333, '3.0', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1015, 333, 'Fehler', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1016, 334, '128', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1017, 334, '127', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1018, 334, '-128', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1019, 334, 'Compilerfehler', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1020, 335, 'final wird zur Behandlung von Ausnahmen verwendet, finally für die Garbage Collection und finalize verhindert Änderungen.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1021, 335, 'final macht eine Variable konstant, finally stellt die Ausführung von Bereinigungscode sicher und finalize wird vor der Garbage Collection aufgerufen.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1022, 335, 'final ist eine Methode, finally ist ein Schlüsselwort und finalize ist ein Block innerhalb von try-catch.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1023, 335, 'final, finally und finalize haben alle den gleichen Zweck.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1024, 336, '1 Byte', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1025, 336, '4 Bytes', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1026, 336, '2 Bytes', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1027, 336, 'Plattformabhängig', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1028, 337, '20', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1029, 337, 'Compilerfehler', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1030, 337, '0', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1031, 337, 'Undefinierter Wert', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1032, 338, 'Wenn eine Klasse als final deklariert wird, kann keine Unterklasse davon erstellt werden.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1033, 338, 'Wenn eine Methode final ist, kann sie nicht überschrieben werden.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1034, 338, 'Wenn eine Variable final ist, kann ihr nur einmal ein Wert zugewiesen werden.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1035, 338, 'Alle der oben genannten Aussagen.', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1036, 339, 'Das Programm wird nicht kompiliert.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1037, 339, 'Der Compiler stellt einen Standardkonstruktor bereit.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1038, 339, 'Die Klasse kann nicht instanziiert werden.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1039, 339, 'Der Konstruktor einer anderen Klasse wird verwendet.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1040, 340, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1041, 340, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1042, 341, 'Objekte zerstören', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1043, 341, 'Speicher zuweisen', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1044, 341, 'Objekte initialisieren', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1045, 341, 'Die main()-Methode aufrufen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1046, 342, 'base', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1047, 342, 'super', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1048, 342, 'parent', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1049, 342, 'this', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1050, 343, 'Aktuelles Objekt', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1051, 343, 'Elternklasse', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1052, 343, 'Statische Methode', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1053, 343, 'Rückgabetyp', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1054, 344, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1055, 344, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1056, 345, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1057, 345, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1058, 346, 'Klasse', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1059, 346, 'Instanzvariable', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1060, 346, 'Methode', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1061, 346, 'Objekt', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1062, 347, 'Jede Variable', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1063, 347, 'Instanzvariablen', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1064, 347, 'Methodenaufrufe und lokale Variablen', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1065, 347, 'Statische Variablen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1066, 350, 'int wird auf dem Heap gespeichert und Integer auf dem Stack', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1067, 350, 'Integer kann sowohl null-Werte als auch int-Werte speichern', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1068, 350, 'int ist langsamer als Wrapper-Klassen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1069, 350, 'Integer kann nicht in Collections verwendet werden', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1070, 352, '1', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1071, 352, '2', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1072, 352, '3', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1073, 352, '4', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1074, 353, 'System.forceGc() aufrufen', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1075, 353, 'System.gc() aufrufen', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1076, 353, 'System.requireGc() aufrufen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1077, 353, 'Keine der oben genannten', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1078, 354, 'Objekte ohne Referenzen werden sofort zerstört.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1079, 354, 'Lokale Variablen in Methoden werden auf dem Heap gespeichert.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1080, 354, 'Statische Variablen werden im Methodenbereich (oder Metaspace) gespeichert.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1081, 354, 'Die Heap-Größe ist fest und kann zur Laufzeit nicht wachsen.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1082, 355, 'Eine einzige Instanz', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1083, 355, 'Mehrere Logger, die in einen Logger geleitet werden', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1084, 356, 'Magische Argumente', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1085, 356, 'Unklare Variablenbenennung', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1086, 356, 'Mehrere Verantwortlichkeiten', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1087, 356, 'Schlechte Formatierung', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1088, 357, 'Java unterstützt Einfachvererbung.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1089, 357, 'Java erlaubt Mehrfachvererbung von Klassen mit extends.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1090, 357, 'Interfaces können verwendet werden, um Mehrfachvererbung zu erreichen.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1091, 357, 'Das Schlüsselwort super kann verwendet werden, um den Konstruktor der Elternklasse aufzurufen.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1092, 358, 'Eine Unterklasse kann keine Methoden einer Superklasse überschreiben.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1093, 358, 'Vererbung ermöglicht Wiederverwendung von Code und Erweiterung bestehender Klassen.', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1094, 358, 'Eine Klasse kann in allen Programmiersprachen nur von einer Klasse erben.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1095, 358, 'Vererbung verhindert Polymorphismus.', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1096, 359, 'Code in Maschinensprache kompilieren', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1097, 359, 'Speicher automatisch optimieren', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1098, 359, 'Code Schritt für Schritt ausführen, um Variablen und den Programmfluss zu untersuchen', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1099, 359, 'Code in Pseudocode umwandeln', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1100, 360, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1101, 360, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1102, 361, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1103, 361, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1104, 362, 'ArrayList nimmt nur primitive Typen auf', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1105, 362, 'Array speichert Daten in aufeinanderfolgenden Speicheradressen', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1106, 362, 'ArrayList nimmt nur Wrapper-Klassen auf', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1107, 362, 'ArrayList zeigt auf verschiedene Speicherstellen, an denen sich die Daten befinden', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1108, 363, 'Mehrere Variablen in einer Klasse speichern', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1109, 363, 'Die Fähigkeit verschiedener Objekte, auf dieselbe Methode unterschiedlich zu reagieren', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1110, 363, 'Den Zugriff auf private Variablen verhindern', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1111, 363, 'Mehrere Konstruktoren in einem Programm erstellen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1112, 364, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1113, 364, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1114, 365, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1115, 365, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1116, 366, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1117, 366, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1118, 367, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1119, 367, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1120, 368, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1121, 368, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1122, 369, 'Die Farbe der IDE, die zum Schreiben des Codes verwendet wird', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1123, 369, 'Die Anzahl der Kommentare im Programm', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1124, 369, 'Die Syntax der Programmiersprache', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1125, 369, 'Die Zeit- und Speicherkomplexität des Algorithmus', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1126, 370, 'Programmierfehler automatisch beheben', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1127, 370, 'Änderungen im Code verfolgen und Zusammenarbeit ermöglichen', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1128, 370, 'Code in Maschinensprache umwandeln', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1129, 370, 'Die CPU-Leistung erhöhen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1130, 371, 'INSERT', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1131, 371, 'SELECT', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1132, 371, 'UPDATE', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1133, 371, 'CREATE', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1134, 372, 'HTTP', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1135, 372, 'FTP', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1136, 372, 'HTTPS', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1137, 372, 'SMTP', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1138, 373, 'Um die genaue Laufzeit eines Programms in Sekunden zu messen', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1139, 373, 'Um zu beschreiben, wie die Leistung eines Algorithmus mit der Eingabegröße wächst', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1140, 373, 'Um die Speicheradresse von Variablen zu berechnen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1141, 373, 'Um die Geschwindigkeit der Programmiersprache zu bestimmen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1142, 374, 'Programme in Maschinencode umwandeln', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1143, 374, 'Bestimmen, welcher Prozess CPU-Zeit erhält', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1144, 374, 'Die Festplattenspeicherkapazität erhöhen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1145, 374, 'Internetverbindungen verwalten', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1146, 375, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1147, 375, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1148, 376, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1149, 376, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1150, 377, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1151, 377, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1152, 378, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1153, 378, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1154, 379, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1155, 379, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1156, 380, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1157, 380, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1158, 381, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1159, 381, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1160, 382, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1161, 382, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1162, 383, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1163, 383, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1164, 384, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1165, 384, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1166, 385, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1167, 385, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1168, 386, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1169, 386, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1170, 387, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1171, 387, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1172, 388, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1173, 388, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1174, 389, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1175, 389, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1176, 390, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1177, 390, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1178, 391, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1179, 391, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1180, 392, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1181, 392, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1182, 393, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1183, 393, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1184, 394, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1185, 394, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1186, 395, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1187, 395, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1188, 396, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1189, 396, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1190, 397, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1191, 397, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1192, 398, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1193, 398, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1194, 399, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1195, 399, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1196, 400, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1197, 400, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1198, 401, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1199, 401, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1200, 402, 'COUNT(*)', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1201, 402, 'COUNT(email)', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1202, 402, 'SUM(email)', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1203, 402, 'AVG(email)', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1204, 403, 'WHERE', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1205, 403, 'ORDER BY', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1206, 403, 'HAVING', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1207, 403, 'LIMIT', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1208, 404, 'ORDER BY datum DESC', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1209, 404, 'SORT BY datum DESC', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1210, 404, 'GROUP BY datum DESC', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1211, 404, 'ORDER BY DESC(datum)', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1212, 405, 'Nur eindeutige Zeilen im Ergebnis', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1213, 405, 'Entfernt NULL aus Ergebnissen', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1214, 405, 'Sortiert automatisch', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1215, 405, 'Verhindert Duplikate in der Tabelle', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1216, 406, 'Foreign Key in einer Tabelle reicht', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1217, 406, 'Es wird eine Zwischentabelle gebraucht', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1218, 406, 'Nur möglich ohne Primärschlüssel', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1219, 406, 'Solche Beziehungen sind nicht möglich', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1220, 407, 'Er darf NULL enthalten', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1221, 407, 'Er muss eindeutig sein', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1222, 407, 'Er muss eine Zeichenkette sein', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1223, 407, 'Er muss automatisch hoch zählen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1224, 408, 'Dass Abfragen schneller laufen', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1225, 408, 'Dass referenzierte Werte existieren', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1226, 408, 'Die Tabelle wird automatisch normalisiert', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1227, 408, 'Es verhindert doppelte Werte in der Tabelle', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1228, 409, 'Mehr Speicherverbrauch', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1229, 409, 'Weniger Redundanz und Anomalien', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1230, 409, 'Mehr Duplikate', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1231, 409, 'Weniger Tabellen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1232, 410, 'Weniger Tabellen', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1233, 410, 'Redundanz reduzieren und Anomalien vermeiden', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1234, 410, 'Mehr Duplikate zulassen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1235, 410, 'Schnellere Schreibzugriffe erzwingen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1236, 411, 'Beim Einfügen fehlen Daten', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1237, 411, 'Beim Löschen gehen Informationen verloren', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1238, 411, 'Ein Wert muss an mehreren Stellen geändert werden', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1239, 411, 'Alle anderen Antwortmöglichkeiten', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1240, 412, 'Schreibzugriffe wichtiger sind als Lesezugriffe', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1241, 412, 'Leseperformance wichtiger ist und Redundanz akzeptiert wird', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1242, 412, 'Man 3NF unbedingt vermeiden muss', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1243, 412, 'Man keine Indizes nutzen darf', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1244, 413, 'SELECT wird langsamer', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1245, 413, 'UPDATE/INSERT wird langsamer', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1246, 413, 'DELETE wird unmöglich', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1247, 413, 'GROUP BY funktioniert nicht mehr', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1248, 414, 'Spalte mit nur 2 möglichen Werten (z. B. true/false)', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1249, 414, 'Spalte, die nie in WHERE/JOIN vorkommt', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1250, 414, 'Spalte, die oft gefiltert oder gejoint wird', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1251, 414, 'Spalte, die nur NULL enthält', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1252, 415, 'LIKE statt =', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1253, 415, 'Prepared Statements / Parameterbindung', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1254, 415, 'DISTINCT nutzen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1255, 415, 'ORDER BY entfernen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1256, 416, 'Hash + Salt verwenden', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1257, 416, 'intern ist', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1258, 416, 'Base64 nutzen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1259, 416, 'Verschlüsseln', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1260, 417, '1:1', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1261, 417, '1:n', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1262, 417, 'n:m', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1263, 417, '0:1', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1264, 418, 'Datenverschlüsselung', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1265, 418, 'Speicherformat der DB', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1266, 418, 'Reihenfolge von Attributen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1267, 418, 'Anzahl möglicher Zuordnungen zwischen Entitäten', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1268, 419, 'Tabelle', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1269, 419, 'Beziehung', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1270, 419, 'Eigenschaft einer Entität', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1271, 419, 'Index', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1272, 420, 'SQL-Abfrage', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1273, 420, 'Objekt mit ggf. Eigenschaften', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1274, 420, 'Backup-Datei', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1275, 420, 'Transaktion', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1276, 421, 'Entität ohne Attribute', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1277, 421, 'Entität, die ohne übergeordnete Entität nicht eindeutig identifizierbar ist', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1278, 421, 'Entität mit sehr vielen Attributen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1279, 421, 'Entität mit UUID', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1280, 422, 'Primärschlüssel ist jeder Schlüssel in einer Datenbank', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1281, 422, 'Primärschlüssel ist verschlüsselt', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1282, 422, 'Primärschlüssel steht in einer anderen Tabelle', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1283, 422, 'Primärschlüssel besteht aus mehreren Spalten/Attributen', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1284, 423, 'Ist verboten in relationalen Datenbanken', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1285, 423, 'Kann oft in einer Tabelle mit aufgenommen werden', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1286, 423, 'Macht Indizes unmöglich', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1287, 423, 'Funktioniert nur in NoSQL', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1288, 424, 'Beziehung muss immer existieren', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1289, 424, 'Beziehung ist verschlüsselt', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1290, 424, 'Beziehung ist materialisiert', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1291, 424, 'Beziehung kann fehlen', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1292, 425, 'Zu viele Indizes', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1293, 425, 'Mehrfach gespeicherte gleiche Information', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1294, 425, 'Keine Backups', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1295, 425, 'Zu große CPU', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1296, 426, 'Beim Einfügen fehlen Werte', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1297, 426, 'Beim Löschen gehen (ungewollt( Infos verloren', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1298, 426, 'Beim Lesen fehlen Rechte', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1299, 426, 'Beim Backup fehlen Dateien', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1300, 427, 'Daten werden doppelt gespeichert', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1301, 427, 'Man kann Daten nicht speichern, ohne Zusatzdaten zu erfinden/anzugeben', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1302, 427, 'Man kann nicht löschen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1303, 427, 'Man kann nicht indizieren', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1304, 428, 'Schnelleres Finden von Datensätzen', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1305, 428, 'Daten verschlüsseln', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1306, 428, 'Tabellen verkleinern', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1307, 428, 'Backups ersetzen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1308, 429, 'Indizes blockieren RAM dauerhaft', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1309, 429, 'Jeder Schreibvorgang muss Indexstrukturen mit aktualisieren', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1310, 429, 'Indizes sind nur für Lesen erlaubt', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1311, 429, 'Indizes löschen Daten', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1312, 430, 'Wie lang der Spaltenname ist', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1313, 430, 'Wie einzigartig die Werte sind (wenig Wiederholungen)', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1314, 430, 'Ob NULL erlaubt ist', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1315, 430, 'Ob die Spalte verschlüsselt ist', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1316, 431, 'Boolean', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1317, 431, 'E-Mail', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1318, 431, 'Kundennummer', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1319, 431, 'UUID', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1320, 432, 'In die 1-Tabelle', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1321, 432, 'In beide Tabellen', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1322, 432, 'In keine, das macht die DB automatisch', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1323, 432, 'In die n-Tabelle', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1324, 433, 'Nur Auto-Increment', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1325, 433, 'Mehreren Attributen zusammen', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1326, 433, 'Immer einer UUID', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1327, 433, 'Immer Text', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1328, 434, 'Daten sind komprimiert', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1329, 434, 'Daten sind schnell abrufbar', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1330, 434, 'Daten sind korrekt, konsistent und passen zu Regeln', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1331, 434, 'Daten sind nur lesbar', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1332, 435, 'Adresse des Kunden wird in 5 Tabellen kopiert', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1333, 435, 'Index auf einer Spalte', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1334, 435, 'Eine Tabelle pro Entität', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1335, 435, 'Fremdschlüssel in der n-Tabelle', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1336, 436, 'Spalte darf keinen NULL-Wert enthalten', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1337, 436, 'Werte müssen eindeutig sein', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1338, 436, 'Spalte darf keine Duplikate enthalten', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1339, 436, 'Spalte wird automatisch indiziert', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1340, 437, 'NULL = „kein Wert“, leerer String = „Wert ist leer“ Finde ich schwer zu verstehen wenn wir hier „nichts“ in String Anführungszeichen schreiben', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1341, 437, 'Ist immer dasselbe', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1342, 437, 'NULL ist ein Text,', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1343, 437, 'Leer ist immer verboten', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1344, 438, 'Nur in der DB', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1345, 438, 'Nur im Frontend', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1346, 438, 'In der Anwendung + in der DB', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1347, 438, 'Beim Nutzer. Er muss selber aufpassen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1348, 439, 'Bei jedem Select', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1349, 439, 'Nur beim Login', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1350, 439, 'Nie, DB macht alles automatisch', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1351, 439, 'Wenn mehrere Änderungen zusammengehören', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1352, 440, 'Tabellen zusammenführen', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1353, 440, 'Indizes erstellen', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1354, 440, 'Daten exportieren', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1355, 440, 'Mehrere Schritte zuverlässig aufeinanderfolgend ausführen', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1356, 441, 'Zu viele Tabellen', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1357, 441, 'Teilweise gespeicherte Daten, falsche Daten (Inkonsistenz)', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1358, 441, 'Mehr RAM', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1359, 441, 'Zu viele Benutzer', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1360, 442, 'Änderungen der Transaktion zurücknehmen', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1361, 442, 'Änderungen endgültig machen', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1362, 442, 'Index neu bauen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1363, 442, 'Backup erstellen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1364, 443, 'Transaktionen sind verboten', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1365, 443, 'Längere Sperren → Konflikte und langsamer', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1366, 443, 'Datenbank wird automatisch gelöscht', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1367, 443, 'Indizes verschwinden', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1368, 444, 'Zusätzliche Suchstruktur für schnelleres Finden', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1369, 444, 'Verschlüsselung', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1370, 444, 'Backup', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1371, 444, 'Tabellenkopie', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1372, 445, 'Bei kleinen Tabellen immer', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1373, 445, 'Nur bei Textfeldern', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1374, 445, 'Wenn häufig nach der gleichen Spalte gefiltert/zugeordnet wird', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1375, 445, 'Nur bei Boolean-Feldern', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1376, 446, 'DB stürzt ab', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1377, 446, 'Lesen wird unmöglich', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1378, 446, 'Abhängigkeiten werden gelöscht', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1379, 446, 'Schreibzugriffe werden langsamer / hoher Aufwand', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1380, 447, 'Antwortzeiten + Stabilität', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1381, 447, 'Nur schöner Code', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1382, 447, 'Nur UI-Design', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1383, 447, 'Nur der Kauf von Servern', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1384, 448, 'Größere Monitore', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1385, 448, 'Rollen trennen + Secrets sicher speichern', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1386, 448, 'Mehr Tabellen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1387, 448, 'Keine Indizes', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1388, 449, 'Damit niemand committen kann', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1389, 449, 'Migrationen/Änderungen testen ohne Produktionsdaten zu riskieren', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1390, 449, 'Damit Backups unnötig sind', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1391, 449, 'Damit man keine Rechte braucht unklar was für Rechte sind hier gemeint?', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1392, 450, 'Backup reicht, nie testen', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1393, 450, 'Nur Logs sichern', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1394, 450, 'Backups + Restore-Tests', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1395, 450, 'Nur Screenshots machen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1396, 451, 'Speicherung nur als JSON-Dokumente', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1397, 451, 'Daten nur als Schlüssel/Wert', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1398, 451, 'Tabellen mit Beziehungen (Relationen) und festen Regeln', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1399, 451, 'Nur für Graphen geeignet', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1400, 452, 'Kein Schema nötig', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1401, 452, 'Hohe Datenintegrität', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1402, 452, 'Keine Indizes möglich', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1403, 452, 'Keine Transaktionen Relativ einfach wenn die richtige Antwort die einzige ist, die nicht komplett hirnverbrannt ist hahahahahha (und die längste)', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1404, 453, 'Keine Fremdschlüssel', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1405, 453, 'Atomare Werte: keine Listen/Mehrfachwerte in einem Feld', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1406, 453, 'Keine Duplikate in der Tabelle', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1407, 453, 'Nur numerische Spalten', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1408, 454, 'Eine ID-Spalte (ID: „231531“)', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1409, 454, 'Spalte „Telefonnummern“ enthält „02437, 02162, 0241“', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1410, 454, 'Eine UNIQUE-Constraint', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1411, 454, 'Eine Tabelle „Kunde“', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1412, 455, 'Ein zusammengesetzter Primärschlüssel existiert', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1413, 455, 'Es keine Primärschlüssel gibt', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1414, 455, 'Nur eine Spalte in der Tabelle ist', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1415, 455, 'Man JSON speichert', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1416, 456, 'Attribut hängt nur von einem Teil eines zusammengesetzten Schlüssels ab', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1417, 456, 'Attribut hängt vom ganzen Schlüssel ab', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1418, 456, 'Es gibt keine Indizes', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1419, 456, 'Es gibt NULL-Werte', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1420, 457, 'hängt ab von B,', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1421, 457, 'hängt ab von C)', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1422, 457, 'Transitive Abhängigkeiten (', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1423, 457, 'Tabellen ahahahhahaha', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1424, 458, '1NF', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1425, 458, '2NF', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1426, 458, '3NF', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1427, 458, 'Keine Normalform', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1428, 459, 'Data Query Language', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1429, 459, 'Data Delete Language', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1430, 459, 'Domain Definition Logic', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1431, 459, 'Data Definition Language', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1432, 460, 'SELECT', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1433, 460, 'INSERT', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1434, 460, 'CREATE / ALTER / DROP', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1435, 460, 'COMMIT', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1436, 461, 'UPDATE', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1437, 461, 'GRANT', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1438, 461, 'ROLLBACK', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1439, 461, 'SELECT', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1440, 462, 'CREATE TABLE', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1441, 462, 'GRANT', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1442, 462, 'INSERT / UPDATE / DELETE', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1443, 462, 'COMMIT', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1444, 463, 'Tabellen sind sortiert', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1445, 463, 'Jede Tabelle hat einen Index', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1446, 463, 'Jede Spalte ist NOT NULL', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1447, 463, 'Fremdschlüssel zeigen nur auf existierende Datensätze', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1448, 464, 'Performance', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1449, 464, 'Beziehungen absichern und ungültige Referenzen verhindern', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1450, 464, 'Automatische Backups', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1451, 464, 'Automatische Normalisierung', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1452, 465, 'Keine doppelten Werte', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1453, 465, 'Keine NULLs', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1454, 465, 'Immer Auto-Increment', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1455, 465, 'Immer zusammengesetzte Keys', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1456, 466, 'Feste Struktur (Schema)', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1457, 466, 'Abfrage mit SQL', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1458, 466, 'Beziehungen über Primär- und Fremdschlüssel', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1459, 466, 'Überall lose Daten', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1460, 467, 'KatzenSQL', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1461, 467, 'MySQL', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1462, 467, 'PostgreSQL', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1463, 467, 'Oracle Database', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1464, 468, 'Attribute und Entitäten', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1465, 468, 'Häuser und Autos', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1466, 468, 'Kreise und Quadrate', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1467, 468, 'Objekte', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1468, 469, 'Klare Struktur', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1469, 469, 'Integrität', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1470, 469, 'mehr Redundanz', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1471, 469, 'viele Standards', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1472, 470, 'mehr doppelte Daten', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1473, 470, 'keine Möglichkeit, sicher zu arbeiten', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1474, 470, 'Performance bei großen Datenmengen', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1475, 470, 'man muss selber Linien zeichnen Was für Linien?', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1476, 471, 'Ein zufällig erzeugter technischer Schlüssel', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1477, 471, 'Ein Schlüssel, der aus mehreren Spalten besteht', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1478, 471, 'Ein Schlüssel, der nur intern in der DB gilt', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1479, 471, 'Ein Schlüssel aus fachlichen Daten mit Bedeutung (z. B. ISBN)', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1480, 472, 'Ein Schlüssel aus fachlichen Daten', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1481, 472, 'Ein technisch erzeugter Schlüssel ohne fachliche Bedeutung (z. B. ID)', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1482, 472, 'Ein Schlüssel, bestehend aus Text', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1483, 472, 'Ein Schlüssel, der mehrere Tabellen verbindet', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1484, 473, 'Auto--ID 12345', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1485, 473, 'UUID 550e8400-e29b-41d4-a716-446655440000', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1486, 473, 'ISBN 978-3-16-148410-0', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1487, 473, 'Ticket-ID T-0000123', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1488, 474, 'Steuernummer', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1489, 474, 'E-Mail-Adresse', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1490, 474, 'IBAN', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1491, 474, '= 4711', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1492, 475, 'Zufällig generierte UUI', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1493, 475, 'ISBN eines Buches', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1494, 475, 'E-Mail-Adresse', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1495, 475, 'Sozialversicherungsnummer', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1496, 476, 'Zufällige UUID', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1497, 476, 'Hashwert ohne Bezug', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1498, 476, 'Auto-ID in deiner Datenbank', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1499, 476, 'ISBN', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1500, 480, 'SELECT liest Daten aus einer oder mehreren Tabellen aus', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1501, 480, 'SELECT fuegt Daten in eine Tabelle ein', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1502, 480, 'Keine der angebotenen Antworten', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1503, 482, 'GROUP BY fasst Datensätze nach bestimmten Spalten zusammen, oft in Kombination mit Aggregatfunktionen.', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1504, 482, 'GROUP BY fasst Datensätze nach bestimmten Gruppennamen zusammen.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1505, 482, 'GROUP BY fügt Datensätze in eine neuen Spalte zusammen.', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1506, 483, 'Die 2. Normalform gilt.', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1507, 483, 'Es gibt keine transitiven Abhängigkeiten zwischen Nicht-Schlüsselattributen.', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1508, 483, 'Alles von oben.', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1509, 484, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1510, 484, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1511, 485, 'Ein konzeptionelles Datenmodell, das Objekte der realen Welt und ihre Beziehungen darstellt', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1512, 485, 'Eine Abfragesprache für relationale Datenbanken', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1513, 485, 'Ein Verfahren zur Datenkomprimierung', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1514, 485, 'Ein Protokoll zur Datenbankverbindung', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1515, 486, 'Ein eindeutig identifizierbares Objekt der realen Welt, z.B. ein Kunde oder ein Produkt', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1516, 486, 'Eine Beziehung zwischen zwei Tabellen', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1517, 486, 'Ein Attribut mit mehreren Werten', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1518, 486, 'Ein zusammengesetzter Primärschlüssel', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1519, 487, 'Eine Eigenschaft einer Entität oder Beziehung, z.B. Name oder Geburtsdatum', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1520, 487, 'Eine Verknüpfung zwischen zwei Entitäten', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1521, 487, 'Eine eigene Tabelle mit Fremdschlüssel', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1522, 487, 'Einen Datenbankindex', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1523, 488, 'Ein Attribut (oder eine Kombination), das eine Entität innerhalb einer Tabelle eindeutig identifiziert', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1524, 488, 'Ein Attribut, das auf eine andere Tabelle verweist', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1525, 488, 'Ein Pflichtfeld ohne Eindeutigkeitsbedingung', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1526, 488, 'Ein automatisch generierter Index', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1527, 489, 'Ein Attribut in einer Tabelle, das auf den Primärschlüssel einer anderen Tabelle verweist', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1528, 489, 'Ein zweiter Primärschlüssel in derselben Tabelle', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1529, 489, 'Ein Attribut ohne Wertebereich', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1530, 489, 'Ein Schlüssel, der keine Duplikate erlaubt', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1531, 490, 'Einem Datensatz auf der 1-Seite können mehrere Datensätze auf der n-Seite zugeordnet sein', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1532, 490, 'Genau ein Datensatz steht immer genau einem anderen gegenüber', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1533, 490, 'Beliebig viele Datensätze stehen beliebig vielen gegenüber', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1534, 490, 'Die Beziehung ist optional und kann leer bleiben', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1535, 491, 'Durch eine Zwischentabelle, die die Primärschlüssel beider Entitäten als Fremdschlüssel enthält', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1536, 491, 'Durch einen zusätzlichen Primärschlüssel in einer der beiden Tabellen', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1537, 491, 'Durch ein Array-Attribut in einer der Tabellen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1538, 491, 'Sie kann direkt ohne Zwischentabelle abgebildet werden', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1539, 492, 'Ein Primärschlüssel, der aus mehreren Attributen besteht, die gemeinsam einen Datensatz eindeutig identifizieren', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1540, 492, 'Ein Primärschlüssel, der automatisch hochgezählt wird', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1541, 492, 'Ein Primärschlüssel, der aus einer anderen Tabelle stammt', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1542, 492, 'Ein Primärschlüssel mit einem Standardwert', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1543, 493, 'Alle Attributwerte müssen atomar sein – keine Mengen oder Wiederholungsgruppen in einer Zelle', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1544, 493, 'Alle Attribute müssen vom Primärschlüssel funktional abhängig sein', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1545, 493, 'Es dürfen keine transitiven Abhängigkeiten existieren', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1546, 493, 'Jede Tabelle muss mindestens einen Fremdschlüssel haben', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1547, 494, 'Die Erste Normalform (1NF), da der Wert nicht atomar ist', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1548, 494, 'Die Zweite Normalform (2NF)', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1549, 494, 'Die Dritte Normalform (3NF)', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1550, 494, 'Keine Normalform – das ist erlaubt', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1551, 495, 'Die Tabelle muss in 1NF sein, und jedes Nicht-Schlüssel-Attribut muss vom gesamten Primärschlüssel abhängig sein, nicht nur von einem Teil', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1552, 495, 'Alle Attribute müssen denselben Datentyp haben', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1553, 495, 'Es darf nur einen einzigen Primärschlüssel geben', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1554, 495, 'Alle Fremdschlüssel müssen auf dieselbe Tabelle zeigen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1555, 496, 'Die Zweite Normalform (2NF), da eine partielle Abhängigkeit vorliegt', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1556, 496, 'Die Erste Normalform (1NF)', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1557, 496, 'Die Dritte Normalform (3NF)', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1558, 496, 'Keine – das ist korrekt modelliert', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1559, 497, 'Die Tabelle ist in 2NF, und es existieren keine transitiven Abhängigkeiten zwischen Nicht-Schlüssel-Attributen', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1560, 497, 'Alle Attribute müssen atomar sein', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1561, 497, 'Jede Tabelle muss einen natürlichen Schlüssel haben', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1562, 497, 'Es dürfen keine NULL-Werte vorkommen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1563, 498, 'Die Dritte Normalform (3NF) wegen der transitiven Abhängigkeit über AbteilungsID', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1564, 498, 'Die Erste Normalform (1NF)', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1565, 498, 'Die Zweite Normalform (2NF)', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1566, 498, 'Keine Normalform ist verletzt', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1567, 500, 'Das unbeabsichtigte Verlieren von Informationen, weil beim Löschen eines Datensatzes andere relevante Daten mitgelöscht werden', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1568, 500, 'Ein Fehler beim Ausführen eines DELETE-Befehls', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1569, 500, 'Das Löschen eines Indexes durch das DBMS', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1570, 500, 'Ein doppelter Eintrag nach einem Löschvorgang', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1571, 501, 'Das Problem, dass bei einer Datenänderung dieselbe Information an mehreren Stellen manuell geändert werden muss und Inkonsistenzen entstehen können', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1572, 501, 'Ein Fehler im UPDATE-Befehl', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1573, 501, 'Das automatische Aktualisieren von Indizes', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1574, 501, 'Eine Änderung am Datenbankschema', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1575, 503, 'Es existiert ein Fremdschlüsselwert, dem kein entsprechender Primärschlüssel in der referenzierten Tabelle gegenübersteht', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1576, 503, 'Die Datenbank wird automatisch gelöscht', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1577, 503, 'Ein neuer Primärschlüssel wird automatisch erzeugt', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1578, 503, 'Die betroffene Zeile wird dupliziert', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1579, 504, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1580, 504, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1581, 505, 'Eine Beziehung, bei der eine Entität mit sich selbst in Beziehung steht, z.B. Mitarbeiter führt Mitarbeiter', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1582, 505, 'Eine Beziehung, die mehrfach zwischen denselben zwei Entitäten vorkommt', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1583, 505, 'Eine Beziehung mit mehr als zwei beteiligten Entitäten', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1584, 505, 'Eine Beziehung ohne Kardinalitätsangabe', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1585, 506, 'Ein Attribut oder eine minimale Attributkombination, die Datensätze eindeutig identifizieren kann und als Primärschlüssel gewählt werden könnte', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1586, 506, 'Ein Attribut, das aus einem anderen Attribut berechnet wird', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1587, 506, 'Ein Fremdschlüssel, der auch Primärschlüssel ist', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1588, 506, 'Ein Attribut mit einem vordefinierten Standardwert', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1589, 507, 'Ein natürlicher Schlüssel ist ein fachliches Attribut (z.B. Steuernummer), ein Surrogatschlüssel ist ein künstlich erzeugter Wert (z.B. auto-increment ID)', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1590, 507, 'Natürliche Schlüssel sind immer numerisch, Surrogatschlüssel textuell', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1591, 507, 'Surrogatschlüssel sind immer Fremdschlüssel', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1592, 507, 'Natürliche Schlüssel dürfen keine NULL-Werte enthalten, Surrogatschlüssel schon', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1593, 508, 'Der Primärschlüssel einer Tabelle wird als Fremdschlüssel in der anderen Tabelle eingetragen, oder beide werden in eine Tabelle zusammengeführt', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1594, 508, 'Immer durch eine Zwischentabelle', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1595, 508, 'Durch ein Array-Attribut', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1596, 508, 'Durch Duplizierung aller Attribute beider Entitäten', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1597, 509, 'Attribut B ist funktional abhängig von Attribut A, wenn jeder Wert von A genau einen Wert von B bestimmt (A → B)', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1598, 509, 'Zwei Attribute haben immer denselben Wert', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1599, 509, 'Ein Attribut hängt von keinem anderen ab', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1600, 509, 'Alle Attribute sind vom Fremdschlüssel abhängig', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1601, 510, 'Es wird eine eigene Tabelle erstellt, die die Primärschlüssel beider Entitäten als Fremdschlüssel und ggf. Beziehungsattribute enthält', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1602, 510, 'Die Attribute der einen Entität werden in die andere Tabelle kopiert', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1603, 510, 'Es wird ein neuer Primärschlüssel für eine der Entitäten erstellt', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1604, 510, 'm:n-Beziehungen können im relationalen Modell nicht abgebildet werden', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1605, 511, 'Weil ein Primärschlüssel jeden Datensatz eindeutig identifizieren muss und NULL keine eindeutige Identifikation erlaubt', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1606, 511, 'Weil NULL-Werte Speicherplatz verschwenden', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1607, 511, 'Weil Fremdschlüssel sonst nicht funktionieren', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1608, 511, 'Weil die 1NF NULL-Werte grundsätzlich verbietet', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1609, 512, 'Das konzeptionelle Modell (ERM) beschreibt fachliche Zusammenhänge unabhängig von Technik; das logische Modell (relationales Schema) überführt das ERM in Tabellenstrukturen', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1610, 512, 'Das konzeptionelle Modell ist immer korrekt, das logische enthält Fehler', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1611, 512, 'Das logische Modell enthält SQL-Abfragen, das konzeptionelle nicht', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1612, 512, 'Beide Modelle sind identisch, nur die Bezeichnung unterscheidet sich', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1613, 513, 'Das bewusste Zusammenführen von Tabellen oder das Einführen von Redundanz, um Leseperformance zu steigern – auf Kosten von Datenkonsistenz', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1614, 513, 'Das Aufteilen einer Tabelle in mehrere, um Anomalien zu vermeiden', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1615, 513, 'Das Entfernen aller Fremdschlüssel', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1616, 513, 'Das Umbenennen von Attributen in einer Tabelle', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1617, 514, '1:n (oder in Min-Max-Notation: (1,1) zu (1,n))', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1618, 514, '0:1', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1619, 514, 'n:m', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1620, 514, '1:1', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1621, 515, 'Die Entität kann an der Beziehung mit keinem oder genau einem Partner beteiligt sein (optional, aber höchstens einmal)', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1622, 515, 'Die Entität muss immer genau einmal beteiligt sein', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1623, 515, 'Die Entität kann an beliebig vielen Beziehungen teilnehmen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1624, 515, 'Die Entität ist immer mindestens zweimal beteiligt', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1625, 516, 'Das Attribut in zwei separate Attribute (Straße und Hausnummer) aufteilen', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1626, 516, 'Das Attribut in eine eigene Tabelle auslagern', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1627, 516, 'Den String mit einem Trennzeichen versehen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1628, 516, 'Das Attribut als Primärschlüssel definieren', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1629, 517, 'Ein Attribut, das aus mehreren Teilattributen besteht, z.B. Adresse bestehend aus Straße, PLZ und Ort', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1630, 517, 'Ein Attribut, das denselben wert in mehreren Tabellen hat', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1631, 517, 'Ein Attribut, das gleichzeitig Primär- und Fremdschlüssel ist', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1632, 517, 'Ein Attribut ohne festen Datentyp', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1633, 518, 'Ein Attribut, das für eine Entität mehrere Werte annehmen kann, z.B. mehrere Telefonnummern eines Kunden', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1634, 518, 'Ein Attribut mit einem berechneten Wert', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1635, 518, 'Ein Attribut, das in zwei Tabellen gleichzeitig vorkommt', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1636, 518, 'Ein Attribut, das nur einmalig vergeben werden darf', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1637, 519, 'In eine eigene Tabelle ausgelagert, mit Fremdschlüssel auf die Ursprungsentität', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1638, 519, 'Als kommaseparierte Liste in einer Spalte gespeichert', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1639, 519, 'Durch Hinzufügen mehrerer gleichnamiger Spalten (Telefon1, Telefon2, ...)', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1640, 519, 'Es wird ignoriert und weggelassen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1641, 520, 'Eine Entität ist ein einzelnes konkretes Objekt (z.B. Kunde „Müller\"), der Entitätstyp beschreibt die Klasse aller gleichartigen Objekte (z.B. „Kunde\")', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1642, 520, 'Entitätsmengen haben keine Attribute', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1643, 520, 'Eine Entität ist eine Tabelle, eine Entitätsmenge ist eine Datenbank', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1644, 520, 'Beide Begriffe sind vollständig synonym', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1645, 521, 'Um m:n-Beziehungen korrekt zu modellieren und die Verknüpfung zwischen den Entitäten herzustellen, ohne Redundanz einzuführen', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1646, 521, 'Weil das DBMS keine Fremdschlüssel in bestehenden Tabellen erlaubt', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1647, 521, 'Um die Abfragegeschwindigkeit zu erhöhen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1648, 521, 'Weil Beziehungstabellen automatisch indiziert werden', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1649, 522, 'Ein Attribut, dessen Wert sich aus anderen Attributen berechnen lässt, z.B. Alter aus Geburtsdatum', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1650, 522, 'Ein Attribut, das aus einer anderen Tabelle kopiert wurde', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1651, 522, 'Ein Attribut ohne wertebereich', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1652, 522, 'Ein Attribut, das Teil des Primärschlüssels ist', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1653, 523, 'Dieselbe Information (z.B. Kundenadresse) wird in mehreren Zeilen der Tabelle wiederholt gespeichert', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1654, 523, 'Eine Tabelle hat keinen Index', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1655, 523, 'Es gibt keine Fremdschlüssel', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1656, 523, 'Die Tabelle hat mehr als 10 Spalten', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1657, 524, 'Drei Tabellen: Student, Kurs, und eine Zwischentabelle (z.B. Belegung) mit den Fremdschlüsseln StudentID und KursID', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1658, 524, 'Zwei Tabellen: Student (mit allen Kursen als Liste) und Kurs', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1659, 524, 'Eine Tabelle, die alle Attribute von Student und Kurs zusammenfasst', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1660, 524, 'Zwei Tabellen mit jeweils einem Array-Feld für die verknüpften IDs', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1661, 525, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1662, 525, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1663, 526, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1664, 526, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1665, 527, 'Gesetzlich vorgeschriebene Vertragsform', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1666, 527, 'Vorformulierte Vertragsbedingungen für viele Verträge', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1667, 527, 'Individuell ausgehandelter Vertrag', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1668, 528, 'GPL', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1669, 528, 'MIT', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1670, 528, 'CC BY-NC', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1671, 529, 'Daten nur verschlüsselt speichern', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1672, 529, 'Datenminimierung beachten', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1673, 529, 'Daten ausschließlich in der EU speichern', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1674, 535, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1675, 535, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1676, 536, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1677, 536, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1678, 537, 'Qualität', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1679, 537, 'Zeit', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1680, 537, 'Kundenzufriedenheit', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1681, 538, 'Lizenzkosten pro Nutzer', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1682, 538, 'Miete für Büroräume', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1683, 538, 'Versandkosten', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1684, 539, 'Ob ein Produkt verkauft werden soll', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1685, 539, 'Ob ein Produkt selbst entwickelt oder eingekauft wird', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1686, 539, 'Ob ein Projekt profitabel ist', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1687, 545, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1688, 545, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1689, 546, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1690, 546, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1691, 547, 'Sequenzdiagramm', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1692, 547, 'Klassendiagramm', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1693, 547, 'Aktivitätsdiagramm', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1694, 548, 'Assoziation', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1695, 548, 'Vererbung', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1696, 548, 'Abhängigkeit', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1697, 549, 'Attribute', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1698, 549, 'Methoden', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1699, 549, 'Zeitlicher Ablauf', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1700, 555, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1701, 555, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1702, 556, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1703, 556, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1704, 557, 'Clustering', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1705, 557, 'Klassifikation', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1706, 557, 'Dimensionsreduktion', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1707, 558, 'Eine mathematische Funktion', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1708, 558, 'Ein Datensatz', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1709, 558, 'Ein Hardwarechip', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1710, 559, 'Accuracy', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1711, 559, 'Loss', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1712, 559, 'Epoch', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1713, 560, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1714, 560, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1715, 561, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1716, 561, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1717, 562, 'for', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1718, 562, 'if', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1719, 562, 'return', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1720, 563, 'Binäre Suche', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1721, 563, 'Lineare Suche', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1722, 563, 'Hash-Suche', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1723, 564, 'Eine zufällige Abfolge von Befehlen', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1724, 564, 'Eine eindeutige Schrittfolge zur Problemlösung', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1725, 564, 'Ein Hardwarebauteil', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1726, 565, 'A) Eine informelle, sprachnahe Beschreibung eines Algorithmus', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1727, 565, 'B) Eine ausführbare Programmiersprache', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1728, 565, 'C) Ein Datenbankmodell', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1729, 565, 'D) Ein UML-Diagramm', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1730, 566, 'IF', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1731, 566, 'WHILE', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1732, 566, 'CLASS', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1733, 566, 'IMPORT', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1734, 567, 'LOOP', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1735, 567, 'RETURN', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1736, 567, 'METHOD', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1737, 567, 'IF–ELSE', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1738, 568, 'Eine Datei', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1739, 568, 'Eine Instanz einer Klasse', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1740, 568, 'Eine globale Variable', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1741, 568, 'Eine Funktion', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1742, 569, 'WHILE', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1743, 569, 'REPEAT UNTIL', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1744, 569, 'FOR', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1745, 569, 'FOREACH', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1746, 570, 'OBJECT Name', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1747, 570, 'PACKAGE Name', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1748, 570, 'LOOP Name', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1749, 570, 'METHOD Name(Parameter)', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1750, 571, 'Boolean', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1751, 571, 'Klasse', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1752, 571, 'Liste', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1753, 571, 'Methode', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1754, 572, 'WHILE', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1755, 572, 'FOR', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1756, 572, 'REPEAT UNTIL', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1757, 572, 'FOREACH', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1758, 573, 'Eine Klasse übernimmt Eigenschaften einer anderen Klasse', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1759, 573, 'Eine Klasse kann nur eine Methode haben', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1760, 573, 'Vererbung existiert nicht', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1761, 573, 'Eine Klasse kann keine Attribute besitzen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1762, 574, 'Objekte können unterschiedliche Implementierungen derselben Methode haben', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1763, 574, 'Klassen haben keine Attribute', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1764, 574, 'Methoden können nicht überschrieben werden', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1765, 574, 'Polymorphie existiert nicht', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1766, 575, 'Attribute', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1767, 575, 'Methoden', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1768, 575, 'Tabellen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1769, 575, 'Konstruktoren', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1770, 576, 'Eingabe', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1771, 576, 'Verarbeitung', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1772, 576, 'Ausgabe', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1773, 576, 'Kompilierung', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1774, 577, 'Klar', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1775, 577, 'Verständlich', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1776, 577, 'Sprachabhängig', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1777, 577, 'Streng syntaktisch', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1778, 578, 'Vererbung', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1779, 578, 'Polymorphie', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1780, 578, 'Kapselung', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1781, 578, 'Wiederholung', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1782, 579, 'IF', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1783, 579, 'WHILE', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1784, 579, 'CLASS', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1785, 579, 'FOR', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1786, 580, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1787, 580, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1788, 581, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1789, 581, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1790, 582, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1791, 582, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1792, 583, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1793, 583, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1794, 584, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1795, 584, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1796, 585, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1797, 585, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1798, 586, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1799, 586, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1800, 587, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1801, 587, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1802, 588, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1803, 588, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1804, 589, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1805, 589, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1806, 590, 'Eine Eigenschaft eines Objekts', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1807, 590, 'Eine Schleife', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1808, 590, 'Eine Klasse', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1809, 590, 'Ein Algorithmus', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1810, 591, 'Ein Wert, der an eine Methode übergeben wird', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1811, 591, 'Eine Klasse', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1812, 591, 'Ein Objekt', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1813, 591, 'Ein Rückgabewert', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1814, 592, 'Verbergen interner Daten', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1815, 592, 'Wiederholung von Code', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1816, 592, 'Sortieren von Listen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1817, 592, 'Erzeugen von Objekten', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1818, 593, 'Der Wert, den eine Methode liefert', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1819, 593, 'Eine Klasse', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1820, 593, 'Eine Schleife', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1821, 593, 'Ein Objekt', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1822, 594, 'Eine endliche Folge von Schritten zur Lösung eines Problems', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1823, 594, 'Eine Klasse', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1824, 594, 'Ein Objekt', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1825, 594, 'Eine Datei', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1826, 595, 'Um Programme direkt auszuführen', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1827, 595, 'Um Algorithmen verständlich zu beschreiben', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1828, 595, 'Um Datenbanken zu modellieren', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1829, 595, 'Um Hardware anzusteuer', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1830, 596, 'x == 5', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1831, 596, 'x := 5', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1832, 596, 'x => 5', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1833, 596, 'x << 5', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1834, 597, 'IF', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1835, 597, 'REPEAT UNTIL', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1836, 597, 'METHOD', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1837, 597, 'CLASS', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1838, 598, 'Er ist sprachabhängig', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1839, 598, 'Er ist schwer zu lesen', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1840, 598, 'Er ist leicht verständlich', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1841, 598, 'Er ist nur für Experten geeignet', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1842, 599, 'IF', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1843, 599, 'FOREACH', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1844, 599, 'RETURN', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1845, 599, 'CLASS', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1846, 600, 'x wird gelöscht', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1847, 600, 'x wird auf 0 gesetzt', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1848, 600, 'x wird mit einer Liste verbunden', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1849, 600, 'x wird ausgegeben', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1850, 601, 'IF x > 10 THEN', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1851, 601, 'LOOP x', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1852, 601, 'METHOD x', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1853, 601, 'CLASS x', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1854, 602, 'x wird gelöscht', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1855, 602, 'x wird ausgegeben', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1856, 602, 'x wird erhöht', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1857, 602, 'x wird kopiert', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1858, 603, 'STOP', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1859, 603, 'BREAK', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1860, 603, 'EXIT PROGRAM', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1861, 603, 'RETURN', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1862, 604, 'Zu viele Kommentare', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1863, 604, 'Zu konkrete Programmiersyntax', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1864, 604, 'Zu einfache Formulierungen', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1865, 604, 'Zu kurze Variablennamen', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1866, 605, 'Bedingungen', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1867, 605, 'Schleifen', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1868, 605, 'Klassen', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1869, 605, 'Compilerbefehle', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1870, 606, 'Unabhängig von Programmiersprachen', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1871, 606, 'Gut für Planung', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1872, 606, 'Direkt ausführbar', 0, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1873, 606, 'Leicht verständlich', 1, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1874, 607, 'IF', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1875, 607, 'WHILE', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1876, 607, 'METHOD', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1877, 607, 'DATABASE', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1878, 608, 'True', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1879, 608, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1880, 609, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1881, 609, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1882, 610, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1883, 610, 'False', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1884, 611, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1885, 611, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1886, 612, 'True', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1887, 612, 'False', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1888, 613, 'Pseudocode muss einer bestimmten Programmiersprache exakt entsprechen', 0, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1889, 613, 'Pseudocode dient dazu, Algorithmen verständlich darzustellen', 1, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1890, 613, 'Pseudocode kann frei formuliert werden und ist nicht streng standardisiert', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1891, 613, 'Pseudocode wird direkt von Computern ausgeführt', 0, 4, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1892, 614, 'Ein Algorithmus ist eine endliche Folge von klar definierten Schritten', 1, 1, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1893, 614, 'Ein Algorithmus darf unendlich lange laufen, ohne Ergebnis zu liefern', 0, 2, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1894, 614, 'Algorithmen lösen Probleme systematisch', 1, 3, 0);
+INSERT INTO mc_answer (answer_id, question_id, option_text, is_correct, option_order, points) VALUES (1895, 614, 'Algorithmen können nur in Programmiersprachen geschrieben werden', 0, 4, 0);
 
--- Gap Options
-INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES
-(1, 1, 'dynamische', 0, 1, 0),
-(2, 1, 'statische', 1, 2, 0),
-(3, 2, 'Methoden', 1, 1, 0),
-(4, 2, 'Akteure', 0, 2, 0),
-(5, 3, 'leere', 0, 1, 0),
-(6, 3, 'gefüllte', 1, 2, 0),
-(7, 4, 'Teil', 0, 1, 0),
-(8, 4, 'Ganzes', 1, 2, 0),
-(9, 5, 'public', 0, 1, 0),
-(10, 5, 'private', 1, 2, 0),
-(11, 6, 'public', 1, 1, 0),
-(12, 6, 'private', 0, 2, 0),
-(13, 7, 'Eingabe', 0, 1, 0),
-(14, 7, 'Rückgabe', 1, 2, 0),
-(15, 8, 'blockierend', 0, 1, 0),
-(16, 8, 'nicht blockierend', 1, 2, 0),
-(17, 9, 'alt', 1, 1, 0),
-(18, 9, 'opt', 0, 2, 0),
-(19, 10, 'par', 0, 1, 0),
-(20, 10, 'loop', 1, 2, 0),
-(21, 11, 'einzelne', 0, 1, 0),
-(22, 11, 'parallele', 1, 2, 0),
-(23, 12, 'einzigen', 1, 1, 0),
-(24, 12, 'parallelen', 0, 2, 0),
-(25, 13, 'Bedingungen', 1, 1, 0),
-(26, 13, 'nichts', 0, 2, 0),
-(27, 14, 'Aktivitätsflüsse', 0, 1, 0),
-(28, 14, 'Kontrollflüsse', 1, 2, 0),
-(29, 15, 'do', 0, 1, 0),
-(30, 15, 'entry', 1, 2, 0),
-(31, 15, 'exit', 0, 3, 0),
-(32, 16, 'do', 1, 1, 0),
-(33, 16, 'entry', 0, 2, 0),
-(34, 16, 'exit', 0, 3, 0),
-(35, 17, 'do', 0, 1, 0),
-(36, 17, 'entry', 0, 2, 0),
-(37, 17, 'exit', 1, 3, 0),
-(38, 18, 'Bedingungen', 0, 1, 0),
-(39, 18, 'Ereignisse', 1, 2, 0),
-(40, 18, 'Aktionen', 0, 3, 0),
-(41, 19, 'Startzustand', 0, 1, 0),
-(42, 19, 'nächsten Zustand', 1, 2, 0),
-(43, 19, 'Endzustand', 0, 3, 0),
-(44, 20, 'Schriftform', 1, 1, 0),
-(45, 20, 'Textform', 0, 2, 0),
-(46, 20, 'notariellen Beurkundung', 0, 3, 0),
-(47, 21, 'ausreichend', 0, 1, 0),
-(48, 21, 'ausgeschlossen', 1, 2, 0),
-(49, 21, 'vorrangig', 0, 3, 0),
-(50, 22, 'variablen', 1, 1, 0),
-(51, 22, 'fixen', 0, 2, 0),
-(52, 22, 'gesamten', 0, 3, 0),
-(53, 23, 'variablen', 0, 1, 0),
-(54, 23, 'fixen', 1, 2, 0),
-(55, 23, 'durchschnittlichen', 0, 3, 0),
-(56, 24, 'Marktpotenzial', 1, 1, 0),
-(57, 24, 'Marktvolumen', 0, 2, 0),
-(58, 24, 'Marktanteil', 0, 3, 0),
-(59, 25, 'Marktvolumen', 1, 1, 0),
-(60, 25, 'Marktanteil', 0, 2, 0),
-(61, 26, 'Rohstoffen', 1, 1, 0),
-(62, 26, 'Dienstleistungen', 0, 2, 0),
-(63, 26, 'Kapitalgütern', 0, 3, 0),
-(64, 27, 'Verteilung', 0, 1, 0),
-(65, 27, 'Weiterverarbeitung', 1, 2, 0),
-(66, 27, 'Lagerung', 0, 3, 0),
-(67, 28, 'Verbindlichkeiten', 0, 1, 0),
-(68, 28, 'Forderungen', 1, 2, 0),
-(69, 28, 'Lagerbestände', 0, 3, 0),
-(70, 29, 'Bezugspreis', 1, 1, 0),
-(71, 29, 'Selbstkostenpreis', 0, 2, 0),
-(72, 29, 'Listenverkaufspreis', 0, 3, 0),
-(73, 42, 'Like', 1, 1, 0),
-(74, 42, '=', 0, 2, 0),
-(75, 42, 'IN', 0, 3, 0),
-(76, 42, 'BETWEEN', 0, 4, 0),
-(77, 43, 'WHERE', 1, 1, 0),
-(78, 43, 'GROUP BY', 0, 2, 0),
-(79, 43, 'ORDER BY', 0, 3, 0),
-(80, 43, 'HAVING', 0, 4, 0),
-(81, 44, 'INSERT INTO', 1, 1, 0),
-(82, 44, 'UPDATE', 0, 2, 0),
-(83, 44, 'SELECT', 0, 3, 0),
-(84, 44, 'DELETE FROM', 0, 4, 0),
-(85, 45, 'ON', 1, 1, 0),
-(86, 45, 'WHERE', 0, 2, 0),
-(87, 45, 'USING', 0, 3, 0),
-(88, 45, 'FROM', 0, 4, 0),
-(89, 46, 'Semikolon', 1, 1, 0),
-(90, 46, 'Komma', 0, 2, 0),
-(91, 46, 'Punkt', 0, 3, 0),
-(92, 46, 'Doppelpunkt', 0, 4, 0),
-(93, 47, 'CREATE INDEX', 1, 1, 0),
-(94, 47, 'CREATE TABLE', 0, 2, 0),
-(95, 47, 'ALTER TABLE', 0, 3, 0),
-(96, 47, 'CREATE VIEW', 0, 4, 0),
-(97, 48, 'ORDER BY', 1, 1, 0),
-(98, 48, 'GROUP BY', 0, 2, 0),
-(99, 48, 'HAVING', 0, 3, 0),
-(100, 48, 'WHERE', 0, 4, 0),
-(101, 49, 'GROUP BY', 1, 1, 0),
-(102, 49, 'ORDER BY', 0, 2, 0),
-(103, 49, 'DISTINCT', 0, 3, 0),
-(104, 49, 'LIMIT', 0, 4, 0),
-(105, 50, 'AVG', 1, 1, 0),
-(106, 50, 'SUM', 0, 2, 0),
-(107, 50, 'COUNT', 0, 3, 0),
-(108, 50, 'MIN', 0, 4, 0),
-(109, 51, 'name', 1, 1, 0),
-(110, 51, 'betrag', 0, 2, 0),
-(111, 51, 'kunde', 0, 3, 0),
-(112, 51, 'bestellung', 0, 4, 0),
-(113, 52, 'betrag', 1, 1, 0),
-(114, 52, 'name', 0, 2, 0),
-(115, 52, 'kunde', 0, 3, 0),
-(116, 52, 'bestellung', 0, 4, 0),
-(117, 53, 'kunde', 1, 1, 0),
-(118, 53, 'name', 0, 2, 0),
-(119, 53, 'betrag', 0, 3, 0),
-(120, 53, 'bestellung', 0, 4, 0),
-(121, 54, 'bestellung', 1, 1, 0),
-(122, 54, 'name', 0, 2, 0),
-(123, 54, 'betrag', 0, 3, 0),
-(124, 54, 'kunde', 0, 4, 0),
-(125, 55, 'name', 1, 1, 0),
-(126, 55, 'betrag', 0, 2, 0),
-(127, 55, 'kunde', 0, 3, 0),
-(128, 55, 'bestellung', 0, 4, 0),
-(129, 56, 'Kardinalitäten', 1, 1, 0),
-(130, 56, 'Beziehung', 0, 2, 0),
-(131, 56, '1:n', 0, 3, 0),
-(132, 56, 'Fremdschlüssel', 0, 4, 0),
-(133, 57, 'Beziehung', 1, 1, 0),
-(134, 57, 'Kardinalitäten', 0, 2, 0),
-(135, 57, '1:n', 0, 3, 0),
-(136, 57, 'Fremdschlüssel', 0, 4, 0),
-(137, 58, '1:n', 1, 1, 0),
-(138, 58, 'Kardinalitäten', 0, 2, 0),
-(139, 58, 'Beziehung', 0, 3, 0),
-(140, 58, 'Fremdschlüssel', 0, 4, 0),
-(141, 59, 'Fremdschlüssel', 1, 1, 0),
-(142, 59, 'Kardinalitäten', 0, 2, 0),
-(143, 59, 'Beziehung', 0, 3, 0),
-(144, 59, '1:n', 0, 4, 0),
-(145, 60, 'n', 1, 1, 0),
-(146, 60, 'Kardinalitäten', 0, 2, 0),
-(147, 60, 'Beziehung', 0, 3, 0),
-(148, 60, '1:n', 0, 4, 0),
-(149, 61, 'Primärschlüssel', 1, 1, 0),
-(150, 61, 'Fremdschlüssel', 0, 2, 0),
-(151, 61, 'Beziehung', 0, 3, 0),
-(152, 61, 'id', 0, 4, 0),
-(153, 62, 'Fremdschlüssel', 1, 1, 0),
-(154, 62, 'Primärschlüssel', 0, 2, 0),
-(155, 62, 'Beziehung', 0, 3, 0),
-(156, 62, 'id', 0, 4, 0),
-(157, 63, 'Beziehung', 1, 1, 0),
-(158, 63, 'Primärschlüssel', 0, 2, 0),
-(159, 63, 'Fremdschlüssel', 0, 3, 0),
-(160, 63, 'id', 0, 4, 0),
-(161, 64, 'name', 1, 1, 0),
-(162, 64, 'menge', 0, 2, 0),
-(163, 64, 'preis', 0, 3, 0),
-(164, 64, 'produkt', 0, 4, 0),
-(165, 65, 'menge', 1, 1, 0),
-(166, 65, 'name', 0, 2, 0),
-(167, 65, 'preis', 0, 3, 0),
-(168, 65, 'produkt', 0, 4, 0),
-(169, 66, 'preis', 1, 1, 0),
-(170, 66, 'name', 0, 2, 0),
-(171, 66, 'menge', 0, 3, 0),
-(172, 66, 'produkt', 0, 4, 0),
-(173, 67, 'produkt', 1, 1, 0),
-(174, 67, 'name', 0, 2, 0),
-(175, 67, 'menge', 0, 3, 0),
-(176, 67, 'preis', 0, 4, 0),
-(177, 68, 'verkauf', 1, 1, 0),
-(178, 68, 'name', 0, 2, 0),
-(179, 68, 'menge', 0, 3, 0),
-(180, 68, 'preis', 0, 4, 0),
-(181, 69, 'name', 1, 1, 0),
-(182, 69, 'menge', 0, 2, 0),
-(183, 69, 'preis', 0, 3, 0),
-(184, 69, 'produkt', 0, 4, 0),
-(185, 70, '%', 1, 1, 0),
-(186, 70, '_', 0, 2, 0),
-(187, 70, '*', 0, 3, 0),
-(188, 70, '=', 0, 4, 0),
-(189, 71, '_', 1, 1, 0),
-(190, 71, '%', 0, 2, 0),
-(191, 71, '*', 0, 3, 0),
-(192, 71, '=', 0, 4, 0),
-(193, 72, 'TRIGGER', 1, 1, 0),
-(194, 72, 'LEFT', 0, 2, 0),
-(195, 72, 'RIGHT', 0, 3, 0),
-(196, 72, 'INNER', 0, 4, 0),
-(197, 73, 'AFTER', 1, 1, 0),
-(198, 73, 'LEFT', 0, 2, 0),
-(199, 73, 'RIGHT', 0, 3, 0),
-(200, 73, 'INNER', 0, 4, 0),
-(201, 74, 'FOR', 1, 1, 0),
-(202, 74, 'LEFT', 0, 2, 0),
-(203, 74, 'RIGHT', 0, 3, 0),
-(204, 74, 'INNER', 0, 4, 0),
-(205, 75, 'LEFT', 1, 1, 0),
-(206, 75, 'RIGHT', 0, 2, 0),
-(207, 75, 'INNER', 0, 3, 0),
-(208, 75, 'JOIN', 0, 4, 0),
-(209, 76, 'JOIN', 1, 1, 0),
-(210, 76, 'LEFT', 0, 2, 0),
-(211, 76, 'RIGHT', 0, 3, 0),
-(212, 76, 'INNER', 0, 4, 0),
-(213, 77, 'bestellung', 1, 1, 0),
-(214, 77, 'LEFT', 0, 2, 0),
-(215, 77, 'JOIN', 0, 3, 0),
-(216, 77, 'IS', 0, 4, 0),
-(217, 78, 'IS', 1, 1, 0),
-(218, 78, 'LEFT', 0, 2, 0),
-(219, 78, 'RIGHT', 0, 3, 0),
-(220, 78, 'INNER', 0, 4, 0),
-(221, 79, 'NULL', 1, 1, 0),
-(222, 79, 'LEFT', 0, 2, 0),
-(223, 79, 'RIGHT', 0, 3, 0),
-(224, 79, 'INNER', 0, 4, 0),
-(225, 80, 'CREATE', 1, 1, 0),
-(226, 80, 'LEFT', 0, 2, 0),
-(227, 80, 'RIGHT', 0, 3, 0),
-(228, 80, 'INNER', 0, 4, 0),
-(229, 81, 'TABLE', 1, 1, 0),
-(230, 81, 'LEFT', 0, 2, 0),
-(231, 81, 'RIGHT', 0, 3, 0),
-(232, 81, 'INNER', 0, 4, 0),
-(233, 82, 'INT', 1, 1, 0),
-(234, 82, 'LEFT', 0, 2, 0),
-(235, 82, 'RIGHT', 0, 3, 0),
-(236, 82, 'INNER', 0, 4, 0),
-(237, 83, 'PRIMARY', 1, 1, 0),
-(238, 83, 'LEFT', 0, 2, 0),
-(239, 83, 'RIGHT', 0, 3, 0),
-(240, 83, 'INNER', 0, 4, 0),
-(241, 84, 'KEY', 1, 1, 0),
-(242, 84, 'LEFT', 0, 2, 0),
-(243, 84, 'RIGHT', 0, 3, 0),
-(244, 84, 'INNER', 0, 4, 0),
-(245, 85, 'AUTO_INCREMENT', 1, 1, 0),
-(246, 85, 'LEFT', 0, 2, 0),
-(247, 85, 'RIGHT', 0, 3, 0),
-(248, 85, 'INNER', 0, 4, 0),
-(249, 86, 'VARCHAR', 1, 1, 0),
-(250, 86, 'LEFT', 0, 2, 0),
-(251, 86, 'RIGHT', 0, 3, 0),
-(252, 86, 'INNER', 0, 4, 0),
-(253, 87, '100', 1, 1, 0),
-(254, 87, '1', 0, 2, 0),
-(255, 87, '50', 0, 3, 0),
-(256, 87, '255', 0, 4, 0),
-(257, 88, 'NOT', 1, 1, 0),
-(258, 88, 'LEFT', 0, 2, 0),
-(259, 88, 'RIGHT', 0, 3, 0),
-(260, 88, 'INNER', 0, 4, 0),
-(261, 89, 'NULL', 1, 1, 0),
-(262, 89, 'LEFT', 0, 2, 0),
-(263, 89, 'RIGHT', 0, 3, 0),
-(264, 89, 'INNER', 0, 4, 0),
-(265, 90, 'bestellung', 1, 1, 0),
-(266, 90, 'kunden_id', 0, 2, 0),
-(267, 90, 'HAVING', 0, 3, 0),
-(268, 90, 'id', 0, 4, 0),
-(269, 91, 'kunden_id', 1, 1, 0),
-(270, 91, 'bestellung', 0, 2, 0),
-(271, 91, 'HAVING', 0, 3, 0),
-(272, 91, 'id', 0, 4, 0),
-(273, 92, 'HAVING', 1, 1, 0),
-(274, 92, 'LEFT', 0, 2, 0),
-(275, 92, 'RIGHT', 0, 3, 0),
-(276, 92, 'INNER', 0, 4, 0),
-(277, 93, 'kunde', 1, 1, 0),
-(278, 93, 'id', 0, 2, 0),
-(279, 93, 'CASCADE', 0, 3, 0),
-(280, 93, 'name', 0, 4, 0),
-(281, 94, 'id', 1, 1, 0),
-(282, 94, 'kunde', 0, 2, 0),
-(283, 94, 'CASCADE', 0, 3, 0),
-(284, 94, 'name', 0, 4, 0),
-(285, 95, 'CASCADE', 1, 1, 0),
-(286, 95, 'LEFT', 0, 2, 0),
-(287, 95, 'RIGHT', 0, 3, 0),
-(288, 95, 'INNER', 0, 4, 0),
-(289, 96, 'abstract', 1, 1, 0),
-(290, 96, 'final', 0, 2, 0),
-(291, 96, 'static', 0, 3, 0),
-(292, 97, 'protected', 1, 1, 0),
-(293, 97, 'privat', 0, 2, 0),
-(294, 97, 'public', 0, 3, 0),
-(295, 98, 'rekursive', 1, 1, 0),
-(296, 98, 'lineare', 0, 2, 0),
-(297, 98, 'parallele', 0, 3, 0),
-(298, 99, 'offenen', 1, 1, 0),
-(299, 99, 'gefüllten', 0, 2, 0),
-(300, 99, 'runde', 0, 3, 0),
-(301, 100, '4', 1, 1, 0),
-(302, 100, '5', 0, 2, 0),
-(303, 100, '8', 0, 3, 0),
-(304, 101, 'Stack', 1, 1, 0),
-(305, 101, 'Queue', 0, 2, 0),
-(306, 101, 'Array', 0, 3, 0),
-(307, 102, 'Overriding', 1, 1, 0),
-(308, 102, 'Overloading', 0, 2, 0),
-(309, 102, 'Hiding', 0, 3, 0),
-(310, 103, 'Observer', 1, 1, 0),
-(311, 103, 'Singleton', 0, 2, 0),
-(312, 103, 'Strategy', 0, 3, 0),
-(313, 104, 'Enum', 1, 1, 0),
-(314, 104, 'Class', 0, 2, 0),
-(315, 104, 'Interface', 0, 3, 0),
-(316, 105, 'Kompilieren', 1, 1, 0),
-(317, 105, 'Interpretieren', 0, 2, 0),
-(318, 105, 'Debuggen', 0, 3, 0),
-(319, 106, 'Assoziation', 1, 1, 0),
-(320, 106, 'Vererbung', 0, 2, 0),
-(321, 106, 'Komposition', 0, 3, 0),
-(322, 107, 'binäre', 1, 1, 0),
-(323, 107, 'lineare', 0, 2, 0),
-(324, 107, 'exponentielle', 0, 3, 0),
-(325, 108, 'Stack', 1, 1, 0),
-(326, 108, 'Heap', 0, 2, 0),
-(327, 109, 'Stack', 1, 1, 0),
-(328, 109, 'Heap', 0, 2, 0),
-(329, 110, 'Heap', 1, 1, 0),
-(330, 110, 'Stack', 0, 2, 0),
-(331, 111, '4', 1, 1, 0),
-(332, 111, '8', 0, 2, 0),
-(333, 111, '2', 0, 3, 0),
-(334, 112, '8', 1, 1, 0),
-(335, 112, '4', 0, 2, 0),
-(336, 112, '2', 0, 3, 0),
-(337, 113, '4', 1, 1, 0),
-(338, 113, '8', 0, 2, 0),
-(339, 113, '2', 0, 3, 0),
-(340, 114, '2', 1, 1, 0),
-(341, 114, '4', 0, 2, 0),
-(342, 114, '8', 0, 3, 0),
-(343, 115, 'byte', 1, 1, 0),
-(344, 115, 'char', 0, 2, 0),
-(345, 115, 'long', 0, 3, 0),
-(346, 115, 'float', 0, 4, 0),
-(347, 115, 'Short', 0, 5, 0),
-(348, 115, 'Long', 0, 6, 0),
-(349, 116, 'char', 1, 1, 0),
-(350, 116, 'byte', 0, 2, 0),
-(351, 116, 'long', 0, 3, 0),
-(352, 116, 'float', 0, 4, 0),
-(353, 116, 'Short', 0, 5, 0),
-(354, 116, 'Long', 0, 6, 0),
-(355, 117, 'zufällige', 0, 1, 0),
-(356, 117, 'strukturierte', 1, 2, 0),
-(357, 117, 'verschlüsselte', 0, 3, 0),
-(358, 117, 'temporäre', 0, 4, 0),
-(359, 118, 'nur einmalig', 0, 1, 0),
-(360, 118, 'dauerhaft', 1, 2, 0),
-(361, 118, 'ausschließlich offline', 0, 3, 0),
-(362, 118, 'nur im Arbeitsspeicher', 0, 4, 0),
-(363, 119, 'keinen', 0, 1, 0),
-(364, 119, 'mehreren', 1, 2, 0),
-(365, 119, 'maximal zwei', 0, 3, 0),
-(366, 119, 'immer genau einem', 0, 4, 0),
-(367, 120, 'unsicher', 0, 1, 0),
-(368, 120, 'konsistent', 1, 2, 0),
-(369, 120, 'unsortiert', 0, 3, 0),
-(370, 120, 'unvollständig', 0, 4, 0),
-(371, 121, 'Backups', 0, 1, 0),
-(372, 121, 'Constraints', 1, 2, 0),
-(373, 121, 'Templates', 0, 3, 0),
-(374, 121, 'Themes', 0, 4, 0),
-(375, 122, 'Dateien', 0, 1, 0),
-(376, 122, 'Beziehungen', 1, 2, 0),
-(377, 122, 'Passwörter', 0, 3, 0),
-(378, 122, 'Cookies', 0, 4, 0),
-(379, 123, 'Caching', 0, 1, 0),
-(380, 123, 'Defense in Depth', 1, 2, 0),
-(381, 123, 'Denormalisierung', 0, 3, 0),
-(382, 123, 'Saving', 0, 4, 0),
-(383, 124, 'gar nicht', 0, 1, 0),
-(384, 124, 'zentral', 1, 2, 0),
-(385, 124, 'nur einmal', 0, 3, 0),
-(386, 124, 'zufällig', 0, 4, 0),
-(387, 125, 'Inkonsistenzen', 1, 1, 0),
-(388, 125, 'Designs', 0, 2, 0),
-(389, 125, 'Updates', 0, 3, 0),
-(390, 125, 'Indizes', 0, 4, 0),
-(391, 126, '1:1', 0, 1, 0),
-(392, 126, 'n:m', 0, 2, 0),
-(393, 126, '1:n', 1, 3, 0),
-(394, 126, '0:1', 0, 4, 0),
-(395, 127, 'Indizes', 0, 1, 0),
-(396, 127, 'Themes', 0, 2, 0),
-(397, 127, 'Tabellenfarben', 0, 3, 0),
-(398, 127, 'Transaktionen', 1, 4, 0),
-(399, 128, 'Backups', 1, 1, 0),
-(400, 128, 'Views', 0, 2, 0),
-(401, 128, 'Joins', 0, 3, 0),
-(402, 128, 'Schedules', 0, 4, 0),
-(403, 129, 'Türen', 0, 1, 0),
-(404, 129, 'Rechte', 1, 2, 0),
-(405, 129, 'Schulen', 0, 3, 0),
-(406, 129, 'Geldscheine', 0, 4, 0),
-(407, 130, 'Kühlschrank-Datenbank', 0, 1, 0),
-(408, 130, 'Cloud-Datenbank', 0, 2, 0),
-(409, 130, 'Turbo-Tabellen-Speicher', 0, 3, 0),
-(410, 130, 'Relationalen Datenbank', 1, 4, 0),
-(411, 131, 'NoSQL-Datenbanken', 1, 1, 0),
-(412, 131, 'NoSleep-Datenbanken', 0, 2, 0),
-(413, 131, 'NoSound-Datenbanken', 0, 3, 0),
-(414, 131, 'NoSpace-Datenbanken', 0, 4, 0),
-(415, 132, 'Dokumentenvernichter-Datenbanken', 0, 1, 0),
-(416, 132, 'Domino-Datenbanken', 0, 2, 0),
-(417, 132, 'Dokumentenorientierte Datenbank', 1, 3, 0),
-(418, 132, 'DORA-Datenbanken', 0, 4, 0),
-(419, 133, 'Key-Voice-Datenbanken', 0, 1, 0),
-(420, 133, 'Key-Value-Datenbanken', 1, 2, 0),
-(421, 133, 'Key-Vault-Datenbanken', 0, 3, 0),
-(422, 133, 'Key-Video-Datenbanken', 0, 4, 0),
-(423, 134, 'Spaltenorientierte Datenbanken', 1, 1, 0),
-(424, 134, 'Spalten-Urlaubs-Datenbanken', 0, 2, 0),
-(425, 134, 'Spaltenlose Datenbanken', 0, 3, 0),
-(426, 134, 'Spaltpilz-Datenbanken', 0, 4, 0),
-(427, 135, 'Grafikkarten-Datenbanken', 0, 1, 0),
-(428, 135, 'Graphit-Datenbanken', 0, 2, 0),
-(429, 135, 'Grafzahl-Datenbanken', 0, 3, 0),
-(430, 135, 'Graphdatenbanken', 1, 4, 0),
-(431, 136, 'Objektiv-Datenbanken', 0, 1, 0),
-(432, 136, 'Objektdesorientiert-Datenbanken', 0, 2, 0),
-(433, 136, 'Objektorientierte Datenbanken', 1, 3, 0),
-(434, 136, 'Objektlos-Datenbanken', 0, 4, 0),
-(435, 137, 'verbindet', 1, 1, 0),
-(436, 138, 'Schlüssel', 1, 1, 0),
-(437, 138, 'Schluessel', 1, 2, 0),
-(438, 139, 'Datensatz', 1, 1, 0),
-(439, 140, 'eingefügt', 1, 1, 0),
-(440, 141, 'Daten', 1, 1, 0),
-(441, 142, 'Fremdschlüsselwert', 1, 1, 0),
-(442, 142, 'Fremdschlüssel', 1, 2, 0),
-(443, 143, 'Primärschlüssel', 1, 1, 0),
-(444, 144, 'Dienst', 1, 1, 0),
-(445, 144, 'Dienstvertrag', 1, 2, 0),
-(446, 145, 'Urheberrecht', 1, 1, 0),
-(447, 146, 'Rechtsgrundlage', 1, 1, 0),
-(448, 147, 'Nacherfüllung', 1, 1, 0),
-(449, 148, 'natürlichen Personen', 1, 1, 0),
-(450, 149, 'Break-even-Point', 1, 1, 0),
-(451, 150, 'Verbindlichkeiten', 1, 1, 0),
-(452, 151, 'Kosten-Nutzen', 1, 1, 0),
-(453, 151, 'Kosten-Nutzen-Analyse', 1, 2, 0),
-(454, 151, 'Kosten-Nutzen-', 1, 3, 0),
-(455, 152, 'Menge', 1, 1, 0),
-(456, 153, 'Planung', 1, 1, 0),
-(457, 154, 'Aktivitäts', 1, 1, 0),
-(458, 154, 'Aktivitätsdiagramm', 1, 2, 0),
-(459, 155, 'Beziehungen', 1, 1, 0),
-(460, 156, 'nicht existieren', 1, 1, 0),
-(461, 157, 'Rolle', 1, 1, 0),
-(462, 157, 'Person', 1, 2, 0),
-(463, 158, 'Ablauf', 1, 1, 0);
+-- gap_field
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (1, 76, 1, NULL, ' Struktur eines Systems und zeigt unter anderem Klassen, Attribute und ');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (2, 76, 2, NULL, NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (3, 77, 1, NULL, ' Raute dargestellt und beschreibt eine besonders starke ');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (4, 77, 2, NULL, '-Teil-Beziehung');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (5, 78, 1, NULL, ' Sichtbarkeit, während das Pluszeichen (+) für ');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (6, 78, 2, NULL, ' Sichtbarkeit steht');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (7, 88, 1, NULL, ' erfolgt, während eine asynchrone Nachricht ');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (8, 88, 2, NULL, ' ausgeführt wird');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (9, 89, 1, NULL, ' beschreibt alternative Abläufe, während der Operator ');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (10, 89, 2, NULL, 'Wiederholungen modelliert');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (11, 98, 1, NULL, ' Kontrollflüsse auf, während ein Join-Knoten diese wieder zu einem ');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (12, 98, 2, NULL, ' Kontrollfluss zusammenführt');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (13, 99, 1, NULL, ' auf, während ein Zusammenführungsknoten mehrere ');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (14, 99, 2, NULL, ' wieder zusammenführt');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (15, 108, 1, NULL, ', ');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (16, 108, 2, NULL, ' oder ');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (17, 108, 3, NULL, ' bezeichnet werden');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (18, 109, 1, NULL, ' reagiert und dabei von einem Zustand in den ');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (19, 109, 2, NULL, ' übergeht');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (20, 139, 1, 'Die Beendigung von Arbeitsverhältnissen durch Kündigung oder Auflösungsvertrag bedarf zu ihrer Wirksamkeit der ', NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (21, 139, 2, ' die elektronische Form ist ', '.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (22, 140, 1, 'Der Stückdeckungsbeitrag ist die Differenz zwischen dem Nettoverkaufserlös und den ', NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (23, 140, 2, ' Kosten eines Produkts. Er dient in erster Linie dazu, die im Unternehmen anfallenden ', ' Kosten zu decken.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (24, 141, 1, 'Das ', NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (25, 141, 2, ' beschreibt die theoretisch maximal mögliche Absatzmenge eines Produktes in einem bestimmten Zeitraum, während das ', ' den tatsächlichen Gesamtabsatz aller Anbieter auf diesem Markt darstellt.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (26, 142, 1, 'Der primäre Sektor befasst sich mit der Gewinnung von ', NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (27, 142, 2, ' , wie beispielsweise in der Forstwirtschaft oder Fischerei. Im Gegensatz dazu umfasst der sekundäre Sektor die ', ' von Gütern, wie etwa im Handwerk oder der Industrie.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (28, 143, 1, 'Beim Factoring verkauft ein Unternehmen seine offenen ', ' an ein Finanzierungsinstitut (den Factor), um sofortige Liquidität zu erhalten und das Ausfallrisiko zu übertragen.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (29, 144, 1, 'Der finale Preis, der sich ergibt, nachdem vom Listeneinkaufspreis alle Preisnachlässe (Rabatte, Skonti) abgezogen und alle Bezugskosten (wie Fracht und Verpackung) hinzugerechnet wurden, wird als ', ' (oder Einstandspreis) bezeichnet.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (42, 224, 1, NULL, NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (43, 225, 1, NULL, NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (44, 226, 1, NULL, NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (45, 227, 1, NULL, NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (46, 228, 1, NULL, NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (47, 229, 1, NULL, NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (48, 230, 1, NULL, NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (49, 231, 1, NULL, NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (50, 232, 1, NULL, NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (51, 241, 1, 'Gegeben sind die Tabellen kunde(id, name) und bestellung(id, kunden_id, betrag). Gesucht wird die Gesamtsumme aller Bestellungen pro Kunde auch wenn ein Kunde keine Bestellungen hat. SELECT k.', ', SUM(b.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (52, 241, 2, ', SUM(b.', ') FROM');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (53, 241, 3, ') FROM', 'k LEFT JOIN');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (54, 241, 4, 'k LEFT JOIN', 'b ON k.id = b.kunden_id GROUP BY k.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (55, 241, 5, 'b ON k.id = b.kunden_id GROUP BY k.', ';');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (56, 242, 1, 'Die', 'beschreibt eine');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (57, 242, 2, 'beschreibt eine', 'zwischen zwei Entitäten. Eine');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (58, 242, 3, 'zwischen zwei Entitäten. Eine', '-Beziehung bedeutet zum Beispiel, dass ein Datensatz der ersten Entität mehreren Datensätzen der zweiten Entität zugeordnet sein kann. Diese Beziehung wird in relationalen Tabellen durch einen');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (59, 242, 4, '-Beziehung bedeutet zum Beispiel, dass ein Datensatz der ersten Entität mehreren Datensätzen der zweiten Entität zugeordnet sein kann. Diese Beziehung wird in relationalen Tabellen durch einen', 'auf der');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (60, 242, 5, 'auf der', '-Seite umgesetzt.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (61, 251, 1, 'Ein', 'ist ein Attribut (oder eine Attributkombination), das einen Datensatz eindeutig identifiziert. Ein');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (62, 251, 2, 'ist ein Attribut (oder eine Attributkombination), das einen Datensatz eindeutig identifiziert. Ein', 'verweist auf einen Datensatz in einer anderen Tabelle und stellt so eine');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (63, 251, 3, 'verweist auf einen Datensatz in einer anderen Tabelle und stellt so eine', 'zwischen Tabellen her.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (64, 252, 1, 'Gegeben sind die Tabellen produkt(id, name, preis) und verkauf(id, produkt_id, menge). Gesucht wird der Gesamtumsatz pro Produkt (menge * preis). Produkte ohne Verkäufe sollen trotzdem angezeigt werden. SELECT p.', ', COALESCE(SUM(v.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (65, 252, 2, ', COALESCE(SUM(v.', '* p.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (66, 252, 3, '* p.', '), 0) AS umsatz FROM');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (67, 252, 4, '), 0) AS umsatz FROM', 'p LEFT JOIN');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (68, 252, 5, 'p LEFT JOIN', 'v ON p.id = v.produkt_id GROUP BY p.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (69, 252, 6, 'v ON p.id = v.produkt_id GROUP BY p.', ';');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (70, 261, 1, 'LIKE verwendet', 'als Wildcard und');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (71, 261, 2, 'als Wildcard und', 'als Platzhalter für genau ein Zeichen');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (72, 262, 1, 'Vervollständige folgenden SQL-Trigger, der nach einem UPDATE die alten Werte eines Mitarbeiters in eine Log-Tabelle speichert. CREATE', 'log_changes');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (73, 262, 2, 'log_changes', 'UPDATE ON employees');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (74, 262, 3, 'UPDATE ON employees', 'EACH ROW BEGIN INSERT INTO employees_log (employee_id, name, action) VALUES (OLD.employee_id, OLD.name, \'updated\'); END;');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (75, 271, 1, 'Vervollständige das SQL-Statement: Zeige alle Kunden an, die noch nie eine Bestellung aufgegeben haben SELECT k.* FROM kunde k', NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (76, 271, 2, NULL, NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (77, 271, 3, NULL, 'b ON k.id = b.kunden_id WHERE b.id');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (78, 271, 4, 'b ON k.id = b.kunden_id WHERE b.id', NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (79, 271, 5, NULL, ';');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (80, 272, 1, 'Vervollständige das SQL-Statement: Erstelle eine Tabelle mitarbeiter mit den Spalten id (Primärschlüssel, automatisch hochzählend) und name (Pflichtfeld)', NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (81, 272, 2, NULL, 'mitarbeiter( id');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (82, 272, 3, 'mitarbeiter( id', NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (83, 272, 4, NULL, NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (84, 272, 5, NULL, NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (85, 272, 6, NULL, ', name');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (86, 272, 7, ', name', '(');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (87, 272, 8, '(', ')');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (88, 272, 9, ')', NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (89, 272, 10, NULL, ');');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (90, 283, 1, 'Gegeben ist die Tabelle bestellung(id, kunden_id, betrag). Zeige alle kunden_id an, deren Gesamtbestellwert größer als 1000 ist. SELECT kunden_id, SUM(betrag) FROM', 'GROUP BY');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (91, 283, 2, 'GROUP BY', NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (92, 283, 3, NULL, 'SUM(betrag) > 1000;');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (93, 284, 1, 'Vervollständige das SQL-Statement. Beim Löschen eines Kunden sollen automatisch alle zugehörigen Bestellungen gelöscht werden. CREATE TABLE bestellung ( id INT PRIMARY KEY, kunden_id INT, FOREIGN KEY (kunden_id) REFERENCES', '(');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (94, 284, 2, '(', ') ON DELETE');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (95, 284, 3, ') ON DELETE', ');');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (96, 299, 1, 'Eine Klasse, von der kein Objekt erzeugt werden kann und die als Bauplan für Unterklassen dient, nennt man', 'Klasse.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (97, 300, 1, 'Der Zugriffsschutz', 'bewirkt, dass nur die Klasse selbst und ihre Unterklassen auf ein Attribut zugreifen können.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (98, 301, 1, 'Das Gegenteil von iterativer Programmierung (Schleifen) ist die', 'Programmierung.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (99, 302, 1, 'In der UML-Modellierung wird eine Vererbung durch einen Pfeil mit einer', 'Spitze dargestellt.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (100, 303, 1, 'Ein Algorithmus mit der Zeitkomplexität $O(n^2)$ wächst bei Verdopplung der Eingabemenge um den Faktor', '.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (101, 304, 1, 'Die Datenstruktur', 'unktioniert nach dem LIFO-Prinzip (Last-In-First-Out).');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (102, 305, 1, 'Wenn eine Unterklasse eine Methode der Oberklasse mit exakt derselben Signatur neu implementiert, nennt man das', '.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (103, 306, 1, 'Das Design Pattern, welches Objekte über Zustandsänderungen eines anderen Objekts informiert, heißt', 'Pattern.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (104, 307, 1, 'Ein', 'ist ein spezieller Typ, der nur eine definierte Menge an festen Werten (Konstanten) annehmen kann.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (105, 308, 1, 'Den Vorgang, Quellcode in Maschinencode zu übersetzen, nennt man', '.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (106, 309, 1, 'Ein', 'stellt eine Verbindung zwischen zwei Klassen in UML dar, ohne dass eine Hierarchie besteht.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (107, 310, 1, 'Die', 'Suche setzt voraus, dass die Datenmenge bereits sortiert ist.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (108, 348, 0, 'Die Variable a wird im', 'gespeichert und die Referenzvariable s wird im');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (109, 348, 1, NULL, 'Das eigentliche String-Objekt wird im');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (110, 348, 2, NULL, 'gespeichert.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (111, 349, 0, 'Der float ist', 'Bytes,');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (112, 349, 1, 'der double ist', 'Bytes,');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (113, 349, 2, 'der int ist', 'Bytes');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (114, 349, 3, 'ein char ist', 'Bytes');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (115, 351, 0, 'Akzeptable Typen für x sind', 'und');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (116, 351, 1, NULL, '.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (117, 477, 1, 'Eine Datenbank ist eine ', ' Sammlung von Daten.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (118, 477, 2, 'Sie wird genutzt, damit Daten ', ' gespeichert und später schnell wiedergefunden werden können.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (119, 477, 3, 'Im Vergleich zu einer einfachen Datei (z. B. Excel/CSV) kann eine Datenbank besser mit ', ' Benutzern gleichzeitig umgehen und hilft dabei, Daten ');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (120, 477, 4, 'Im Vergleich zu einer einfachen Datei (z. B. Excel/CSV) kann eine Datenbank besser mit mehreren Benutzern gleichzeitig umgehen und hilft dabei, Daten ', ' zu halten.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (121, 477, 5, 'Damit Daten korrekt bleiben, kann man Regeln festlegen, z. B. dass bestimmte Felder nicht leer sein dürfen oder dass IDs eindeutig sind. Solche Regeln heißen ', '.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (122, 477, 6, 'Wenn man Daten aus mehreren Tabellen miteinander verbindet (z. B. Kunde ↔ Bestellung); nutzt man dafür ', ' (Verknüpfungen).');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (123, 477, 7, 'Die Anwendung prüft Eingaben, aber die Datenbank sollte ebenfalls Regeln haben, damit auch bei Importen oder Fehlern keine falschen Daten gespeichert werden. Das nennt man ', '.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (124, 478, 1, 'Eine Datenbank ist sinnvoll, wenn man Daten ', ' verwalten muss, z. B. Kunden, Bestellungen oder Tickets.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (125, 478, 2, 'Wenn Daten doppelt gespeichert werden, kann das zu ', ' führen (z. B. an einer Stelle geändert, an anderer vergessen).');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (126, 478, 3, 'Eine häufige Beziehung ist: „Ein Kunde kann mehrere Bestellungen haben“. Das nennt man ', '.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (127, 478, 4, 'Damit mehrere Änderungen zusammen zuverlässig klappen (z. B. Bestellung anlegen und Positionen dazu speichern); nutzt man ', '.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (128, 478, 5, 'Damit Daten nicht verloren gehen, braucht man regelmäßige ', '.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (129, 478, 6, 'Wichtig ist außerdem, dass nicht jeder alles darf: Nutzer sollten nur die ', ' bekommen, die sie wirklich benötigen. Dies nennt man Least Privilege.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (130, 479, 1, 'Die Merkmale einer ', ' sind eine feste Struktur mit Primär- und Fremdschlüsseln und man kann durch SQL abfragen. Dieser Datentyp ist sehr verbreitet.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (131, 479, 2, 'Dagegen stehen die ', '. Sie sind nicht-relational. Ihre Struktur ist nicht fest – sie haben kein festes Schema.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (132, 479, 3, ' ', ' beinhalten ihre Daten meist als JSON- oder XML-Dokumente. MongoDB ist ein Beispiel.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (133, 479, 4, ' ', ' speichern Daten als Schlüssel-Wert-Paare (Key → Value). Redis ist ein Beispiel.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (134, 479, 5, ' ', ' speichern Daten spaltenweise (statt zeilenweise) und sind gut für Analysen großer Datenmengen.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (135, 479, 6, ' ', ' speichern Daten als Knoten und Kanten und sind gut für stark vernetzte Daten (z. B. soziale Netzwerke).');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (136, 479, 7, ' ', ' speichern Daten als Objekte inkl. Attributen und Referenzen.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (137, 481, 1, 'Ein JOIN', 'Datensaetze aus mehreren Tabellen ueber gemeinsame');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (138, 481, 2, NULL, '.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (139, 499, 1, 'Ein Problem, bei dem ein neuer', NULL);
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (140, 499, 2, 'nicht', 'werden kann,');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (141, 499, 3, 'ohne gleichzeitig unnötige oder unbekannte', 'zu ergänzen.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (142, 502, 1, 'Referentielle Integrität bedeutet, dass ein', 'entweder NULL ist');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (143, 502, 2, 'oder auf einen tatsächlich existierenden', 'in der referenzierten Tabelle zeigen muss.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (144, 530, 1, 'Bei einem', 'vertrag schuldet der Auftragnehmer keinen Erfolg, sondern nur eine Tätigkeit.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (145, 531, 1, 'Das', 'recht schützt Softwareentwickler vor unerlaubter Nutzung ihres Codes.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (146, 532, 1, 'wenn eine', 'vorliegt.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (147, 533, 1, 'Software', 'verlangen.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (148, 534, 1, 'die Daten von', 'verarbeiten.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (149, 540, 1, 'Der', 'zeigt, ab welcher Absatzmenge ein Unternehmen kostendeckend arbeitet.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (150, 541, 1, 'die Fähigkeit,', 'zu bezahlen.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (151, 542, 1, 'Eine', '-Analyse vergleicht Aufwand und Nutzen eines Projekts.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (152, 543, 1, 'unabhängig von der', 'konstant.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (153, 544, 1, 'Ein Budget ist eine', 'für zukünftige Ausgaben.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (154, 550, 1, 'Ein', 'diagramm beschreibt Abläufe und Entscheidungen.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (155, 551, 1, 'In einem Klassendiagramm verbinden', 'die Klassen miteinander.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (156, 552, 1, 'Eine Komposition bedeutet, dass das Teil ohne das Ganze', 'kann.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (157, 553, 1, 'Ein Akteur repräsentiert eine', 'die mit dem System interagiert.');
+INSERT INTO gap_field (gap_id, question_id, gap_index, text_before, text_after) VALUES (158, 554, 1, 'Sequenzdiagramme zeigen den', 'von Nachrichten.');
 
--- Question–Theme Mapping
-INSERT INTO Question_Theme (question_id, theme_id) VALUES
-(1, 3),
-(2, 3),
-(3, 3),
-(4, 3),
-(5, 3),
-(6, 3),
-(7, 3),
-(8, 3),
-(9, 3),
-(10, 3),
-(11, 3),
-(12, 3),
-(13, 3),
-(14, 3),
-(15, 3),
-(16, 3),
-(17, 3),
-(18, 3),
-(19, 3),
-(20, 3),
-(21, 3),
-(22, 3),
-(23, 3),
-(24, 3),
-(25, 3),
-(26, 3),
-(27, 3),
-(28, 3),
-(29, 3),
-(30, 3),
-(31, 3),
-(32, 3),
-(33, 3),
-(34, 3),
-(35, 3),
-(36, 3),
-(37, 3),
-(38, 3),
-(39, 3),
-(40, 3),
-(41, 3),
-(42, 3),
-(43, 3),
-(44, 3),
-(45, 3),
-(46, 3),
-(47, 3),
-(48, 3),
-(49, 3),
-(50, 3),
-(51, 3),
-(52, 3),
-(53, 3),
-(54, 3),
-(55, 3),
-(56, 3),
-(57, 3),
-(58, 3),
-(59, 3),
-(60, 3),
-(61, 3),
-(62, 3),
-(63, 3),
-(64, 3),
-(65, 3),
-(66, 3),
-(67, 3),
-(68, 3),
-(69, 3),
-(70, 6),
-(71, 6),
-(72, 6),
-(73, 6),
-(74, 6),
-(75, 6),
-(76, 6),
-(77, 6),
-(78, 6),
-(79, 6),
-(80, 6),
-(81, 6),
-(82, 6),
-(83, 6),
-(84, 6),
-(85, 6),
-(86, 6),
-(87, 6),
-(88, 6),
-(89, 6),
-(90, 6),
-(91, 6),
-(92, 6),
-(93, 6),
-(94, 6),
-(95, 6),
-(96, 6),
-(97, 6),
-(98, 6),
-(99, 6),
-(100, 6),
-(101, 6),
-(102, 6),
-(103, 6),
-(104, 6),
-(105, 6),
-(106, 6),
-(107, 6),
-(108, 6),
-(109, 6),
-(110, 3),
-(111, 3),
-(112, 3),
-(113, 3),
-(114, 3),
-(115, 3),
-(116, 3),
-(117, 3),
-(118, 3),
-(119, 3),
-(120, 3),
-(121, 3),
-(122, 3),
-(123, 3),
-(124, 3),
-(125, 3),
-(126, 3),
-(127, 3),
-(128, 3),
-(129, 3),
-(130, 3),
-(131, 3),
-(132, 3),
-(133, 3),
-(134, 3),
-(135, 3),
-(136, 3),
-(137, 3),
-(138, 3),
-(139, 3),
-(140, 3),
-(141, 3),
-(142, 3),
-(143, 3),
-(144, 3),
-(196, 5),
-(197, 5),
-(198, 5),
-(199, 5),
-(200, 5),
-(201, 5),
-(202, 5),
-(203, 5),
-(204, 5),
-(205, 5),
-(206, 5),
-(207, 5),
-(208, 5),
-(209, 5),
-(210, 5),
-(211, 5),
-(212, 5),
-(213, 5),
-(214, 5),
-(215, 5),
-(216, 5),
-(217, 5),
-(218, 5),
-(219, 5),
-(220, 5),
-(221, 5),
-(222, 5),
-(223, 5),
-(224, 5),
-(225, 5),
-(226, 5),
-(227, 5),
-(228, 5),
-(229, 5),
-(230, 5),
-(231, 5),
-(232, 5),
-(233, 4),
-(234, 4),
-(235, 5),
-(236, 4),
-(237, 4),
-(238, 5),
-(239, 5),
-(240, 5),
-(241, 5),
-(242, 4),
-(243, 4),
-(244, 5),
-(245, 5),
-(246, 5),
-(247, 4),
-(248, 5),
-(249, 5),
-(250, 5),
-(251, 4),
-(252, 5),
-(253, 5),
-(254, 5),
-(255, 5),
-(256, 5),
-(257, 5),
-(258, 5),
-(259, 5),
-(260, 5),
-(261, 5),
-(262, 5),
-(263, 5),
-(264, 5),
-(265, 5),
-(266, 5),
-(267, 5),
-(268, 5),
-(269, 5),
-(270, 5),
-(271, 5),
-(272, 5),
-(273, 5),
-(274, 4),
-(275, 4),
-(276, 5),
-(277, 5),
-(278, 5),
-(279, 4),
-(280, 5),
-(281, 5),
-(282, 5),
-(283, 5),
-(284, 4),
-(285, 8),
-(286, 8),
-(287, 8),
-(288, 8),
-(289, 8),
-(290, 8),
-(291, 8),
-(292, 8),
-(293, 8),
-(294, 8),
-(295, 8),
-(296, 8),
-(297, 8),
-(298, 8),
-(299, 8),
-(300, 8),
-(301, 8),
-(302, 8),
-(303, 8),
-(304, 8),
-(305, 8),
-(306, 8),
-(307, 8),
-(308, 8),
-(309, 8),
-(310, 8),
-(311, 8),
-(312, 8),
-(313, 8),
-(314, 8),
-(315, 8),
-(316, 8),
-(317, 8),
-(318, 8),
-(319, 8),
-(320, 8),
-(321, 8),
-(322, 8),
-(323, 8),
-(324, 8),
-(325, 8),
-(326, 8),
-(327, 8),
-(328, 8),
-(329, 8),
-(330, 8),
-(331, 8),
-(332, 8),
-(333, 8),
-(334, 8),
-(335, 8),
-(336, 8),
-(337, 8),
-(338, 8),
-(339, 8),
-(340, 8),
-(341, 8),
-(342, 8),
-(343, 8),
-(344, 8),
-(345, 8),
-(346, 8),
-(347, 8),
-(348, 8),
-(349, 8),
-(350, 8),
-(351, 8),
-(352, 8),
-(353, 8),
-(354, 8),
-(355, 8),
-(356, 8),
-(357, 8),
-(358, 8),
-(359, 8),
-(360, 8),
-(361, 8),
-(362, 8),
-(363, 8),
-(364, 8),
-(365, 8),
-(366, 8),
-(367, 8),
-(368, 8),
-(369, 8),
-(370, 8),
-(371, 8),
-(372, 8),
-(373, 8),
-(374, 8),
-(375, 4),
-(376, 4),
-(377, 5),
-(378, 5),
-(379, 5),
-(380, 5),
-(381, 5),
-(382, 5),
-(383, 5),
-(384, 5),
-(385, 5),
-(386, 4),
-(387, 4),
-(388, 4),
-(389, 4),
-(390, 5),
-(391, 5),
-(392, 5),
-(393, 5),
-(394, 5),
-(395, 5),
-(396, 4),
-(397, 4),
-(398, 4),
-(399, 4),
-(400, 5),
-(401, 5),
-(402, 5),
-(403, 5),
-(404, 5),
-(405, 5),
-(406, 4),
-(407, 4),
-(408, 4),
-(409, 4),
-(410, 4),
-(411, 5),
-(412, 5),
-(413, 4),
-(414, 4),
-(415, 4),
-(416, 4),
-(417, 4),
-(418, 4),
-(419, 4),
-(420, 4),
-(421, 4),
-(422, 4),
-(423, 4),
-(424, 4),
-(425, 5),
-(426, 4),
-(427, 4),
-(428, 4),
-(429, 4),
-(430, 4),
-(431, 4),
-(432, 5),
-(433, 4),
-(434, 4),
-(435, 4),
-(436, 4),
-(437, 5),
-(438, 5),
-(439, 5),
-(440, 5),
-(441, 5),
-(442, 5),
-(443, 5),
-(444, 5),
-(445, 5),
-(446, 5),
-(447, 5),
-(448, 5),
-(449, 5),
-(450, 5),
-(451, 4),
-(452, 4),
-(453, 4),
-(454, 4),
-(455, 4),
-(456, 4),
-(457, 4),
-(458, 4),
-(459, 5),
-(460, 5),
-(461, 5),
-(462, 5),
-(463, 4),
-(464, 4),
-(465, 5),
-(466, 4),
-(467, 4),
-(468, 4),
-(469, 4),
-(470, 4),
-(471, 4),
-(472, 4),
-(473, 4),
-(474, 4),
-(475, 4),
-(476, 4),
-(477, 4),
-(478, 4),
-(479, 4),
-(480, 5),
-(481, 5),
-(482, 5),
-(483, 4),
-(484, 4),
-(485, 4),
-(486, 4),
-(487, 4),
-(488, 4),
-(489, 4),
-(490, 4),
-(491, 4),
-(492, 4),
-(493, 4),
-(494, 4),
-(495, 4),
-(496, 4),
-(497, 4),
-(498, 4),
-(499, 4),
-(500, 4),
-(501, 4),
-(502, 4),
-(503, 4),
-(504, 4),
-(505, 4),
-(506, 4),
-(507, 4),
-(508, 4),
-(509, 4),
-(510, 4),
-(511, 4),
-(512, 4),
-(513, 4),
-(514, 4),
-(515, 4),
-(516, 4),
-(517, 4),
-(518, 4),
-(519, 4),
-(520, 4),
-(521, 4),
-(522, 4),
-(523, 4),
-(524, 4),
-(525, 2),
-(526, 2),
-(527, 2),
-(528, 2),
-(529, 2),
-(530, 2),
-(531, 2),
-(532, 2),
-(533, 2),
-(534, 2),
-(535, 3),
-(536, 3),
-(537, 3),
-(538, 3),
-(539, 3),
-(540, 3),
-(541, 3),
-(542, 3),
-(543, 3),
-(544, 3),
-(545, 6),
-(546, 6),
-(547, 6),
-(548, 6),
-(549, 6),
-(550, 6),
-(551, 6),
-(552, 6),
-(553, 6),
-(554, 6),
-(555, 7),
-(556, 7),
-(557, 7),
-(558, 7),
-(559, 7),
-(560, 8),
-(561, 8),
-(562, 8),
-(563, 8),
-(564, 8),
-(565, 8),
-(566, 8),
-(567, 8),
-(568, 8),
-(569, 8),
-(570, 8),
-(571, 8),
-(572, 8),
-(573, 8),
-(574, 8),
-(575, 8),
-(576, 8),
-(577, 8),
-(578, 8),
-(579, 8),
-(580, 8),
-(581, 8),
-(582, 8),
-(583, 8),
-(584, 8),
-(585, 8),
-(586, 8),
-(587, 8),
-(588, 8),
-(589, 8),
-(590, 8),
-(591, 8),
-(592, 8),
-(593, 8),
-(594, 8),
-(595, 8),
-(596, 8),
-(597, 8),
-(598, 8),
-(599, 8),
-(600, 8),
-(601, 8),
-(602, 8),
-(603, 8),
-(604, 8),
-(605, 8),
-(606, 8),
-(607, 8),
-(608, 8),
-(609, 8),
-(610, 8),
-(611, 8),
-(612, 8),
-(613, 8),
-(614, 8);
+-- gap_option
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (1, 1, 'dynamische', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (2, 1, 'statische', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (3, 2, 'Methoden', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (4, 2, 'Akteure', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (5, 3, 'leere', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (6, 3, 'gefüllte', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (7, 4, 'Teil', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (8, 4, 'Ganzes', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (9, 5, 'public', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (10, 5, 'private', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (11, 6, 'public', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (12, 6, 'private', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (13, 7, 'Eingabe', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (14, 7, 'Rückgabe', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (15, 8, 'blockierend', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (16, 8, 'nicht blockierend', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (17, 9, 'alt', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (18, 9, 'opt', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (19, 10, 'par', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (20, 10, 'loop', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (21, 11, 'einzelne', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (22, 11, 'parallele', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (23, 12, 'einzigen', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (24, 12, 'parallelen', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (25, 13, 'Bedingungen', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (26, 13, 'nichts', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (27, 14, 'Aktivitätsflüsse', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (28, 14, 'Kontrollflüsse', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (29, 15, 'do', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (30, 15, 'entry', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (31, 15, 'exit', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (32, 16, 'do', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (33, 16, 'entry', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (34, 16, 'exit', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (35, 17, 'do', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (36, 17, 'entry', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (37, 17, 'exit', 1, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (38, 18, 'Bedingungen', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (39, 18, 'Ereignisse', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (40, 18, 'Aktionen', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (41, 19, 'Startzustand', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (42, 19, 'nächsten Zustand', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (43, 19, 'Endzustand', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (44, 20, 'Schriftform', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (45, 20, 'Textform', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (46, 20, 'notariellen Beurkundung', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (47, 21, 'ausreichend', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (48, 21, 'ausgeschlossen', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (49, 21, 'vorrangig', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (50, 22, 'variablen', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (51, 22, 'fixen', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (52, 22, 'gesamten', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (53, 23, 'variablen', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (54, 23, 'fixen', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (55, 23, 'durchschnittlichen', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (56, 24, 'Marktpotenzial', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (57, 24, 'Marktvolumen', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (58, 24, 'Marktanteil', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (59, 25, 'Marktvolumen', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (60, 25, 'Marktanteil', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (61, 26, 'Rohstoffen', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (62, 26, 'Dienstleistungen', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (63, 26, 'Kapitalgütern', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (64, 27, 'Verteilung', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (65, 27, 'Weiterverarbeitung', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (66, 27, 'Lagerung', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (67, 28, 'Verbindlichkeiten', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (68, 28, 'Forderungen', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (69, 28, 'Lagerbestände', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (70, 29, 'Bezugspreis', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (71, 29, 'Selbstkostenpreis', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (72, 29, 'Listenverkaufspreis', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (73, 42, 'Like', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (74, 42, '=', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (75, 42, 'IN', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (76, 42, 'BETWEEN', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (77, 43, 'WHERE', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (78, 43, 'GROUP BY', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (79, 43, 'ORDER BY', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (80, 43, 'HAVING', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (81, 44, 'INSERT INTO', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (82, 44, 'UPDATE', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (83, 44, 'SELECT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (84, 44, 'DELETE FROM', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (85, 45, 'ON', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (86, 45, 'WHERE', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (87, 45, 'USING', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (88, 45, 'FROM', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (89, 46, 'Semikolon', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (90, 46, 'Komma', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (91, 46, 'Punkt', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (92, 46, 'Doppelpunkt', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (93, 47, 'CREATE INDEX', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (94, 47, 'CREATE TABLE', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (95, 47, 'ALTER TABLE', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (96, 47, 'CREATE VIEW', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (97, 48, 'ORDER BY', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (98, 48, 'GROUP BY', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (99, 48, 'HAVING', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (100, 48, 'WHERE', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (101, 49, 'GROUP BY', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (102, 49, 'ORDER BY', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (103, 49, 'DISTINCT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (104, 49, 'LIMIT', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (105, 50, 'AVG', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (106, 50, 'SUM', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (107, 50, 'COUNT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (108, 50, 'MIN', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (109, 51, 'name', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (110, 51, 'betrag', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (111, 51, 'kunde', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (112, 51, 'bestellung', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (113, 52, 'betrag', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (114, 52, 'name', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (115, 52, 'kunde', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (116, 52, 'bestellung', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (117, 53, 'kunde', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (118, 53, 'name', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (119, 53, 'betrag', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (120, 53, 'bestellung', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (121, 54, 'bestellung', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (122, 54, 'name', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (123, 54, 'betrag', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (124, 54, 'kunde', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (125, 55, 'name', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (126, 55, 'betrag', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (127, 55, 'kunde', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (128, 55, 'bestellung', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (129, 56, 'Kardinalitäten', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (130, 56, 'Beziehung', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (131, 56, '1:n', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (132, 56, 'Fremdschlüssel', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (133, 57, 'Beziehung', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (134, 57, 'Kardinalitäten', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (135, 57, '1:n', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (136, 57, 'Fremdschlüssel', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (137, 58, '1:n', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (138, 58, 'Kardinalitäten', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (139, 58, 'Beziehung', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (140, 58, 'Fremdschlüssel', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (141, 59, 'Fremdschlüssel', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (142, 59, 'Kardinalitäten', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (143, 59, 'Beziehung', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (144, 59, '1:n', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (145, 60, 'n', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (146, 60, 'Kardinalitäten', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (147, 60, 'Beziehung', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (148, 60, '1:n', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (149, 61, 'Primärschlüssel', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (150, 61, 'Fremdschlüssel', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (151, 61, 'Beziehung', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (152, 61, 'id', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (153, 62, 'Fremdschlüssel', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (154, 62, 'Primärschlüssel', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (155, 62, 'Beziehung', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (156, 62, 'id', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (157, 63, 'Beziehung', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (158, 63, 'Primärschlüssel', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (159, 63, 'Fremdschlüssel', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (160, 63, 'id', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (161, 64, 'name', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (162, 64, 'menge', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (163, 64, 'preis', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (164, 64, 'produkt', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (165, 65, 'menge', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (166, 65, 'name', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (167, 65, 'preis', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (168, 65, 'produkt', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (169, 66, 'preis', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (170, 66, 'name', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (171, 66, 'menge', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (172, 66, 'produkt', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (173, 67, 'produkt', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (174, 67, 'name', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (175, 67, 'menge', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (176, 67, 'preis', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (177, 68, 'verkauf', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (178, 68, 'name', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (179, 68, 'menge', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (180, 68, 'preis', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (181, 69, 'name', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (182, 69, 'menge', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (183, 69, 'preis', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (184, 69, 'produkt', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (185, 70, '%', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (186, 70, '_', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (187, 70, '*', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (188, 70, '=', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (189, 71, '_', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (190, 71, '%', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (191, 71, '*', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (192, 71, '=', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (193, 72, 'TRIGGER', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (194, 72, 'LEFT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (195, 72, 'RIGHT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (196, 72, 'INNER', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (197, 73, 'AFTER', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (198, 73, 'LEFT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (199, 73, 'RIGHT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (200, 73, 'INNER', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (201, 74, 'FOR', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (202, 74, 'LEFT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (203, 74, 'RIGHT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (204, 74, 'INNER', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (205, 75, 'LEFT', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (206, 75, 'RIGHT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (207, 75, 'INNER', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (208, 75, 'JOIN', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (209, 76, 'JOIN', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (210, 76, 'LEFT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (211, 76, 'RIGHT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (212, 76, 'INNER', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (213, 77, 'bestellung', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (214, 77, 'LEFT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (215, 77, 'JOIN', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (216, 77, 'IS', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (217, 78, 'IS', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (218, 78, 'LEFT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (219, 78, 'RIGHT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (220, 78, 'INNER', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (221, 79, 'NULL', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (222, 79, 'LEFT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (223, 79, 'RIGHT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (224, 79, 'INNER', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (225, 80, 'CREATE', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (226, 80, 'LEFT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (227, 80, 'RIGHT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (228, 80, 'INNER', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (229, 81, 'TABLE', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (230, 81, 'LEFT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (231, 81, 'RIGHT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (232, 81, 'INNER', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (233, 82, 'INT', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (234, 82, 'LEFT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (235, 82, 'RIGHT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (236, 82, 'INNER', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (237, 83, 'PRIMARY', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (238, 83, 'LEFT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (239, 83, 'RIGHT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (240, 83, 'INNER', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (241, 84, 'KEY', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (242, 84, 'LEFT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (243, 84, 'RIGHT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (244, 84, 'INNER', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (245, 85, 'AUTO_INCREMENT', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (246, 85, 'LEFT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (247, 85, 'RIGHT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (248, 85, 'INNER', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (249, 86, 'VARCHAR', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (250, 86, 'LEFT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (251, 86, 'RIGHT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (252, 86, 'INNER', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (253, 87, '100', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (254, 87, '1', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (255, 87, '50', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (256, 87, '255', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (257, 88, 'NOT', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (258, 88, 'LEFT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (259, 88, 'RIGHT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (260, 88, 'INNER', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (261, 89, 'NULL', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (262, 89, 'LEFT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (263, 89, 'RIGHT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (264, 89, 'INNER', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (265, 90, 'bestellung', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (266, 90, 'kunden_id', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (267, 90, 'HAVING', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (268, 90, 'id', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (269, 91, 'kunden_id', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (270, 91, 'bestellung', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (271, 91, 'HAVING', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (272, 91, 'id', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (273, 92, 'HAVING', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (274, 92, 'LEFT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (275, 92, 'RIGHT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (276, 92, 'INNER', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (277, 93, 'kunde', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (278, 93, 'id', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (279, 93, 'CASCADE', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (280, 93, 'name', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (281, 94, 'id', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (282, 94, 'kunde', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (283, 94, 'CASCADE', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (284, 94, 'name', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (285, 95, 'CASCADE', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (286, 95, 'LEFT', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (287, 95, 'RIGHT', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (288, 95, 'INNER', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (289, 96, 'abstract', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (290, 96, 'final', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (291, 96, 'static', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (292, 97, 'protected', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (293, 97, 'privat', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (294, 97, 'public', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (295, 98, 'rekursive', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (296, 98, 'lineare', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (297, 98, 'parallele', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (298, 99, 'offenen', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (299, 99, 'gefüllten', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (300, 99, 'runde', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (301, 100, '4', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (302, 100, '5', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (303, 100, '8', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (304, 101, 'Stack', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (305, 101, 'Queue', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (306, 101, 'Array', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (307, 102, 'Overriding', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (308, 102, 'Overloading', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (309, 102, 'Hiding', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (310, 103, 'Observer', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (311, 103, 'Singleton', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (312, 103, 'Strategy', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (313, 104, 'Enum', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (314, 104, 'Class', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (315, 104, 'Interface', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (316, 105, 'Kompilieren', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (317, 105, 'Interpretieren', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (318, 105, 'Debuggen', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (319, 106, 'Assoziation', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (320, 106, 'Vererbung', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (321, 106, 'Komposition', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (322, 107, 'binäre', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (323, 107, 'lineare', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (324, 107, 'exponentielle', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (325, 108, 'Stack', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (326, 108, 'Heap', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (327, 109, 'Stack', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (328, 109, 'Heap', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (329, 110, 'Heap', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (330, 110, 'Stack', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (331, 111, '4', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (332, 111, '8', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (333, 111, '2', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (334, 112, '8', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (335, 112, '4', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (336, 112, '2', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (337, 113, '4', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (338, 113, '8', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (339, 113, '2', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (340, 114, '2', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (341, 114, '4', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (342, 114, '8', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (343, 115, 'byte', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (344, 115, 'char', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (345, 115, 'long', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (346, 115, 'float', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (347, 115, 'Short', 0, 5, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (348, 115, 'Long', 0, 6, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (349, 116, 'char', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (350, 116, 'byte', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (351, 116, 'long', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (352, 116, 'float', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (353, 116, 'Short', 0, 5, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (354, 116, 'Long', 0, 6, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (355, 117, 'zufällige', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (356, 117, 'strukturierte', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (357, 117, 'verschlüsselte', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (358, 117, 'temporäre', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (359, 118, 'nur einmalig', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (360, 118, 'dauerhaft', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (361, 118, 'ausschließlich offline', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (362, 118, 'nur im Arbeitsspeicher', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (363, 119, 'keinen', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (364, 119, 'mehreren', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (365, 119, 'maximal zwei', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (366, 119, 'immer genau einem', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (367, 120, 'unsicher', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (368, 120, 'konsistent', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (369, 120, 'unsortiert', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (370, 120, 'unvollständig', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (371, 121, 'Backups', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (372, 121, 'Constraints', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (373, 121, 'Templates', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (374, 121, 'Themes', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (375, 122, 'Dateien', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (376, 122, 'Beziehungen', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (377, 122, 'Passwörter', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (378, 122, 'Cookies', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (379, 123, 'Caching', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (380, 123, 'Defense in Depth', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (381, 123, 'Denormalisierung', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (382, 123, 'Saving', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (383, 124, 'gar nicht', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (384, 124, 'zentral', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (385, 124, 'nur einmal', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (386, 124, 'zufällig', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (387, 125, 'Inkonsistenzen', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (388, 125, 'Designs', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (389, 125, 'Updates', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (390, 125, 'Indizes', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (391, 126, '1:1', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (392, 126, 'n:m', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (393, 126, '1:n', 1, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (394, 126, '0:1', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (395, 127, 'Indizes', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (396, 127, 'Themes', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (397, 127, 'Tabellenfarben', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (398, 127, 'Transaktionen', 1, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (399, 128, 'Backups', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (400, 128, 'Views', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (401, 128, 'Joins', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (402, 128, 'Schedules', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (403, 129, 'Türen', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (404, 129, 'Rechte', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (405, 129, 'Schulen', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (406, 129, 'Geldscheine', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (407, 130, 'Kühlschrank-Datenbank', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (408, 130, 'Cloud-Datenbank', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (409, 130, 'Turbo-Tabellen-Speicher', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (410, 130, 'Relationalen Datenbank', 1, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (411, 131, 'NoSQL-Datenbanken', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (412, 131, 'NoSleep-Datenbanken', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (413, 131, 'NoSound-Datenbanken', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (414, 131, 'NoSpace-Datenbanken', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (415, 132, 'Dokumentenvernichter-Datenbanken', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (416, 132, 'Domino-Datenbanken', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (417, 132, 'Dokumentenorientierte Datenbank', 1, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (418, 132, 'DORA-Datenbanken', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (419, 133, 'Key-Voice-Datenbanken', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (420, 133, 'Key-Value-Datenbanken', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (421, 133, 'Key-Vault-Datenbanken', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (422, 133, 'Key-Video-Datenbanken', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (423, 134, 'Spaltenorientierte Datenbanken', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (424, 134, 'Spalten-Urlaubs-Datenbanken', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (425, 134, 'Spaltenlose Datenbanken', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (426, 134, 'Spaltpilz-Datenbanken', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (427, 135, 'Grafikkarten-Datenbanken', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (428, 135, 'Graphit-Datenbanken', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (429, 135, 'Grafzahl-Datenbanken', 0, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (430, 135, 'Graphdatenbanken', 1, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (431, 136, 'Objektiv-Datenbanken', 0, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (432, 136, 'Objektdesorientiert-Datenbanken', 0, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (433, 136, 'Objektorientierte Datenbanken', 1, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (434, 136, 'Objektlos-Datenbanken', 0, 4, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (435, 137, 'verbindet', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (436, 138, 'Schlüssel', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (437, 138, 'Schluessel', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (438, 139, 'Datensatz', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (439, 140, 'eingefügt', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (440, 141, 'Daten', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (441, 142, 'Fremdschlüsselwert', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (442, 142, 'Fremdschlüssel', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (443, 143, 'Primärschlüssel', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (444, 144, 'Dienst', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (445, 144, 'Dienstvertrag', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (446, 145, 'Urheberrecht', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (447, 146, 'Rechtsgrundlage', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (448, 147, 'Nacherfüllung', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (449, 148, 'natürlichen Personen', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (450, 149, 'Break-even-Point', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (451, 150, 'Verbindlichkeiten', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (452, 151, 'Kosten-Nutzen', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (453, 151, 'Kosten-Nutzen-Analyse', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (454, 151, 'Kosten-Nutzen-', 1, 3, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (455, 152, 'Menge', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (456, 153, 'Planung', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (457, 154, 'Aktivitäts', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (458, 154, 'Aktivitätsdiagramm', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (459, 155, 'Beziehungen', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (460, 156, 'nicht existieren', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (461, 157, 'Rolle', 1, 1, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (462, 157, 'Person', 1, 2, 0);
+INSERT INTO gap_option (gap_option_id, gap_id, option_text, is_correct, option_order, points) VALUES (463, 158, 'Ablauf', 1, 1, 0);
 
--- Rooms
-INSERT INTO room (room_id, description, image_url, map_x, map_y, max_points, min_points_required, name, room_order, question_set_id, theme_id) VALUES
-(1, NULL, NULL, 1, 1, 100, 0, 'KhitoGlebLih', 1, 1, 3),
-(2, NULL, NULL, 2, 1, 100, 0, 'Cursed-Crib', 2, 2, 3),
-(3, NULL, NULL, 3, 1, 100, 0, 'xXx', 3, 3, 6),
-(4, NULL, NULL, 4, 1, 100, 0, 'SUD_LJ3Q3_Projektarbeit_2026', 4, 7, 3),
-(5, NULL, NULL, 1, 2, 100, 0, 'GBoyz', 5, 8, 5),
-(6, NULL, NULL, 2, 2, 100, 0, 'Bazinga', 6, 9, 4),
-(7, NULL, NULL, 3, 2, 100, 0, 'Feenstaub', 7, 15, 8),
-(8, NULL, NULL, 4, 2, 100, 0, 'Hard Workers', 8, 16, 8),
-(9, NULL, NULL, 1, 3, 100, 0, 'Dummy2Pro', 9, 21, 4),
-(10, NULL, NULL, 2, 3, 100, 0, 'Hammer', 10, 22, 5),
-(11, NULL, NULL, 3, 3, 100, 0, 'RandomMap', 11, 23, 8);
+-- room
+INSERT INTO room (room_id, description, image_url, map_x, map_y, max_points, min_points_required, name, room_order, question_set_id, theme_id) VALUES (1, NULL, NULL, 1, 1, 100, 0, 'KhitoGlebLih', 1, 1, 3);
+INSERT INTO room (room_id, description, image_url, map_x, map_y, max_points, min_points_required, name, room_order, question_set_id, theme_id) VALUES (2, NULL, NULL, 2, 1, 100, 0, 'Cursed-Crib', 2, 2, 3);
+INSERT INTO room (room_id, description, image_url, map_x, map_y, max_points, min_points_required, name, room_order, question_set_id, theme_id) VALUES (3, NULL, NULL, 3, 1, 100, 0, 'xXx', 3, 3, 6);
+INSERT INTO room (room_id, description, image_url, map_x, map_y, max_points, min_points_required, name, room_order, question_set_id, theme_id) VALUES (4, NULL, NULL, 4, 1, 100, 0, 'SUD_LJ3Q3_Projektarbeit_2026', 4, 7, 3);
+INSERT INTO room (room_id, description, image_url, map_x, map_y, max_points, min_points_required, name, room_order, question_set_id, theme_id) VALUES (5, NULL, NULL, 1, 2, 100, 0, 'GBoyz', 5, 8, 5);
+INSERT INTO room (room_id, description, image_url, map_x, map_y, max_points, min_points_required, name, room_order, question_set_id, theme_id) VALUES (6, NULL, NULL, 2, 2, 100, 0, 'Bazinga', 6, 9, 4);
+INSERT INTO room (room_id, description, image_url, map_x, map_y, max_points, min_points_required, name, room_order, question_set_id, theme_id) VALUES (7, NULL, NULL, 3, 2, 100, 0, 'Feenstaub', 7, 15, 8);
+INSERT INTO room (room_id, description, image_url, map_x, map_y, max_points, min_points_required, name, room_order, question_set_id, theme_id) VALUES (8, NULL, NULL, 4, 2, 100, 0, 'Hard Workers', 8, 16, 8);
+INSERT INTO room (room_id, description, image_url, map_x, map_y, max_points, min_points_required, name, room_order, question_set_id, theme_id) VALUES (9, NULL, NULL, 1, 3, 100, 0, 'Dummy2Pro', 9, 21, 4);
+INSERT INTO room (room_id, description, image_url, map_x, map_y, max_points, min_points_required, name, room_order, question_set_id, theme_id) VALUES (10, NULL, NULL, 2, 3, 100, 0, 'Hammer', 10, 22, 5);
+INSERT INTO room (room_id, description, image_url, map_x, map_y, max_points, min_points_required, name, room_order, question_set_id, theme_id) VALUES (11, NULL, NULL, 3, 3, 100, 0, 'RandomMap', 11, 23, 8);
