@@ -14,7 +14,7 @@
 
         <groupId>de.bwvschule.itf233.gruppe3</groupId>
         <artifactId>quizgame</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.5.1-SNAPSHOT</version>
         <name>quizgame</name>
         <description>Quiz game fullstack project</description>
 
