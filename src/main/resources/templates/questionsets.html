@@ -2,7 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Manage Question Sets</title>
+    <title>Fragensätze verwalten</title>
+    <link rel="stylesheet" th:href="@{/admin.css}">
     <style>
         #menu {
             display: none;
@@ -12,21 +13,21 @@
 <body>
 <div id="menu">
     <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/themes">Manage Themes</a></li>
-        <li><a href="/teams">Manage Teams</a></li>
-        <li><a href="/questionsets">Manage Question Sets</a></li>
-        <li><a href="/questions">Manage Questions</a></li>
+        <li><a href="/">Startseite</a></li>
+        <li><a href="/themes">Themen verwalten</a></li>
+        <li><a href="/teams">Teams verwalten</a></li>
+        <li><a href="/questionsets">Fragensätze verwalten</a></li>
+        <li><a href="/questions">Fragen verwalten</a></li>
     </ul>
 </div>
-<h1>Manage Question Sets</h1>
-<h2>Existing Question Sets</h2>
+<h1>Fragensätze verwalten</h1>
+<h2>Vorhandene Fragensätze</h2>
 <table>
     <thead>
     <tr>
         <th>ID</th>
-        <th>Title</th>
-        <th>Team</th>
+        <th>Titel</th>
+        <th>Teamname</th>
     </tr>
     </thead>
     <tbody>
@@ -38,20 +39,20 @@
     </tbody>
 </table>
 
-<h2>Add New Question Set</h2>
+<h2>Neuen Fragensatz hinzufügen</h2>
 <form action="/questionsets" method="post" th:object="${questionSet}">
     <div>
-        <label for="title">Title:</label>
+        <label for="title">Titel:</label>
         <input type="text" id="title" th:field="*{title}">
     </div>
     <div>
-        <label for="team">Team:</label>
+        <label for="team">Teamname:</label>
         <select id="team" th:field="*{team}">
             <option th:each="team : ${teams}" th:value="${team.id}" th:text="${team.name}"></option>
         </select>
     </div>
     <div>
-        <button type="submit">Add Question Set</button>
+        <button type="submit">Fragensatz hinzufügen</button>
     </div>
 </form>
 

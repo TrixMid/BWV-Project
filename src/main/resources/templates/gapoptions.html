@@ -2,7 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Manage Gap Options</title>
+    <title>Lückenoptionen verwalten</title>
+    <link rel="stylesheet" th:href="@{/admin.css}">
     <style>
         #menu {
             display: none;
@@ -12,22 +13,22 @@
 <body>
 <div id="menu">
     <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/themes">Manage Themes</a></li>
-        <li><a href="/teams">Manage Teams</a></li>
-        <li><a href="/questionsets">Manage Question Sets</a></li>
-        <li><a href="/questions">Manage Questions</a></li>
+        <li><a href="/">Startseite</a></li>
+        <li><a href="/themes">Themen verwalten</a></li>
+        <li><a href="/teams">Teams verwalten</a></li>
+        <li><a href="/questionsets">Fragensätze verwalten</a></li>
+        <li><a href="/questions">Fragen verwalten</a></li>
     </ul>
 </div>
-<h1 th:text="'Manage Gap Options for Gap Field: ' + ${gapField.id}"></h1>
-<h2>Existing Gap Options</h2>
+<h1 th:text="'Lückenoptionen verwalten für Lückenfeld: ' + ${gapField.id}"></h1>
+<h2>Vorhandene Lückenoptionen</h2>
 <table>
     <thead>
     <tr>
         <th>ID</th>
-        <th>Option Text</th>
-        <th>Is Correct</th>
-        <th>Order</th>
+        <th>Optionstext</th>
+        <th>Ist richtig</th>
+        <th>Reihenfolge</th>
     </tr>
     </thead>
     <tbody>
@@ -40,22 +41,22 @@
     </tbody>
 </table>
 
-<h2>Add New Gap Option</h2>
+<h2>Neue Lückenoption hinzufügen</h2>
 <form th:action="@{/questions/{qId}/gapfields/{gfId}/gapoptions(qId=${questionId}, gfId=${gapField.id})}" method="post" th:object="${gapOption}">
     <div>
-        <label for="optionText">Option Text:</label>
+        <label for="optionText">Optionstext:</label>
         <input type="text" id="optionText" th:field="*{optionText}">
     </div>
     <div>
-        <label for="isCorrect">Is Correct:</label>
+        <label for="isCorrect">Ist richtig:</label>
         <input type="checkbox" id="isCorrect" th:field="*{isCorrect}">
     </div>
     <div>
-        <label for="optionOrder">Order:</label>
+        <label for="optionOrder">Reihenfolge:</label>
         <input type="number" id="optionOrder" th:field="*{optionOrder}">
     </div>
     <div>
-        <button type="submit">Add Gap Option</button>
+        <button type="submit">Lückenoption hinzufügen</button>
     </div>
 </form>
 

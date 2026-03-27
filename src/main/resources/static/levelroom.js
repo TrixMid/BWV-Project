@@ -30,10 +30,10 @@ let doorTriggered = false;
 let gapOverlayVisible = false;       // Status des Overlays
 
 let cursors;
-let keyA, keyD, keyW, keyS;
+let keyA, keyD, keyW, keyS, keyE;
 
 const config = {
-    type: Phaser.CANVAS,
+    type: Phaser.AUTO,
     parent: document.body,
     width: window.innerWidth,
     height: window.innerHeight,
@@ -77,6 +77,7 @@ function create() {
     keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
     keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
+    keyE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
 
     drawQuestionRoom.call(this);
     createPlayer.call(this);
@@ -241,7 +242,7 @@ function handleGapInteraction() {
     const dy = Math.abs(player.y - computerDesk.y);
     const isNear = dx < 210 * uiScale && dy < 80 * uiScale;
 
-    if (isNear && Phaser.Input.Keyboard.JustDown(sceneRef.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E))) {
+    if (isNear && Phaser.Input.Keyboard.JustDown(keyE)) {
         showGapOverlay();
     }
 }
@@ -530,7 +531,7 @@ function createBoardQuestion(question) {
 
     const boardText = sceneRef.add.text(
         ROOM_WIDTH / 2 - 120,
-        190,
+        205,
         text,
         {
             fontFamily: "Arial Black, Arial, sans-serif",
@@ -656,8 +657,8 @@ function showBoardMessage(message) {
     createPlayer.call(sceneRef);
 
     const msg = sceneRef.add.text(
-        ROOM_WIDTH / 2,
-        190,
+        ROOM_WIDTH / 2 - 120,
+        205,
         message,
         {
             fontFamily: "Arial Black, Arial, sans-serif",

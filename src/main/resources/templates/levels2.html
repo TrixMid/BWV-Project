@@ -23,24 +23,33 @@
             top: 16px;
             right: 20px;
             z-index: 9999;
-            background: rgba(255,255,255,0.92);
-            padding: 10px 14px;
-            border-radius: 10px;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
-            font-family: Arial, sans-serif;
+            background: #ffffff;
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         #teamPanel label {
+            display: block;
             font-weight: bold;
-            margin-right: 8px;
+            margin-bottom: 8px;
+            color: #2c3e50;
         }
 
         #teamPanel input {
-            padding: 6px 10px;
+            padding: 10px 12px;
             font-size: 15px;
-            border: 1px solid #aaa;
-            border-radius: 6px;
-            width: 180px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 220px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        #teamPanel input:focus {
+            border-color: #3498db;
         }
     </style>
 </head>
@@ -464,14 +473,13 @@
         ];
 
         const deskCenterX = ROOM_WIDTH / 2;
-        // Buchbreite + Abstand vergrößert
         const bookWidth = 52 * uiScale;
-        const bookSpacing = 32 * uiScale; // mehr Abstand
+        const bookSpacing = 45 * uiScale;
         const totalWidth = levelConfigs.length * (bookWidth + bookSpacing) - bookSpacing;
         const startX = deskCenterX - totalWidth / 2 + bookWidth / 2;
 
-        const bookY = 320 - 15;  // leicht über dem Tisch
-        const textY = bookY - 24;
+        const bookY = 320 - 20;
+        const textY = bookY - 30;
         const zoneY = bookY + 10;
 
         levelBooks = [];
