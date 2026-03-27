@@ -2,7 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Manage Themes</title>
+    <title>Themen verwalten</title>
+    <link rel="stylesheet" th:href="@{/admin.css}">
     <style>
         #menu {
             display: none;
@@ -12,21 +13,21 @@
 <body>
 <div id="menu">
     <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/themes">Manage Themes</a></li>
-        <li><a href="/teams">Manage Teams</a></li>
-        <li><a href="/questionsets">Manage Question Sets</a></li>
-        <li><a href="/questions">Manage Questions</a></li>
+        <li><a href="/">Startseite</a></li>
+        <li><a href="/themes">Themen verwalten</a></li>
+        <li><a href="/teams">Teams verwalten</a></li>
+        <li><a href="/questionsets">Fragensätze verwalten</a></li>
+        <li><a href="/questions">Fragen verwalten</a></li>
     </ul>
 </div>
-<h1>Manage Themes</h1>
-<h2>Existing Themes</h2>
+<h1>Themen verwalten</h1>
+<h2>Vorhandene Themen</h2>
 <table>
     <thead>
     <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Description</th>
+        <th>Beschreibung</th>
     </tr>
     </thead>
     <tbody>
@@ -38,18 +39,18 @@
     </tbody>
 </table>
 
-<h2>Add New Theme</h2>
+<h2>Neues Thema hinzufügen</h2>
 <form action="/themes" method="post" th:object="${theme}">
     <div>
         <label for="name">Name:</label>
         <input type="text" id="name" th:field="*{name}">
     </div>
     <div>
-        <label for="description">Description:</label>
+        <label for="description">Beschreibung:</label>
         <input type="text" id="description" th:field="*{description}">
     </div>
     <div>
-        <button type="submit">Add Theme</button>
+        <button type="submit">Thema hinzufügen</button>
     </div>
 </form>
 

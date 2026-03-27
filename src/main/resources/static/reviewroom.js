@@ -22,7 +22,7 @@ let cursors;
 let keyA, keyD, keyW, keyS;
 
 const config = {
-    type: Phaser.CANVAS,
+    type: Phaser.AUTO,
     parent: document.body,
     width: window.innerWidth,
     height: window.innerHeight,
@@ -253,7 +253,7 @@ function createBoardQuestion(reviewQuestion) {
 
     const boardText = sceneRef.add.text(
         ROOM_WIDTH / 2,
-        190,
+        205,
         text,
         {
             fontFamily: "Arial Black, Arial, sans-serif",
@@ -364,7 +364,7 @@ function showBoardMessage(message) {
 
     const msg = sceneRef.add.text(
         ROOM_WIDTH / 2,
-        190,
+        205,
         message,
         {
             fontFamily: "Arial Black, Arial, sans-serif",
