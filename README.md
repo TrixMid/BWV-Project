@@ -48,13 +48,19 @@ Das spiel soll:
 
 
 ## How to start
-manuelle commands
+starte xxamp, stelle sicher das mysql auf port 3306 offen ist.
+erstelle eine tabelle "quizdb" und nutze die "quizdb.sql" datei um diese zu füllen.
+
+Starte einer der neuen [Releases](https://github.com/TrixMid/BWV-Project/releases)
+
+Das projekt kann auch über Intellij gestartet werden, empfohlen wird aber die zip datei oder die jar in dem aktuellsten release.
+
+
+manuelle commands zum starten mit source code. (könnte funktionieren)
 1. `source setup_maven.sh`
 2. `$MVNW_EXEC spring-boot:run`
-Das projekt kann auch über Intellij gestartet werden, empfohlen wird aber die zip datei oder die jar in dem aktuellsten release.
 
 ### Troubleshooting
 Falls sie Probleme mit dem SQLLite fallback haben, starten sie einen MySQL server auf port 3306 mit hilfe von XXAMP.
-
 Falls die Datenbank leer ist nutzen sie die Datei in `src/main/resources/data.sql` um diese zu füllen, 
 das Program sollte die Tabellen schon selbst erstellt haben.
