@@ -1,6 +1,8 @@
 package de.bwvschule.itf233.gruppe3.quizgame.gamedb.repository;
 
 import de.bwvschule.itf233.gruppe3.quizgame.gamedb.entities.AnsweredQuestion;
+import de.bwvschule.itf233.gruppe3.quizgame.gamelogic.entities.AnsweredQuestion;
+import de.bwvschule.itf233.gruppe3.quizgame.gamelogic.entities.RoomProgress;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -15,6 +17,9 @@ public interface AnsweredQuestionRepository extends JpaRepository<AnsweredQuesti
     Set<Integer> findAnsweredQuestionIdsByProgressId(Integer progressId);
 
     long countByRoomProgressGameSessionSessionId(Integer sessionId);
+
+    // Neue Methode: zählt die beantworteten Fragen für einen bestimmten RoomProgress
+    long countByRoomProgress(RoomProgress roomProgress);
 
     List<AnsweredQuestion> findByRoomProgressProgressIdOrderByAnsweredAtAsc(Integer progressId);
 }

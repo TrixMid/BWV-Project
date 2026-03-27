@@ -1,3 +1,4 @@
+
 *.xml
 HELP.md
 target/
@@ -33,6 +34,8 @@ build/
 ### VS Code ###
 .vscode/
 
+### SQLite ###
+*.db
 ### maven home
 .m2
 .mvn/jvm.config

@@ -52,7 +52,15 @@ public class GameController {
 
     @GetMapping("/session/{sessionId}/progress")
     public Map<String, Object> getSessionProgress(@PathVariable Integer sessionId) {
-        long answeredCount = answeredQuestionRepository.countByRoomProgressGameSessionSessionId(sessionId);
+        GameSession session = gameSessionRepository.findById(sessionId)
+                .orElseThrow(() -> new IllegalArgumentException("Session nicht gefunden: " + sessionId));
+
+        // RoomProgress für den aktuellen Raum holen
+        RoomProgress progress = roomProgressRepository
+                .findByGameSessionSessionIdAndRoomRoomId(sessionId, session.getCurrentRoom().getRoomId())
+                .orElseThrow(() -> new IllegalStateException("Kein RoomProgress für diesen Raum gefunden"));
+
+        long answeredCount = answeredQuestionRepository.countByRoomProgress(progress);
 
         Map<String, Object> response = new HashMap<>();
         response.put("sessionId", sessionId);

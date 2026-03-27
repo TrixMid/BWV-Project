@@ -25,7 +25,7 @@ public class GapOption {
     private Integer optionOrder;
 
     //zusatzliches Feld
-    @Column(name = "points", nullable = false)
+    @Column(name = "points", nullable = false, columnDefinition = "integer default 0")
     private Integer points = 0;
 
     public GapOption() {

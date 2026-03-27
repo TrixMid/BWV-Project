@@ -16,13 +16,18 @@ function getUiScale() {
 
 let questions = [];
 let currentQuestionIndex = 0;
+let currentQuestionType = null;      // 'MC', 'TF', 'GAP'
+let currentQuestionDetail = null;    // vollständige Frage-Daten (inkl. gaps)
+let currentGapAnswers = [];          // [{ gapId, selectedOptionId, userText }]
 
 let sceneRef;
 let player;
 let tables = [];
+let computerDesk = null;             // Referenz auf den Computer-Tisch
 let nextDoor = null;
 let nextDoorLabel = null;
 let doorTriggered = false;
+let gapOverlayVisible = false;       // Status des Overlays
 
 let cursors;
 let keyA, keyD, keyW, keyS;
@@ -89,8 +94,12 @@ function update() {
     if (!player) return;
 
     handleMovement();
-    handleTableSelection();
-    resetTableTouchFlags();
+    if (currentQuestionType === 'GAP') {
+        handleGapInteraction();
+    } else {
+        handleTableSelection();
+        resetTableTouchFlags();
+    }
     handleDoorOverlap();
 }
 
@@ -121,6 +130,7 @@ function loadLevelQuestions() {
                         }
 
                         loadQuestion();
+
                     })
                     .catch(() => {
                         currentQuestionIndex = 0;
@@ -148,6 +158,8 @@ function loadQuestion() {
     fetch("/api/questions/" + id)
         .then(res => res.json())
         .then(detail => {
+            currentQuestionType = detail.questionType; // 'MC', 'TF', 'GAP'
+            currentQuestionDetail = detail;
             buildQuestion(detail);
         })
         .catch(() => {
@@ -164,7 +176,7 @@ async function goToNextQuestion() {
         nextDoor.setTexture("doorOpen");
     }
 
-    const saved = await saveCurrentMcAnswer();
+    const saved = await saveCurrentAnswer();
 
     if (!saved) {
         doorTriggered = false;
@@ -195,12 +207,248 @@ function buildQuestion(question) {
 
     drawQuestionRoom.call(sceneRef);
     createPlayer.call(sceneRef);
-
     sceneRef.cameras.main.startFollow(player, true, 0.08, 0.08);
 
     createBoardQuestion(question);
-    createAnswerTables(question.answers || []);
+
+    if (currentQuestionType === 'GAP') {
+        createComputerDesk();
+        tables = []; // keine Antworttische
+    } else {
+        createAnswerTables(question.answers || []);
+    }
     createNextDoor();
+}
+
+function createComputerDesk() {
+    const pos = { x: ROOM_WIDTH / 2, y: 590 };
+    computerDesk = sceneRef.add.image(pos.x, pos.y, "computerDesk").setDepth(2);
+    sceneRef.physics.add.existing(computerDesk, true);
+
+    const hint = sceneRef.add.text(pos.x, pos.y - 70, "Drücke E", {
+        fontFamily: "Arial, sans-serif",
+        fontSize: `${Math.round(24 * uiScale)}px`,
+        color: "#ffffff",
+        stroke: "#000000",
+        strokeThickness: 3
+    }).setOrigin(0.5).setDepth(3);
+    computerDesk.hintText = hint;
+}
+
+function handleGapInteraction() {
+    if (!computerDesk) return;
+    const dx = Math.abs(player.x - computerDesk.x);
+    const dy = Math.abs(player.y - computerDesk.y);
+    const isNear = dx < 210 * uiScale && dy < 80 * uiScale;
+
+    if (isNear && Phaser.Input.Keyboard.JustDown(sceneRef.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E))) {
+        showGapOverlay();
+    }
+}
+
+function createGapOverlay() {
+    if (document.getElementById("gapOverlay")) return;
+    const overlay = document.createElement("div");
+    overlay.id = "gapOverlay";
+    overlay.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        background: rgba(0,0,0,0.85);
+        padding: 20px;
+        border-radius: 15px;
+        color: white;
+        font-family: Arial, sans-serif;
+        z-index: 10000;
+        display: none;
+        backdrop-filter: blur(5px);
+        max-height: 40%;
+        overflow-y: auto;
+    `;
+    const container = document.createElement("div");
+    container.id = "gapFieldsContainer";
+    const button = document.createElement("button");
+    button.id = "submitGap";
+    button.textContent = "Antworten speichern";
+    button.style.cssText = "margin-top:15px; padding:10px 20px; font-size:18px; background:#4CAF50; color:white; border:none; border-radius:5px; cursor:pointer;";
+    overlay.appendChild(container);
+    overlay.appendChild(button);
+    document.body.appendChild(overlay);
+
+    button.addEventListener("click", () => {
+        saveGapAnswersFromOverlay();
+    });
+}
+
+function populateGapOverlay(question) {
+    const gaps = question.gaps || [];
+    const container = document.getElementById("gapFieldsContainer");
+    if (!container) return;
+    container.innerHTML = "";
+
+    gaps.forEach(field => {
+        const fieldDiv = document.createElement("div");
+        fieldDiv.className = "gap-field";
+        fieldDiv.style.marginBottom = "20px";
+        fieldDiv.style.padding = "10px";
+        fieldDiv.style.borderBottom = "1px solid #ccc";
+
+        // Text vor der Lücke
+        if (field.textBefore) {
+            const beforeSpan = document.createElement("span");
+            beforeSpan.textContent = field.textBefore;
+            fieldDiv.appendChild(beforeSpan);
+        }
+
+        // Dropdown
+        const select = document.createElement("select");
+        select.setAttribute("data-gap-id", field.id);
+        select.style.margin = "0 10px";
+        select.style.padding = "5px";
+        select.style.fontSize = "16px";
+
+        const placeholder = document.createElement("option");
+        placeholder.textContent = "Bitte auswählen";
+        placeholder.value = "";
+        select.appendChild(placeholder);
+
+        (field.options || []).forEach(opt => {
+            const option = document.createElement("option");
+            option.value = opt.gapOptionId;
+            option.textContent = opt.optionText;
+            select.appendChild(option);
+        });
+
+        // Vorauswahl, falls bereits Antwort gespeichert
+        const existing = currentGapAnswers.find(a => a.gapId === field.id);
+        if (existing) {
+            select.value = existing.selectedOptionId;
+        }
+
+        select.addEventListener("change", (e) => {
+            const selectedId = e.target.value ? parseInt(e.target.value) : null;
+            const idx = currentGapAnswers.findIndex(a => a.gapId === field.id);
+            if (selectedId) {
+                const selectedOption = field.options.find(opt => opt.gapOptionId === selectedId);
+                if (idx >= 0) {
+                    currentGapAnswers[idx].selectedOptionId = selectedId;
+                    currentGapAnswers[idx].userText = selectedOption ? selectedOption.optionText : "";
+                } else {
+                    currentGapAnswers.push({
+                        gapId: field.id,
+                        selectedOptionId: selectedId,
+                        userText: selectedOption ? selectedOption.optionText : ""
+                    });
+                }
+            } else {
+                if (idx >= 0) currentGapAnswers.splice(idx, 1);
+            }
+        });
+
+        fieldDiv.appendChild(select);
+
+        // Text nach der Lücke
+        if (field.textAfter) {
+            const afterSpan = document.createElement("span");
+            afterSpan.textContent = field.textAfter;
+            fieldDiv.appendChild(afterSpan);
+        }
+
+        container.appendChild(fieldDiv);
+    });
+}
+
+function showGapOverlay() {
+    if (gapOverlayVisible) return;
+    createGapOverlay();               // stellt sicher, dass Overlay existiert
+    populateGapOverlay(currentQuestionDetail);
+    document.getElementById("gapOverlay").style.display = "block";
+    gapOverlayVisible = true;
+}
+
+function buildGapPlaceholderText(question) {
+    let fullText = question.startText || "";  // beginnt mit start_text
+
+    const gaps = question.gaps || [];
+    for (let i = 0; i < gaps.length; i++) {
+        const gap = gaps[i];
+        fullText += "___" + (gap.textAfter || "");
+    }
+
+    if (question.endText) {
+        fullText += question.endText;
+    }
+
+    return fullText;
+}
+
+function saveGapAnswersFromOverlay() {
+    const selects = document.querySelectorAll("#gapFieldsContainer .gap-field select");
+    const gaps = currentQuestionDetail.gaps || [];
+    if (selects.length !== gaps.length) return;
+
+    for (let i = 0; i < selects.length; i++) {
+        const selectedVal = selects[i].value;
+        if (!selectedVal) {
+            alert("Bitte fülle alle Lücken aus.");
+            return;
+        }
+        const gapId = gaps[i].id;
+        const existingIndex = currentGapAnswers.findIndex(a => a.gapId === gapId);
+        const selectedOption = gaps[i].options.find(opt => opt.gapOptionId == selectedVal);
+        if (existingIndex >= 0) {
+            currentGapAnswers[existingIndex].selectedOptionId = parseInt(selectedVal);
+            currentGapAnswers[existingIndex].userText = selectedOption.optionText;
+        } else {
+            currentGapAnswers.push({
+                gapId: gapId,
+                selectedOptionId: parseInt(selectedVal),
+                userText: selectedOption.optionText
+            });
+        }
+    }
+
+    updateBoardWithGapAnswers();
+    document.getElementById("gapOverlay").style.display = "none";
+    gapOverlayVisible = false;
+
+    if (computerDesk) {
+        computerDesk.setTexture("computerDesk");
+    }
+}
+
+function updateBoardWithGapAnswers() {
+    if (!currentQuestionDetail) return;
+    const gaps = currentQuestionDetail.gaps || [];
+    let fullText = "";
+
+    for (let i = 0; i < gaps.length; i++) {
+        const gap = gaps[i];
+        const answer = currentGapAnswers.find(a => a.gapId === gap.id);
+        const userText = answer ? answer.userText : "___";
+        fullText += (gap.textBefore || "") + userText + (gap.textAfter || "");
+    }
+
+    // Alten Tafeltext entfernen (falls vorhanden)
+    const oldBoard = sceneRef.children.getByName("boardText");
+    if (oldBoard) oldBoard.destroy();
+
+    const newText = sceneRef.add.text(
+        ROOM_WIDTH / 2 - 120,
+        190,
+        fullText,
+        {
+            fontFamily: "Arial Black, Arial, sans-serif",
+            fontSize: `${Math.round(32 * uiScale)}px`,
+            color: "#f5f5f5",
+            wordWrap: { width: 760 * uiScale },
+            align: "center",
+            lineSpacing: 8
+        }
+    ).setOrigin(0.5).setDepth(10).setName("boardText");
+
+    fitTextToBox(newText, 760 * uiScale, 170 * uiScale, 32 * uiScale, 18);
 }
 
 function clearDynamicObjects() {
@@ -217,6 +465,11 @@ function clearDynamicObjects() {
     nextDoor = null;
     nextDoorLabel = null;
     doorTriggered = false;
+    computerDesk = null;
+    currentGapAnswers = [];
+    gapOverlayVisible = false;
+    const overlay = document.getElementById("gapOverlay");
+    if (overlay) overlay.style.display = "none";
 }
 
 function drawQuestionRoom() {
@@ -268,10 +521,15 @@ function drawQuestionRoom() {
 }
 
 function createBoardQuestion(question) {
-    const text = question?.startText || "Keine Frage vorhanden.";
+    let text = "";
+    if (currentQuestionType === 'GAP') {
+        text = buildGapPlaceholderText(question);
+    } else {
+        text = question?.startText || "Keine Frage vorhanden.";
+    }
 
     const boardText = sceneRef.add.text(
-        ROOM_WIDTH / 2 -120,
+        ROOM_WIDTH / 2 - 120,
         190,
         text,
         {
@@ -282,7 +540,7 @@ function createBoardQuestion(question) {
             align: "center",
             lineSpacing: 8
         }
-    ).setOrigin(0.5).setDepth(10);
+    ).setOrigin(0.5).setDepth(10).setName("boardText");
 
     fitTextToBox(boardText, 760 * uiScale, 170 * uiScale, 32 * uiScale, 18);
 }
@@ -414,7 +672,7 @@ function showBoardMessage(message) {
 }
 
 /* =========================
-   Table Logic
+   Answer Logic
 ========================= */
 
 function resetTableTouchFlags() {
@@ -447,22 +705,75 @@ async function saveCurrentMcAnswer() {
     const questionId = question.questionId ?? question.id;
     const selectedAnswerIds = getSelectedAnswerIds();
 
+    if (selectedAnswerIds.length === 0) {
+        alert("Bitte wähle eine Antwort aus.");
+        return false;
+    }
+
     try {
         const response = await fetch(`/quizgame/session/${sessionId}/answer/mc`, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 questionId: questionId,
                 selectedAnswerIds: selectedAnswerIds
             })
         });
-
         return response.ok;
     } catch (error) {
-        console.error("Fehler beim Speichern der Antwort:", error);
+        console.error("Fehler beim Speichern der MC-Antwort:", error);
         return false;
+    }
+}
+
+async function saveCurrentGapAnswer() {
+    if (!sessionId) return true;
+
+    const question = questions[currentQuestionIndex];
+    if (!question) return false;
+
+    const questionId = question.questionId ?? question.id;
+
+    // Prüfen, ob alle Lücken ausgefüllt sind
+    const gaps = currentQuestionDetail.gaps || [];
+    if (currentGapAnswers.length !== gaps.length) {
+        alert("Bitte fülle alle Lücken aus (über den Computer).");
+        return false;
+    }
+
+    // Sicherstellen, dass jede Lücke eine gültige Option ID hat
+    for (let answer of currentGapAnswers) {
+        if (answer.selectedOptionId === null) {
+            alert("Eine oder mehrere Lücken enthalten ungültige Eingaben. Bitte korrigiere sie.");
+            return false;
+        }
+    }
+
+    // Array im erwarteten Format für Backend erstellen
+    const gapAnswerPayload = currentGapAnswers.map(answer => ({
+        questionId: questionId,
+        gapFieldId: answer.gapId,
+        selectedOptionId: answer.selectedOptionId
+    }));
+
+    try {
+        const response = await fetch(`/quizgame/session/${sessionId}/answer/gap`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(gapAnswerPayload)
+        });
+        return response.ok;
+    } catch (error) {
+        console.error("Fehler beim Speichern der GAP-Antwort:", error);
+        return false;
+    }
+}
+
+async function saveCurrentAnswer() {
+    if (currentQuestionType === 'GAP') {
+        return await saveCurrentGapAnswer();
+    } else {
+        return await saveCurrentMcAnswer();
     }
 }
 
@@ -575,7 +886,17 @@ function createTextures() {
     g.generateTexture("answerDeskSelected", 520, 124);
     g.clear();
 
-    /* Tür geschlossen im Stil der alten braunen Tür */
+    /* Computer-Tisch */
+    g.fillStyle(0x8B4513, 1);
+    g.fillRoundedRect(0, 0, 520, 124, 8);
+    g.fillStyle(0x2c3e50, 1);
+    g.fillRoundedRect(60, 20, 400, 60, 8);
+    g.fillStyle(0xecf0f1, 1);
+    g.fillRect(70, 30, 380, 40);
+    g.generateTexture("computerDesk", 520, 124);
+    g.clear();
+
+    /* Tür geschlossen */
     g.fillStyle(0x9a6232, 1);
     g.fillRoundedRect(0, 0, 140, 260, 10);
     g.fillStyle(0x7b4d26, 1);

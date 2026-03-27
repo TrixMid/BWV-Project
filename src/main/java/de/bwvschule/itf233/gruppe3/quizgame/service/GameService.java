@@ -3,23 +3,19 @@ package de.bwvschule.itf233.gruppe3.quizgame.service;
 import de.bwvschule.itf233.gruppe3.quizgame.db.entities.*;
 import de.bwvschule.itf233.gruppe3.quizgame.db.repository.*;
 import de.bwvschule.itf233.gruppe3.quizgame.dto.GapAnswerDto;
-import de.bwvschule.itf233.gruppe3.quizgame.gamedb.entities.*;
-import de.bwvschule.itf233.gruppe3.quizgame.gamedb.repository.*;
+import de.bwvschule.itf233.gruppe3.quizgame.gamelogic.entities.*;
+import de.bwvschule.itf233.gruppe3.quizgame.gamelogic.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import de.bwvschule.itf233.gruppe3.quizgame.dto.ReviewQuestionResponse;
 import de.bwvschule.itf233.gruppe3.quizgame.dto.ReviewAnswerResponse;
-
 import de.bwvschule.itf233.gruppe3.quizgame.dto.ReviewSummaryResponse;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
-
 
 @Service
 @RequiredArgsConstructor
@@ -39,7 +35,7 @@ public class GameService {
     public GameSession startNewSession(Player player) {
         Room startRoom = roomRepository.findAllByOrderByRoomOrderAsc().stream()
                 .findFirst()
-                .orElseThrow(() -> new IllegalStateException("no room found, add room seed data"));
+                .orElseThrow(() -> new IllegalStateException("Kein Raum vorhanden"));
         GameSession session = GameSession.builder()
                 .player(player)
                 .currentRoom(startRoom)
@@ -52,16 +48,41 @@ public class GameService {
     }
 
     @Transactional
+    public RoomProgress createRoomProgress(GameSession session, Room room) {
+        return roomProgressRepository.save(
+                RoomProgress.builder()
+                        .gameSession(session)
+                        .room(room)
+                        .pointsEarned(0)
+                        .completed(false)
+                        .medal(MedalType.NONE)
+                        .build()
+        );
+    }
+
+    @Transactional
+    public void changeRoom(GameSession session, Room targetRoom) {
+        session.setCurrentRoom(targetRoom);
+        Optional<RoomProgress> existing = roomProgressRepository
+                .findByGameSessionSessionIdAndRoomRoomId(session.getSessionId(), targetRoom.getRoomId());
+        if (existing.isEmpty()) {
+            createRoomProgress(session, targetRoom);
+        }
+        gameSessionRepository.save(session);
+    }
+
+    @Transactional
     public GameSession startSessionForPlayerName(String playerName) {
-        String name = playerName == null ? "" : playerName.trim();
-        if (name.isBlank()) {
-            throw new IllegalArgumentException("player name cannot be blank");
+        String cleanedName = playerName == null ? "" : playerName.trim();
+
+        if (cleanedName.isBlank()) {
+            throw new IllegalArgumentException("Playername darf nicht leer sein.");
         }
 
-        Player player = playerRepository.findByUsername(name)
+        Player player = playerRepository.findByUsername(cleanedName)
                 .orElseGet(() -> {
                     Player newPlayer = new Player();
-                    newPlayer.setUsername(name);
+                    newPlayer.setUsername(cleanedName);
                     return playerRepository.save(newPlayer);
                 });
 
@@ -71,35 +92,9 @@ public class GameService {
     }
 
     @Transactional
-    public RoomProgress createRoomProgress(GameSession session, Room room) {
-        return roomProgressRepository.save(
-                RoomProgress.builder()
-                        .gameSession(session)
-                        .room(room)
-                        .pointsEarned(0)
-                        .completed(false)
-                        .medal(MedalType.NONE)
-                        .build());
-    }
-
-    @Transactional
-    public void changeRoom(GameSession session, Room targetRoom) {
-        session.setCurrentRoom(targetRoom);
-
-        Optional<RoomProgress> existing = roomProgressRepository
-                .findByGameSessionSessionIdAndRoomRoomId(session.getSessionId(), targetRoom.getRoomId());
-        if (existing.isEmpty()) {
-            createRoomProgress(session, targetRoom);
-        }
-        gameSessionRepository.save(session);
-    }
-
-
-    @Transactional
-    public AnsweredQuestion evaluateMcAnswer(GameSession session,
-                                             RoomProgress progress,
-                                             Question question,
-                                             List<Integer> selectedAnswerIds) {
+    public AnsweredQuestion evaluateMcAnswer(GameSession session, RoomProgress progress,
+                                             Question question, List<Integer> selectedAnswerIds) {
+        // Frage-ID ist Integer, Repository-Methode erwartet Integer
         List<McAnswer> allAnswers = mcAnswerRepository.findByQuestionIdOrderByOptionOrderAsc(question.getId());
 
         int pointsEarned = (int) allAnswers.stream()
@@ -192,6 +187,7 @@ public class GameService {
             totalPoints += selected.getPoints();
         }
 
+        // Frage-ID aus DTO ist Integer
         Question question = questionRepository.findById(gapAnswers.get(0).getQuestionId())
                 .orElseThrow();
         AnsweredQuestion aq = AnsweredQuestion.builder()
@@ -227,9 +223,10 @@ public class GameService {
                 .findByGameSessionSessionIdAndRoomRoomId(sessionId, session.getCurrentRoom().getRoomId())
                 .orElseThrow();
 
-        List<AnsweredQuestion> answered = answeredQuestionRepository.findByRoomProgressProgressIdOrderByAnsweredAtAsc(progress.getProgressId());
+        List<AnsweredQuestion> answeredQuestions = answeredQuestionRepository
+                .findByRoomProgressProgressIdOrderByAnsweredAtAsc(progress.getProgressId());
 
-        return answered.stream().map(aq -> {
+        return answeredQuestions.stream().map(aq -> {
             Question question = aq.getQuestion();
 
             Set<Integer> selectedIds = parseSelectedAnswerIds(aq.getSelectedAnswerIds());
@@ -268,45 +265,14 @@ public class GameService {
 
             int maxPoints = room.getMaxPoints();
             double percentage = (double) progress.getPointsEarned() / maxPoints;
-
             if (percentage >= 0.9) {
                 progress.setMedal(MedalType.GOLD);
             } else if (percentage >= 0.75) {
                 progress.setMedal(MedalType.SILVER);
             } else if (percentage >= 0.5) {
                 progress.setMedal(MedalType.BRONZE);
-            } else {
-                progress.setMedal(MedalType.NONE);
             }
         }
         roomProgressRepository.save(progress);
-    }
-
-    private void checkAndFinishGame(GameSession session) {
-        List<Room> allRooms = roomRepository.findAllByOrderByRoomOrderAsc();
-        List<RoomProgress> progressList = roomProgressRepository
-                .findByGameSessionSessionId(session.getSessionId());
-
-        Set<Integer> completedRoomIds = progressList.stream()
-                .filter(RoomProgress::getCompleted)
-                .map(p -> p.getRoom().getRoomId())
-                .collect(Collectors.toSet());
-
-        boolean allDone = allRooms.stream()
-                .allMatch(r -> completedRoomIds.contains(r.getRoomId()));
-
-        if (allDone) {
-            session.setStatus(GameStatus.WON);
-            gameSessionRepository.save(session);
-        }
-    }
-
-    private Set<Integer> parseIds(String raw) {
-        if (raw == null || raw.isBlank()) return Set.of();
-        return Arrays.stream(raw.split(","))
-                .map(String::trim)
-                .filter(s -> !s.isEmpty())
-                .map(Integer::valueOf)
-                .collect(Collectors.toSet());
     }
 }
